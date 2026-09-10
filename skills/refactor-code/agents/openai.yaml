@@ -1,0 +1,5 @@
+interface:
+  display_name: "Refactor Code"
+  short_description: "Improve structure while preserving behavior"
+policy:
+  allow_implicit_invocation: true

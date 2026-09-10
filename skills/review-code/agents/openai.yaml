@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review Code"
+  short_description: "Find verified risks in a code change"
+policy:
+  allow_implicit_invocation: true

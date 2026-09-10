@@ -1,0 +1,5 @@
+interface:
+  display_name: "Design Code Architecture"
+  short_description: "Design domain and module boundaries"
+policy:
+  allow_implicit_invocation: true

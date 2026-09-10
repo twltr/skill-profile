@@ -1,0 +1,5 @@
+interface:
+  display_name: "Document System"
+  short_description: "Explain system behavior and design"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Plan Work"
+  short_description: "Plan and maintain verifiable work packages"
+policy:
+  allow_implicit_invocation: true

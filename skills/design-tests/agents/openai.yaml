@@ -1,0 +1,5 @@
+interface:
+  display_name: "Design Tests"
+  short_description: "Choose meaningful tests and coverage"
+policy:
+  allow_implicit_invocation: true

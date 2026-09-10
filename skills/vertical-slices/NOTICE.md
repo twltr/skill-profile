@@ -1,6 +1,6 @@
 # Source attribution
 
-The primary source is Tobi's former global AGENTS.md and his explicit revision
+The primary source is the former global AGENTS.md and the explicit revision
 decisions. Its original architecture, test strategy, examples and work lifecycle
 remain the governing material. Selected techniques from Matt Pocock supplement
 that material; they do not replace its vocabulary or workflow ownership.

@@ -10,8 +10,7 @@ and constraints without reconstructing them from scattered implementation.
 This method owns the system book and README. Source comments and local headers
 have their own owner in Golden Comments.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if its full text is
-not already in context. Establish the intended reader, question, repository
+Establish the intended reader, question, repository
 conventions and actual implementation before choosing the documentation shape.
 Preserve a working book structure outside the requested change.
 

@@ -16,11 +16,6 @@ An analysis-only assignment ends with findings and a proposal; it does not
 silently become a refactoring. Once the human has authorized the improvement,
 complete the ordinary steps within that scope without asking again for each edit.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if its full text is
-not already in context. If a structural choice remains unresolved, use
-[Vertical Slices](../vertical-slices/SKILL.md) for that decision within the current
-human-started scope, then return here. Do not restart an already loaded method.
-
 ## Define the Min-Max gain
 
 Establish the requested scope, intended capability, constraints and observable

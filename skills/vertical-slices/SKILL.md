@@ -11,10 +11,29 @@ adding a feature or module, extending an existing capability and maintaining
 existing code. Start from the affected slice and respect its existing ownership.
 A small change uses these boundaries without requiring a whole-system redesign.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if its full text is
-not already in context. Resolve links from this skill's directory. If the source
-is unavailable, report the missing basis; do not invent its contents. A return
-to an already loaded method continues its current step, never a recursive restart.
+## Minimum Surface as the design measure
+
+Build the full intended capability with the smallest coherent system that can
+honestly own it. **Min-Max Engineering** means maximum useful behavior for the
+state, code, modules, dependencies, configuration and operational moving parts
+needed to deliver it. Same capability with less system is an architectural gain.
+Smallest means least error, state and search surface, not fewest lines: a shared
+choke point may add code while giving a wrong behavior one enforceable address.
+
+**Surface is context.** Ask before and after a design or implementation: what can
+be reduced, what now has one owner, and what becomes easier to change without
+losing capability, robustness or safety? Explicitness comes from honest names,
+boundaries, errors and structure, not an ever-growing inventory of special cases.
+
+Before adding machinery, consider deleting obsolete surfaces, consolidating
+owners, reusing an existing boundary, table-driving repeated behavior or using
+an established pattern. Compatibility layers, broad abstractions, fallback paths
+and parallel workflows must justify the states and maintenance they introduce.
+A green suite does not excuse unnecessary parallel machinery.
+
+No arbitrary file-count or line-count targets. Useful comments, module briefings
+and explanations preserve the model, reasons and invariants; they are not code
+volume to shave away. Consolidate repetition without losing those explanations.
 
 ## Establish the model before cutting files
 
@@ -28,6 +47,22 @@ resolved vocabulary at its existing canonical owner. A substantial system needs
 a context map, each context's responsibility and lexicon, and an explanation of
 terms whose meaning changes across boundaries. Extend the existing explanation;
 do not impose a second glossary or another methodology's folder names.
+
+Give each responsibility and maintained truth one canonical owner. Multiple
+inputs are legitimate; independent writers or competing implementations of the
+same responsibility create drift. Establish the existing owner before adding
+another implementation. Similar code alone does not mean identical responsibility.
+
+Make declarations express the real concepts. **One name, one job:** a cap is not
+also a fetch page size; a floor is not also a server default; a timeout is not
+also an embedding budget. Separate meanings need honest names even when their
+values currently agree. Comments cannot excuse a false declaration.
+
+**Withhold, never fabricate:** represent unavailable or undetermined separately
+from absent, empty, false or expired in the contract and its types, then give
+consumers an explicit handling decision. A fallback may provide a less useful
+answer, but must keep the contract's promises, including timeout nesting, budget
+pairing and invariants when a dependency or configuration is missing.
 
 ## Vertical co-location and safe localization
 
@@ -63,6 +98,12 @@ to the repository. Keep a machine-readable dependency map derived from actual
 imports or declarations. New cross-module edges must be deliberate, reviewable
 changes; an existing-edge baseline can support a ratchet during a migration.
 Do not maintain a second architectural truth manually.
+
+Keep operational scripts and contract checks with the system they protect.
+Temporary authoring aids and convention checks must be removable without breaking
+builds, tests or operation. A one-off inspection does not earn a permanent gate;
+use existing commands and actual requirements rather than adding administration
+to complete an ordinary change.
 
 Each module carries a compact briefing at its package documentation or existing
 entrypoint: purpose, what it owns, public API, allowed and forbidden dependencies,

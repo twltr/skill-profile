@@ -10,8 +10,7 @@ can honestly do so. A suite is not worth its count. Its structure must let a
 maintainer understand the protected behavior and locate the failure without
 reconstructing a hundred scattered checks.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if its full text is
-not already in context. Derive the units, vocabulary and evidence from the actual system.
+Derive the units, vocabulary and evidence from the actual system.
 Use focused diagnosis and test-first feedback where they help establish the
 behavior; neither replaces understanding the unit and its invariants.
 
@@ -84,8 +83,7 @@ better than many microscopic checks without context.
 
 Give the unit's file a compact explanation of what it covers, why those behaviors
 belong together and where they are specified. Each case needs a reason for its
-expected result, not a narration of the test code. Follow Golden Comments for
-source commentary; test semantics remain owned here.
+expected result, not a narration of the test code.
 
 ## Make the evidence discriminate
 

@@ -1,5 +1,0 @@
-interface:
-  display_name: "Engineering Mindset"
-  short_description: "Apply core Engineering principles"
-policy:
-  allow_implicit_invocation: true

@@ -10,8 +10,7 @@ method keeps the roadmap and active execution plans aligned. Project-specific in
 an explicitly chosen external workflow may override these defaults; otherwise
 use ROADMAP.md, CHANGELOG.md and .tmp/ deliberately rather than inventing a tracker.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if it is not already
-in context. Establish whether the request is to plan, resume or execute. A
+Establish whether the request is to plan, resume or execute. A
 planning-only request creates the plan; it does not launch implementation or
 publish to an external tracker. Unresolved direction belongs to clarification,
 not to a ticket that pretends the decision has been made.

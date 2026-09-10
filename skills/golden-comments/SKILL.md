@@ -9,8 +9,7 @@ Make source code explain the model a future maintainer needs to change it safely
 Golden Comments carry **why, how and why this construction**. Code already says
 what the statements do; repeating their syntax adds no understanding.
 
-Read [Engineering Mindset](../engineering-mindset/SKILL.md) if it is not already
-in context. Use this method when writing or changing source commentary, including
+Use this method when writing or changing source commentary, including
 within ordinary implementation. A comment-only assignment does not authorize a
 code redesign. This skill owns source commentary, not a system documentation book.
 

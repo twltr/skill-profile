@@ -1,0 +1,5 @@
+interface:
+  display_name: "All or Nothing"
+  short_description: "Complete replacements and model corrections"
+policy:
+  allow_implicit_invocation: true

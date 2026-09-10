@@ -1,0 +1,5 @@
+interface:
+  display_name: "Golden Comments"
+  short_description: "Explain the model and reasons in source code"
+policy:
+  allow_implicit_invocation: true

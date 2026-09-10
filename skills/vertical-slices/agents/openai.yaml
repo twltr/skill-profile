@@ -1,0 +1,5 @@
+interface:
+  display_name: "Vertical Slices"
+  short_description: "Design agent-oriented capability boundaries"
+policy:
+  allow_implicit_invocation: true

@@ -1,9 +1,10 @@
 # Source attribution
 
-Selected methods are adapted from Matt Pocock's skills at the revision linked
-below. The workflow is independently usable and changes the upstream scope,
-repository assumptions and orchestration where needed. These sources document
-provenance; they are not mandatory runtime reading.
+The primary source is Tobi's former global AGENTS.md and his explicit revision
+decisions. Its original architecture, test strategy, examples and work lifecycle
+remain the governing material. Selected techniques from Matt Pocock supplement
+that material; they do not replace its vocabulary or workflow ownership.
+The following sources record those additions and are not mandatory runtime reading.
 
 - https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/to-spec/SKILL.md
 - https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/to-tickets/SKILL.md

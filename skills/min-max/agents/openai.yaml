@@ -1,0 +1,5 @@
+interface:
+  display_name: "Min-Max"
+  short_description: "Human-started structural improvement"
+policy:
+  allow_implicit_invocation: false

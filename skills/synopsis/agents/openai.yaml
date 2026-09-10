@@ -1,0 +1,5 @@
+interface:
+  display_name: "Synopsis"
+  short_description: "Write the system book and README"
+policy:
+  allow_implicit_invocation: true

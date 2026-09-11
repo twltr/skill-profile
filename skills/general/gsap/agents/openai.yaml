@@ -1,0 +1,5 @@
+interface:
+  display_name: "GSAP"
+  short_description: "Choose the GSAP guidance needed for the animation"
+policy:
+  allow_implicit_invocation: true

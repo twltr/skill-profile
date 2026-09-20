@@ -29,6 +29,7 @@ supplementary Matt Pocock attribution where applicable.
 | [`frontend-design`](skills/general/frontend-design/SKILL.md) | Reviewed snapshot of [Anthropic's `frontend-design`](https://github.com/anthropics/skills/tree/2235be7c60b551f5de82ade908fd3816455afcda/skills/frontend-design) at commit `2235be7c60b551f5de82ade908fd3816455afcda`. The bundled Apache-2.0 license is preserved. |
 | [`motion-design`](skills/general/motion-design/SKILL.md) | Reviewed snapshot of [LottieFiles `motion-design-skill`](https://github.com/LottieFiles/motion-design-skill/tree/b6606e101601ef027f01729a7289e97c329ad0cd/skills/motion-design) at commit `b6606e101601ef027f01729a7289e97c329ad0cd`. MIT license preserved. |
 | [`gsap`](skills/general/gsap/SKILL.md) | Repository-owned router around eight byte-preserved entrypoints from [GreenSock's official `gsap-skills`](https://github.com/greensock/gsap-skills/tree/aed9cfd3277740755f6bfc1155c7aa645403b760/skills) at commit `aed9cfd3277740755f6bfc1155c7aa645403b760`. The manifest records each source hash; MIT license preserved. This is a standalone skill, not a plugin-managed installation. |
+| [`workspace-management`](skills/general/workspace-management/SKILL.md) | Repository-owned workflow for provider-neutral, host-local Workspace context and AI-project bindings. |
 
 ## Catalog-only external skills
 

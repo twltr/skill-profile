@@ -1,5 +1,5 @@
 interface:
-  display_name: "Min-Max"
+  display_name: "MinMax Codebase"
   short_description: "Human-started structural improvement"
 policy:
   allow_implicit_invocation: false

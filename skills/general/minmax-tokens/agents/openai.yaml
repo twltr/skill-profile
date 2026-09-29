@@ -1,0 +1,6 @@
+interface:
+  display_name: "MinMax Tokens"
+  short_description: "Bound context and tool output without dropping evidence"
+  default_prompt: "Use $minmax-tokens to keep this task focused without weakening verification."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Puppeteer"
+  short_description: "Delegate bounded work and verify integration"
+  default_prompt: "Use $puppeteer to divide this work into accountable, verifiable tasks."
+policy:
+  allow_implicit_invocation: true

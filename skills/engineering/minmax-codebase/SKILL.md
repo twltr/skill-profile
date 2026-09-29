@@ -1,10 +1,10 @@
 ---
-name: min-max
-description: Human-invoked Min-Max/refactoring work to reduce system complexity while preserving agreed capability and behavior. Never start automatically from a code smell, routine completion or a project reference.
+name: minmax-codebase
+description: Human-invoked structural and architectural improvement that reduces system complexity while preserving agreed capability and behavior. Never start automatically from a code smell, routine completion or a project reference.
 disable-model-invocation: true
 ---
 
-# Min-Max
+# MinMax Codebase
 
 Improve the chosen system so the same intended capability needs less state,
 error surface, duplication, search and operational machinery. This is deliberate

@@ -16,7 +16,7 @@ supplementary Matt Pocock attribution where applicable.
 | [`all-or-nothing`](skills/engineering/all-or-nothing/SKILL.md) | Complete an agreed replacement and retire the superseded owner. |
 | [`golden-comments`](skills/engineering/golden-comments/SKILL.md) | Explain reasons, invariants and failure consequences in source commentary. |
 | [`marshmallow-tests`](skills/engineering/marshmallow-tests/SKILL.md) | Design tests around coherent units, invariants and precise failure addresses. |
-| [`min-max`](skills/engineering/min-max/SKILL.md) | Deliberately reduce system complexity while preserving agreed capability. |
+| [`minmax-codebase`](skills/engineering/minmax-codebase/SKILL.md) | Human-initiated structural and architectural improvement; preserves agreed capability. |
 | [`road-to-glory`](skills/engineering/road-to-glory/SKILL.md) | Maintain resumable Engineering work through roadmaps, active plans and changelogs. |
 | [`synopsis`](skills/engineering/synopsis/SKILL.md) | Create system books, architecture explanations and substantial READMEs. |
 | [`vertical-slices`](skills/engineering/vertical-slices/SKILL.md) | Organize repository capabilities around clear owners and public boundaries. |
@@ -30,6 +30,8 @@ supplementary Matt Pocock attribution where applicable.
 | [`motion-design`](skills/general/motion-design/SKILL.md) | Reviewed snapshot of [LottieFiles `motion-design-skill`](https://github.com/LottieFiles/motion-design-skill/tree/b6606e101601ef027f01729a7289e97c329ad0cd/skills/motion-design) at commit `b6606e101601ef027f01729a7289e97c329ad0cd`. MIT license preserved. |
 | [`gsap`](skills/general/gsap/SKILL.md) | Repository-owned router around eight byte-preserved entrypoints from [GreenSock's official `gsap-skills`](https://github.com/greensock/gsap-skills/tree/aed9cfd3277740755f6bfc1155c7aa645403b760/skills) at commit `aed9cfd3277740755f6bfc1155c7aa645403b760`. The manifest records each source hash; MIT license preserved. This is a standalone skill, not a plugin-managed installation. |
 | [`workspace-management`](skills/general/workspace-management/SKILL.md) | Repository-owned workflow for provider-neutral, host-local Workspace context and AI-project bindings. |
+| [`minmax-tokens`](skills/general/minmax-tokens/SKILL.md) | Repository-owned method for reducing unnecessary context and tool output without weakening verification. |
+| [`puppeteer`](skills/general/puppeteer/SKILL.md) | Repository-owned delegation method for bounded tasks, shared-resource ownership and verified integration. |
 
 ## Catalog-only external skills
 

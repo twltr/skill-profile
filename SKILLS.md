@@ -72,10 +72,15 @@ adaptation decisions and licenses. Humanizer and Writing Clearly and Concisely
 are source material, not additional installed entry points.
 
 [`diagram-design`](https://github.com/cathrynlavery/diagram-design/tree/f4547ee95f88e5b28a52517feff6b6c11cc657f9/skills/diagram-design)
-remains an external dependency. All 279 files in the inspected local standalone
-copy match that upstream revision; its metadata reports version 2.6. The original
-installation commit was not recorded. Its HTML/CSS/SVG sources and existing
-export helpers are linked conditionally, not vendored, rewritten or replaced.
+remains an external dependency. Its 279 upstream files match that revision;
+its metadata reports version 2.6. The original installation commit was not
+recorded. Its HTML/CSS/SVG sources and existing export helpers are linked
+conditionally, not vendored, rewritten or replaced. Two native UI files in
+[client-config/diagram-design](client-config/diagram-design) add the visible
+`Auto:` label, explicit invocation policy and the interface icon supplied by
+the Cloud import. Merge these files into the external skill during distribution;
+the upstream method retains its own owner. The writing skills likewise preserve
+Cloud-normalized metadata and supplied icons for complete file parity.
 The Pages plugin likewise remains host-managed. Each target host must expose
 its own skill catalog and actual tools. A missing dependency is reported; no
 skill is described as applied before its instructions have been read.

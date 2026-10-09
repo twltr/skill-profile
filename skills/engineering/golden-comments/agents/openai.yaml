@@ -1,5 +1,12 @@
 interface:
-  display_name: "Golden Comments"
-  short_description: "Auto: Modelle und Gründe in Quellkommentaren"
+  display_name: Golden Comments
+  short_description: 'Auto: Modelle und Gründe in Quellkommentaren'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
 policy:
   allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

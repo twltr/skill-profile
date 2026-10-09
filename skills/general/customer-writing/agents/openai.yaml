@@ -1,6 +1,13 @@
 interface:
   display_name: Customer Writing
-  short_description: "Auto: Kundenkorrespondenz"
+  short_description: 'Auto: Kundenkorrespondenz'
   default_prompt: Use $customer-writing to draft or revise this customer message.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
 policy:
   allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

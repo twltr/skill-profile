@@ -1,0 +1,13 @@
+interface:
+  display_name: Good Writing
+  short_description: "Auto: passende Schreibmethode"
+  default_prompt: Use $good-writing to write or revise this text for its intended reader.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

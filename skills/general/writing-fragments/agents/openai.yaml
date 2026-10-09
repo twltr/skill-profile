@@ -1,0 +1,14 @@
+interface:
+  display_name: Writing Fragments
+  short_description: "Nur explizit: Schreibideen sammeln"
+  default_prompt: Use $writing-fragments to explore this idea and capture raw material
+    before structuring it.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: false
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

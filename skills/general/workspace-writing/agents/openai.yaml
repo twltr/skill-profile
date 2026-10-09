@@ -1,0 +1,6 @@
+interface:
+  display_name: Workspace Writing
+  short_description: "Auto: OpenAI ChatGPT Pages und Spaces"
+  default_prompt: Use $workspace-writing to organize and write these shared working notes.
+policy:
+  allow_implicit_invocation: true

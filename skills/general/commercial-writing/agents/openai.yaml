@@ -1,0 +1,13 @@
+interface:
+  display_name: Commercial Writing
+  short_description: "Auto: Angebote und Verkaufsargumente"
+  default_prompt: Use $commercial-writing to write or revise this commercial text.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,5 +1,5 @@
 interface:
   display_name: "Golden Comments"
-  short_description: "Explain the model and reasons in source code"
+  short_description: "Auto: Modelle und Gründe in Quellkommentaren"
 policy:
   allow_implicit_invocation: true

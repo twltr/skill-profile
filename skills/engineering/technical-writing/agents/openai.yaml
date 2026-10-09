@@ -1,0 +1,6 @@
+interface:
+  display_name: "Technical Writing"
+  short_description: "Auto: visuelle technische Dokumentation"
+  default_prompt: "Use $technical-writing to explain this repository for its intended readers."
+policy:
+  allow_implicit_invocation: true

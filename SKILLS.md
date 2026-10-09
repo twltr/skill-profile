@@ -18,7 +18,7 @@ supplementary Matt Pocock attribution where applicable.
 | [`marshmallow-tests`](skills/engineering/marshmallow-tests/SKILL.md) | Design tests around coherent units, invariants and precise failure addresses. |
 | [`minmax-codebase`](skills/engineering/minmax-codebase/SKILL.md) | Human-initiated structural and architectural improvement; preserves agreed capability. |
 | [`road-to-glory`](skills/engineering/road-to-glory/SKILL.md) | Maintain resumable Engineering work through roadmaps, active plans and changelogs. |
-| [`synopsis`](skills/engineering/synopsis/SKILL.md) | Create system books, architecture explanations and substantial READMEs. |
+| [`technical-writing`](skills/engineering/technical-writing/SKILL.md) | Explain repositories with purposeful Markdown, shallow topic groups and diagrams of relationships and behavior; callable through Good Writing or directly. |
 | [`vertical-slices`](skills/engineering/vertical-slices/SKILL.md) | Organize repository capabilities around clear owners and public boundaries. |
 
 ## Included General skills
@@ -32,6 +32,53 @@ supplementary Matt Pocock attribution where applicable.
 | [`workspace-management`](skills/general/workspace-management/SKILL.md) | Repository-owned workflow for provider-neutral, host-local Workspace context and AI-project bindings. |
 | [`minmax-tokens`](skills/general/minmax-tokens/SKILL.md) | Repository-owned method for reducing unnecessary context and tool output without weakening verification. |
 | [`puppeteer`](skills/general/puppeteer/SKILL.md) | Repository-owned delegation method for bounded tasks, shared-resource ownership and verified integration. |
+| [`good-writing`](skills/general/good-writing/SKILL.md) | Adapted from the user-supplied 2026-09-23 export. Short common entry selecting the relevant writing specialist. |
+| [`commercial-writing`](skills/general/commercial-writing/SKILL.md) | Adapted from the same export. Evidence-grounded offers, sales arguments and commercial decisions. |
+| [`customer-writing`](skills/general/customer-writing/SKILL.md) | Repository-owned method for external correspondence with customers and business partners. |
+| [`workspace-writing`](skills/general/workspace-writing/SKILL.md) | Repository-owned method for shared working knowledge in OpenAI ChatGPT Pages and Spaces, organized by related topics and maintained in place. |
+| [`writing-fragments`](skills/general/writing-fragments/SKILL.md) | Same export, adapting [Matt Pocock's Writing Fragments](https://github.com/mattpocock/skills/blob/main/skills/in-progress/writing-fragments/SKILL.md). Included MIT license and attribution preserved; implicit invocation disabled. |
+| [`unslop`](skills/general/unslop/SKILL.md) | Maintained adaptation of Pstack Unslop, Humanizer and Writing Clearly and Concisely. [Provenance](skills/general/unslop/NOTICE.md), pinned hashes and all three MIT licenses are preserved. Shared language rules for German and English; implicit invocation enabled. |
+
+### Writing sources and composition
+
+Good Writing, Commercial Director and Writing Fragments originated in the
+user-supplied `writing-skills.zip` export, imported on 2026-09-23. Archive
+SHA-256: `71bb4a17c423b91a779c1a7d060f23844d16508d3d98674be2e607cf19b74965`.
+The [export manifest](skills/general/writing-skills-export.json) identifies the
+original 15 files, not the current adapted trees. Writing Fragments keeps its
+original method, MIT license and attribution; its description and UI label now
+state the existing explicit-only invocation policy.
+
+The 2026-10-09 revision replaces Good Writing's mandatory pipeline and reserved
+director registry with a short router and four independent specialists.
+`technical-writing` replaces Synopsis; `commercial-writing` replaces Writing
+Commercial Director. Customer Writing and Workspace Writing own the former
+business and Spaces references. The former names and references are retired
+from the maintained source; historical export records keep their original names.
+
+All six writing entrypoints allow implicit invocation. Good Writing and every
+specialist require Unslop even when used directly, and can call Diagram Design.
+Their descriptions and UI labels state the configured invocation mode; Writing
+Fragments remains explicit-only. These labels document policy, not proof of an
+actual model invocation. Golden Comments' handoff now names Technical Writing.
+Workspace Writing emphasizes hierarchical topic grouping. Technical Writing
+keeps a shallow structure with substantial topic folders, favors visual
+explanations, and updates legacy diagrams within an authorized revision.
+Its documentation depth and shared fact ownership remain intact. The commercial
+method retains evidence and decision rules. Duplicated language rules and
+percentage-cut targets are retired. Unslop's
+[notice](skills/general/unslop/NOTICE.md) owns the exact upstream revisions,
+adaptation decisions and licenses. Humanizer and Writing Clearly and Concisely
+are source material, not additional installed entry points.
+
+[`diagram-design`](https://github.com/cathrynlavery/diagram-design/tree/f4547ee95f88e5b28a52517feff6b6c11cc657f9/skills/diagram-design)
+remains an external dependency. All 279 files in the inspected local standalone
+copy match that upstream revision; its metadata reports version 2.6. The original
+installation commit was not recorded. Its HTML/CSS/SVG sources and existing
+export helpers are linked conditionally, not vendored, rewritten or replaced.
+The Pages plugin likewise remains host-managed. Each target host must expose
+its own skill catalog and actual tools. A missing dependency is reported; no
+skill is described as applied before its instructions have been read.
 
 ## Catalog-only external skills
 

@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "skills": [
+    {
+      "name": "good-writing",
+      "path": "skills/good-writing",
+      "allow_implicit_invocation": true
+    },
+    {
+      "name": "writing-commercial-director",
+      "path": "skills/writing-commercial-director",
+      "allow_implicit_invocation": false
+    },
+    {
+      "name": "writing-fragments",
+      "path": "skills/writing-fragments",
+      "allow_implicit_invocation": false
+    }
+  ],
+  "files": {
+    "skills/good-writing/SKILL.md": "5fbf06929d0db6ab152410db2a984021b8be4283ef6cad53ac1be65f6678f379",
+    "skills/good-writing/agents/openai.yaml": "7e0fa18449bfe430702777a6866a4f347656df8b13363a269b1018a85902387e",
+    "skills/good-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/good-writing/references/pipeline.md": "6cf11353576d17936d1e4477b6327fa4ed32877d34b745c10bf0368a6974848c",
+    "skills/good-writing/references/routing.md": "655b910824960dbd6fcc3fac60794c5184eb326dc9b16575b7e20d8c47e7ece9",
+    "skills/writing-commercial-director/SKILL.md": "81eaa6757b93d5a15e6d500f1bf71f2edb90297643768a476782ceff8fbf1f78",
+    "skills/writing-commercial-director/agents/openai.yaml": "dd071d9281e13d8cb9f6d37d24e6610cf8d79790ceb926d644ba0aee0f25a69f",
+    "skills/writing-commercial-director/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/writing-commercial-director/references/commercial-standard.md": "2dd4333f2d626825dfe0723379adc7b2732dba71f3c36f7c06b315ffe9b0330f",
+    "skills/writing-commercial-director/references/patterns.md": "231437c3f3b7ef4ddded963a7a0beb93595aa6dab6e071695355ed990bc9c405",
+    "skills/writing-commercial-director/scripts/copy_audit.py": "e6383cb32aacafcf2a9372eb09dcc5985fc46106fd522f00dc9e57f5d0a775c3",
+    "skills/writing-fragments/LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/writing-fragments/SKILL.md": "aaa47e607325c662b3ebec4231c6f928db8bfa25ff2a94e61fed6d9da5f2aae9",
+    "skills/writing-fragments/agents/openai.yaml": "2a65238070b2f38a78618ad4d83f8b930f6e1ae33ec00cdd162bf8002c7b01d7",
+    "skills/writing-fragments/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee"
+  }
+}

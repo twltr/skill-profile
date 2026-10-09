@@ -1,0 +1,44 @@
+{
+  "reviewed": "2026-10-09",
+  "sources": [
+    {
+      "name": "unslop",
+      "repo": "cursor/plugins",
+      "commit": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "path": "pstack/skills/unslop/SKILL.md",
+      "license_path": "pstack/LICENSE",
+      "skill_sha256": "195411d320b5b328f9f642baf59757ed19aaf0931c0838740e0aca273d538dc1",
+      "license_sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    {
+      "name": "humanizer",
+      "repo": "blader/humanizer",
+      "commit": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+      "path": "SKILL.md",
+      "license_path": "LICENSE",
+      "skill_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+      "license_sha256": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96"
+    },
+    {
+      "name": "clearly",
+      "repo": "softaworks/agent-toolkit",
+      "commit": "3027f20f3181758385a1bb8c022d4041dfb4de84",
+      "path": "skills/writing-clearly-and-concisely/SKILL.md",
+      "license_path": "LICENSE",
+      "skill_sha256": "c5f4ecc8bfa7984d0df70d30cea3bfeb824f7b24d31db111d5a1a9a959880575",
+      "license_sha256": "4b4447da5344f8b2d3a8a19ba8366d1ac7a24d9ab4690bd04576dc772ddf8321",
+      "consulted_reference": {
+        "path": "skills/writing-clearly-and-concisely/elements-of-style/03-elementary-principles-of-composition.md",
+        "sha256": "3867f33512ff2f0e965386dbb558579aab43ca10f070bd48d732584b9b5119e0",
+        "sections": [
+          8,
+          10,
+          12,
+          13,
+          15,
+          16
+        ]
+      }
+    }
+  ]
+}

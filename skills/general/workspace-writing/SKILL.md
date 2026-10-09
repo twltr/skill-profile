@@ -1,9 +1,12 @@
 ---
 name: workspace-writing
-description: "Write or reconcile shared working notes and knowledge in OpenAI ChatGPT Pages and Spaces. Group related topics into useful hierarchies, keep current decisions and next actions visible, and link to established owners. Native Page operations belong to the host's Pages skills. Automatic selection enabled; explicit use also supported."
+description: "Write or reconcile shared working notes and knowledge in OpenAI ChatGPT Pages and Spaces. Group related topics into useful hierarchies, keep current decisions and next actions visible, and link to established owners. Native Page operations belong to the host's Pages skills. Automatic selection disabled; use only by explicit user request or through Good Writing."
 ---
 
 # Workspace Writing
+
+Use this method only when explicitly requested by the user or selected by Good
+Writing. An ordinary matching request goes through that router.
 
 Treat **OpenAI ChatGPT Pages and Spaces** as a shared working and knowledge
 surface for the person and agent. Help them find what matters and what comes

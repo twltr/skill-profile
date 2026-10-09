@@ -8,5 +8,4 @@ policy:
   products:
   - chatgpt
   - codex
-  - api
   - atlas

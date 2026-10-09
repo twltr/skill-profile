@@ -1,14 +1,13 @@
 interface:
   display_name: Technical Writing
-  short_description: 'Auto: visuelle technische Dokumentation'
+  short_description: 'Via Good Writing / explizit: Dokumentation'
   default_prompt: Use $technical-writing to explain this repository for its intended
     readers.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
   products:
   - chatgpt
   - codex
-  - api
   - atlas

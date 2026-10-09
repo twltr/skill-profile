@@ -1,9 +1,12 @@
 ---
 name: technical-writing
-description: "Write or revise repository READMEs, system explanations and architecture documentation. Make the system understandable through purposeful Markdown, grouped topics and diagrams of relationships and behavior. Use directly or through Good Writing; source comments belong to Golden Comments. Automatic selection enabled; explicit use also supported."
+description: "Write or revise repository READMEs, system explanations and architecture documentation. Make the system understandable through purposeful Markdown, grouped topics and diagrams of relationships and behavior. Source comments belong to Golden Comments. Automatic selection disabled; use only by explicit user request or through Good Writing."
 ---
 
 # Technical Writing
+
+Use this method only when explicitly requested by the user or selected by Good
+Writing. An ordinary matching request goes through that router.
 
 Explain the system so a new developer can understand its construction, reasons
 and constraints without reconstructing them from scattered implementation.

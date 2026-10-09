@@ -1,6 +1,6 @@
 ---
 name: golden-comments
-description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs belong to Technical Writing. Automatic selection enabled; explicit use also supported."
+description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Technical Writing route in Good Writing. Automatic selection enabled; explicit use also supported."
 ---
 
 # Golden Comments

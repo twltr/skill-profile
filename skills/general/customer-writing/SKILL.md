@@ -1,9 +1,12 @@
 ---
 name: customer-writing
-description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Use directly or through Good Writing; sales arguments and offers belong to Commercial Writing. Automatic selection enabled; explicit use also supported."
+description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers belong to Commercial Writing. Automatic selection disabled; use only by explicit user request or through Good Writing."
 ---
 
 # Customer Writing
+
+Use this method only when explicitly requested by the user or selected by Good
+Writing. An ordinary matching request goes through that router.
 
 Help the recipient understand the situation and act. Use the reader, purpose,
 facts and constraints from Good Writing, or infer them from a direct request.
@@ -43,8 +46,9 @@ For a process, relationship or handoff that benefits from a graphic, load
 editable source, export and visual checks. If unavailable, disclose the limit
 and use a clear supported form; an explicitly requested graphic remains open.
 
-For an actual commercial argument, use `commercial-writing` for that part with
-the existing brief and evidence. Retain the relationship and channel constraints.
+For mixed correspondence and sales arguments, apply the commercial brief selected
+by Good Writing to that part. Keep this method focused on the relationship and
+channel; specialist selection belongs to the router or an explicit user choice.
 
 ## Check and deliver
 

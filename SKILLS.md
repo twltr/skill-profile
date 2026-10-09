@@ -56,11 +56,15 @@ Commercial Director. Customer Writing and Workspace Writing own the former
 business and Spaces references. The former names and references are retired
 from the maintained source; historical export records keep their original names.
 
-All six writing entrypoints allow implicit invocation. Good Writing and every
-specialist require Unslop even when used directly, and can call Diagram Design.
+Good Writing is the sole automatic router for the four writing specialists.
+Commercial, Customer, Workspace and Technical Writing disable implicit
+invocation; they are loaded by the router or explicitly selected by the user.
+Good Writing and every specialist require Unslop even when used directly, and
+can call Diagram Design. Unslop and Diagram Design remain automatic.
 Their descriptions and UI labels state the configured invocation mode; Writing
 Fragments remains explicit-only. These labels document policy, not proof of an
-actual model invocation. Golden Comments' handoff now names Technical Writing.
+actual model invocation. Golden Comments points documentation work to the
+Technical Writing route in Good Writing.
 Workspace Writing emphasizes hierarchical topic grouping. Technical Writing
 keeps a shallow structure with substantial topic folders, favors visual
 explanations, and updates legacy diagrams within an authorized revision.
@@ -80,7 +84,14 @@ conditionally, not vendored, rewritten or replaced. Two native UI files in
 `Auto:` label, explicit invocation policy and the interface icon supplied by
 the Cloud import. Merge these files into the external skill during distribution;
 the upstream method retains its own owner. The writing skills likewise preserve
-Cloud-normalized metadata and supplied icons for complete file parity.
+supported Cloud-normalized metadata and supplied icons.
+Their product list excludes `api`, which causes Codex CLI 0.159.0 and the Desktop
+loader 0.162.0-alpha.2 to discard the whole metadata file and lose its invocation
+policy. Verify both export parity and
+native metadata loading after distribution. ChatGPT adds `api` back on export;
+that host-generated product-list difference is the sole allowed exception to
+local/Cloud equality. It does not change the matched invocation policies or method
+content and must not be copied back into the Codex deployment.
 The Pages plugin likewise remains host-managed. Each target host must expose
 its own skill catalog and actual tools. A missing dependency is reported; no
 skill is described as applied before its instructions have been read.
@@ -101,6 +112,12 @@ needed. The reviewed public baseline is commit
 The local Matt checkout previously used for host distribution contains two
 additional invocation-policy commits on top of that public baseline. Pulling
 the upstream paths gives the public versions, not those local policy changes.
+The reviewed local revision is `07121a1`, which already restricts Research and
+Prototype to explicit requests or an explicitly started Wayfinder workflow in
+their instructions. Native Codex overlays in
+[client-config/skill-invocation](client-config/skill-invocation) enforce the same
+scope with `allow_implicit_invocation: false` and visible labels. Merge each
+overlay into its matching external skill; do not vendor or rewrite the method.
 
 ## Intentionally outside this repository
 

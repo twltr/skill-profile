@@ -1,6 +1,6 @@
 ---
 name: good-writing
-description: "Write or revise correspondence, commercial copy, shared notes, articles, reports and repository documentation. Select Customer Writing, Commercial Writing, Workspace Writing or Technical Writing from the reader and purpose. Ordinary replies and quick wording fixes use Unslop directly. Automatic selection enabled; explicit use also supported."
+description: "Write or revise correspondence, commercial copy, shared notes, articles, reports and repository documentation. The automatic router for Customer Writing, Commercial Writing, Workspace Writing and Technical Writing. Ordinary replies and quick wording fixes use Unslop directly. Automatic selection enabled; explicit use also supported."
 ---
 
 # Good Writing
@@ -22,8 +22,18 @@ It owns clear language, meaningful formatting and protection against lost detail
 | Ordinary reply, quick wording fix or other prose | `unslop` and the reader's brief; no further route required |
 
 An explicit choice wins. Route by the text's job, not its source: a product pitch
-based on code is commercial writing. Specialists also work directly and never
-route back here. For mixed tasks, apply each method only to its relevant part.
+based on code is commercial writing. For mixed tasks, select the needed methods
+here and apply each only to its relevant part.
+
+Good Writing is the sole automatic router for the four specialists. They disable
+implicit invocation and remain usable by explicit user choice or as resources
+loaded by this router. Resolve the selected name through the host's installed-skill
+lookup and read its complete `SKILL.md` before applying it. In a filesystem runtime,
+use the configured skill roots; in a flat installation the file is the sibling
+`../<skill-name>/SKILL.md`. Absence from the automatic catalog alone does not mean
+uninstalled. Pass the existing brief, apply the method, then return the finished
+text to this task. Specialists never route back here or select another specialist.
+
 Use `writing-fragments` only when explicitly requested; it stays outside
 automatic routing.
 

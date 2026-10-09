@@ -1,14 +1,13 @@
 interface:
   display_name: Workspace Writing
-  short_description: 'Auto: OpenAI ChatGPT Pages und Spaces'
+  short_description: 'Via Good Writing / explizit: ChatGPT Pages'
   default_prompt: Use $workspace-writing to organize and write these shared working
     notes.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
   products:
   - chatgpt
   - codex
-  - api
   - atlas

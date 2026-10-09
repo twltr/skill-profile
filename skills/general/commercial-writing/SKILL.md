@@ -1,9 +1,12 @@
 ---
 name: commercial-writing
-description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Use directly or through Good Writing; routine external correspondence belongs to Customer Writing. Automatic selection enabled; explicit use also supported."
+description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence belongs to Customer Writing. Automatic selection disabled; use only by explicit user request or through Good Writing."
 ---
 
 # Commercial Writing
+
+Use this method only when explicitly requested by the user or selected by Good
+Writing. An ordinary matching request goes through that router.
 
 ## Role
 

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="711" viewBox="0 0 1100 711" role="img" aria-labelledby="repo-title repo-desc">
+<title id="repo-title">Generic codebase architecture</title>
+<desc id="repo-desc">A client calls an API route, which delegates to a domain service that queries a database. API and service share one application process.</desc>
+<defs>
+      <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#356F9F"/>
+      </marker>
+      <marker id="teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#237C77"/>
+      </marker>
+      <marker id="green-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#3E805C"/>
+      </marker>
+    </defs>
+<rect x="0" y="0" width="1100" height="711" rx="0" fill="#F7F9FC"/>
+<text x="56" y="42" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#356F9F">SOFTWARE ARCHITECTURE</text>
+<text x="56" y="85" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="start" fill="#172738">One process, three responsibilities</text>
+<text x="56" y="116" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">Example topology; replace module names and edges with actual repository facts.</text><rect x="52" y="252" width="234" height="198" rx="13" fill="#FFFFFF" stroke="#D5DFE7" stroke-width="1.5"/>
+<rect x="52" y="252" width="234" height="10" rx="3" fill="#356F9F"/>
+<text x="75" y="312" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="start" fill="#172738">Client</text>
+<text x="75" y="347" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" text-anchor="start" fill="#566779">Browser / CLI</text>
+<text x="75" y="397" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#356F9F">Sends requests</text><rect x="332" y="165" width="414" height="394" rx="16" fill="#E9F3F6" stroke="#9EC9D2" stroke-width="1.5"/>
+<text x="356" y="200" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#237C77">APPLICATION PROCESS</text>
+<text x="356" y="227" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="start" fill="#566779">same runtime, separate modules</text>
+<rect x="360" y="263" width="358" height="94" rx="10" fill="#FFFFFF" stroke="#B9D9DF" stroke-width="1.5"/>
+<text x="384" y="300" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#172738">API route</text>
+<text x="384" y="331" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">Parsing, validation, response</text>
+<rect x="360" y="425" width="358" height="94" rx="10" fill="#FFFFFF" stroke="#B9D9DF" stroke-width="1.5"/>
+<text x="384" y="462" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#172738">Domain service</text>
+<text x="384" y="493" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">Business rules and orchestration</text>
+<rect x="792" y="252" width="256" height="198" rx="13" fill="#FFFFFF" stroke="#D5DFE7" stroke-width="1.5"/>
+<rect x="792" y="252" width="256" height="10" rx="3" fill="#3E805C"/>
+<text x="815" y="312" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="start" fill="#172738">Database</text>
+<text x="815" y="347" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" text-anchor="start" fill="#566779">Persistent data</text>
+<text x="815" y="397" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#3E805C">External dependency</text><path d="M 286 308 H 360" fill="none" stroke="#356F9F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue-arrow)"/>
+<rect x="291" y="266" width="66" height="27" rx="5" fill="#F7F9FC"/>
+<text x="324" y="285" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#172738">HTTP</text>
+<path d="M 539 357 V 425" fill="none" stroke="#237C77" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal-arrow)"/>
+<rect x="551" y="375" width="125" height="29" rx="5" fill="#E9F3F6"/>
+<text x="613" y="395" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#172738">calls</text>
+<path d="M 718 470 H 770 V 375 H 792" fill="none" stroke="#3E805C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+<rect x="728" y="329" width="58" height="31" rx="5" fill="#F7F9FC"/>
+<text x="757" y="351" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#172738">SQL</text>
+<rect x="52" y="598" width="996" height="77" rx="12" fill="#FFFFFF" stroke="#D5DFE7" stroke-width="1.5"/>
+<text x="77" y="629" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#172738">Read the boundaries carefully</text>
+<text x="77" y="657" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">Modules are logical units here; the API and service are NOT separate deployments.</text></svg>

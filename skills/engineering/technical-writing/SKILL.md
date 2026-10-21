@@ -174,15 +174,15 @@ when the reader can follow the verified relationships faster visually; do not
 wait for a separate diagram request. A simple list or exact attribute comparison
 may still be clearer as Markdown. Not every page needs a graphic.
 
-Load `diagram-design` through the host's catalog with the verified model, reader
-and intended output. It owns visual form, editable HTML/CSS/SVG source, export
+Load `editorial-svg-diagrams` through the host's catalog with the verified model, reader
+and intended output. It owns visual form, editable standalone SVG source, export
 and visual checks; do not copy its design manual here. Keep meaningful labels,
 conditions and direction. Link large flow diagrams from the relevant explanation
 instead of collecting them in a short overview. No Figma or new plugin is required.
 
 When revising documentation, modernize legacy diagrams encountered within the
-requested scope using `diagram-design`. Follow its source-specific import route
-where available. Preserve verified components, relationships, direction and
+requested scope using `editorial-svg-diagrams`. Read the existing source before
+converting it. Preserve verified components, relationships, direction and
 conditions; disclose any necessary consolidation. Keep required repository
 notation and automated consumers working. Update the embed and source links,
 then retire the superseded asset once the replacement is verified. This does

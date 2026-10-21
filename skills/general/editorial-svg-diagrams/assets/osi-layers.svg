@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="806" viewBox="0 0 1000 806" role="img" aria-labelledby="osi-title osi-desc">
+<title id="osi-title">Seven OSI networking layers</title>
+<desc id="osi-desc">Seven horizontal bands from application and presentation to physical, with protocol examples.</desc>
+<defs>
+      <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#356F9F"/>
+      </marker>
+      <marker id="teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#237C77"/>
+      </marker>
+      <marker id="green-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#3E805C"/>
+      </marker>
+    </defs>
+<rect x="0" y="0" width="1000" height="806" rx="0" fill="#F7F9FC"/>
+<text x="56" y="42" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#356F9F">NETWORK REFERENCE</text>
+<text x="56" y="85" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="start" fill="#172738">The seven OSI layers</text>
+<text x="56" y="116" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">From application meaning to physical signal transmission.</text><rect x="56" y="147" width="888" height="79" rx="12" fill="#285E83"/>
+<rect x="68" y="159" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="196" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">7</text>
+<text x="157" y="182" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Application  /  Anwendung</text>
+<text x="157" y="207" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">HTTP  |  DNS  |  SMTP</text>
+<rect x="56" y="234" width="888" height="79" rx="12" fill="#337193"/>
+<rect x="68" y="246" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="283" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">6</text>
+<text x="157" y="269" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Presentation  /  Darstellung</text>
+<text x="157" y="294" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Encoding  |  encryption concepts</text>
+<rect x="56" y="321" width="888" height="79" rx="12" fill="#407E9A"/>
+<rect x="68" y="333" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="370" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
+<text x="157" y="356" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Session  /  Sitzung</text>
+<text x="157" y="381" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Session management concepts</text>
+<rect x="56" y="408" width="888" height="79" rx="12" fill="#237C77"/>
+<rect x="68" y="420" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="457" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text>
+<text x="157" y="443" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Transport  /  Transportebene</text>
+<text x="157" y="468" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">TCP  |  UDP</text>
+<rect x="56" y="495" width="888" height="79" rx="12" fill="#3E805C"/>
+<rect x="68" y="507" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="544" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text>
+<text x="157" y="530" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Network  /  Vermittlung</text>
+<text x="157" y="555" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">IPv4  |  IPv6  |  ICMP</text>
+<rect x="56" y="582" width="888" height="79" rx="12" fill="#986934"/>
+<rect x="68" y="594" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="631" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
+<text x="157" y="617" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Data Link  /  Sicherung</text>
+<text x="157" y="642" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Ethernet  |  WLAN-MAC</text>
+<rect x="56" y="669" width="888" height="79" rx="12" fill="#805B53"/>
+<rect x="68" y="681" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
+<text x="100" y="718" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text>
+<text x="157" y="704" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Physical  /  Bitübertragung</text>
+<text x="157" y="729" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Copper  |  optical fiber  |  radio</text>
+<text x="56" y="789" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#566779">Conceptual teaching model; real protocol stacks do not map perfectly to seven layers.</text></svg>

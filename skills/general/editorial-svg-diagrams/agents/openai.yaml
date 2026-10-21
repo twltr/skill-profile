@@ -1,0 +1,11 @@
+interface:
+  display_name: "Editorial SVG Diagrams"
+  short_description: "Auto: Eigenständige SVG-Diagramme mit geprüftem Export"
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - atlas
+  allow_implicit_invocation: true

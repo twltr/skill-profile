@@ -1,0 +1,20 @@
+{
+  "source": "User-supplied skill.zip, 2026-10-21",
+  "archive_sha256": "a04a51242e83b701819f6dc5f2136964903a64dc4ff181973ed96f2610d2f579",
+  "files": {
+    "SKILL.md": "fb8759d436532c8d2cfd8dda96b620d8c8e9837fb968506bc05ac3bfb2f908a2",
+    "agents/openai.yaml": "eb6b4ee1333bdf815cd344b75877221ba2b7e849d4467ee17a975302ba23dfae",
+    "assets/codebase-architecture.svg": "d189b1c6c25d358572e17447b128cd5da5583a2ed3d53ed4c3f0f9e1a69db3a1",
+    "assets/icon.svg": "c61ab27d2b21bf7a3b500fb56040b4a7406fdaf6ca4b7a920d7d2f3070bf7404",
+    "assets/osi-layers.svg": "957d9da006f2e99224745b35a21ba1a64b20d37e59ceb480228b88c2da1f5a11",
+    "assets/packet-encapsulation.svg": "7635884bdb0054fd92e6848da822efead488ac6a9189c8724d8bb6b44144e0ba",
+    "assets/starter.svg": "2d4a4dd281ac3824c438952e575caecaf4d6d24399ae035eb1d1a9e6f684bf47",
+    "assets/tcp-handshake.svg": "efb61c157dbb5ee2ea092acdcc24cb7299433d8e5c8bae8803d8d6d0f8887288",
+    "references/embedding-and-formats.md": "f4b04d88a41fc1dd979de14dbb1e28c6e30355a6b41af5155d5ae1ced7d5643f",
+    "references/svg-construction.md": "b7d6bfcf020eb55cc4be269c22d3a527f5ff728e21265b2ca06a206b9087e2d6",
+    "references/visual-patterns.md": "7b4ccd9370630fb18eefc800881dbbcbf6701c94dfe1ec15e19e986a726808bd",
+    "scripts/build_examples.py": "1d0ad4ab2de528b99566981a40286f5403db07545872e857279c21acd00f204a",
+    "scripts/export_svg.py": "d6d05968cc6fab01e4d8fd91ff56ddc3e7e3a03019decd6102118296f9eaae2a",
+    "scripts/preflight_svg.py": "cb1d09b80b05be2a8ad3c44cd8f1b8f4912da979484083ca4599f442df630312"
+  }
+}

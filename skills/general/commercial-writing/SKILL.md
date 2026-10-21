@@ -142,7 +142,7 @@ emphasis and tables for exact comparisons. Let the strongest supported value
 receive the strongest visual weight. Keep material conditions beside the claim;
 link optional proof and detail without hiding a limitation that changes the offer.
 
-Load `diagram-design` when a mechanism, comparison of relationships or process
+Load `editorial-svg-diagrams` when a mechanism, comparison of relationships or process
 becomes clearer as a graphic. Pass the verified model, audience and output needs;
 it owns editable source, design, export and visual checks. If unavailable,
 disclose the limit and use a readable supported form; an explicitly requested

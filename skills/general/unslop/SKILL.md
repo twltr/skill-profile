@@ -63,7 +63,7 @@ Formatting should carry meaning, not decorate an otherwise unchanged wall of tex
 | Consult evidence or optional detail | Descriptive links, quotations, or supported disclosures and footnotes |
 
 Use diagrams for relationships when they improve understanding; the selected
-writing method calls `diagram-design` for their design and verification. Do not
+writing method calls `editorial-svg-diagrams` for their design and verification. Do not
 force every format into every text. Test renderer support before relying on
 extensions such as callouts, collapsible sections or highlighting; retain a
 readable fallback. Never hide an essential condition in collapsed detail.

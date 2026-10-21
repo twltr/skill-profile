@@ -42,7 +42,7 @@ rich text is unavailable, and avoid raw Markdown syntax in the delivered message
 Longer correspondence can use meaningful topic headings; a short reply needs none.
 
 For a process, relationship or handoff that benefits from a graphic, load
-`diagram-design` with the verified facts, recipient and output needs. It owns
+`editorial-svg-diagrams` with the verified facts, recipient and output needs. It owns
 editable source, export and visual checks. If unavailable, disclose the limit
 and use a clear supported form; an explicitly requested graphic remains open.
 

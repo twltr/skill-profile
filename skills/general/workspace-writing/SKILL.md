@@ -66,7 +66,7 @@ and comparable tables as the content warrants. Keep context near its decision.
 Avoid technical IDs, hash lists, test logs and agent reports on the human overview
 unless needed there. Link useful sources beside the supported point.
 
-Load `diagram-design` for relationships, dependencies or workflows that become
+Load `editorial-svg-diagrams` for relationships, dependencies or workflows that become
 clearer visually. Pass the verified model, reader and intended output; it owns
 editable sources, export and visual checks. Keep large diagrams in linked
 detail. If unavailable, disclose that limit and use a readable list, table or

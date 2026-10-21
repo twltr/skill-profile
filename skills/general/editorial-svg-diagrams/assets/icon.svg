@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="icon-title icon-desc">
+  <title id="icon-title">Editorial SVG diagrams</title>
+  <desc id="icon-desc">Three precise layered cards with a connector arrow.</desc>
+  <rect width="128" height="128" rx="26" fill="#F7F9FC"/>
+  <rect x="21" y="24" width="86" height="23" rx="7" fill="#356F9F"/>
+  <rect x="21" y="54" width="86" height="23" rx="7" fill="#237C77"/>
+  <rect x="21" y="84" width="86" height="23" rx="7" fill="#3E805C"/>
+  <rect x="31" y="32" width="21" height="5" rx="2" fill="#FFFFFF"/>
+  <rect x="31" y="62" width="21" height="5" rx="2" fill="#FFFFFF"/>
+  <rect x="31" y="92" width="21" height="5" rx="2" fill="#FFFFFF"/>
+  <path d="M68 36 H96 V96" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M90 89 L96 97 L102 89" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

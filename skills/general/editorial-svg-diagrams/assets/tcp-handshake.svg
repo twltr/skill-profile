@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="738" viewBox="0 0 1024 738" role="img" aria-labelledby="tcp-title tcp-desc">
+<title id="tcp-title">TCP three-way handshake</title>
+<desc id="tcp-desc">Client sends SYN, server responds SYN ACK, client confirms with ACK. These are TCP messages handled by the kernel.</desc>
+<defs>
+      <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#356F9F"/>
+      </marker>
+      <marker id="teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#237C77"/>
+      </marker>
+      <marker id="green-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L9 5 L1 9Z" fill="#3E805C"/>
+      </marker>
+    </defs>
+<rect x="0" y="0" width="1024" height="738" rx="0" fill="#F7F9FC"/>
+<text x="56" y="42" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#356F9F">SEQUENCE DIAGRAM</text>
+<text x="56" y="85" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="start" fill="#172738">TCP connection setup</text>
+<text x="56" y="116" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">Two endpoints; the operating system handles the transport handshake.</text><rect x="84" y="150" width="278" height="94" rx="12" fill="#FFFFFF" stroke="#D5DFE7" stroke-width="1.5"/>
+<rect x="100" y="168" width="54" height="54" rx="9" fill="#356F9F"/>
+<rect x="112" y="181" width="29" height="19" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2" /><line x1="109" y1="205" x2="144" y2="205" stroke="#FFFFFF" stroke-width="2" />
+<text x="172" y="188" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#172738">Client Y</text><text x="172" y="212" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="400" text-anchor="start" fill="#566779">192.168.1.20</text><text x="172" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="start" fill="#356F9F">ACTIVE OPEN</text><rect x="662" y="150" width="278" height="94" rx="12" fill="#FFFFFF" stroke="#D5DFE7" stroke-width="1.5"/>
+<rect x="678" y="168" width="54" height="54" rx="9" fill="#237C77"/>
+<rect x="690" y="181" width="29" height="19" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2" /><line x1="687" y1="205" x2="722" y2="205" stroke="#FFFFFF" stroke-width="2" />
+<text x="750" y="188" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#172738">Server X</text><text x="750" y="212" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="400" text-anchor="start" fill="#566779">192.168.1.10</text><text x="750" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="start" fill="#237C77">LISTENING :8080</text><line x1="223" y1="251" x2="223" y2="617" stroke="#C9D5DE" stroke-width="2" stroke-dasharray="7 9" />
+<line x1="801" y1="251" x2="801" y2="617" stroke="#C9D5DE" stroke-width="2" stroke-dasharray="7 9" />
+<rect x="54" y="294" width="44" height="44" rx="22" fill="#E8EFF5"/>
+<text x="76" y="325" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#172738">1</text>
+<path d="M 223 318 H 801" fill="none" stroke="#356F9F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue-arrow)"/>
+<rect x="463.0" y="281" width="98" height="31" rx="6" fill="#F7F9FC"/>
+<text x="512" y="303" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#172738">SYN</text>
+<rect x="54" y="401" width="44" height="44" rx="22" fill="#E8EFF5"/>
+<text x="76" y="432" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#172738">2</text>
+<path d="M 801 425 H 223" fill="none" stroke="#237C77" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal-arrow)"/>
+<rect x="440.0" y="388" width="144" height="31" rx="6" fill="#F7F9FC"/>
+<text x="512" y="410" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#172738">SYN + ACK</text>
+<rect x="54" y="508" width="44" height="44" rx="22" fill="#E8EFF5"/>
+<text x="76" y="539" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#172738">3</text>
+<path d="M 223 532 H 801" fill="none" stroke="#356F9F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue-arrow)"/>
+<rect x="463.0" y="495" width="98" height="31" rx="6" fill="#F7F9FC"/>
+<text x="512" y="517" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#172738">ACK</text>
+<rect x="84" y="628" width="856" height="72" rx="12" fill="#E5F3EE" stroke="#C4E3D5" stroke-width="1"/>
+<circle cx="127" cy="664" r="17" fill="#3E805C"/>
+<path d="M 118 663 L 125 670 L 138 656" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="158" y="659" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#172738">Connection established</text>
+<text x="158" y="683" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="start" fill="#566779">accept() returns a connected socket; it is not another network message.</text></svg>

@@ -38,6 +38,7 @@ supplementary Matt Pocock attribution where applicable.
 | [`workspace-writing`](skills/general/workspace-writing/SKILL.md) | Repository-owned method for shared working knowledge in OpenAI ChatGPT Pages and Spaces, organized by related topics and maintained in place. |
 | [`writing-fragments`](skills/general/writing-fragments/SKILL.md) | Same export, adapting [Matt Pocock's Writing Fragments](https://github.com/mattpocock/skills/blob/main/skills/in-progress/writing-fragments/SKILL.md). Included MIT license and attribution preserved; implicit invocation disabled. |
 | [`unslop`](skills/general/unslop/SKILL.md) | Maintained adaptation of Pstack Unslop, Humanizer and Writing Clearly and Concisely. [Provenance](skills/general/unslop/NOTICE.md), pinned hashes and all three MIT licenses are preserved. Shared language rules for German and English; implicit invocation enabled. |
+| [`editorial-svg-diagrams`](skills/general/editorial-svg-diagrams/SKILL.md) | Reviewed adaptation of the user-supplied 2026-10-21 `skill.zip`. Owns standalone SVG diagrams, educational construction, PNG/PDF exports and visual review. [Provenance and review changes](skills/general/editorial-svg-diagrams/NOTICE.md); [original file hashes](skills/general/editorial-svg-diagrams/source-manifest.json). Implicit invocation enabled. |
 
 ### Writing sources and composition
 
@@ -60,7 +61,7 @@ Good Writing is the sole automatic router for the four writing specialists.
 Commercial, Customer, Workspace and Technical Writing disable implicit
 invocation; they are loaded by the router or explicitly selected by the user.
 Good Writing and every specialist require Unslop even when used directly, and
-can call Diagram Design. Unslop and Diagram Design remain automatic.
+can call Editorial SVG Diagrams. Unslop and Editorial SVG Diagrams remain automatic.
 Their descriptions and UI labels state the configured invocation mode; Writing
 Fragments remains explicit-only. These labels document policy, not proof of an
 actual model invocation. Golden Comments points documentation work to the
@@ -75,16 +76,13 @@ percentage-cut targets are retired. Unslop's
 adaptation decisions and licenses. Humanizer and Writing Clearly and Concisely
 are source material, not additional installed entry points.
 
-[`diagram-design`](https://github.com/cathrynlavery/diagram-design/tree/f4547ee95f88e5b28a52517feff6b6c11cc657f9/skills/diagram-design)
-remains an external dependency. Its 279 upstream files match that revision;
-its metadata reports version 2.6. The original installation commit was not
-recorded. Its HTML/CSS/SVG sources and existing export helpers are linked
-conditionally, not vendored, rewritten or replaced. Two native UI files in
-[client-config/diagram-design](client-config/diagram-design) add the visible
-`Auto:` label, explicit invocation policy and the interface icon supplied by
-the Cloud import. Merge these files into the external skill during distribution;
-the upstream method retains its own owner. The writing skills likewise preserve
-supported Cloud-normalized metadata and supplied icons.
+On 2026-10-21, `editorial-svg-diagrams` replaced the external `diagram-design`
+snapshot. The previous skill and its native overlay are retired; writing routes
+now use the included replacement. Its source SVGs stay editable, while PNG and
+PDF are verified exports. The imported archive and replaced local trees are
+preserved outside active skill roots for recovery.
+
+The writing skills preserve supported Cloud-normalized metadata and supplied icons.
 Their product list excludes `api`, which causes Codex CLI 0.159.0 and the Desktop
 loader 0.162.0-alpha.2 to discard the whole metadata file and lose its invocation
 policy. Verify both export parity and

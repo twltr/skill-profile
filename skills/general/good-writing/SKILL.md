@@ -38,7 +38,7 @@ Use `writing-fragments` only when explicitly requested; it stays outside
 automatic routing.
 
 Make the structure easy to see with the destination's supported formatting.
-Across all routes, load `diagram-design` when a visual explains relationships
+Across all routes, load `editorial-svg-diagrams` when a visual explains relationships
 or behavior better. Pass the verified model, audience and output needs; it owns
 diagram sources, design, export and visual checks. A short reply needs no diagram.
 

@@ -1,50 +1,25 @@
-# Visual Grammars and How to Select Them
+# Visual patterns: relationships before boxes
 
-| Reader needs to see | Use | Layout grammar | Typical applications |
+Choose the pattern that allows the fewest labels without losing the causal or structural relation.
+
+| Teaching goal | Illustration grammar | Shape carries meaning | Example |
 |---|---|---|---|
-| Ordered abstractions | Layer stack | Uniform numbered bands; top to bottom | OSI layers, access control, application stack |
-| Time-ordered exchanges | Sequence | Actors across x; time down y; arrows indicate messages | TCP handshake, API calls, async jobs |
-| Composition / encapsulation | Nested strips | Payload + progressively added header/trailer | Ethernet/IP/TCP, message envelopes, binary formats |
-| Component topology | Architecture | Few cards grouped by trust/runtime boundaries, routed connectors | Services, codebases, deployment |
-| Steps and branches | Process/flow | One direction, clear decision nodes and labeled outcomes | CI/CD, onboarding, escalation |
-| Cause / status evolution | Timeline/state | State labels and transition triggers | Incident lifecycle, job retries |
+| One possibility vs many | Repeated slots with 1 highlight / all candidates | Availability of positions, not a description paragraph | `entropy-possibilities.svg` |
+| Request exchange / handshake | Actor lifelines; direction-marked arrows from top to bottom | Sender, recipient, ordering | `tcp-handshake.svg` |
+| Data wraps data | Segmented, nested horizontal bands | Headers/trailer add around same payload | `packet-encapsulation.svg` |
+| Endpoints and ports | Two minimal device illustrations with arrows | Which machine initiates and receives | `pc-connection.svg` |
+| Protocol abstractions | Aligned colored rows / rank order | Discrete layers and dependency order | `osi-layers.svg` |
+| Component dependencies | A small connected topology | Data path across components, not text boxes | `codebase-architecture.svg` |
+| State transition | Two states sharing objects; only changed object highlighted | What changed, not every possible property | Create a compact before/after |
+| Flow with a meaningful choice | Paths split at a decision with labeled conditions | Branching consequence | Handcrafted path geometry |
 
-## Layer stack
+## Shared rules
 
-- Each row has an index, semantic title, brief example; equal line lengths across rows.
-- Progress from top = consumer/abstract to bottom = physical/fundamental when appropriate.
-- A color ramp may distinguish functional groups. Do not imply each layer runs on a separate device.
-- Use a two-line label only when a third column would be unreadable.
-- **Source:** `assets/osi-layers.svg`.
-
-## Sequence exchange
-
-- Actors align to vertical dotted lifelines; events are ordered from top to bottom.
-- Arrows originate at sender and end at receiver. Reuse a semantic return color if useful.
-- Number the transport messages if order is central. Avoid arrows that accidentally imply the API function call itself travels over the network.
-- Keep at most 6-8 distinct messages in one frame. Split normal + error path into separate figures when necessary.
-- **Source:** `assets/tcp-handshake.svg`.
-
-## Encapsulation / composition
-
-- Preserve nested logical contents: TCP segment (header + data), IP packet (IP header + TCP segment), Ethernet frame (Ethernet header + IP packet + FCS).
-- Show header blocks with distinct widths and colors. Relative widths are **schematic**, not actual byte proportions unless explicitly stated.
-- Label what is physically present and what is conceptual. For example, Ethernet FCS is a trailer, not an IP field.
-- **Source:** `assets/packet-encapsulation.svg`.
-
-## Software/codebase architecture
-
-- Map names from actual source tree when accessible; place public entrypoints on one side, core logic center, external dependencies on the other.
-- Separate data path (solid arrows) from optional/event path (dashed arrows). Label protocols or actions only when known.
-- Group module boundaries, runtimes and trust boundaries deliberately; a module is not automatically a separate deployment.
-- Choose nesting for ownership, arrows for invocation/data movement, and line style for optionality; do not rely only on color.
-- **Source:** `assets/codebase-architecture.svg` (fictional generic topology, not a claim about any real codebase).
-
-## Process / decision
-
-- Use rounded rectangles for actions, diamonds or clearly styled decision cards for branching. Label edges as conditions (true/false) instead of using unexplained color changes.
-- Keep decisions ≤3 per frame; more usually needs decomposition.
-
-## Completeness and fidelity
-
-Record factual source and any omissions in nearby prose; figures alone can omit details, but must not contradict reality. Convert Mermaid or draw.io by extracting actors, nodes, edges and labels, then rebuild geometry. Redesign is not a license to remove necessary states, failure branches, or security controls.
+- Default to one figure per explanatory beat. Split an overview from details rather than nest all details in an SVG.
+- Do not begin with a heading. Begin with shapes that instantiate the subject.
+- For sequences, actor names and message labels stay; IPs, flags, thread state, retries, exact port numbers or timing metrics only appear if the question specifically requires them.
+- For encapsulation, show payload continuity by repeating the same color/word, not by telling a story in each block.
+- For quantities, use spatial repetition/size/position and minimal numeric labels. Never draw visually misleading counts; distinguish *possible states* from *physical entities*.
+- For repository architecture, establish actual modules and call/data arrows from code inspection; if inaccessible, clearly mark the whole example as illustrative in accompanying prose.
+- Use colored fills to indicate role (blue request/application, teal transport/response, green network, ochre medium); the exact hues are less important than contrast and consistent mapping.
+- Borders are not inherently bad. A border that marks an endpoint or possibility slot is meaningful. A giant card around the entire figure, with a built-in footnote, is usually not.

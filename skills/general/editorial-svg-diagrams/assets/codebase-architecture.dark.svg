@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="787" height="221" viewBox="0 0 787 221" role="img" aria-labelledby="arch-title arch-desc">
+<title id="arch-title">Simple client API database architecture</title>
+<desc id="arch-desc">Client uses HTTP to talk with an API; the API uses SQL with a database. This figure is fictional and illustrative.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="arch-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="arch-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="25" y="74" width="193" height="115" rx="12" class="f-bluewash" />
+<rect x="25" y="74" width="193" height="115" rx="12" fill="none" class="s-blue" stroke-width="2.5"/>
+<text x="121" y="130" class="f-ink label" text-anchor="middle" >Client</text>
+<rect x="296" y="74" width="193" height="115" rx="12" class="f-tealwash" />
+<rect x="296" y="74" width="193" height="115" rx="12" fill="none" class="s-teal" stroke-width="2.5"/>
+<text x="392" y="130" class="f-ink label" text-anchor="middle" >API</text>
+<rect x="568" y="74" width="193" height="115" rx="12" class="f-greenwash" />
+<rect x="568" y="74" width="193" height="115" rx="12" fill="none" class="s-green" stroke-width="2.5"/>
+<text x="664" y="130" class="f-ink label" text-anchor="middle" >Database</text>
+<path d="M218 131 H294" fill="none" class="s-blue" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arch-blue-arrow)" />
+<path d="M489 131 H566" fill="none" class="s-teal" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arch-teal-arrow)" />
+<text x="256" y="115" class="f-muted tiny" text-anchor="middle" >HTTP</text>
+<text x="527" y="115" class="f-muted tiny" text-anchor="middle" >SQL</text>
+</svg>

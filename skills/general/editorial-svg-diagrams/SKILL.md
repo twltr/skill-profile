@@ -1,71 +1,81 @@
 ---
 name: editorial-svg-diagrams
-description: "Create, revise, export and teach standalone SVG diagrams for architecture, protocols, processes, research papers, reports, READMEs, slides and PDFs. Use for layer stacks, sequences, encapsulation, component maps and converting existing diagrams into editable SVG with verified PNG/PDF exports. Automatic selection enabled; explicit use also supported."
+description: >-
+  Create and teach explanation-first diagrams: clean visual aids with very few words, meaningful geometry, restrained color and theme-aware presentation. Use for short illustrative figures within explanations, documentation, papers, READMEs, software architecture, protocol handshakes, OSI layers, encapsulation, uncertainty/entropy, state changes or scientific concepts. Produce real standalone transparent SVGs plus optional dark/light variants, PNG or PDF exports when files are requested; in supported chat interfaces, prefer native theme-aware UI and inline SVG. Also use to refactor overly text-heavy diagram graphics into visual-first figures, or to learn SVG construction.
 ---
 
-# Editorial SVG Diagrams
+# Editorial SVG Diagrams — explanation first
 
-Produce **real, self-contained `.svg` files**, not rasterized approximations, screenshots, UI-specific markup, or diagram-code pretending to be SVG. Use semantic content and exact geometry to create images that can be placed in a paper, README, slide, report, or project documentation. Favor legibility and precision over decoration.
+**A diagram is a visual sentence, not a document in miniature.** Match the user's demonstrated reference: visual structure carries the idea; supporting prose lives *outside* the figure. Do not mistake more labels, bigger cards, longer descriptions or a giant canvas for higher fidelity.
 
-## Operating contract
+## Choose the output mode before drawing
 
-1. **Understand the actual system.** Identify subject, audience, source of truth, required relationships, desired destination, and language. Match in-diagram text to the user's/document's language (German, English, etc.). For a codebase diagram, inspect repository artifacts when accessible; otherwise label every assumption. For a conversion, preserve all material relationships and labels; do not invent. Do not ask for details already available; make reasonable, disclosed defaults.
-2. **Choose the correct visual grammar.** Use a layer stack for abstraction layers; sequence for ordered exchanges; nested strips for encapsulation; architecture for components + interfaces; process/decision for conditions. If user supplied an existing diagram type, retain it. Read [references/visual-patterns.md](references/visual-patterns.md) for placement and semantic rules.
-3. **Choose an export target** before sizing. Default to a portable `960x600` or content-specific `viewBox` on a light paper background, with a PNG preview. For narrow paper columns simplify or compose a separate narrower variant. Read [references/embedding-and-formats.md](references/embedding-and-formats.md) when embedding/exporting.
-4. **Draw with deliberate SVG geometry.** Use `<svg viewBox>`, `<title>`, `<desc>`, `<defs>`, `<g>`, `<rect>`, `<line>`, `<path>`, `<circle>`, and `<text>`. Coordinates determine layout; the order determines paint layering. Use explicit backgrounds, reusable arrow markers, consistent edge attachments, restrained color, and adequate typography. Read [references/svg-construction.md](references/svg-construction.md) to build or teach from first principles.
-5. **Create the file and verify it.** Resolve `diagram_skill_dir` to the directory containing this loaded `SKILL.md`; use its absolute path, not the project's working directory. Write the standalone `.svg` into the requested output folder. Run `python3 "$diagram_skill_dir/scripts/preflight_svg.py" path.svg`; fix structural failures. Run `python3 "$diagram_skill_dir/scripts/export_svg.py" path.svg --format png --scale 2` and, if requested, `--format pdf`. Open and visually inspect the rendered result; correct clashes, clipping, scale, stroke continuity, arrow tips, contrast, and actual terminology. The script checks structural correctness; it cannot replace visual inspection. If no supported renderer is available, report that boundary and leave render verification open; do not claim an unrendered asset is verified.
-6. **Deliver both semantics and artifacts.** Return links to verified SVG and optionally PNG/PDF. Mention the intended embedding width, any assumptions, and whether source content was verified. If asked how it was built, refer to the concrete SVG elements and geometry in the included examples rather than giving only a vague tool description.
+- **In a chat with native UI/diagram primitives:** prefer native host layout elements and inline SVG when they create the clearest illustration. Host-managed text, backgrounds, padding and semantic colors can follow the host theme. Use plain text outside the illustration for explanation. Never force the user into a downloadable PNG just to show a diagram in chat. Respect the host's supported component system; do not emit unsupported tags.
+- **For a repository, paper, documentation, download, reuse, or user-requested SVG:** create a *real standalone* transparent `.svg`. Treat the output as the small reusable visual portion, not the whole surrounding article. Also supply a PNG preview when useful and an explicitly colored `.dark.svg` for dark surfaces when helpful.
+- **For HTML pages with native design tokens:** inline the SVG and inherit `currentColor`/CSS variables or use native UI layouts; if embedding with `<img>`, document theme limitations. A standalone SVG with `@media (prefers-color-scheme: dark)` can follow the browser/OS preference; it does **not necessarily** follow a site's manual theme override. For dependable manual themes use two SVG assets with a theme-controlled source switch.
+- **For print/Office/PDF:** export the light SVG as a vector PDF if supported, or a sized PNG fallback. Transparency is still the default in the SVG file; choose a page background in the document, not inside the illustration.
 
-## Target aesthetic
+## The mandatory visual-first workflow
 
-Model the clear in-chat technical diagrams shown in the examples: dark jewel-tone rows for distinct protocol layers, lighter paper outside, small disciplined labels, strong visual hierarchy, and soft rounded geometry. This is a design direction, **not a dependency on ChatGPT-specific UI components**.
+1. **Name one visual takeaway.** Write privately: “After seeing the figure, the reader should perceive ____.” Examples: the three directions of SYN/SYN-ACK/ACK; every network header wrapping the preceding data; knowing one location versus having eight possibilities. Verify semantics against source material, code, or explicit assumptions.
+2. **Remove prose before drawing.** Put chapter title, definition, caveats, citations, explanations, and conclusion in the *surrounding text*. Keep labels attached to actual shapes, regions, or arrows only. Default visible content: at most ~12 short labels / ~35 words. Each label ideally 1–3 words. These are targets, not grounds to omit indispensable data. If explaining requires several sentences inside the figure, split the figure or write those sentences outside it.
+3. **Select a visual metaphor before a box layout.** Prefer position / size / path / containment / sequence / color / changes between states. A grid of text cards is not an explanatory picture. Read [references/visual-patterns.md](references/visual-patterns.md). For complex architecture, choose a true topology, not a 3-card template.
+4. **Compose to the content.** Use a tight, meaningful `viewBox` sized to the geometry (e.g., a 760×380 handshake or 770×390 two-row state comparison). Visuals dominate the occupied area; eliminate floating whitespace. No built-in title strip, decorative eyebrow, global white paper rectangle, giant footer, or whole-document card frame. A border/card around the illustration, if warranted, belongs to the host layout, not the standalone SVG.
+5. **Draw accurately with restrained visual grammar.** Use SVG primitives (`rect`, `circle`, `path`, `line`, `text`), clean route geometry, 2–4px arrows, enough spacing, consistent radii, blue/teal as default semantic accents. Show all labels at sizes readable at final embedding width. Read [references/svg-construction.md](references/svg-construction.md) when building or teaching.
+6. **Handle color and backgrounds intentionally.** **Transparent canvas is the default.** Never add a full-canvas `rect` merely to create a white/paper/dark background. Use neutral strokes/text plus a few meaningful accent fills. For static SVG, use dark text/strokes on light surroundings and light text/strokes in the explicit dark variant; use embedded `prefers-color-scheme` CSS only as progressive enhancement. Check with two different backgrounds. Never assume `currentColor` in an external SVG `<img>` automatically inherits the page theme.
+7. **Validate, export, inspect, revise.** Resolve helper paths from the installed skill directory, not the current project folder. For file outputs: run `python scripts/build_examples.py` if regenerating bundled figures, then `python scripts/preflight_svg.py figure.svg` and `python scripts/visual_guard.py figure.svg`. Render PNG via `python scripts/export_svg.py figure.svg --format png --scale 2`, composite preview over light/dark, and **open both images**. Check typography, clipping, contrast, arrowheads, label crowding, explanatory clarity at real display/print size. Fix failures and repeat. The lint scripts cannot replace visual inspection.
+8. **Deliver usable assets without unnecessary commentary.** Return SVG and, when relevant, PNG/PDF or variants. Put factual caveats as adjacent prose/captions, not visible text drawn into the SVG. Describe what differs across variants where it matters.
 
-- **Structure:** A short eyebrow (optional), one descriptive heading, and one readable diagram. Use whitespace to group; add a caption only if it explains ambiguity or assumptions.
-- **Palette:** Prefer paper `#F7F9FC`, ink `#172738`, muted `#566779`, rule `#D5DFE7`; blue `#356F9F` for request/application, teal `#237C77` for transport/exchange, green `#3E805C` for routing/network, ochre `#A67637` for media. Choose one lead/accent, with colors tied to meaning; do not use every color in every graphic. Dark output must be explicitly requested or contextually appropriate.
-- **Cards:** 8-12 px radii for substantial blocks; 4-6 px for chips. Fine 1-1.5 px borders; flat surfaces rather than drop shadows, glows, or neon gradients.
-- **Text:** Use common local sans-serif fallbacks (`Arial`, `Helvetica`, `sans-serif`) for portability; monospace only for IP addresses, ports, commands, IDs, and code. Primary text must survive physical reduction; target >=9 pt at its real output size (>=10 pt preferred). Do not put long body prose inside a diagram.
-- **Grid:** Establish margins and baselines before nodes. Use 8 px spacing rhythm with 4 px refinements; preserve equal row heights, gutters, alignment, and consistent visual weight. Treat viewBox as an internal coordinate system, not fixed printed size.
-- **Arrows:** Signal direction and causality. Align ports/attachments deliberately. Use orthogonal or horizontal routed arrows for component flow; a conventional message arrow for sequences. Prefer 2 px strokes and explicit `marker-end` arrowheads. Draw lines under foreground blocks, not through labels. Label mask backgrounds when connectors pass behind text.
-- **Density:** Aim for 3-9 substantive items per frame. When labels shrink or arrows cross confusingly, split into overview and detail. Never cram everything into a single figure.
-- **Accuracy:** A TCP SYN is not an application message; UDP has no handshake; controls and security boundaries must not be inferred. A diagram must remain factually correct even when simplified.
+## The style contract (hard defaults)
 
-## Portable SVG requirements
+- **No root background fill** (`<rect width="100%" height="100%" fill="#fff">`, etc.) unless user explicitly asks for a fixed-background image. Keep SVG alpha transparent and allow the destination to own its page color.
+- **No gratuitous text as graphics:** no explanatory paragraphs, title/subtitle, glossary, source attribution, legend or outcome prose inside the SVG by default. Semantic `<title>` and `<desc>` are *nonvisual metadata* and should remain.
+- **No generic dashboards:** avoid multiple equal cards with filler text and icons if a single arrow, progression or state contrast conveys more.
+- **No forced fixed artboard:** fit `viewBox` tightly; prefer shape-to-area and visual balance over defaulting to 960×600.
+- **No gratuitous decorations:** borders only to encode an entity, region or intentional separator. Shadows, gradients and random brand palettes are off by default.
+- **Not every figure requires an arrow:** the entropy example relies on marked versus possible positions; adding arrows there would confuse the meaning.
+- **Respect sequence conventions:** time downward, actors aligned, clear sender/recipient, directional lines; simplified diagonals are valid for chronological messages as in the supplied reference. Use orthogonal routes for complex architectures when that improves readability.
+- **No false technical semantics:** distinguish UDP from TCP; do not imply eight actual particles in an eight-position entropy illustration; ensure header nesting is logically accurate and label proportions as schematic if relevant.
 
-- Root must declare `xmlns="http://www.w3.org/2000/svg"`, meaningful `viewBox`, `role="img"`, `aria-labelledby="..."`, unique `<title id>` and `<desc id>`. IDs must be unique and in-document references resolvable.
-- Prefer **standalone SVG 1.1-compatible** constructs. Avoid `<foreignObject>`, scripts, external images/fonts/stylesheets, animations, external URLs, browser-only filters and CSS layout. Avoid emoji/icon fonts; render symbols as simple vector paths if needed.
-- Use local, explicit fills/strokes and escape XML special characters in generated text. `<text>` stays editable and selectable. Don't convert text to paths unless an output tool absolutely requires it, and then also preserve an editable source.
-- Background: solid light paper for documents; use transparent only on request. Background should not be transparent by accident because different PDF/dark readers will render it differently.
-- Do not disguise unsupported rendering, convert to PNG as the only deliverable, or deliver unverified assets.
+## Test the reference, not just SVG validity
 
-## How to learn or recreate the technique
+Compare the user's desired illustration against the earlier failure with [references/reference-contrast.md](references/reference-contrast.md). The old figure is **not** a style template to copy; it is a regression example. Look at the *same TCP handshake*: three visible messages are the story, not large endpoint cards and paragraphs. When asked to recreate a provided figure, inspect/crop the figure itself rather than importing surrounding page chrome into the art.
 
-Read [references/svg-construction.md](references/svg-construction.md), then inspect the bundled examples as actual SVG source. Begin by changing node text and positions in `assets/starter.svg`. Recreate the layer stack and TCP handshake in `assets/osi-layers.svg` and `assets/tcp-handshake.svg`. The tutorial includes viewBox coordinates, primitive markup, arrow markers, and failure checks. When the user explicitly asks to *learn*, show the construction steps and point to concrete source lines, then give one small exercise to modify.
-
-## Bundled references and reusable assets
+## Assets and tools
 
 | Resource | Purpose |
 |---|---|
-| [references/svg-construction.md](references/svg-construction.md) | Learn SVG geometry and build a handshake diagram from scratch |
-| [references/visual-patterns.md](references/visual-patterns.md) | Choose layout grammar for layers, sequences, encapsulation, architectures, and flows |
-| [references/embedding-and-formats.md](references/embedding-and-formats.md) | Insert SVG into Markdown, HTML, LaTeX, Office, and PDFs; export sizing |
-| `assets/icon.svg` | Small reusable skill icon drawn entirely with SVG |
-| `assets/starter.svg` | Minimal accessible SVG skeleton with arrow marker |
-| `assets/osi-layers.svg` | Colored OSI layer stack with consistent bands |
-| `assets/tcp-handshake.svg` | Client/server lifelines, SYN/SYN-ACK/ACK, application boundary |
-| `assets/packet-encapsulation.svg` | Nested packet contents through transport/IP/Ethernet |
-| `assets/codebase-architecture.svg` | Generic clean codebase/service architecture |
-| `scripts/preflight_svg.py` | Inspect structure, references, portable SVG elements, and approximate geometry |
-| `scripts/export_svg.py` | Validate then export to PNG or vector PDF (CairoSVG/Inkscape) |
+| [references/reference-contrast.md](references/reference-contrast.md) | Cropped positive vs negative example of the same diagram; failure modes |
+| [references/visual-patterns.md](references/visual-patterns.md) | Visual metaphors and layout grammars (sequence, comparison, encapsulation, architecture) |
+| [references/svg-construction.md](references/svg-construction.md) | Step-by-step SVG building, style classes, arrow geometry and responsive themes |
+| [references/embedding-and-formats.md](references/embedding-and-formats.md) | Actual theme behavior in chat/HTML/README/LaTeX/Office; export recipes |
+| `assets/tcp-handshake.svg`, `.dark.svg` | Minimal three-message explanation with no article text |
+| `assets/entropy-possibilities.svg`, `.dark.svg` | Two-row state comparison: exactly one versus eight possibilities |
+| `assets/packet-encapsulation.svg`, `.dark.svg` | Layering through actual colored band geometry |
+| `assets/pc-connection.svg`, `.dark.svg` | Two endpoints, direction and ports |
+| `assets/osi-layers.svg`, `.dark.svg` | Lean layer stack |
+| `assets/codebase-architecture.svg`, `.dark.svg` | Deliberately generic 3-component example, not a verified codebase |
+| `assets/starter.svg`, `.dark.svg` | Tiny editable starting point |
+| `scripts/build_examples.py` | Deterministically rebuild all examples/variants |
+| `scripts/preflight_svg.py` | XML/accessibility/portable-resource checks |
+| `scripts/visual_guard.py` | Explanation-first text budget and full-background regression gate |
+| `scripts/export_svg.py` | PNG/vector PDF export |
+| `scripts/preview_themes.py` | Composite previews on light and dark surfaces |
 
-## Relationship to other diagram tools
+## Accepted regression references
 
-This skill owns semantic layout selection, the portable `.svg`, educational SVG construction, export presets and image-level QA. Use the bundled visual patterns with the verified source model. Mermaid/draw.io/Excalidraw can supply relationships; preserve required notation and automated consumers when converting them. The final SVG uses deliberate geometry without requiring an HTML wrapper or another diagram skill.
+The user accepted three further examples on 2026-10-23. Use these as visual
+benchmarks alongside the handshake contrast: [binary search](assets/accepted/binary-search.svg),
+[cache hit/miss](assets/accepted/cache-hit-miss.svg), and
+[debouncing](assets/accepted/debouncing.svg), each with an explicit dark variant.
+Their editable SVGs are preserved from the supplied test archive; the import
+manifest records their provenance. Compare the visual mechanism, not identical
+styling: shrinking region, diverging paths, or input/output timing.
 
-## Quality gate before delivery
+## Learning mode
 
-- Reader can state the main relationship in 5 seconds; no ambiguous labels or implied invented links.
-- Color has meaning; typography/contrast readable at target size, including grayscale print when needed.
-- Arrow endpoints, return directions, labels, and time order verified.
-- No text outside viewBox, cut arrowheads, hidden lines, collisions, overflow, or dependency on remote assets.
-- Validates and renders without network access; visually inspected PNG at target scale.
-- Source SVG and preview (if appropriate) share the same content; no unreported raster-only edits.
+When the user wants to *learn* SVG, begin with `assets/starter.svg` or `assets/tcp-handshake.svg`. Explain `viewBox`, coordinate origin, primitives, paths, fills and classes **using a real pictured example**. Give one small edit (change arrow positions, add a fourth message, swap one highlight). Keep tutorial prose outside the SVG. If teaching a specific diagram, show the result as a diagram first, then annotated source excerpts separately.
+
+## Scope relative to other skills
+
+Use broader diagram-design skills for unusual or complicated graph semantics when available. This skill owns the **visual-minimal explainer**, portable SVG source, theming strategy, rendering, and QA. The user did not ask for dashboard layouts, default title cards or an SVG that is secretly a paragraph.

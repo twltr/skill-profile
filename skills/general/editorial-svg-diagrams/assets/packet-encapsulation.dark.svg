@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="351" viewBox="0 0 834 351" role="img" aria-labelledby="packetencapsulation-title packetencapsulation-desc">
+<title id="packetencapsulation-title">Packet encapsulation</title>
+<desc id="packetencapsulation-desc">Hallo application bytes are wrapped in TCP, IP and Ethernet headers; Ethernet also adds FCS.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="packetencapsulation-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="packetencapsulation-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="8" y="65" class="f-ink small" text-anchor="start" >Anwendung</text>
+<rect x="154" y="36" width="656" height="43" rx="7" class="f-blue" />
+<text x="482.0" y="64" class="f-whitetxt small" text-anchor="middle" >Hallo</text>
+<path d="M482.0 88 L482.0 101" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" />
+<path d="M477.0 95 L482.0 102 L487.0 95" fill="none" class="s-muted" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="8" y="150" class="f-ink small" text-anchor="start" >TCP</text>
+<rect x="154" y="121" width="232" height="43" rx="0" class="f-teal" />
+<text x="270.0" y="149" class="f-whitetxt small" text-anchor="middle" >Header</text>
+<rect x="386" y="121" width="424" height="43" rx="0" class="f-blue" />
+<text x="598.0" y="149" class="f-whitetxt small" text-anchor="middle" >Hallo</text>
+<path d="M386 125 L386 160" fill="none" class="s-border" stroke-width="1.0" stroke-linecap="round" />
+<path d="M482.0 173 L482.0 186" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" />
+<path d="M477.0 180 L482.0 187 L487.0 180" fill="none" class="s-muted" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="8" y="235" class="f-ink small" text-anchor="start" >IP</text>
+<rect x="154" y="206" width="187" height="43" rx="0" class="f-green" />
+<text x="247.5" y="234" class="f-whitetxt small" text-anchor="middle" >IP-Header</text>
+<rect x="341" y="206" width="469" height="43" rx="0" class="f-teal" />
+<text x="575.5" y="234" class="f-whitetxt small" text-anchor="middle" >TCP + Hallo</text>
+<path d="M341 210 L341 245" fill="none" class="s-border" stroke-width="1.0" stroke-linecap="round" />
+<path d="M482.0 258 L482.0 271" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" />
+<path d="M477.0 265 L482.0 272 L487.0 265" fill="none" class="s-muted" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="8" y="320" class="f-ink small" text-anchor="start" >Ethernet</text>
+<rect x="154" y="291" width="161" height="43" rx="0" class="f-ochre" />
+<text x="234.5" y="319" class="f-whitetxt small" text-anchor="middle" >Ethernet</text>
+<rect x="315" y="291" width="410" height="43" rx="0" class="f-green" />
+<text x="520.0" y="319" class="f-whitetxt small" text-anchor="middle" >IP + TCP + Hallo</text>
+<rect x="725" y="291" width="85" height="43" rx="0" class="f-brown" />
+<text x="767.5" y="319" class="f-whitetxt small" text-anchor="middle" >FCS</text>
+<path d="M315 295 L315 330" fill="none" class="s-border" stroke-width="1.0" stroke-linecap="round" />
+<path d="M725 295 L725 330" fill="none" class="s-border" stroke-width="1.0" stroke-linecap="round" />
+</svg>

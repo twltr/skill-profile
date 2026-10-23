@@ -1,6 +1,6 @@
 interface:
   display_name: "Editorial SVG Diagrams"
-  short_description: "Auto: Eigenständige SVG-Diagramme mit geprüftem Export"
+  short_description: "Auto: Visuelle Erklärgrafiken mit wenig Text"
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:

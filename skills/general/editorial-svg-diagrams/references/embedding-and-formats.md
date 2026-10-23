@@ -1,57 +1,53 @@
-# Exporting and Embedding Standalone SVG Diagrams
+# Transparent SVG, theme behavior, and embedding
 
-## Preferred deliverables
+## Important distinctions
 
-- **Canonical:** editable vector `.svg` with live text, accessible `<title>` and `<desc>`, no linked fonts/assets.
-- **Preview / web fallback:** anti-aliased `.png` rendered at 2x or fixed pixel width.
-- **PDF vector figures:** `.pdf` export when required for LaTeX print/publish or office document pipelines with poor SVG support. Confirm font substitution and print scale.
+**Native chat UI:** A host can render layout components and inline SVG within its actual theme. If host controls have theme-aware text, surfaces, borders and spacing, use them directly. This is why a ChatGPT-native explanatory widget may look more naturally integrated than a portable file.
 
-## Typical targets
+**Standalone `.svg` in `<img>`:** The SVG is a separate image document; it does **not automatically inherit arbitrary CSS variables, `currentColor`, or the site's manually selected theme**. CSS `@media (prefers-color-scheme: dark)` inside the SVG often reacts to the browser/OS preference but may be independent of the site's light/dark toggle, renderer or SVG embedding method.
 
-| Destination | Primary file | How to embed | Notes |
-|---|---|---|---|
-| GitHub README | PNG for broad compatibility, SVG when supported | `![Diagram](docs/diagram.svg)` or `.png` | Prefer relative repository paths; verify hosting's SVG sanitization/support |
-| Web documentation | SVG | `<img src="diagram.svg" alt="...">` | Keep caption/alt text; don't assume title alone satisfies alt text |
-| Markdown knowledge docs | SVG or PNG | `![...](diagram.svg)` | Renderer-specific: verify; use PNG fallback |
-| PowerPoint/Word | SVG when supported; else high-res PNG | Insert image normally | Verify font substitution and clipping on exported PDF |
-| LaTeX / academic paper | PDF vector or PNG fallback | `\includegraphics[width=\linewidth]{diagram.pdf}` | Export with CairoSVG/Inkscape; verify final PDF at target size |
-| PDF report | Vector PDF or PNG | Insert into authoring app before exporting | Inspect produced PDF; don't assume a PDF generator supports SVG natively |
+**Reliable manual theme:** Generate explicit `.svg` light and `.dark.svg` variants and switch the `<img src>` using the host app's actual theme state or theme class. A `<picture>` with `media="(prefers-color-scheme: dark)"` works for OS/browser preference when the site follows it:
 
-## Size and physical legibility
+```html
+<picture>
+  <source srcset="figure.dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="figure.svg" alt="Description of key relationship">
+</picture>
+```
 
-SVG coordinates are not printing points. Example: a 22 px source label in a 960-wide viewBox used at 480 physical px is effectively 11 px. In a two-column paper's single column (~85-90 mm), complex 960-wide SVGs become illegible. For a single narrow column, prefer **520 px viewBox with 18-22 px labels and only 3-5 nodes**. For full-page figures (150-180 mm) 960 px viewBox often works if labels are >=20-24 px.
+For an app with a manual theme stored independently of OS preference, update `src` from that theme state; do not claim `<picture>` solves the manual override.
 
-Before delivering, preview at actual intended width, not just a 4K monitor zoomed in. Avoid line strokes thinner than ~0.7 pt once printed. Grayscale and monochrome exports must still communicate arrows/labels.
+## Transparent background as a contract
 
-## Commands
+All bundled `.svg` files have no background rectangle and no full-viewBox dark/light fill. This is deliberate: the surrounding ChatGPT, Markdown, paper or slide canvas owns the background. Text and guide colors do need a compatible foreground palette; transparency by itself **does not make an SVG theme-aware**.
 
-Resolve `diagram_skill_dir` to the absolute directory containing the loaded
-`SKILL.md`. Keep the diagram and output paths relative to the project, or pass
-absolute paths. Run with Python 3:
+For a paper use the light SVG on the paper. For a dark deck use `.dark.svg` or recolor an inline SVG from host design tokens. PNG previews can be composited against either background **without altering the original SVG**.
+
+## Embedding targets
+
+| Destination | Delivery | Detail |
+|---|---|---|
+| Chat UI | Native host components / inline SVG | Theme from the host; keep prose outside figure |
+| GitHub README | `.svg` (plus optional `.png`) | Relative link `![...](docs/figures/example.svg)`; README renderer may not follow app theme |
+| Website / HTML docs | Theme-aware inline SVG or light/dark asset switch | Use `<img>` + CSS/theme logic, or `<picture>` for OS preference |
+| Academic papers / LaTeX | Light variant as vector PDF or PNG | `\includegraphics[width=\linewidth]{figure.pdf}` |
+| Word / PowerPoint | SVG if tool supports it, else PNG | Inspect final export at target size |
+| Reports / slides | Inline SVG or vector PDF | Put figure title and explanatory caption in document layout |
+
+## Output dimensions and text
+
+Fit the SVG's `viewBox` to the actual content. A wide 820×350 colored band figure becomes illegible at 8cm print width; in narrow columns reduce nodes and labels rather than squeezing. Test at actual expected final insertion width; 16–22 SVG-unit text sizes are good starting points but physical size matters. Preserve editable `<text>` and never require remote font downloads.
+
+## Useful commands
 
 ```bash
-python3 "$diagram_skill_dir/scripts/preflight_svg.py" my-diagram.svg
-python3 "$diagram_skill_dir/scripts/export_svg.py" my-diagram.svg --format png --scale 2
-python3 "$diagram_skill_dir/scripts/export_svg.py" my-diagram.svg --format png --width 1800 --out preview.png
-python3 "$diagram_skill_dir/scripts/export_svg.py" my-diagram.svg --format pdf --out figure.pdf
+python scripts/preflight_svg.py figure.svg
+python scripts/visual_guard.py figure.svg
+python scripts/export_svg.py figure.svg --format png --scale 2
+python scripts/export_svg.py figure.svg --format pdf --out figure.pdf
+python scripts/preview_themes.py figure.svg --dark figure.dark.svg --out theme-check.png
 ```
 
-`scripts/export_svg.py` uses Python CairoSVG when importable, or Inkscape CLI when CairoSVG cannot be imported. A CairoSVG rendering error is reported and stops the export; it does not silently switch renderers. The script performs preflight automatically. PNG image pixels are not an SVG substitute; preserve the original source. PDFs preserve vector shapes in typical cases, but embedding fonts and font substitution depend on export backend and environment.
+Python requirements for previews: `cairosvg` and `Pillow` (PIL). The PDF/PNG exporter also supports Inkscape as a fallback where noted.
 
-## Team repository organization
-
-A reasonable layout:
-
-```text
-docs/
-  diagrams/
-    README.md                 # factual sources and explanation
-    transport-handshake.svg  # editable source of truth
-    transport-handshake.png  # reproducible preview / compatibility
-```
-
-For regeneration, commit SVG and exporter command in documentation; avoid manually drifting SVG/PNG versions. If sources are generated programmatically, commit the script, not only the render. Keep diagrams close to relevant architecture docs or modules rather than creating a parallel documentation universe.
-
-## Security and portability
-
-Treat imported SVG as untrusted markup. Do not execute embedded scripts or fetch remote assets. The included preflight rejects script/foreignObject and external references; it is a *structural linter*, not a complete hostile-input sanitizer. Use a hardened sanitization and rendering environment for attacker-controlled files. Keep generated SVG self-contained for stable CI and reproducible papers.
+SVG is the source of truth. PNG and PDF are generated outputs, not substitutes for a structurally editable original. `preflight_svg.py` is not a hostile-input sanitizer; untrusted imported SVG needs sandboxing/sanitization outside this skill.

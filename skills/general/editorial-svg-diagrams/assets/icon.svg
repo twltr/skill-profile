@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="icon-title icon-desc">
   <title id="icon-title">Editorial SVG diagrams</title>
   <desc id="icon-desc">Three precise layered cards with a connector arrow.</desc>
-  <rect width="128" height="128" rx="26" fill="#F7F9FC"/>
   <rect x="21" y="24" width="86" height="23" rx="7" fill="#356F9F"/>
   <rect x="21" y="54" width="86" height="23" rx="7" fill="#237C77"/>
   <rect x="21" y="84" width="86" height="23" rx="7" fill="#3E805C"/>

@@ -1,100 +1,86 @@
-# Constructing SVG Diagrams from First Principles
+# SVG construction: compact visual explanations
 
-This guide teaches the exact *public* SVG technique behind clean technical chat-style illustrations, independent of any proprietary UI renderer. The resulting `*.svg` works as a standalone vector image in other systems.
+This is a practical tutorial for building the compact TCP handshake shown in `assets/tcp-handshake.svg`. Load the actual SVG source while following the steps.
 
-## 1. Start with a coordinate canvas
+## 1. Define the coordinate system
 
-```xml
+```svg
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="960" height="600" viewBox="0 0 960 600"
-     role="img" aria-labelledby="tcp-title tcp-desc">
-  <title id="tcp-title">TCP handshake</title>
-  <desc id="tcp-desc">Client sends SYN, server responds SYN-ACK, client acknowledges.</desc>
-  <rect width="960" height="600" fill="#F7F9FC" />
-  <!-- elements go here -->
+     width="800" height="398" viewBox="0 0 800 398"
+     role="img" aria-labelledby="handshake-title handshake-desc">
+  <title id="handshake-title">TCP handshake</title>
+  <desc id="handshake-desc">Client SYN, server SYN-ACK, client ACK.</desc>
+  <!-- visual elements -->
 </svg>
 ```
 
-`viewBox="min-x min-y width height"` defines a coordinate system. `x` runs right; `y` runs down. Setting a fixed `width` and `height` is optional, but convenient for predictable standalone previews. Scaling keeps vector shapes sharp. For narrow printed figures, reduce semantic density or recreate at narrower viewBox; don't simply shrink small letters.
+`width`/`height` establish a convenient default aspect ratio, while `viewBox` controls the internal coordinate space. `x` grows to the right and `y` grows downward. The visible SVG has **no page-colored background**. `<title>` and `<desc>` are accessibility metadata, not decorative text on the image.
 
-## 2. Make a card with shape + text
+## 2. Put actors far enough apart to see motion
 
-```xml
-<rect x="48" y="96" width="256" height="100" rx="12"
-      fill="#E9F2F8" stroke="#356F9F" stroke-width="1.5" />
-<text x="68" y="135" font-family="Arial, Helvetica, sans-serif"
-      font-size="24" font-weight="700" fill="#172738">Client</text>
-<text x="68" y="165" font-family="Arial, Helvetica, sans-serif"
-      font-size="18" fill="#566779">192.168.1.20</text>
+```svg
+<text x="146" y="32" text-anchor="middle">Client</text>
+<text x="650" y="32" text-anchor="middle">Server</text>
+<path d="M146 56 V357" stroke="#9CA8B0" stroke-dasharray="7 10"/>
+<path d="M650 56 V357" stroke="#9CA8B0" stroke-dasharray="7 10"/>
 ```
 
-Place text using a *baseline*, not a top-left coordinate. Use `text-anchor="middle"` for labels centered on a known `x`. Set `dominant-baseline` only when checked with your actual SVG renderer. Use `&amp;`, `&lt;`, `&gt;` to escape XML characters. Avoid wrapping text by CSS; manually create two `<text>` lines or `<tspan x="..." dy="...">`.
+The two vertical lifelines are a scaffold. Keep the visual field mostly open; don't need a heavy rectangle for each machine.
 
-## 3. Create arrows deliberately
+## 3. Use paths for three movements
 
-Define the marker once:
-
-```xml
-<defs>
-  <marker id="tcp-arrow" viewBox="0 0 10 10" refX="9" refY="5"
-          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-    <path d="M 1 1 L 9 5 L 1 9 Z" fill="#356F9F" />
-  </marker>
-</defs>
+```svg
+<path d="M146 118 L650 163" stroke="#397DA9" stroke-width="4"
+      fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M650 190 L146 235" stroke="#0E8981" stroke-width="4"
+      fill="none" marker-end="url(#arrow-teal)"/>
+<path d="M146 270 L650 315" stroke="#397DA9" stroke-width="4"
+      fill="none" marker-end="url(#arrow-blue)"/>
 ```
 
-Then reference it from a route:
+Create matching markers once in `<defs>` with IDs that exist and do not collide with other diagrams. Labels `SYN`, `SYN-ACK`, `ACK` should sit above the corresponding strokes without colliding. For ordered exchanges, slight diagonals can reinforce time progression; they are valid here even if architecture diagrams use orthogonal connectors.
 
-```xml
-<path d="M 320 250 H 640" fill="none" stroke="#356F9F"
-      stroke-width="3" marker-end="url(#tcp-arrow)" />
+## 4. Only two small API cues
+
+Small chips marked `connect()` and `accept()` distinguish calling into the TCP stack from on-wire packets. Do not add an explanatory footer into the canvas saying what these do; explain that in the text alongside the SVG.
+
+## 5. Class-based adaptive paint
+
+The bundled default SVG contains semantic CSS classes with a light palette and a dark override:
+
+```css
+.f-ink { fill: #1C2936; }
+.s-blue { stroke: #397DA9; }
+@media (prefers-color-scheme: dark) {
+  .f-ink { fill: #F1F4F6; }
+  .s-blue { stroke: #4988B4; }
+}
 ```
 
-In path syntax `M` means move, `L` line, `H` horizontal, `V` vertical; `Q` quadratic curve, `C` cubic curve. Arrows should stop at a surface boundary, not bury their tip behind a box. The marker should point to the recipient. For return direction, draw the path in reverse, not just change label wording. Draw routes before foreground nodes when they would otherwise intersect.
+This follows the browser/OS `prefers-color-scheme` when honored by the SVG renderer. **It is not equivalent to inheriting a parent ChatGPT app theme.** For inline SVG in a host, prefer styling via the host's actual theme system; when using an external `.svg` in an `<img>`, use the authored light/dark variants if the site offers a manual theme toggle. Most raster/PDF converters render one static scheme; use the explicit variant appropriate to the destination.
 
-## 4. Put a label above a line
+## 6. Rebuild and test
 
-A connector through bare text is ugly. Use a small paper-colored label mask if text is placed on top of a route:
-
-```xml
-<rect x="430" y="219" width="100" height="32" rx="5" fill="#F7F9FC" />
-<text x="480" y="241" text-anchor="middle" font-size="17"
-      font-weight="700" fill="#172738">SYN</text>
-```
-
-Position against a measured segment and use a clear 6-8 px breathing gap. Do not use a large blank mask that hides meaningful geometry.
-
-## 5. Build a sequence diagram step by step
-
-**Example geometry:** viewBox `0 0 960 600`; client anchor `x=220`, server anchor `x=740`; common horizontal margins `56`.
-
-1. Draw title, explanatory subheading, client/server cards at `x=100` and `x=620`.
-2. Draw dashed lifelines with `stroke-dasharray="6 8"` from y=`180` to y=`500` at x=`220` and x=`740`.
-3. Put `SYN` on y=`265` from `(220,265)` to `(740,265)`, arrow to server.
-4. Put `SYN + ACK` on y=`365` from `(740,365)` to `(220,365)`, arrow to client (different hue).
-5. Put `ACK` on y=`465` from `(220,465)` to `(740,465)`, arrow to server.
-6. Label numbering, emphasize transport vs application separation, and optionally add a completion bar at bottom. `accept()` returns a connected socket after the connection handshake; it is not a TCP packet.
-7. Check the semantics before decorating. See `assets/tcp-handshake.svg` for a fully composed result. Its spacing differs slightly to balance captions and callouts.
-
-For a layer stack, replace lifelines with equal-height rounded rows. Number layers 7 down to 1, assign background hues deliberately, and left-align descriptions. Inspect `assets/osi-layers.svg`.
-
-For packet encapsulation, show **composition** rather than arbitrary sequential cards: each successive row must explicitly contain the previous unit as payload; do not suggest that Ethernet encapsulates IP without its own header/trailer. Inspect `assets/packet-encapsulation.svg`.
-
-## 6. Compose for readability
-
-- Use an 8 px layout rhythm; plan margins, row/card heights and centerlines before writing markup.
-- Establish hierarchy with exactly three levels: title (28-36 px), node names (21-25 px), small labels (14-19 px), adjusted for target display width.
-- Use solid fills and subtle borders. Heavy gradients, drop shadows, multiple unrelated fonts, decorative doodles, and packed legends are seldom useful for technical diagrams.
-- Use colors by semantic category; arrows retain meaning without color through arrowheads and labels.
-- Prefer fewer shapes. If paths cross or labels become tiny, split the diagram.
-
-## 7. Learn by modifying
-
-Start with `assets/starter.svg`; change text, positions and fill colors. Next copy `assets/tcp-handshake.svg`, swap endpoint names/IPs, and add a fourth message. Observe how the arrow marker, lifeline and y-order change. After every edit, validate and re-render:
+From the skill folder:
 
 ```bash
+python scripts/build_examples.py
 python scripts/preflight_svg.py assets/tcp-handshake.svg
+python scripts/visual_guard.py assets/tcp-handshake.svg
 python scripts/export_svg.py assets/tcp-handshake.svg --format png --scale 2
+python scripts/preview_themes.py assets/tcp-handshake.svg --dark assets/tcp-handshake.dark.svg --out handshake-preview.png
 ```
 
-A diagram rendered once is only an initial draft. View the PNG at document size and check the meaning, clipping, and legibility.
+Open the composite preview. Check arrow direction, readable labels, no text collision, no white rectangle and natural space usage.
+
+## 7. Exercise
+
+Change the second arrow's label to `SYN + ACK` and shift its endpoints 15 SVG units downward. Verify that the label remains separated from the stroke. Then restore the correct original. If the label forces a long paragraph into the drawing, stop and move the explanation to prose.
+
+## Make other figure types
+
+- **Entropy:** 8 slot `<rect>` shapes per row, 1 selected `<circle>` on first row, all candidate circles on second. Keep all circles count-correct.
+- **Packet encapsulation:** preserve blue payload identity, add only one new header/trailer per row; align segment widths to communicate composition.
+- **OSI:** 7 aligned colored bands and one short protocol exemplar per row; no visible title or prose in SVG.
+
+Do not use SVG as an excuse to reconstruct an entire article out of `<text>` tags.

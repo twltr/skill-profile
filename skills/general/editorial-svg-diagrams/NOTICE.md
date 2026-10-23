@@ -32,4 +32,6 @@ Local adaptations retain supported invocation metadata and the existing
 finite-number / event-attribute validation fixes. Helper paths are resolved
 from the skill directory. The light/dark foreground sentence was corrected
 to use dark foreground on light surfaces and light foreground on dark surfaces.
-No additional license or redistribution rights are inferred from this import.
+Whitespace-only lines in the accepted SVG examples were normalized; their
+geometry and text are unchanged. No additional license or redistribution rights
+are inferred from this import.

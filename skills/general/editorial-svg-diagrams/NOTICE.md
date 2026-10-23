@@ -35,3 +35,11 @@ to use dark foreground on light surfaces and light foreground on dark surfaces.
 Whitespace-only lines in the accepted SVG examples were normalized; their
 geometry and text are unchanged. No additional license or redistribution rights
 are inferred from this import.
+
+## 2026-10-23 representation and geometry clarification
+
+User feedback made per-figure representation choice and clean geometric
+construction explicit: compare useful alternatives before drawing, align peer
+elements and spacing, plan clear connector routes, and judge the rendered result
+beyond structural lint. This changes the authoring method, not the imported
+example artwork, provenance records or invocation policy.

@@ -76,6 +76,12 @@ percentage-cut targets are retired. Unslop's
 adaptation decisions and licenses. Humanizer and Writing Clearly and Concisely
 are source material, not additional installed entry points.
 
+The 2026-10-26 writing revision makes Unslop's prohibition on slogan-like
+parallel phrasing explicit for paired and longer constructions, including
+headings. Good Writing invokes its final wording check after the finished
+artifact is assembled. Language rules remain owned by Unslop; routing and
+invocation metadata are unchanged.
+
 On 2026-10-21, `editorial-svg-diagrams` replaced the external `diagram-design`
 snapshot. The previous skill and its native overlay are retired; writing routes
 now use the included replacement. Its source SVGs stay editable, while PNG and

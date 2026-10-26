@@ -43,8 +43,13 @@ or behavior better. Pass the verified model, audience and output needs; it owns
 diagram sources, design, export and visual checks. A short reply needs no diagram.
 
 Check meaning, conditions, uncertainty, links and requested depth against the
-source. Return the finished text. Artifact skills own native editing and render
-checks; a draft does not authorize saving, sending, publishing or reorganization.
+source. After specialist work and artifact assembly, apply Unslop's final
+wording check to the complete reader-facing result, including titles and headings.
+Text added by a renderer or another agent needs the same check. Reading Unslop
+at the start does not complete this step. Revise failures before returning the
+finished text; keep the language rules with Unslop rather than duplicating them
+in each specialist. Artifact skills own native editing and render checks; a
+draft does not authorize saving, sending, publishing or reorganization.
 
 If a required skill cannot be read, name it and leave that method's completion
 open while continuing independent preparation. Never claim it was applied.

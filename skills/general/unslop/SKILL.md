@@ -40,11 +40,34 @@ reading for each writing task.
   In English, replace “leverage” with “use” and remove “it is important to note”.
   German examples include “an dieser Stelle ist hervorzuheben”, “ganzheitliche
   Mehrwerte” and “im Rahmen der Durchführung”. Edit by meaning, not a blacklist.
-- Remove staged contrasts, forced groups of three, metaphorical closers and
-  repetitive transitions when they add no information. Keep a contrast that
+- Remove staged contrasts, metaphorical closers and repetitive transitions
+  when they add no information. Keep a contrast that
   explains a real difference or corrects a relevant misconception.
 - Keep one term for one concept. Do not cycle through synonyms merely for
   variety. Explain unfamiliar terms when the reader needs them.
+
+## Name the subject without a slogan
+
+Do not generate slogan-like pairs, triplets or longer chains of matching
+phrases. Repeated grammar, balanced adjective-noun pairs or successive short
+sentences must not turn an explanation into rhythmic promotional copy. This
+applies even when each fragment contains a relevant point, and includes titles,
+section headings, leads, callouts, captions, UI mockups and closing sentences.
+Changing punctuation or reducing three beats to two does not fix the pattern.
+
+Name the subject, purpose or concrete conclusion in a descriptive heading.
+Write recommendations and explanations as ordinary complete sentences. Do not
+add an umbrella claim merely to make the wording sound polished.
+
+| Reject this construction | Use a descriptive alternative |
+|---|---|
+| Arbeitszeit sichtbar machen. Anrufe sauber zuordnen. Verdienst nachvollziehbar schätzen. | Analyse und Konzept für ein Dashboard zur Arbeitszeiterfassung |
+| Kleiner Start, klare Ausbaustufe | Umfang des MVP |
+
+Keep genuine enumerations of facts, required steps and comparisons when the
+reader needs those items. A list of CPU, RAM and storage is not a slogan.
+Do not flatten useful information to avoid a count of two or three. Supplied
+quotations remain quotations; do not silently rewrite them.
 
 ## Make the information easy to see
 
@@ -85,6 +108,15 @@ Keep a requested detailed explanation detailed enough to teach the subject.
 Keep necessary qualifications; remove duplicated hedging, not the uncertainty.
 Do not chase a percentage reduction or a uniform sentence length.
 
-Read the result once for sense: can the reader understand it without decoding
-shorthand, and did the edit change any fact, condition, distinction or degree of
-certainty? Repair those losses before delivering.
+## Check the finished wording
+
+Before delivery, read the actual final text, including its title and every
+heading, lead, callout, caption and closing sentence. Rewrite any slogan-like
+parallel phrasing using the rule above. Check text introduced during formatting,
+artifact generation or delegated work too; an earlier draft's review does not
+cover later additions. Loading this skill is not evidence that the text passed.
+
+Then check that the reader can understand the result without decoding shorthand
+and that no fact, condition, distinction or degree of certainty was lost. Repair
+the text before delivering. This is an editorial check, not a claimed automatic
+enforcement mechanism or a guarantee about future model output.

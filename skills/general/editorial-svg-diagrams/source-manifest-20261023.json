@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-23",
+  "archives": {
+    "skill.zip": "a1d611f736fd252a634c6642ad22ae21ce65f412d26f1f133b48da4161c1e77a",
+    "editorial-svg-testgrafiken.zip": "d1efde5ed5bb931dee3ae85db7f03b338d951d22d38a1f610097fc41aa48feb7"
+  },
+  "files": {
+    "skill.zip": {
+      "editorial-svg-diagrams/SKILL.md": "786a4a3f1d2246fc29b7216093c14f7f0a5b3ec942391aa72ebf135bcd3cd61b",
+      "editorial-svg-diagrams/scripts/preflight_svg.py": "cb1d09b80b05be2a8ad3c44cd8f1b8f4912da979484083ca4599f442df630312",
+      "editorial-svg-diagrams/scripts/preview_themes.py": "314160002ea750ed02508136d704879970a2e97cb6dee630a88d8f3d6e5e35f6",
+      "editorial-svg-diagrams/scripts/visual_guard.py": "42b59ac4dbe6cc8f84a3743b647f4034e7477bf64e0ed579c7e6351608bb9df4",
+      "editorial-svg-diagrams/scripts/export_svg.py": "d6d05968cc6fab01e4d8fd91ff56ddc3e7e3a03019decd6102118296f9eaae2a",
+      "editorial-svg-diagrams/scripts/build_examples.py": "0d9d3dfaf5ad3e7e16ef9318761eacf2db21bfe81f7d6794a7568725541735e2",
+      "editorial-svg-diagrams/assets/reference-handshake-crop.png": "347133418bd3666f738cfa2efcd0829be135569e0388200a8a9452634a4c5e0d",
+      "editorial-svg-diagrams/assets/codebase-architecture.svg": "48ad73f5043e28ab04ea44b53e9fa6722fc4524eef7c3c0a5f828a7ead5e04fb",
+      "editorial-svg-diagrams/assets/starter.svg": "88e9e36ebc873aac020c56f1e252e789c50c01a896381d18954aba06ed9cc004",
+      "editorial-svg-diagrams/assets/pc-connection.svg": "b2b690aab8d62ed949ef6513fa693e115d0275fe27ea2b184ea7a712970868dd",
+      "editorial-svg-diagrams/assets/tcp-handshake.dark.svg": "8145bf9d8ddd1fd9417731b5921a643683fc2576727b0339f5b05161a58e71e0",
+      "editorial-svg-diagrams/assets/pc-connection.dark.svg": "319283d2c035569c497b56884c5c68e718a9d76647e5f15ce29187a98819a8c5",
+      "editorial-svg-diagrams/assets/icon.svg": "1bf94fedd4499d77c65f7104675ad1c91aa1885bde12a329d06e7da0c4b38cce",
+      "editorial-svg-diagrams/assets/entropy-possibilities.dark.svg": "c8945fbdba0c96caed021f762f9fdccc66c5e7aff618f1193dafb8512638ae36",
+      "editorial-svg-diagrams/assets/tcp-handshake.svg": "59d9a532b1417e98b1112ff4d08c93c557a77b575a76c92be1565b9f1d45b00f",
+      "editorial-svg-diagrams/assets/starter.dark.svg": "b2fae38a84e6bf4aaad14b3956703a48b71bdc1767b689acb07cf58ecd4caa3c",
+      "editorial-svg-diagrams/assets/entropy-possibilities.svg": "58c64f7c22076513a5699bb02217ff3970092eccd6332a52c4f5e12d4b3662a4",
+      "editorial-svg-diagrams/assets/anti-pattern-handshake.png": "00ffb120094ff2be047f2ab3631609df92155f1d2a54e409cd19322c66d418ac",
+      "editorial-svg-diagrams/assets/packet-encapsulation.svg": "0fce4655fb5058b802a2276d55ce53fd7944fe8d421357195bcc0aa8924b72bf",
+      "editorial-svg-diagrams/assets/osi-layers.dark.svg": "fe9c34d71061d66f69ffde18612dd17b4f92236932d9a833e7526f06c752b182",
+      "editorial-svg-diagrams/assets/codebase-architecture.dark.svg": "d5de23a2c1a3e7d03b4654dbee5b70656303c048496dbe0602670a110952eac9",
+      "editorial-svg-diagrams/assets/packet-encapsulation.dark.svg": "01bc2ce5e78b498119d1bb1fabf7e6ecfef68493ce3aa6aec2ebe7fcb34bc9d4",
+      "editorial-svg-diagrams/assets/osi-layers.svg": "8016d3b7d4dacff7eb0aad147f174cc733c62bbd51b955cc32791748d759df41",
+      "editorial-svg-diagrams/agents/openai.yaml": "4fc18c7315f3b413a6164f97aec0d524180666497f32286874bf6797350d37c5",
+      "editorial-svg-diagrams/references/embedding-and-formats.md": "ba5f9330399094c3369d3fa109bf78d0d1e5918f71a767aad14579331f052b2f",
+      "editorial-svg-diagrams/references/visual-patterns.md": "be983662e6692a5b24ff071e707500fbbdc1a107e88f614117f98085aad240ed",
+      "editorial-svg-diagrams/references/svg-construction.md": "add3c9e872467a668dc632fa69466ed51fd73dc21a9dceadfc5d5d21fa9134fa",
+      "editorial-svg-diagrams/references/reference-contrast.md": "5303a8fafae17608fcead3b2d25899a5e8cfe53d8b604a71ea5567b79d4c7b16"
+    },
+    "editorial-svg-testgrafiken.zip": {
+      "testgrafiken/binary-search.dark.svg": "f95a92bc4a4caa21fd56e2de3b74abe149966572f383e145cfac2d0e93beb289",
+      "testgrafiken/binary-search.pdf": "39eb2d56432f0453d9a0fb9bed107e37f55f8b85a6c63b53b9564c06e3e7e42a",
+      "testgrafiken/binary-search.svg": "f39e4692af27d16a8ef5cb83a743f02ef554325833f38e412a2007aae3b96a52",
+      "testgrafiken/cache-hit-miss.dark.svg": "a4c74f0a4934e3505ee8de606f7caf2ad896503a2894de30dfb36f673525c4ff",
+      "testgrafiken/cache-hit-miss.pdf": "ac184e1230620876b3cb31c62ddcf46b84f9bb3b67db65e9475bb8843cdad6b0",
+      "testgrafiken/cache-hit-miss.svg": "b6d70047d14e9e422d88a8ef2ce92977f119ad6b29eb6fc7832108360f66ee88",
+      "testgrafiken/debouncing.dark.svg": "cc04ddb6f44be6bb236fc3b294edb22bc2aaee8e46cb7209957ab6af9e0d3479",
+      "testgrafiken/debouncing.pdf": "7f461f773ca19586e3ea6e1ba6d84cb7057d34196309882cae4204976118d1db",
+      "testgrafiken/debouncing.svg": "b2fbb4dacfdb4a6fd884bce6c02872e0355cdc6f48a1099a3dd1cbca4cd565b0",
+      "testgrafiken/generate_tests.py": "fa54779195fb71d36106cc64b8b82019ddfd2d0d6b112596e2653c54fe2181bf"
+    }
+  }
+}

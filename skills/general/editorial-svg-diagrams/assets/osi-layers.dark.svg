@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="595" height="383" viewBox="0 0 595 383" role="img" aria-labelledby="osilayers-title osilayers-desc">
+<title id="osilayers-title">OSI layer stack</title>
+<desc id="osilayers-desc">Seven OSI layers arranged top to bottom with simple example protocols or responsibilities.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="osilayers-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="osilayers-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="14" y="6" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="36" class="f-whitetxt label" text-anchor="start" >7</text>
+<text x="90" y="35" class="f-whitetxt small" text-anchor="start" >Application</text>
+<text x="548" y="35" class="f-whitetxt small" text-anchor="end" >HTTP</text>
+<rect x="14" y="59" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="89" class="f-whitetxt label" text-anchor="start" >6</text>
+<text x="90" y="88" class="f-whitetxt small" text-anchor="start" >Presentation</text>
+<text x="548" y="88" class="f-whitetxt small" text-anchor="end" >Kodierung</text>
+<rect x="14" y="112" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="142" class="f-whitetxt label" text-anchor="start" >5</text>
+<text x="90" y="141" class="f-whitetxt small" text-anchor="start" >Session</text>
+<text x="548" y="141" class="f-whitetxt small" text-anchor="end" >Sitzung</text>
+<rect x="14" y="165" width="566" height="45" rx="8" class="f-teal" />
+<text x="44" y="195" class="f-whitetxt label" text-anchor="start" >4</text>
+<text x="90" y="194" class="f-whitetxt small" text-anchor="start" >Transport</text>
+<text x="548" y="194" class="f-whitetxt small" text-anchor="end" >TCP / UDP</text>
+<rect x="14" y="218" width="566" height="45" rx="8" class="f-green" />
+<text x="44" y="248" class="f-whitetxt label" text-anchor="start" >3</text>
+<text x="90" y="247" class="f-whitetxt small" text-anchor="start" >Network</text>
+<text x="548" y="247" class="f-whitetxt small" text-anchor="end" >IP</text>
+<rect x="14" y="271" width="566" height="45" rx="8" class="f-ochre" />
+<text x="44" y="301" class="f-whitetxt label" text-anchor="start" >2</text>
+<text x="90" y="300" class="f-whitetxt small" text-anchor="start" >Data Link</text>
+<text x="548" y="300" class="f-whitetxt small" text-anchor="end" >Ethernet</text>
+<rect x="14" y="324" width="566" height="45" rx="8" class="f-brown" />
+<text x="44" y="354" class="f-whitetxt label" text-anchor="start" >1</text>
+<text x="90" y="353" class="f-whitetxt small" text-anchor="start" >Physical</text>
+<text x="548" y="353" class="f-whitetxt small" text-anchor="end" >Signale</text>
+</svg>

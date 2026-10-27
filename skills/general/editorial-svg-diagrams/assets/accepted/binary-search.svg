@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="315" viewBox="0 0 850 315" role="img" aria-labelledby="binary-search-title binary-search-desc">
+<title id="binary-search-title">Binary search narrows the candidate interval</title>
+<desc id="binary-search-desc">Searching sorted values for 26. The compared midpoint is 12, then 21, then 26. The possible interval halves with each comparison.</desc>
+<style><![CDATA[
+    text { font-family: Arial, Helvetica, sans-serif; font-weight: 500; }
+    .label { font-size: 22px; font-weight: 600; }
+    .small { font-size: 18px; font-weight: 600; }
+    .number { font-size: 24px; font-weight: 600; }
+    .chip-number { font-size: 27px; font-weight: 700; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+    .f-ink { fill: #263340; } .s-ink { stroke: #263340; }
+    .f-muted { fill: #657381; } .s-muted { stroke: #657381; }
+    .s-guide { stroke: #C9D3DA; } .s-faint { stroke: #DCE3E8; }
+    .f-blue { fill: #397DA9; } .s-blue { stroke: #397DA9; }
+    .f-teal { fill: #0F8E86; } .s-teal { stroke: #0F8E86; }
+    .f-bluewash { fill: #EAF2F9; } .f-tealwash { fill: #E0F4F0; }
+    .f-whitetxt { fill: #FFFFFF; }
+
+@media (prefers-color-scheme: dark) {
+    text { font-family: Arial, Helvetica, sans-serif; font-weight: 500; }
+    .label { font-size: 22px; font-weight: 600; }
+    .small { font-size: 18px; font-weight: 600; }
+    .number { font-size: 24px; font-weight: 600; }
+    .chip-number { font-size: 27px; font-weight: 700; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+    .f-ink { fill: #EEF3F6; } .s-ink { stroke: #EEF3F6; }
+    .f-muted { fill: #AEBAC2; } .s-muted { stroke: #AEBAC2; }
+    .s-guide { stroke: #4A555F; } .s-faint { stroke: #303B43; }
+    .f-blue { fill: #528FB9; } .s-blue { stroke: #528FB9; }
+    .f-teal { fill: #1DA8A0; } .s-teal { stroke: #1DA8A0; }
+    .f-bluewash { fill: #172A39; } .f-tealwash { fill: #142F2C; }
+    .f-whitetxt { fill: #FFFFFF; }
+    }
+]]></style>
+<defs>
+<marker id="binary-search-blue-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-blue" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="binary-search-teal-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-teal" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="binary-search-guide-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-muted" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="22" y="67" class="f-muted small" text-anchor="start" >Ziel</text>
+<rect x="17" y="79" width="92" height="59" rx="11" class="f-teal" />
+<text x="63" y="116" class="f-whitetxt chip-number" text-anchor="middle" >26</text>
+<rect x="148" y="19" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<text x="187.0" y="60" class="f-muted number" text-anchor="middle" >2</text>
+<rect x="235" y="19" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<text x="274.0" y="60" class="f-muted number" text-anchor="middle" >5</text>
+<rect x="322" y="19" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<text x="361.0" y="60" class="f-muted number" text-anchor="middle" >8</text>
+<rect x="409" y="19" width="78" height="63" rx="11" class="f-blue" />
+<text x="448.0" y="60" class="f-whitetxt number" text-anchor="middle" >12</text>
+<rect x="496" y="19" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="496" y="19" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<text x="535.0" y="60" class="f-ink number" text-anchor="middle" >17</text>
+<rect x="583" y="19" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="583" y="19" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<text x="622.0" y="60" class="f-ink number" text-anchor="middle" >21</text>
+<rect x="670" y="19" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="670" y="19" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<text x="709.0" y="60" class="f-ink number" text-anchor="middle" >26</text>
+<rect x="757" y="19" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="757" y="19" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<text x="796.0" y="60" class="f-ink number" text-anchor="middle" >31</text>
+<rect x="148" y="125" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="235" y="125" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="322" y="125" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="409" y="125" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="496" y="125" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="583" y="125" width="78" height="63" rx="11" class="f-blue" />
+<text x="622.0" y="166" class="f-whitetxt number" text-anchor="middle" >21</text>
+<rect x="670" y="125" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="670" y="125" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<rect x="757" y="125" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="757" y="125" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<rect x="148" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="235" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="322" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="409" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="496" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="583" y="231" width="78" height="63" rx="11"  fill="none" class="s-faint" stroke-width="2.2"/>
+<rect x="670" y="231" width="78" height="63" rx="11" class="f-teal" />
+<text x="709.0" y="272" class="f-whitetxt number" text-anchor="middle" >26</text>
+<rect x="757" y="231" width="78" height="63" rx="11" class="f-tealwash" />
+<rect x="757" y="231" width="78" height="63" rx="11"  fill="none" class="s-teal" stroke-width="2.3"/>
+<path d="M683 94 V112" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#binary-search-guide-arr)"/>
+<path d="M724 201 V218" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#binary-search-guide-arr)"/>
+</svg>

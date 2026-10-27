@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="262" viewBox="0 0 768 262" role="img" aria-labelledby="endpoint-title endpoint-desc">
+<title id="endpoint-title">Two computers communicating via TCP</title>
+<desc id="endpoint-desc">PC Y at 192.168.1.20:53124 connects to server PC X at 192.168.1.10:8080 and receives a reply.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="endpoint-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="endpoint-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="16" y="22" width="194" height="220" rx="16" class="f-tealwash" />
+<rect x="16" y="22" width="194" height="220" rx="16" fill="none" class="s-teal" stroke-width="2.5"/>
+<rect x="78" y="47" width="70" height="47" rx="6" fill="none" class="s-teal" stroke-width="3"/>
+<path d="M113 94 L113 104" fill="none" class="s-teal" stroke-width="3" stroke-linecap="round" />
+<path d="M97 104 L129 104" fill="none" class="s-teal" stroke-width="3" stroke-linecap="round" />
+<text x="113" y="139" class="f-ink label" text-anchor="middle" >PC X</text>
+<text x="113" y="174" class="f-muted small mono" text-anchor="middle" >192.168.1.10</text>
+<text x="113" y="203" class="f-muted small" text-anchor="middle" >Port 8080</text>
+<rect x="556" y="22" width="194" height="220" rx="16" class="f-bluewash" />
+<rect x="556" y="22" width="194" height="220" rx="16" fill="none" class="s-blue" stroke-width="2.5"/>
+<rect x="618" y="47" width="70" height="47" rx="6" fill="none" class="s-blue" stroke-width="3"/>
+<path d="M653 94 L653 104" fill="none" class="s-blue" stroke-width="3" stroke-linecap="round" />
+<path d="M637 104 L669 104" fill="none" class="s-blue" stroke-width="3" stroke-linecap="round" />
+<text x="653" y="139" class="f-ink label" text-anchor="middle" >PC Y</text>
+<text x="653" y="174" class="f-muted small mono" text-anchor="middle" >192.168.1.20</text>
+<text x="653" y="203" class="f-muted small" text-anchor="middle" >Port 53124</text>
+<path d="M556 100 H219" fill="none" class="s-teal" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#endpoint-teal-arrow)" />
+<text x="384" y="87" class="f-ink small" text-anchor="middle" >connect</text>
+<path d="M219 170 H556" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#endpoint-blue-arrow)" stroke-dasharray="6 7"/>
+<text x="384" y="160" class="f-ink small" text-anchor="middle" >Antwort</text>
+</svg>

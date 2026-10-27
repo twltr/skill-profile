@@ -1,53 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="806" viewBox="0 0 1000 806" role="img" aria-labelledby="osi-title osi-desc">
-<title id="osi-title">Seven OSI networking layers</title>
-<desc id="osi-desc">Seven horizontal bands from application and presentation to physical, with protocol examples.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="595" height="383" viewBox="0 0 595 383" role="img" aria-labelledby="osilayers-title osilayers-desc">
+<title id="osilayers-title">OSI layer stack</title>
+<desc id="osilayers-desc">Seven OSI layers arranged top to bottom with simple example protocols or responsibilities.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #1C2936; }
+.s-ink { stroke: #1C2936; }
+.f-muted { fill: #5A6672; }
+.s-muted { stroke: #5A6672; }
+.f-guide { fill: #B2BDC7; }
+.s-guide { stroke: #B2BDC7; }
+.f-border { fill: #BCC6CF; }
+.s-border { stroke: #BCC6CF; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137B77; }
+.s-teal { stroke: #137B77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #E9F1F8; }
+.f-tealwash { fill: #E6F5F2; }
+.f-greenwash { fill: #EAF4ED; }
+.f-neutralwash { fill: #F2F5F7; }
+.f-soft { fill: #778590; }
+.s-soft { stroke: #778590; }
+.f-whitetxt { fill: #FFFFFF; }
+@media (prefers-color-scheme: dark) {
+  .f-ink { fill: #F1F4F6; }
+  .s-ink { stroke: #F1F4F6; }
+  .f-muted { fill: #B2BAC1; }
+  .s-muted { stroke: #B2BAC1; }
+  .f-guide { fill: #49545C; }
+  .s-guide { stroke: #49545C; }
+  .f-border { fill: #444B50; }
+  .s-border { stroke: #444B50; }
+  .f-blue { fill: #3979A5; }
+  .s-blue { stroke: #3979A5; }
+  .f-teal { fill: #137D77; }
+  .s-teal { stroke: #137D77; }
+  .f-green { fill: #397654; }
+  .s-green { stroke: #397654; }
+  .f-ochre { fill: #95622F; }
+  .s-ochre { stroke: #95622F; }
+  .f-brown { fill: #8B6058; }
+  .s-brown { stroke: #8B6058; }
+  .f-bluewash { fill: #14232E; }
+  .f-tealwash { fill: #102825; }
+  .f-greenwash { fill: #14271C; }
+  .f-neutralwash { fill: #171C20; }
+  .f-soft { fill: #808990; }
+  .s-soft { stroke: #808990; }
+  .f-whitetxt { fill: #FFFFFF; }
+}
+]]></style>
 <defs>
-      <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-        <path d="M1 1 L9 5 L1 9Z" fill="#356F9F"/>
-      </marker>
-      <marker id="teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-        <path d="M1 1 L9 5 L1 9Z" fill="#237C77"/>
-      </marker>
-      <marker id="green-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-        <path d="M1 1 L9 5 L1 9Z" fill="#3E805C"/>
-      </marker>
-    </defs>
-<rect x="0" y="0" width="1000" height="806" rx="0" fill="#F7F9FC"/>
-<text x="56" y="42" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#356F9F">NETWORK REFERENCE</text>
-<text x="56" y="85" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="start" fill="#172738">The seven OSI layers</text>
-<text x="56" y="116" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#566779">From application meaning to physical signal transmission.</text><rect x="56" y="147" width="888" height="79" rx="12" fill="#285E83"/>
-<rect x="68" y="159" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="196" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">7</text>
-<text x="157" y="182" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Application  /  Anwendung</text>
-<text x="157" y="207" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">HTTP  |  DNS  |  SMTP</text>
-<rect x="56" y="234" width="888" height="79" rx="12" fill="#337193"/>
-<rect x="68" y="246" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="283" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">6</text>
-<text x="157" y="269" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Presentation  /  Darstellung</text>
-<text x="157" y="294" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Encoding  |  encryption concepts</text>
-<rect x="56" y="321" width="888" height="79" rx="12" fill="#407E9A"/>
-<rect x="68" y="333" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="370" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
-<text x="157" y="356" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Session  /  Sitzung</text>
-<text x="157" y="381" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Session management concepts</text>
-<rect x="56" y="408" width="888" height="79" rx="12" fill="#237C77"/>
-<rect x="68" y="420" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="457" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text>
-<text x="157" y="443" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Transport  /  Transportebene</text>
-<text x="157" y="468" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">TCP  |  UDP</text>
-<rect x="56" y="495" width="888" height="79" rx="12" fill="#3E805C"/>
-<rect x="68" y="507" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="544" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text>
-<text x="157" y="530" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Network  /  Vermittlung</text>
-<text x="157" y="555" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">IPv4  |  IPv6  |  ICMP</text>
-<rect x="56" y="582" width="888" height="79" rx="12" fill="#986934"/>
-<rect x="68" y="594" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="631" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
-<text x="157" y="617" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Data Link  /  Sicherung</text>
-<text x="157" y="642" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Ethernet  |  WLAN-MAC</text>
-<rect x="56" y="669" width="888" height="79" rx="12" fill="#805B53"/>
-<rect x="68" y="681" width="64" height="55" rx="9" fill="#FFFFFF" opacity="0.14"/>
-<text x="100" y="718" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text>
-<text x="157" y="704" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="start" fill="#FFFFFF">Physical  /  Bitübertragung</text>
-<text x="157" y="729" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#F2F8FA">Copper  |  optical fiber  |  radio</text>
-<text x="56" y="789" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#566779">Conceptual teaching model; real protocol stacks do not map perfectly to seven layers.</text></svg>
+  <marker id="osilayers-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="osilayers-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="14" y="6" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="36" class="f-whitetxt label" text-anchor="start" >7</text>
+<text x="90" y="35" class="f-whitetxt small" text-anchor="start" >Application</text>
+<text x="548" y="35" class="f-whitetxt small" text-anchor="end" >HTTP</text>
+<rect x="14" y="59" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="89" class="f-whitetxt label" text-anchor="start" >6</text>
+<text x="90" y="88" class="f-whitetxt small" text-anchor="start" >Presentation</text>
+<text x="548" y="88" class="f-whitetxt small" text-anchor="end" >Kodierung</text>
+<rect x="14" y="112" width="566" height="45" rx="8" class="f-blue" />
+<text x="44" y="142" class="f-whitetxt label" text-anchor="start" >5</text>
+<text x="90" y="141" class="f-whitetxt small" text-anchor="start" >Session</text>
+<text x="548" y="141" class="f-whitetxt small" text-anchor="end" >Sitzung</text>
+<rect x="14" y="165" width="566" height="45" rx="8" class="f-teal" />
+<text x="44" y="195" class="f-whitetxt label" text-anchor="start" >4</text>
+<text x="90" y="194" class="f-whitetxt small" text-anchor="start" >Transport</text>
+<text x="548" y="194" class="f-whitetxt small" text-anchor="end" >TCP / UDP</text>
+<rect x="14" y="218" width="566" height="45" rx="8" class="f-green" />
+<text x="44" y="248" class="f-whitetxt label" text-anchor="start" >3</text>
+<text x="90" y="247" class="f-whitetxt small" text-anchor="start" >Network</text>
+<text x="548" y="247" class="f-whitetxt small" text-anchor="end" >IP</text>
+<rect x="14" y="271" width="566" height="45" rx="8" class="f-ochre" />
+<text x="44" y="301" class="f-whitetxt label" text-anchor="start" >2</text>
+<text x="90" y="300" class="f-whitetxt small" text-anchor="start" >Data Link</text>
+<text x="548" y="300" class="f-whitetxt small" text-anchor="end" >Ethernet</text>
+<rect x="14" y="324" width="566" height="45" rx="8" class="f-brown" />
+<text x="44" y="354" class="f-whitetxt label" text-anchor="start" >1</text>
+<text x="90" y="353" class="f-whitetxt small" text-anchor="start" >Physical</text>
+<text x="548" y="353" class="f-whitetxt small" text-anchor="end" >Signale</text>
+</svg>

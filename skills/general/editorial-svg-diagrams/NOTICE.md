@@ -20,3 +20,26 @@ Review adaptations preserve the supplied diagram method and example artwork:
 
 The structural preflight remains a linter, not a hostile-input sanitizer or a
 substitute for visual inspection.
+
+## 2026-10-23 visual-first revision
+
+Imported the user-supplied revised skill.zip and editorial-svg-testgrafiken.zip.
+source-manifest-20261023.json records archive and original file hashes. The
+three accepted test figures and their dark variants are included as explicit
+regression references. The earlier source manifest remains historical evidence.
+
+Local adaptations retain supported invocation metadata and the existing
+finite-number / event-attribute validation fixes. Helper paths are resolved
+from the skill directory. The light/dark foreground sentence was corrected
+to use dark foreground on light surfaces and light foreground on dark surfaces.
+Whitespace-only lines in the accepted SVG examples were normalized; their
+geometry and text are unchanged. No additional license or redistribution rights
+are inferred from this import.
+
+## 2026-10-23 representation and geometry clarification
+
+User feedback made per-figure representation choice and clean geometric
+construction explicit: compare useful alternatives before drawing, align peer
+elements and spacing, plan clear connector routes, and judge the rendered result
+beyond structural lint. This changes the authoring method, not the imported
+example artwork, provenance records or invocation policy.

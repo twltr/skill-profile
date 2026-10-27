@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="310" viewBox="0 0 870 310" role="img" aria-labelledby="debounce-title debounce-desc">
+<title id="debounce-title">Debouncing groups events into two actions</title>
+<desc id="debounce-desc">Six input events arrive in two clusters. With 120 milliseconds of quiet time required, only one action fires after each cluster.</desc>
+<style><![CDATA[
+    text { font-family: Arial, Helvetica, sans-serif; font-weight: 500; }
+    .label { font-size: 22px; font-weight: 600; }
+    .small { font-size: 18px; font-weight: 600; }
+    .number { font-size: 24px; font-weight: 600; }
+    .chip-number { font-size: 27px; font-weight: 700; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+    .f-ink { fill: #EEF3F6; } .s-ink { stroke: #EEF3F6; }
+    .f-muted { fill: #AEBAC2; } .s-muted { stroke: #AEBAC2; }
+    .s-guide { stroke: #4A555F; } .s-faint { stroke: #303B43; }
+    .f-blue { fill: #528FB9; } .s-blue { stroke: #528FB9; }
+    .f-teal { fill: #1DA8A0; } .s-teal { stroke: #1DA8A0; }
+    .f-bluewash { fill: #172A39; } .f-tealwash { fill: #142F2C; }
+    .f-whitetxt { fill: #FFFFFF; }
+    ]]></style>
+<defs>
+<marker id="debounce-blue-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-blue" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="debounce-teal-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-teal" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="debounce-guide-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-muted" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<path d="M158 90 H832" fill="none" class="s-guide" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#debounce-guide-arr)"/>
+<path d="M158 233 H832" fill="none" class="s-guide" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#debounce-guide-arr)"/>
+<text x="18" y="97" class="f-ink small" text-anchor="start" >Eingaben</text>
+<text x="18" y="240" class="f-ink small" text-anchor="start" >Aktion</text>
+<rect x="166" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="172" cy="66" r="4" class="f-blue"/>
+<rect x="214" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="220" cy="66" r="4" class="f-blue"/>
+<rect x="262" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="268" cy="66" r="4" class="f-blue"/>
+<rect x="310" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="316" cy="66" r="4" class="f-blue"/>
+<rect x="540" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="546" cy="66" r="4" class="f-blue"/>
+<rect x="588" y="66" width="12" height="48" rx="6" class="f-blue" />
+<circle cx="594" cy="66" r="4" class="f-blue"/>
+<path d="M316 138 V149 H444 V138" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M444 149 V205" fill="none" class="s-guide" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 7"/>
+<circle cx="444" cy="233" r="29" fill="none" class="s-teal" stroke-width="2" opacity="0.29"/>
+<circle cx="444" cy="233" r="15.5" class="f-teal"/>
+<circle cx="444" cy="233" r="4.5" class="f-whitetxt"/>
+<path d="M594 138 V149 H722 V138" fill="none" class="s-muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M722 149 V205" fill="none" class="s-guide" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 7"/>
+<circle cx="722" cy="233" r="29" fill="none" class="s-teal" stroke-width="2" opacity="0.29"/>
+<circle cx="722" cy="233" r="15.5" class="f-teal"/>
+<circle cx="722" cy="233" r="4.5" class="f-whitetxt"/>
+<text x="380" y="179" class="f-muted small" text-anchor="middle" >120 ms</text>
+</svg>

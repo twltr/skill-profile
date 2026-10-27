@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="396" viewBox="0 0 870 396" role="img" aria-labelledby="cache-path-title cache-path-desc">
+<title id="cache-path-title">Cache hit and cache miss</title>
+<desc id="cache-path-desc">Cache hit: request returns from cache without visiting the database. Cache miss: request continues to the database and its response returns via cache.</desc>
+<style><![CDATA[
+    text { font-family: Arial, Helvetica, sans-serif; font-weight: 500; }
+    .label { font-size: 22px; font-weight: 600; }
+    .small { font-size: 18px; font-weight: 600; }
+    .number { font-size: 24px; font-weight: 600; }
+    .chip-number { font-size: 27px; font-weight: 700; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+    .f-ink { fill: #263340; } .s-ink { stroke: #263340; }
+    .f-muted { fill: #657381; } .s-muted { stroke: #657381; }
+    .s-guide { stroke: #C9D3DA; } .s-faint { stroke: #DCE3E8; }
+    .f-blue { fill: #397DA9; } .s-blue { stroke: #397DA9; }
+    .f-teal { fill: #0F8E86; } .s-teal { stroke: #0F8E86; }
+    .f-bluewash { fill: #EAF2F9; } .f-tealwash { fill: #E0F4F0; }
+    .f-whitetxt { fill: #FFFFFF; }
+
+@media (prefers-color-scheme: dark) {
+    text { font-family: Arial, Helvetica, sans-serif; font-weight: 500; }
+    .label { font-size: 22px; font-weight: 600; }
+    .small { font-size: 18px; font-weight: 600; }
+    .number { font-size: 24px; font-weight: 600; }
+    .chip-number { font-size: 27px; font-weight: 700; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+    .f-ink { fill: #EEF3F6; } .s-ink { stroke: #EEF3F6; }
+    .f-muted { fill: #AEBAC2; } .s-muted { stroke: #AEBAC2; }
+    .s-guide { stroke: #4A555F; } .s-faint { stroke: #303B43; }
+    .f-blue { fill: #528FB9; } .s-blue { stroke: #528FB9; }
+    .f-teal { fill: #1DA8A0; } .s-teal { stroke: #1DA8A0; }
+    .f-bluewash { fill: #172A39; } .f-tealwash { fill: #142F2C; }
+    .f-whitetxt { fill: #FFFFFF; }
+    }
+]]></style>
+<defs>
+<marker id="cache-path-blue-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-blue" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="cache-path-teal-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-teal" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="cache-path-guide-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" class="s-muted" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="198" y="29" class="f-ink small" text-anchor="middle" >Client</text>
+<text x="457" y="29" class="f-ink small" text-anchor="middle" >Cache</text>
+<text x="720" y="29" class="f-ink small" text-anchor="middle" >Datenbank</text>
+<path d="M25 200 H850" fill="none" class="s-guide" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 9"/>
+<text x="27" y="124" class="f-teal label" text-anchor="start" >HIT</text>
+<text x="27" y="317" class="f-blue label" text-anchor="start" >MISS</text>
+<path d="M252 95 H409" fill="none" class="s-blue" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-blue-arr)"/>
+<path d="M409 132 H252" fill="none" class="s-teal" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-teal-arr)"/>
+<path d="M252 289 H409" fill="none" class="s-blue" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-blue-arr)"/>
+<path d="M409 326 H252" fill="none" class="s-teal" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-teal-arr)"/>
+<path d="M508 289 H677" fill="none" class="s-blue" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-blue-arr)"/>
+<path d="M677 326 H508" fill="none" class="s-teal" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cache-path-teal-arr)"/>
+<rect x="159" y="76" width="78" height="54" rx="8"  fill="none" class="s-ink" stroke-width="2.7"/>
+<path d="M198 130 V141 M174 142 H222" fill="none" class="s-ink" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="414" y="83" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="83" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="92" r="3.2" class="f-teal"/>
+<rect x="414" y="106" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="106" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="115" r="3.2" class="f-teal"/>
+<rect x="414" y="129" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="129" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="138" r="3.2" class="f-teal"/>
+<g opacity="0.38">
+<rect x="686" y="87" width="68" height="60" rx="0" class="f-bluewash" />
+<path d="M686 87 V138 Q720 159 754 138 V87" fill="none" class="s-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="720" cy="87" rx="34" ry="12" fill="none" class="s-ink" stroke-width="2.5"/>
+<path d="M686 113 Q720 134 754 113" fill="none" class="s-guide" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<rect x="159" y="270" width="78" height="54" rx="8"  fill="none" class="s-ink" stroke-width="2.7"/>
+<path d="M198 324 V335 M174 336 H222" fill="none" class="s-ink" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="414" y="277" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="277" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="286" r="3.2" class="f-teal"/>
+<rect x="414" y="300" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="300" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="309" r="3.2" class="f-teal"/>
+<rect x="414" y="323" width="86" height="19" rx="5" class="f-tealwash" />
+<rect x="414" y="323" width="86" height="19" rx="5"  fill="none" class="s-teal" stroke-width="2.4"/>
+<circle cx="486" cy="332" r="3.2" class="f-teal"/>
+<g>
+<rect x="686" y="281" width="68" height="60" rx="0" class="f-bluewash" />
+<path d="M686 281 V332 Q720 353 754 332 V281" fill="none" class="s-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="720" cy="281" rx="34" ry="12" fill="none" class="s-ink" stroke-width="2.5"/>
+<path d="M686 307 Q720 328 754 307" fill="none" class="s-guide" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+</svg>

@@ -108,7 +108,7 @@ the included collection above.
 
 | Skill | Canonical source | Purpose and local binding |
 |---|---|---|
-| `judgment` | [`twltr/judgment`, `skills/judgment/`](https://github.com/twltr/judgment/tree/main/skills/judgment) | Evidence-based review of claims, uncertainty and subsequent review through a portable JSON/Markdown case package. The Codex copy is `~/.codex/skills/judgment/`; the optional local `judgment` command supplies its isolated Python runtime. Skill discovery and factual evaluation remain separate checks. |
+| `judgment` | [`twltr/judgment`, `skills/judgment/`](https://github.com/twltr/judgment/tree/main/skills/judgment) | Neutral judge coordinating native defense and challenge teams for each claim, with multiple specialists per side as needed. Portable JSON/Markdown packages preserve evidence, uncertainty, actual assignments and subsequent review; no automatic single-agent fallback. The Codex copy is `~/.codex/skills/judgment/`; the optional local `judgment` command supplies its isolated Python runtime. Skill discovery and factual evaluation remain separate checks. |
 
 ## Catalog-only external skills
 

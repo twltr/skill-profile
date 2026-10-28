@@ -100,6 +100,16 @@ The Pages plugin likewise remains host-managed. Each target host must expose
 its own skill catalog and actual tools. A missing dependency is reported; no
 skill is described as applied before its instructions have been read.
 
+## Project-owned skills
+
+These skills are linked here and maintained in their own repositories. Their
+installed directories are deployment copies; do not vendor a second source into
+the included collection above.
+
+| Skill | Canonical source | Purpose and local binding |
+|---|---|---|
+| `judgment` | [`twltr/judgment`, `skills/judgment/`](https://github.com/twltr/judgment/tree/main/skills/judgment) | Evidence-based review of claims, uncertainty and subsequent review through a portable JSON/Markdown case package. The Codex copy is `~/.codex/skills/judgment/`; the optional local `judgment` command supplies its isolated Python runtime. Skill discovery and factual evaluation remain separate checks. |
+
 ## Catalog-only external skills
 
 These skills are intentionally not copied into this repository. Pull them from

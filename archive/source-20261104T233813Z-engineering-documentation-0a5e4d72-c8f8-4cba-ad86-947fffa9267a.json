@@ -1,0 +1,37 @@
+{
+  "source_revision": "e94a45b10ab5083b5a7b9393f29e1a10ba2d6f86",
+  "reason": "Preserve released writing method and its five affected package owners before splitting engineering documentation from general technical writing.",
+  "packages": [
+    "skills/engineering/technical-writing",
+    "skills/general/good-writing",
+    "skills/engineering/engineering-review",
+    "skills/engineering/golden-comments",
+    "skills/engineering/road-to-glory"
+  ],
+  "archive": "archive/source-20261104T233813Z-engineering-documentation-0a5e4d72-c8f8-4cba-ad86-947fffa9267a.zip",
+  "files": {
+    "skills/engineering/engineering-review/LICENSE-Theo.txt": "8095f9a9f97d074131f6a2ce09b952d12c18b36f09f4e5df0517c4e64e82c851",
+    "skills/engineering/engineering-review/NOTICE.md": "c5f6bdedae3057b6f0f466e933d183af6ea063274a7f3f995b97acaf5e88cba5",
+    "skills/engineering/engineering-review/SKILL.md": "c329c38bf0645d8e1c11efe77c2e4c39de6c7b2b92bc1aed228a625393986262",
+    "skills/engineering/engineering-review/agents/openai.yaml": "b1229ca240d33ea0a24e5e4bb1014358ac783494a63e99c3ff23ed9e9a8db522",
+    "skills/engineering/engineering-review/assets/icon-small.svg": "9e01f10bf289fff0ad381728cc423438c11cec96b0f96717cc1c6ae22b97fe80",
+    "skills/engineering/engineering-review/assets/icon.svg": "9e01f10bf289fff0ad381728cc423438c11cec96b0f96717cc1c6ae22b97fe80",
+    "skills/engineering/golden-comments/SKILL.md": "7f93603c1e817b86e1492da262ef0bf642f3c7ac24292f2224552cb297aa14a3",
+    "skills/engineering/golden-comments/agents/openai.yaml": "310ddf937b63ff7c1531f3710fb8bc43e7842be812e150298c3f2030899758b3",
+    "skills/engineering/golden-comments/assets/icon-small.svg": "ae9e72a84a1aeb8cc844dfe8300d6994da0bc5b7a25e006d9e6d7f042239e1b0",
+    "skills/engineering/golden-comments/assets/icon.svg": "ae9e72a84a1aeb8cc844dfe8300d6994da0bc5b7a25e006d9e6d7f042239e1b0",
+    "skills/engineering/road-to-glory/NOTICE.md": "6885b6fa9b2ade9f56e5547f7bd22dfe2e2db15b3a5a199264f3a46bea5e1920",
+    "skills/engineering/road-to-glory/SKILL.md": "804cb244c5b21e4770c2db909aee92965693ba440e3ffab47055734afc17fed4",
+    "skills/engineering/road-to-glory/agents/openai.yaml": "97dc8425986b720a9acbfe0de759275081f80f8d29eea8fd1cecf9b4ab914aef",
+    "skills/engineering/road-to-glory/assets/icon-small.svg": "a53a44308b2b7c57fff5da5e6237b60f6b7fa02f14510f38059177f5938406a5",
+    "skills/engineering/road-to-glory/assets/icon.svg": "aca25154a103caa5ada69f46bd8ef905b84a8b0d825d0701623b1bb134eec6ec",
+    "skills/engineering/technical-writing/SKILL.md": "232de14a90c0ead00ccd361c7c6bfeda08aede5bb24a05f3d20f4376d2839c43",
+    "skills/engineering/technical-writing/agents/openai.yaml": "6b7ed549095a2148b230f3231e0595c54395738ddfa472c0f6fd53888e44f699",
+    "skills/engineering/technical-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/engineering/technical-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/good-writing/SKILL.md": "40f3a9dce79c3db96d2d3ccc21d1693c255640dfc662633f41b95fabbb13d59e",
+    "skills/general/good-writing/agents/openai.yaml": "5aba2b29718516dd0f593105b4482ff8a724a72d6b01d42ca305ec55732ae33a",
+    "skills/general/good-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/good-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee"
+  }
+}

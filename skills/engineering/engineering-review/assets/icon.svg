@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
-<title id="title">Engineering Review</title>
-<g aria-hidden="true"><circle cx="28" cy="27" r="17" fill="none" stroke="#F3F2EE" stroke-width="6.4" /><path d="M17 28L25 35L40 18" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M41 41L54 54" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M41 41L54 54" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
-<g><circle cx="28" cy="27" r="17" fill="none" stroke="#26364A" stroke-width="5"/><path d="M17 28L25 35L40 18" fill="#318F95" stroke="none" stroke-width="2.5"/><path d="M41 41L54 54" fill="#26364A" stroke="none" stroke-width="7"/><path d="M41 41L54 54" fill="#CF704D" stroke="none" stroke-width="3"/></g>
+<title id="title">Engineering Review: an open-ended wrench</title>
+<g aria-hidden="true"><path d="M56 10C61 18 58 28 51 33C47 35 43 35 39 33L17 55Q13 59 9 55Q5 51 9 47L31 25C29 22 29 18 31 14C33 9 39 6 44 7L40 17L46 23L53 20Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><circle cx="13" cy="51" r="2.4" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
+<g><path d="M56 10C61 18 58 28 51 33C47 35 43 35 39 33L17 55Q13 59 9 55Q5 51 9 47L31 25C29 22 29 18 31 14C33 9 39 6 44 7L40 17L46 23L53 20Z" fill="#527CAF" stroke="none" stroke-width="2.5"/><circle cx="13" cy="51" r="2.4" fill="#F3F2EE" stroke="none" stroke-width="2.5"/></g>
 </svg>

@@ -46,7 +46,12 @@ directly. A direct request needs no return to Good Writing.
 Choose this method when the document's authoritative inputs are specifications,
 verified product behavior or supplied technical material. If the requested result
 is maintained with a software repository—its README, agent instructions,
-architecture or SDK contracts—use Engineering Documentation when available.
+architecture or SDK contracts—Engineering Documentation owns it. On direct
+invocation, hand off once to that method when available; it completes the work
+without routing again. If Good Writing supplied the brief, return the scope
+mismatch to that active caller instead of selecting another writer. If the owning
+method is unavailable, report the limit and preserve the requested scope rather
+than pretending this manual workflow verified the repository.
 A vendor API manual can belong here; an SDK's code-owned reference belongs there.
 Missing repository access is a blocked source check, not permission to pretend
 its implementation was inspected. Do not re-enter an already active caller.

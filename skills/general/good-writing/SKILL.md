@@ -77,7 +77,11 @@ lookup and read its complete `SKILL.md` before applying it. In a filesystem runt
 use the configured skill roots; in a flat installation the file is the sibling
 `../<skill-name>/SKILL.md`. Absence from the automatic catalog alone does not mean
 uninstalled. Pass the existing brief, apply the method, then return the finished
-text to this task. Specialists never route back here or select another specialist.
+text to this task. Specialists never route back here. A directly invoked method
+that discovers a scope mismatch may hand off once to the correct sibling; the
+receiving method completes the task without routing again. A specialist selected
+by this router returns a scope mismatch to the active caller instead of choosing
+another writer. Good Writing remains the sole automatic router.
 
 Writing Fragments is a deliberate preparation dependency before the specialist
 route, not another automatic router. Its explicit-only policy remains in native

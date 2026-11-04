@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="370" viewBox="0 20 980 370" role="img" aria-labelledby="turn-title turn-desc">
+  <title id="turn-title">A turn is complete only after acceptance</title>
+  <desc id="turn-desc">Fictional model. Dispatch moves Queued to Running, owned by the worker. A result moves Running to Review, owned by the reviewer. Acceptance moves Review to Accepted. Requested changes return Review to Running. A missing prerequisite moves Running to Blocked; a resolved prerequisite returns Blocked to Running.</desc>
+  <defs>
+    <marker id="turn-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="turn-detour" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#E7B46E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#E2E8F0">
+
+<path d="M180 180 H280" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-arrow)"/>
+<text x="230" y="168" font-size="18" fill="#A9B7C7" text-anchor="middle" font-weight="400">dispatch</text>
+<path d="M440 180 H540" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-arrow)"/>
+<text x="490" y="168" font-size="18" fill="#A9B7C7" text-anchor="middle" font-weight="400">result</text>
+<path d="M700 180 H800" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-arrow)"/>
+<text x="750" y="168" font-size="18" fill="#A9B7C7" text-anchor="middle" font-weight="400">accept</text>
+<path d="M675 148 V58 H305 V148" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-arrow)"/>
+<text x="490" y="43" font-size="18" fill="#A9B7C7" text-anchor="middle" font-weight="400">changes</text>
+<path d="M315 212 V310" fill="none" stroke="#E7B46E" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-detour)"/>
+<text x="292" y="269" font-size="17" fill="#E7B46E" text-anchor="end" font-weight="400">missing prerequisite</text>
+<path d="M405 310 V212" fill="none" stroke="#E7B46E" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#turn-detour)"/>
+<text x="428" y="269" font-size="17" fill="#E7B46E" text-anchor="start" font-weight="400">prerequisite resolved</text>
+<rect x="20" y="148" width="160" height="64" rx="12" fill="#233142" stroke="#94A3B8" stroke-width="2"/>
+<text x="100" y="188" font-size="24" fill="#E2E8F0" text-anchor="middle" font-weight="600">Queued</text>
+<rect x="280" y="148" width="160" height="64" rx="12" fill="#133B52" stroke="#8CC6F1" stroke-width="2"/>
+<text x="360" y="188" font-size="24" fill="#E2E8F0" text-anchor="middle" font-weight="600">Running</text>
+<rect x="540" y="148" width="160" height="64" rx="12" fill="#143F3B" stroke="#75D6CB" stroke-width="2"/>
+<text x="620" y="188" font-size="24" fill="#E2E8F0" text-anchor="middle" font-weight="600">Review</text>
+<rect x="800" y="148" width="160" height="64" rx="12" fill="#143F3B" stroke="#75D6CB" stroke-width="2"/>
+<rect x="806" y="154" width="148" height="52" rx="7" fill="none" stroke="#75D6CB" stroke-width="1"/>
+<text x="880" y="188" font-size="24" fill="#E2E8F0" text-anchor="middle" font-weight="600">Accepted</text>
+<rect x="280" y="310" width="160" height="64" rx="12" fill="#4B3418" stroke="#E7B46E" stroke-width="2"/>
+<text x="360" y="350" font-size="24" fill="#E2E8F0" text-anchor="middle" font-weight="600">Blocked</text>
+<text x="360" y="130" font-size="16" fill="#8CC6F1" text-anchor="middle" font-weight="400">Worker</text>
+<text x="620" y="130" font-size="16" fill="#75D6CB" text-anchor="middle" font-weight="400">Reviewer</text>
+</g>
+</svg>

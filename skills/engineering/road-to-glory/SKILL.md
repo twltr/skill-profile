@@ -268,14 +268,14 @@ and recheck the corrected implementation. Passing this phase does not finish the
 
 Once the implementation is accepted, give its reviewed revision, behavior and
 changes to bounded documentation scouts through **Puppeteer**, when available.
-They inspect the affected README, setup instructions, contracts, diagrams and
+They inspect the affected README, repository agent instructions, setup instructions, contracts, diagrams and
 explanations, returning stale or missing material with exact locations and reasons.
 The main agent reconciles the findings and assigns the documentation update.
 
-Use **Good Writing** and its **Technical Writing** route when available, including
+Use **Good Writing** and its **Engineering Documentation** route when available, including
 **Unslop** when available for the assembled wording. Use **Editorial SVG Diagrams**
-when available for relationships or flows that a figure explains more clearly
-than paragraphs. Keep README purpose and quick start concise, link deeper durable
+when available to make relationships and flows visible and replace the paragraphs
+the figure makes unnecessary. Keep README purpose and quick start concise, link deeper durable
 knowledge and preserve essential reasons and conditions. No transient progress
 notes, "since the last update" appendices or agent diaries belong there; their
 owners are the plan, roadmap, issue, PR or changelog.

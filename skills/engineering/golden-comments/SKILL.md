@@ -1,6 +1,6 @@
 ---
 name: golden-comments
-description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Technical Writing route in Good Writing."
+description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Engineering Documentation route in Good Writing."
 ---
 
 # Golden Comments
@@ -12,7 +12,7 @@ what the statements do; repeating their syntax adds no understanding.
 Use this method when writing or changing source commentary, including
 within ordinary implementation. A comment-only assignment does not authorize a
 code redesign. This skill owns source commentary, not a system documentation book.
-For system books and READMEs, use Good Writing's Technical Writing route when
+For system books and READMEs, use Good Writing's Engineering Documentation route when
 those skills are available; otherwise document the limit and keep the explanation
 inside the explicitly requested scope.
 
@@ -58,6 +58,25 @@ Write coherent local prose rather than a stack of labels with no explanation.
 Keep a longer briefing when moving it elsewhere would separate a critical
 invariant from the mechanism. A module's domain and public-contract explanation
 keeps its canonical owner; link it instead of copying a documentation chapter.
+
+These are selection questions, not seven mandatory headings for every file. A
+short module docstring can establish purpose, dependency and one critical boundary:
+
+```python
+"""Apply accepted turn results through the event store's transaction boundary.
+
+Review decides acceptance; this module persists it with the cursor update.
+Both writes must commit together so recovery cannot skip an unapplied result.
+"""
+```
+
+This is a fictional example; verify the dependency and atomicity claim against
+the actual implementation. Put such a briefing at the file's natural entrypoint
+when it saves a reader from reconstructing the module's job. Keep it short and
+specific; obvious files need no ceremonial header. Detailed local reasons remain
+beside the mechanism. Use Domain Modeling for precise concepts and Vertical Slices
+for actual ownership and dependencies when those skills are available; a comment
+does not create a new contract or authorize restructuring the code.
 
 ## Explain where the voltage is
 

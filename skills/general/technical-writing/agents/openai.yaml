@@ -1,0 +1,13 @@
+interface:
+  display_name: Technical Writing
+  short_description: "Make technical manuals, procedures and references clear and usable"
+  default_prompt: Use $technical-writing to write or revise this technical manual
+    from its verified source material for its intended readers.
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: false
+  products:
+  - chatgpt
+  - codex
+  - atlas

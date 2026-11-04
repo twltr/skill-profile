@@ -22,7 +22,7 @@ supplementary Matt Pocock attribution where applicable.
 | <img src="skills/engineering/marshmallow-tests/assets/icon.svg" width="28" height="28" alt=""> [`marshmallow-tests`](skills/engineering/marshmallow-tests/SKILL.md) | Design tests around coherent units, invariants and precise failure addresses. |
 | <img src="skills/engineering/minmax-codebase/assets/icon.svg" width="28" height="28" alt=""> [`minmax-codebase`](skills/engineering/minmax-codebase/SKILL.md) | Human-initiated structural and architectural improvement; preserves agreed capability. |
 | <img src="skills/engineering/road-to-glory/assets/icon.svg" width="28" height="28" alt=""> [`road-to-glory`](skills/engineering/road-to-glory/SKILL.md) | Coordinate substantial work through versioned plans, conditional delegation, remote issues/PRs and separate implementation/documentation reviews before cleanup. |
-| <img src="skills/engineering/technical-writing/assets/icon.svg" width="28" height="28" alt=""> [`technical-writing`](skills/engineering/technical-writing/SKILL.md) | Explain repositories with purposeful Markdown, shallow topic groups and diagrams of relationships and behavior; callable through Good Writing or directly. |
+| <img src="skills/engineering/engineering-documentation/assets/icon.svg" width="28" height="28" alt=""> [`engineering-documentation`](skills/engineering/engineering-documentation/SKILL.md) | Maintain README, repository agent instructions and code-owned docs as distinct entrypoints to one system. Uses primary visual explanations and Synopsis's ordered chapters; [lineage and evidence](skills/engineering/engineering-documentation/NOTICE.md). |
 | <img src="skills/engineering/vertical-slices/assets/icon.svg" width="28" height="28" alt=""> [`vertical-slices`](skills/engineering/vertical-slices/SKILL.md) | Organize repository capabilities around clear owners and public boundaries. |
 
 ## Included General skills
@@ -43,6 +43,7 @@ supplementary Matt Pocock attribution where applicable.
 | <img src="skills/general/skill-issue/assets/icon.svg" width="28" height="28" alt=""> [`skill-issue`](skills/general/skill-issue/SKILL.md) | Repository-owned skill authoring and review method with early worked examples and explicit criteria for supporting files. Includes conditional installation guidance. Independently adapted from earlier Matt Pocock and OpenAI influences; [reviewed sources and adaptation](skills/general/skill-issue/NOTICE.md) record the current OpenAI snapshot. Both source licenses are preserved. |
 | <img src="skills/general/state-of-the-art/assets/icon.svg" width="28" height="28" alt=""> [`state-of-the-art`](skills/general/state-of-the-art/SKILL.md) | Repository-owned research method with problem-led discovery, current primary evidence, scoped alternatives and conditional agent challenge. [Provenance](skills/general/state-of-the-art/NOTICE.md). |
 | <img src="skills/general/svg-design/assets/icon.svg" width="28" height="28" alt=""> [`svg-design`](skills/general/svg-design/SKILL.md) | Locally maintained SVG design method for logos, icons, brand assets and website graphics. Includes eight technical references and a preview asset. The original installed files match an OpenData snapshot; [provenance and local changes](skills/general/svg-design/NOTICE.md), original hashes and MIT license are preserved. |
+| <img src="skills/general/technical-writing/assets/icon.svg" width="28" height="28" alt=""> [`technical-writing`](skills/general/technical-writing/SKILL.md) | Standalone technical manuals, procedures and reference from verified specifications and source material, without assuming a codebase. [Scope and lineage](skills/general/technical-writing/NOTICE.md). |
 | <img src="skills/general/unslop/assets/icon.svg" width="28" height="28" alt=""> [`unslop`](skills/general/unslop/SKILL.md) | Maintained adaptation of Pstack Unslop, Humanizer and Writing Clearly and Concisely. [Provenance](skills/general/unslop/NOTICE.md), pinned hashes and all three MIT licenses are preserved. Shared language rules for German and English; implicit invocation enabled. |
 | <img src="skills/general/workspace-management/assets/icon.svg" width="28" height="28" alt=""> [`workspace-management`](skills/general/workspace-management/SKILL.md) | Repository-owned workflow for provider-neutral, host-local Workspace context and AI-project bindings. |
 | <img src="skills/general/workspace-writing/assets/icon.svg" width="28" height="28" alt=""> [`workspace-writing`](skills/general/workspace-writing/SKILL.md) | Repository-owned method for shared working knowledge in OpenAI ChatGPT Pages and Spaces, organized by related topics and maintained in place. |
@@ -66,8 +67,15 @@ Commercial Director. Customer Writing and Workspace Writing own the former
 business and Spaces references. The former names and references are retired
 from the maintained source; historical export records keep their original names.
 
-Good Writing is the sole automatic router for the four writing specialists.
-Commercial, Customer, Workspace and Technical Writing disable implicit
+The 2026-11-05 revision moves repository documentation to
+`engineering-documentation`: README, repository AGENTS.md, code-owned SDK docs
+and the ordered system book stay in one method with distinct responsibilities.
+`technical-writing` now lives in General and owns standalone technical manuals,
+procedures and reference material. Both retain the shared pencil and explicit
+invocation policy. The previous complete packages are committed under `archive/`.
+
+Good Writing is the sole automatic router for the five writing specialists.
+Commercial, Customer, Workspace, Engineering Documentation and Technical Writing disable implicit
 invocation; they are loaded by the router or explicitly selected by the user.
 Good Writing uses Writing Fragments for source preparation, scaled to the task.
 Direct specialists reuse an existing handoff or prepare one without restarting
@@ -77,10 +85,12 @@ can call Editorial SVG Diagrams. Unslop and Editorial SVG Diagrams remain automa
 Descriptions explain the task and intended outcome; `agents/openai.yaml` owns
 the native invocation policy. Writing Fragments remains explicit-only. Policy
 configuration does not prove an actual model invocation. Golden Comments points
-documentation work to the Technical Writing route in Good Writing.
-Workspace Writing emphasizes hierarchical topic grouping. Technical Writing
-keeps a shallow structure with substantial topic folders, favors visual
-explanations, and updates legacy diagrams within an authorized revision.
+documentation work to the Engineering Documentation route in Good Writing.
+Workspace Writing emphasizes hierarchical topic grouping. Engineering Documentation
+keeps ordered chapters and a shallow structure with substantial topic folders.
+Explanatory figures replace the paragraphs they make unnecessary, with concise
+text equivalents, necessary conditions and source anchors retained. It updates
+legacy diagrams within an authorized revision.
 Its documentation depth and shared fact ownership remain intact. The commercial
 method retains evidence and decision rules. Duplicated language rules and
 percentage-cut targets are retired. Unslop's

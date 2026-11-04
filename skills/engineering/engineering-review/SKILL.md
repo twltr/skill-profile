@@ -92,8 +92,9 @@ Use these supporting methods when available and relevant:
   in review mode; do not turn a finding into an unrelated refactoring assignment.
 - **Golden Comments:** check the explanation of reasons, models and invariants beside code.
 - **Marshmallow Tests:** assess whether evidence distinguishes the relevant failures.
-- **Good Writing**, its **Technical Writing** route and **Editorial SVG Diagrams**:
-  assess durable documentation, concise orientation and accurate explanatory visuals.
+- **Good Writing**, its **Engineering Documentation** route and **Editorial SVG Diagrams**:
+  assess README, agent instructions and durable docs against their distinct owners;
+  check usable entrypoints, concise explanation and accurate primary visuals.
 - **All or Nothing:** check whether an agreed replacement reached affected consumers
   and whether a purported completion still leaves the retired owner active.
 

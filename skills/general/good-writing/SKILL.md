@@ -1,6 +1,6 @@
 ---
 name: good-writing
-description: "Write or revise correspondence, commercial copy, shared notes, articles, reports and repository documentation. Select the writing method for the reader and purpose. Ordinary replies and quick wording fixes use Unslop directly."
+description: "Write or revise correspondence, commercial copy, shared notes, articles, reports, technical manuals and repository documentation. Select the writing method for the reader and purpose. Ordinary replies and quick wording fixes use Unslop directly."
 ---
 
 # Good Writing
@@ -49,8 +49,15 @@ in your own final check and report that Unslop was not applied.
 | Customer or business-partner correspondence | `customer-writing` |
 | Offer, sales copy, pitch or commercial decision | `commercial-writing` |
 | Shared working notes in OpenAI ChatGPT Pages and Spaces | `workspace-writing` |
-| Repository README, system or architecture documentation | `technical-writing` |
+| Repository README, agent instructions, architecture or SDK docs maintained with code | `engineering-documentation` |
+| Technical manual, product guide or reference maintained from specifications or other non-repository sources | `technical-writing` |
 | Ordinary reply, quick wording fix or other prose | `unslop` and the reader's brief; no further route required |
+
+Choose between the two technical routes by the document's owner and task. An SDK's
+code-owned documentation uses Engineering Documentation even for external readers;
+a vendor API manual based on published specifications uses Technical Writing.
+Missing code access remains an unresolved verification, not a reason to pretend
+repository documentation was checked through the other route.
 
 For repository docs, keep durable product and system knowledge in its canonical
 documentation owner. Put temporary progress, task status, agent diaries and
@@ -63,7 +70,7 @@ An explicit choice wins. Route by the text's job, not its source: a product pitc
 based on code is commercial writing. For mixed tasks, select the needed methods
 here and apply each only to its relevant part.
 
-Good Writing is the sole automatic router for the four specialists. They disable
+Good Writing is the sole automatic router for the five specialists. They disable
 implicit invocation and remain usable by explicit user choice or as resources
 loaded by this router. Resolve the selected name through the host's installed-skill
 lookup and read its complete `SKILL.md` before applying it. In a filesystem runtime,

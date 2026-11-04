@@ -1,0 +1,20 @@
+{
+  "source_revision": "acc598730570fb9996d0d78e301a6aef4ca1889d",
+  "reason": "Preserve released routing before clarifying one-way correction of a direct out-of-scope invocation.",
+  "packages": [
+    "skills/general/technical-writing",
+    "skills/general/good-writing"
+  ],
+  "archive": "archive/source-20261104T235646Z-writing-scope-handoff-4a7e74ab-cf6a-4475-9968-b63be546eb0e.zip",
+  "files": {
+    "skills/general/good-writing/SKILL.md": "3d8c0e5316b5a5d5e9fe06bbf6eeddcc73efcc6fa35ceee8a5898961192b9b26",
+    "skills/general/good-writing/agents/openai.yaml": "5aba2b29718516dd0f593105b4482ff8a724a72d6b01d42ca305ec55732ae33a",
+    "skills/general/good-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/good-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/technical-writing/NOTICE.md": "1f0fd1e89a6214a5bdf58cfab1e2b2abb89ac1be3a96c3f3cfce2a64a4803d7a",
+    "skills/general/technical-writing/SKILL.md": "b18b05b30d23786a1b50bf0885c5225163af0822fc75abff87db75f3cf2a6c98",
+    "skills/general/technical-writing/agents/openai.yaml": "719ae6d77917eea719b6e8ce90b4541ca6ff8827d3467afa6c62752396b06328",
+    "skills/general/technical-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/technical-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee"
+  }
+}

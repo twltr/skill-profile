@@ -101,7 +101,7 @@ PDF are verified exports. The imported archive and replaced local trees are
 preserved outside active skill roots for recovery.
 
 The writing skills preserve supported Cloud-normalized metadata. Their complete
-packages include locally designed compact and large SVG icons.
+packages reuse the original shared pencil icon for compact and large displays.
 Their product list excludes `api`, which causes Codex CLI 0.159.0 and the Desktop
 loader 0.162.0-alpha.2 to discard the whole metadata file and lose its invocation
 policy. Verify both export parity and

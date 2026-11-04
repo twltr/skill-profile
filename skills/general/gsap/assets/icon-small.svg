@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
 <title id="title">GSAP</title>
-<g aria-hidden="true"><path d="M22 9H36V30Q36 35 41 39L49 45Q54 49 50 54Q47 57 42 54L23 44Q17 41 19 35L22 27Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="22" y="9" width="14" height="8" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M17 51C12 47 22 46 17 42C12 38 22 37 17 33" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
-<g><path d="M22 9H36V30Q36 35 41 39L49 45Q54 49 50 54Q47 57 42 54L23 44Q17 41 19 35L22 27Z" fill="#318F95" stroke="none" stroke-width="2.5"/><rect x="22" y="9" width="14" height="8" rx="1" fill="#B58D3C" stroke="none" stroke-width="2.5"/><path d="M17 51C12 47 22 46 17 42C12 38 22 37 17 33" fill="#26364A" stroke="none" stroke-width="3"/></g>
+<g aria-hidden="true"><path d="M36 7L18 34H29L25 57L47 27H35L42 7Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M10 24H17M7 32H14M11 40H18" fill="none" stroke="#F3F2EE" stroke-width="4.4" /></g>
+<g><path d="M36 7L18 34H29L25 57L47 27H35L42 7Z" fill="#B58D3C" stroke="none" stroke-width="2.5"/><path d="M10 24H17M7 32H14M11 40H18" fill="none" stroke="#318F95" stroke-width="3"/></g>
 </svg>

@@ -1,6 +1,6 @@
 ---
 name: golden-comments
-description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Technical Writing route in Good Writing. Automatic selection enabled; explicit use also supported."
+description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Technical Writing route in Good Writing."
 ---
 
 # Golden Comments
@@ -12,6 +12,21 @@ what the statements do; repeating their syntax adds no understanding.
 Use this method when writing or changing source commentary, including
 within ordinary implementation. A comment-only assignment does not authorize a
 code redesign. This skill owns source commentary, not a system documentation book.
+For system books and READMEs, use Good Writing's Technical Writing route when
+those skills are available; otherwise document the limit and keep the explanation
+inside the explicitly requested scope.
+
+## A reason-bearing comment
+
+**Weak:** `Update the registry.`
+
+**Better, if this matches the real mechanism:**
+
+> This upsert must run before the registry write, or the id check races.
+
+The second comment names the required ordering and the failure it prevents. Read
+the mechanism before writing it; if the implementation does not enforce that
+ordering, report the discrepancy instead of making the comment sound reassuring.
 
 ## Find the explanation's local owner
 
@@ -51,10 +66,6 @@ second truth, a race or data loss. Inspect optimistic concurrency, idempotency,
 event append/load boundaries, projection cursors, transactions, retry/claim/lease
 logic, deletion gates, authentication and secrets, reconciliation and cross-system
 calls. The list identifies risks to look for, not comments to add mechanically.
-
-State the mechanism and consequence naturally:
-
-> This upsert must run before the registry write, or the id check races.
 
 "Save record" does not explain the risk. When a severity cue helps, begin with
 `Important:` or `Critical:` and name the consequence. Never label source comments

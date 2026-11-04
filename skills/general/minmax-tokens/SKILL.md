@@ -7,6 +7,15 @@ description: Reduce unnecessary context and tool output during file, search, Git
 
 Use the smallest sufficient evidence, not the smallest possible answer. Keep active requirements, contrary evidence, safety constraints, unresolved failures, and final checks intact. If a filtered result cannot establish the answer, expand the scope.
 
+## A bounded read
+
+For a known checkout test failure in a large saved log, search the case identifier
+and failure blocks before reading the relevant error and surrounding context.
+Return the failure, exact location, actual process exit status and unresolved
+questions. Preserve access to the original log and expand when the excerpt cannot
+explain the problem. A model summary after pasting the entire log cannot undo
+the context cost. Independent reasoning across another subsystem may justify a scout.
+
 ## Get only the useful result
 
 Before a tool call, know the question it must answer and the expected size of its result. Use known IDs, paths, symbols, fields, ranges, and structured queries directly. Search narrowly, then widen deliberately if coverage is insufficient. Read a small file or a complete function when its context matters; do not add a count or planning step before an already bounded read.
@@ -23,4 +32,4 @@ Run the tests needed by the project's rules and the change's risk. Compact their
 
 For web research, use precise questions and authoritative sources. Keep version or date, the relevant passage, and uncertainty. Reuse a located source unless new evidence or a contradiction calls for another query.
 
-When delegation is worth considering, use `puppeteer` for task division and authority. Do not summon a subagent to count, filter, or summarize data that a deterministic tool can handle. Keep model and reasoning choices in client profiles, not this portable skill.
+When delegation is useful and `puppeteer` is available, use it for task division and authority. Substantial independent investigations can keep irrelevant source out of the main context; there is no general limit here on useful agent count. Do not summon a subagent merely to count or filter data that a deterministic tool can handle. Without Puppeteer, define bounded questions, ownership and evidence directly. Keep model and reasoning choices in client profiles, not this portable skill.

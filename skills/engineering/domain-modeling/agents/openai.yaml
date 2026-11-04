@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "Domain Modeling"
+  short_description: "Clarify domain concepts, relationships and names"
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 ---
 name: workspace-writing
-description: "Write or reconcile shared working notes and knowledge in OpenAI ChatGPT Pages and Spaces. Group related topics into useful hierarchies, keep current decisions and next actions visible, and link to established owners. Native Page operations belong to the host's Pages skills. Automatic selection disabled; use only by explicit user request or through Good Writing."
+description: "Write or reconcile shared working notes and knowledge in OpenAI ChatGPT Pages and Spaces. Group related topics into useful hierarchies, keep current decisions and next actions visible, and link to established owners. Native Page operations belong to the host's Pages skills."
 ---
 
 # Workspace Writing
@@ -14,10 +14,31 @@ next. This skill owns content and organization, not host-local Workspace folders
 or repository bindings. Accept the brief from Good Writing or a direct request;
 do not route back to Good Writing.
 
-**Always apply `unslop`**, including during direct use. Load it once through the
+Before drafting, reuse the caller's source-selection handoff. If none is supplied,
+use Writing Fragments when available to select the relevant material, sources,
+qualifiers and gaps at the scale of this task. Otherwise perform that bounded
+selection directly without claiming the skill was applied. A direct invocation
+needs the same preparation, not a return to Good Writing or repeated scouting.
+
+**Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.
-If unavailable, name the missing dependency and leave the language review open;
-continue independent preparation without claiming the full method was applied.
+If unavailable, use this skill's clarity and preservation checks and report
+that Unslop was not applied.
+
+**Example:** Notes say the welcome message is drafted, launch still needs a
+support owner, and technical migration progress lives in a repository issue.
+The overview links to customer communication and support readiness, and points
+to the migration issue instead of copying its status:
+
+```text
+Launch
+  Welcome message: drafted -> Customer communication
+  Support coverage: owner needed -> Support readiness
+  Technical migration: progress -> existing repository issue
+```
+
+Keep this map together. Create linked Pages only when a subject needs its own
+reading path. Any cloud access not checked remains unknown.
 
 ## Cluster by meaning
 

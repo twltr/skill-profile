@@ -11,6 +11,19 @@ adding a feature or module, extending an existing capability and maintaining
 existing code. Start from the affected slice and respect its existing ownership.
 A small change uses these boundaries without requiring a whole-system redesign.
 
+## A small ownership example
+
+In an illustrative cancellation feature, `ordering/` owns order state and
+cancellation orchestration, `inventory/` owns reservations, and `payments/` owns
+payment and refund outcomes. Each capability contains the API, state, logic and
+UI it actually needs. Ordering uses the other capabilities' public contracts;
+it does not update their storage directly.
+
+A reservation-expiry change belongs in inventory with its invariant and tests.
+Ordering changes only if the public outcomes it handles change. Shared transaction
+mechanics may be reusable; reservation policy remains with inventory. Derive the
+real boundaries from the system, not from this example's nouns or file count.
+
 ## Minimum Surface as the design measure
 
 Build the full intended capability with the smallest coherent system that can
@@ -41,6 +54,11 @@ Read the affected code, current vocabulary, requirements and architecture.
 Trace a representative behavior from its entrypoint through decisions, state
 and outputs. Distinguish the actual model from the requested change.
 
+If **Domain Modeling** is available, use it when concepts, lifecycles or names need
+clarification; pass the affected scenarios and receive the settled model. If it
+called this skill to map an already-settled model, use that model without calling
+back. Without it, resolve the relevant meanings through the checks below.
+
 Clarify terms with real counterexamples: can two concepts change independently,
 have different lifetimes or mean different things across contexts? Keep the
 resolved vocabulary at its existing canonical owner. A substantial system needs
@@ -69,10 +87,8 @@ pairing and invariants when a dependency or configuration is missing.
 Start from the business capability. Technical roles live **inside** the owning
 module, rather than forming global controllers/services/repositories layers.
 
-For example, billing/, catalog/ and checkout/ each own the API, domain, storage
-and UI parts their capability needs. A pricing change should be understandable
-inside billing/, rather than requiring reconstruction across five global layer
-folders. These names illustrate the cut; derive the actual names from the system.
+For example, a pricing change should be understandable at its capability owner
+rather than requiring reconstruction across five global technical-layer folders.
 
 For each capability, identify its inputs, state, decisions, invariants, outputs
 and expected changes. Keep parts that must be understood together together.
@@ -163,12 +179,21 @@ or make evolution safer: a state machine, registry, factory, adapter, repository
 event log, outbox or process manager can each earn a place. A pattern that adds a
 layer without reducing the search or error surface is decoration.
 
-For consequential architecture, framework, provider, security, persistence or
-runtime decisions, consult current primary sources and established literature.
-Name the meaningful applied pattern and record its original source and rationale
-through the repository's canonical reference owner. Do not invent citations or
-rename an existing system after a methodology. Bounded contexts, ports, events
-and invariants matter through the boundaries they express.
+If **Engineering Practices** is available, use it for consequential language,
+architecture, framework, provider, security, persistence, protocol or runtime
+choices. If **State of the Art** is available and current evidence is needed,
+use its research method through that decision owner. Without those methods,
+consult current primary sources and established literature directly. Keep the
+accepted choice and rationale at the repository's canonical design owner.
+Do not invent citations or rename a system after a methodology. Bounded contexts,
+ports, events and invariants matter through the boundaries they express.
+
+If **Puppeteer** is available, use it for substantial exploration of independent
+capabilities or competing boundaries before loading the whole system into the
+main context. Scouts return current owners, contracts, evidence and disagreements;
+the main agent reconciles the architecture. If **Grilling with Agents** is already
+the caller, answer its scoped structural questions instead of starting another
+council. A known local change needs no parallel architecture study.
 
 ## Check and deliver the design
 

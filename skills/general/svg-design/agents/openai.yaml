@@ -1,0 +1,5 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "SVG Design"
+  short_description: "Design logos, icons and visual graphics for websites"

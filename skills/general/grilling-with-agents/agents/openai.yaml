@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "Grilling with Agents"
+  short_description: "Refine plans through agent questions and grounded decisions"
+policy:
+  allow_implicit_invocation: false

@@ -56,5 +56,5 @@
 <path d="M556 100 H219" fill="none" class="s-teal" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#endpoint-teal-arrow)" />
 <text x="384" y="87" class="f-ink small" text-anchor="middle" >connect</text>
 <path d="M219 170 H556" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#endpoint-blue-arrow)" stroke-dasharray="6 7"/>
-<text x="384" y="160" class="f-ink small" text-anchor="middle" >Antwort</text>
+<text x="384" y="160" class="f-ink small" text-anchor="middle" >Response</text>
 </svg>

@@ -1,10 +1,10 @@
 interface:
   display_name: Good Writing
-  short_description: 'Auto: passende Schreibmethode'
+  short_description: "Write and revise texts for their audience and purpose"
   default_prompt: Use $good-writing to write or revise this text for its intended
     reader.
-  icon_small: assets/icon.svg
-  icon_large: assets/icon.svg
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
 policy:
   products:
   - chatgpt

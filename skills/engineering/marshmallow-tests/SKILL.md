@@ -14,6 +14,23 @@ Derive the units, vocabulary and evidence from the actual system.
 Use focused diagnosis and test-first feedback where they help establish the
 behavior; neither replaces understanding the unit and its invariants.
 
+## One invariant with discriminating evidence
+
+Illustrative test contract, not executable project code:
+
+```text
+Given an unpaid invoice for 100 and a payment event P for 30,
+when P is delivered twice,
+then the ledger records one P and the remaining balance is 70.
+
+Two ledger entries identify duplicate storage.
+A balance of 40 identifies duplicate application.
+```
+
+These checks describe one meaningful payment flow. A concurrent-delivery or
+restart case earns a wider test only if the isolated flow cannot expose that
+failure. Derive the real unit, numbers and outcomes from the system's contract.
+
 ## Cut top-down, starting with the system
 
 First understand the affected system: components, interactions, critical paths,

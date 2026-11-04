@@ -36,8 +36,10 @@
 | Responding | Reacting to interaction |
 | Ambient | Background atmosphere |
 
-### Level 2: Motion Personality
-Match to brand. See [motion-personality.md](motion-personality.md).
+### Level 2: Motion Personality (when established)
+Use a motion personality only when the brief or product establishes one. Match
+that identity consistently; otherwise keep motion neutral and task-focused. See
+[motion-personality.md](motion-personality.md) for expressive options.
 
 ### Level 3: Motion Direction
 
@@ -60,16 +62,18 @@ Choose animated properties. See [property-selection.md](../reference/property-se
 ```
 1. PURPOSE → What does this motion DO?
    ├── Feedback → short, ease-out, minimal
-   ├── Entrance → ease-out, personality-matched
+   ├── Entrance → ease-out; match an established personality if applicable
    ├── Exit → ease-in, 70% of entrance
    ├── Emphasis → scale or color pulse
    └── Ambient → slow, continuous, sine
 
-2. PERSONALITY → Match keywords
-   ├── Fun/bouncy → Playful
-   ├── Elegant/luxury → Premium
-   ├── Clean/professional → Corporate
-   └── Bold/dynamic → Energetic
+2. PERSONALITY → Is one established by the brief or product?
+   ├── Yes → match the relevant keywords
+   │   ├── Fun/bouncy → Playful
+   │   ├── Elegant/luxury → Premium
+   │   ├── Clean/professional → Corporate
+   │   └── Bold/dynamic → Energetic
+   └── No → keep the motion neutral and task-focused
 
 3. PROPERTIES → Minimum needed (two = sweet spot)
 
@@ -83,9 +87,9 @@ Choose animated properties. See [property-selection.md](../reference/property-se
 | Check | Question |
 |-------|----------|
 | Purpose | Clear function? |
-| Personality | Matches brand/context? |
+| Personality (if established) | Matches brand/context, or is neutral/task-focused when none is established? |
 | Repetition | Fine on 100th viewing? |
 | Attention | Respects viewer's focus? |
 | Hierarchy | Reinforces importance? |
-| Layers | Primary + secondary + ambient? |
+| Supporting detail | Would a secondary or ambient effect clarify this motion? |
 | Timing | Duration appropriate? |

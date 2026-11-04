@@ -1,10 +1,10 @@
 interface:
   display_name: Unslop
-  short_description: 'Auto: klare Sprache und Formatierung'
+  short_description: "Remove filler and make prose clear, natural and precise"
   default_prompt: Use $unslop to improve this text while preserving its meaning and
     voice.
-  icon_small: assets/icon.svg
-  icon_large: assets/icon.svg
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
 policy:
   allow_implicit_invocation: true
   products:

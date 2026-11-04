@@ -1,4 +1,6 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "MinMax Tokens"
   short_description: "Bound context and tool output without dropping evidence"
   default_prompt: "Use $minmax-tokens to keep this task focused without weakening verification."

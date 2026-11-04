@@ -54,7 +54,11 @@ Use for: enterprise, dashboards, business tools, admin, healthcare, banking.
 Signature: large scale changes (50-150%), fast color transitions, particle bursts, accelerating stagger, bold edge entrances.
 Use for: gaming, sports, music, events, marketing, fitness apps.
 
-## Keyword Matching
+## Matching an Established Identity
+
+Use these associations only when the brief or product calls for a motion
+personality. If none is established, neutral, task-focused motion is a valid
+choice; do not infer an archetype from generic UI or illustration work alone.
 
 | Keywords | Archetype |
 |----------|-----------|
@@ -62,12 +66,12 @@ Use for: gaming, sports, music, events, marketing, fitness apps.
 | elegant, minimal, luxury, sophisticated | Premium |
 | clean, professional, business, dashboard | Corporate |
 | dynamic, energetic, bold, exciting | Energetic |
-| (unspecified) + UI | Corporate (default) |
-| (unspecified) + illustration | Playful (default) |
+| Unspecified | Neutral and task-focused; no archetype required |
 
 ## Brand Motion Identity
 
-Define three constants for recognizable motion:
+When a project needs a distinct motion identity, define three constants for
+recognizable motion:
 
 ### 1. Signature Easing (80% of animations)
 Playful: ease-out-back | Premium: (0.4,0,0.2,1) | Corporate: (0.2,0,0,1) | Energetic: ease-out-expo
@@ -84,6 +88,6 @@ Playful: ease-out-back | Premium: (0.4,0,0.2,1) | Corporate: (0.2,0,0,1) | Energ
 Playful: bounce up from below | Premium: slow fade + scale 98%→100% | Corporate: slide right + opacity | Energetic: snap from edge + overshoot
 
 ## Mixing Archetypes
-- 90% primary archetype; specific moments can borrow another
+- When a primary archetype is established, keep it consistent and let specific moments borrow another when useful
 - Ease into personality shifts, don't snap
 - Example: corporate dashboard borrows Playful for success state only

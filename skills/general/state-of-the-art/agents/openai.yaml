@@ -1,0 +1,9 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: State of the Art
+  short_description: "Research current evidence for an engineering decision"
+  default_prompt: Use $state-of-the-art to research this engineering question
+    and return a cited decision handoff.
+policy:
+  allow_implicit_invocation: true

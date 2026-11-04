@@ -1,9 +1,14 @@
 # Core Philosophy
 
+Treat the ranges and examples below as starting points for the brief, not mandatory
+presets. Legible state, accessibility and the purpose of the interaction govern.
+
 ## Three Pillars
 
 ### Pillar 1: Emotional Intent
-Define target emotion before choosing any property.
+Name what the motion should help a person perceive or do. Choose an emotion only
+when the brief calls for expressive motion; functional feedback can simply be clear
+and immediate.
 
 | Emotion | Character | Timing | Easing |
 |---------|----------|--------|--------|
@@ -22,16 +27,18 @@ Define target emotion before choosing any property.
 | Action | 30-40% | Primary motion, hero moment |
 | Resolution | 30-40% | Settle, breathe, confirm |
 
-Even a 200ms tooltip fade has implicit setup→action→resolution.
+Use setup → action → resolution when it helps explain the motion. A simple tooltip
+or save confirmation does not require three authored phases.
 
 ### Pillar 3: Motion Craft
 - Easing curves match emotional intent
 - Duration proportional to element size and distance
 - Arcs for organic, straight for mechanical
-- Secondary motion (shadows, related elements)
-- Nothing starts and stops all at once
+- Optional secondary motion (shadows, related elements) when it supports the action
+- For coordinated multi-element motion, stagger only when it clarifies hierarchy;
+  synchronized feedback or one element can be the right choice.
 
-## Three Motion Layers
+## Optional Motion Layers
 
 | Layer | Role | Amplitude |
 |-------|------|-----------|
@@ -41,13 +48,16 @@ Even a 200ms tooltip fade has implicit setup→action→resolution.
 
 - Secondary offset 50-100ms from primary, different easing
 - Ambient is continuous/slow, never demands attention
-- Primary-only animation feels flat; always add secondary + ambient
+Add a secondary or ambient layer when it clarifies hierarchy or adds useful
+character. A focused action may use only its primary motion.
 
-## The 1/3 Screen Rule
-No motion travels >1/3 screen without intermediate keyframe. Break with direction changes, speed shifts, or arc adjustments.
+## Long Travel
+For motion crossing a large part of the screen, consider intermediate beats,
+direction or speed changes only when they improve comprehension. Do not add
+keyframes solely to satisfy a distance quota.
 
 ## The Attention Budget
 - One hero motion per scene moment
 - Max 2-3 elements in active motion simultaneously
 - Ambient doesn't count against budget
-- Stagger rather than synchronize
+- Choose staggering or synchronization according to the relationship being shown

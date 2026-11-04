@@ -8,10 +8,9 @@ with supported facts for the actual recipient; do not borrow them as promises.
 1. Conditional opportunity
 2. Missing numbers
 3. Weak value proposition
-4. Technical detail into commercial value
-5. Earned status
-6. Decision ask
-7. Page hierarchy
+4. Earned status
+5. Decision ask
+6. Page hierarchy
 
 ## 1. Conditional opportunity
 
@@ -49,19 +48,7 @@ Strong:
 
 The exact outcome and mechanism matter more than broad positive adjectives.
 
-## 4. Technical detail into commercial value
-
-Weak:
-
-> The product uses a modular architecture, containerization, and standardized exports.
-
-Strong:
-
-> **Change operators without rebuilding the product.** Standard deployments, complete exports, and a documented recovery path preserve negotiating power and reduce switching risk.
-
-Use architecture as proof after stating the outcome it enables.
-
-## 5. Earned status
+## 4. Earned status
 
 Empty praise:
 
@@ -73,7 +60,7 @@ Earned reinforcement:
 
 Derive the attractive identity from the decision, preparation, or control actually present.
 
-## 6. Decision ask
+## 5. Decision ask
 
 Weak:
 
@@ -85,7 +72,7 @@ Strong:
 
 Name the action, owner or audience, timing, and result.
 
-## 7. Page hierarchy
+## 6. Page hierarchy
 
 Weak first page:
 

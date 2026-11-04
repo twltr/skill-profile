@@ -11,6 +11,18 @@ GSAP version the project uses, and the intended animation and lifecycle behavior
 Keep an explicitly chosen alternative library; ordinary CSS transitions do not
 require adopting GSAP.
 
+## A small routing example
+
+**Request:** Add a scroll-linked sequence to a panel in an existing React page.
+Read the React lifecycle reference and ScrollTrigger reference; include timeline
+guidance if elements must appear in sequence. Check the installed GSAP version
+before using version-sensitive details.
+
+**Verify:** Inspect the real page at its relevant viewport sizes, then mount,
+unmount and revisit it to check cleanup. Confirm the content remains available
+with reduced motion. Do not load plugin, utility or other framework guides unless
+the implementation needs them.
+
 ## Choose the relevant references
 
 Read only the documents needed for the current question. Combine independent

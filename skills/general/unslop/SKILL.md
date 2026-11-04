@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: "Use when composing or editing prose, including ordinary replies, to remove filler and AI mannerisms while preserving meaning, voice and necessary detail. Applies to German and English without starting a document workflow. Automatic selection enabled; explicit use also supported."
+description: "Use when composing or editing prose, including ordinary replies, to remove filler and AI mannerisms while preserving meaning, voice and necessary detail. Applies to German and English without starting a document workflow."
 ---
 
 # Unslop
@@ -11,6 +11,15 @@ or further writing skill of its own. For substantial text, check the whole argum
 well as individual sentences. Return the finished text unless process is asked
 for. Provenance and licenses are in [NOTICE.md](NOTICE.md); they are not required
 reading for each writing task.
+
+**Example:**
+
+> Before: We may be in a position to migrate on Friday, provided approval arrives by Thursday.
+>
+> After: We may be able to migrate on Friday if approval arrives by Thursday.
+
+The edit removes ceremony while preserving both the uncertain outcome and its
+approval condition.
 
 ## Preserve the meaning
 
@@ -38,8 +47,8 @@ reading for each writing task.
   or remove the unsupported claim.
 - Replace inflated wording with what happened or what the reader should do.
   In English, replace “leverage” with “use” and remove “it is important to note”.
-  German examples include “an dieser Stelle ist hervorzuheben”, “ganzheitliche
-  Mehrwerte” and “im Rahmen der Durchführung”. Edit by meaning, not a blacklist.
+  In both languages, replace abstract nominal phrasing with concrete verbs.
+  Edit by meaning, not a blacklist.
 - Remove staged contrasts, metaphorical closers and repetitive transitions
   when they add no information. Keep a contrast that
   explains a real difference or corrects a relevant misconception.
@@ -61,8 +70,8 @@ add an umbrella claim merely to make the wording sound polished.
 
 | Reject this construction | Use a descriptive alternative |
 |---|---|
-| Arbeitszeit sichtbar machen. Anrufe sauber zuordnen. Verdienst nachvollziehbar schätzen. | Analyse und Konzept für ein Dashboard zur Arbeitszeiterfassung |
-| Kleiner Start, klare Ausbaustufe | Umfang des MVP |
+| Make work time visible. Assign calls correctly. Estimate earnings clearly. | Analysis and concept for a time-tracking dashboard |
+| Small start, clear expansion path | MVP scope |
 
 Keep genuine enumerations of facts, required steps and comparisons when the
 reader needs those items. A list of CPU, RAM and storage is not a slogan.

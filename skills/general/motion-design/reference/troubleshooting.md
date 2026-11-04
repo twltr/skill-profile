@@ -5,7 +5,7 @@
 - Straight paths → add 10-20px arc at midpoint
 - Uniform timing → stagger 50-100ms between elements
 - Everything synced → offset start/stop 50-150ms
-- No secondary → add shadow, icon reaction, ambient
+- The action lacks emphasis → consider one supporting cue only if it improves clarity
 
 ## Feels Too Slow
 - Duration exceeds type budget → check duration table
@@ -21,10 +21,10 @@
 - No anticipation on large motion → add 100-200ms wind-up
 
 ## Feels Cheap / Flat
-- Only primary motion → add secondary + ambient
-- Opacity-only → combine with position or scale
+- Primary motion is unclear → clarify its timing or direction before adding effects
+- State hard to perceive after motion → strengthen the persistent label, icon or styling; add motion only if it improves clarity
 - Same easing everywhere → vary primary vs secondary
-- No follow-through → child elements trail 50-150ms
+- No follow-through on substantial motion → consider a brief settle; do not add delay to simple feedback
 - No overshoot → add 3-10%
 
 ## Too Distracting
@@ -34,11 +34,10 @@
 - Ambient too prominent → 10-20% amplitude, slower
 - No breathing room → 100-200ms pause between beats
 
-## No Personality
-- Default easing → apply archetype's signature
-- Same duration for all → use personality palette
-- No consistent entrance → define one for project
-- Mixed archetypes → pick one for 90%+
+## Motion feels inconsistent
+- If the brief or product establishes a personality, align easing and duration with it
+- Define a shared palette or entrance pattern only when the project needs a distinct motion identity
+- If no personality is established, use clear, task-focused motion; do not invent one to fill a gap
 
 ## Inconsistent Feel
 - Different easing same-type → standardize per motion type
@@ -57,16 +56,16 @@
 
 1. No linear on spatial movement
 2. Duration matches element type
-3. Primary + secondary layers
-4. Consistent personality
+3. Any supporting layers earn their place
+4. Consistent personality when the brief or product establishes one
 5. Directional easing correct
 6. 1/3 screen rule
 7. 1/3 element rule
-8. Follow-through present
+8. Follow-through supports the action without unnecessary delay
 9. Every motion has purpose
 10. Fine on 100th viewing
 
-## Personality Mistakes
+## If the project uses a defined personality
 - **Playful**: overshoot >25% = broken; not everything bounces; short+bounce = glitchy
 - **Premium**: too subtle = invisible; too slow = waiting; zero = broken
 - **Corporate**: too conservative = boring; playful easing breaks trust; identical = monotonous

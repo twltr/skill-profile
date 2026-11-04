@@ -14,6 +14,19 @@ metadata:
 
 # Motion Design Skill
 
+## A small interaction example
+
+**Task:** Show when a form has saved without distracting someone who is still
+entering information.
+
+**Direction:** Change the button label to “Saved” and use one brief color
+transition. Keep the confirmation visible without motion; respect reduced-motion
+preferences. On failure, preserve entered values and show a clear error. Add a
+checkmark draw or ambient effect only if it helps the intended interaction.
+
+This functional feedback has no elaborate emotional story or required secondary
+animation. Restrained motion can be complete.
+
 ## When to Apply
 
 Use this skill when:
@@ -35,22 +48,26 @@ Use this skill when:
 
 ## Quick Reference: 8-Step Checklist
 
-Before creating any animation:
+Use the questions that fit the task. For functional feedback, optimize for clear,
+immediate response; emotional intent and motion personality are optional and
+apply when the brief or product defines them.
 
-1. **Emotional target?** — joy, calm, urgency, elegance
-2. **Motion Personality?** — Playful, Premium, Corporate, Energetic
+1. **Emotional target?** — identify one when expressive intent is part of the brief
+2. **Motion Personality?** — use an established one; otherwise neutral/task-focused is valid
 3. **Primary property?** — position, scale, rotation, opacity
 4. **Duration?** — see duration table below
 5. **Easing family?** — entrance=decelerate, exit=accelerate
 6. **Hero element?** — apply staging principles
-7. **Secondary + ambient layers?** — add richness
+7. **Would another layer help?** — add it only when it clarifies the action
 8. **1/3 rules?** — motion distance, simultaneous elements
 
 ---
 
-## Three Pillars (CRITICAL)
+## Three design lenses
 
-Every animation must satisfy three pillars before any technical decisions:
+For expressive motion, consider intent, visual narrative and craft before
+choosing technical details. Functional feedback can stay brief and direct; do not
+invent an emotional story or add decorative motion to satisfy this checklist.
 
 | Pillar | Question | Drives |
 |--------|----------|--------|
@@ -58,10 +75,13 @@ Every animation must satisfy three pillars before any technical decisions:
 | **Visual Narrative** | What's the micro-story? | Setup → Action → Resolution |
 | **Motion Craft** | How do we make it believable? | Physics, secondary motion, paths |
 
-**Three motion layers** (flat animation = missing layers):
+Optional motion layers can add depth when the design calls for them:
 - **Primary**: Main action the viewer follows
 - **Secondary**: Supporting richness (shadows, icons shifting)
 - **Ambient**: Background life (gradients, subtle pulses)
+
+Secondary and ambient effects are design choices, never prerequisites for
+functional feedback. Prefer one clear property when it fully communicates the state.
 
 > Deep dive: [director/core-philosophy.md](director/core-philosophy.md)
 
@@ -69,7 +89,9 @@ Every animation must satisfy three pillars before any technical decisions:
 
 ## Motion Personality
 
-Select ONE archetype per project. Apply consistently.
+When the brief or existing brand defines a motion personality, use a fitting
+archetype as a consistency aid. Do not invent a personality for functional
+feedback or force one onto a restrained interface.
 
 | Archetype | Duration | Easing | Overshoot | Keywords |
 |-----------|----------|--------|-----------|----------|
@@ -78,9 +100,9 @@ Select ONE archetype per project. Apply consistently.
 | **Corporate** | 200-400ms | cubic-bezier(0.2,0,0,1) | 0-3% | clean, professional, business, dashboard |
 | **Energetic** | 100-250ms | ease-out-expo | 15-30% | dynamic, energetic, bold, exciting |
 
-**Default**: Corporate for UI, Playful for illustrations.
+There is no default archetype; follow the product, audience and brief.
 
-**Brand Motion Identity** — define three constants:
+For a project that needs a distinct motion identity, define three constants:
 1. **Signature easing**: One curve for 80% of animations
 2. **Duration palette**: 3 durations (quick / standard / slow)
 3. **Entrance pattern**: One consistent entry style
@@ -186,19 +208,28 @@ Select ONE archetype per project. Apply consistently.
 5. **Secondary**: Content fades in 100ms after card lands
 6. **Staging**: Other cards dim to 80%
 
-### Success State (Playful)
+### Success State (Expressive example)
 1. **Primary**: Scale pop with ease-out-back
 2. **Secondary**: Checkmark draws in
 3. **Ambient**: Subtle particle burst
 4. **Color**: Green fill
 5. **Total**: 300-400ms
 
-### Error Shake (Corporate)
+This is one expressive option, not a success-state requirement. Keep the
+success state understandable without animation, and use a simpler label, icon
+or color treatment when it better fits the interaction. Respect reduced-motion
+preferences; omit the pop and particles when motion is reduced.
+
+### Error Shake (Optional example)
 1. **Primary**: Position oscillates 2-3 times, ±10-15px horizontal
 2. **Easing**: ease-in-out for sharp stops
 3. **Color**: Red tint
 4. **Total**: 300-400ms
 5. **No overshoot**: Errors feel firm
+
+Use a shake only when it helps locate the affected control and is comfortable
+for the audience. An inline message and persistent error styling can be clearer;
+do not make motion the sole carrier of error information.
 
 > More patterns: [patterns/entrance-exit.md](patterns/entrance-exit.md) | [patterns/state-feedback.md](patterns/state-feedback.md)
 
@@ -260,17 +291,23 @@ Select ONE archetype per project. Apply consistently.
 
 ## Quality Rules
 
-### CRITICAL — never break
+### Core constraints
 1. **Never linear for spatial movement** — always use easing curves (linear only for spinners, progress bars)
-2. **Never opacity-only** for important state changes — combine with position or scale
+2. **State changes must remain perceivable without motion.** Preserve semantic
+   labels and a persistent visual state; do not rely on a transient animation
+   or color alone where another cue is needed for clarity or accessibility.
 3. **Never exceed 1/3 screen** without intermediate keyframe
-4. **Always three motion layers** — primary + secondary + ambient
+4. **Use only the layers the task earns** — primary motion can stand alone; add
+   supporting motion when it improves meaning without distracting.
 
-### HIGH — strongly follow
+### Design guidance
 1. Match duration to element type (see tables)
 2. Use directional easing (ease-out entrance, ease-in exit)
-3. Apply Disney principles (especially anticipation, follow-through)
-4. Maintain consistent personality across scene
+3. Consider Disney principles such as anticipation and follow-through when they
+   clarify a substantial action; omit them when they add delay or decoration to
+   simple feedback.
+4. Maintain a consistent personality when one is established by the brief or
+   product; otherwise keep the motion neutral and task-focused.
 
 > Full checklist: [reference/quality-checklist.md](reference/quality-checklist.md)
 
@@ -282,9 +319,9 @@ Select ONE archetype per project. Apply consistently.
 |---------|-------------|-----|
 | Looks robotic | Linear easing or no arcs | Add easing curves + arc paths |
 | Feels too slow | Duration too long for element type | Check duration table, use ease-out |
-| Feels cheap/flat | Missing secondary + ambient | Add shadow motion + background life |
+| Feels under-explained | The main action or state is unclear | Clarify the primary motion before adding supporting detail |
 | Too distracting | Too many elements moving | Apply 1/3 rule, reduce amplitude |
-| No personality | Generic easing everywhere | Apply personality archetype consistently |
+| Motion feels generic | Easing has no intentional relationship to the product | Define a fitting motion style only if the brief calls for one |
 
 > Deep dive: [reference/troubleshooting.md](reference/troubleshooting.md)
 

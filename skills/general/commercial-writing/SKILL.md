@@ -1,6 +1,6 @@
 ---
 name: commercial-writing
-description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence belongs to Customer Writing. Automatic selection disabled; use only by explicit user request or through Good Writing."
+description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence belongs to Customer Writing."
 ---
 
 # Commercial Writing
@@ -18,17 +18,39 @@ request and ask only about a gap that changes the offer or claim. Do not route
 back to Good Writing or repeat source preparation. Write in the requested
 language and preserve responsibilities assigned to other contributors.
 
+## Turn a technical claim into a commercial outcome
+
+**Fictional illustration:**
+
+Weak:
+
+> The product uses standardized exports and documented recovery.
+
+Stronger, when the facts support it:
+
+> Keep the option to change suppliers. Standard exports and a documented recovery
+> path make data migration and service recovery possible.
+
+The technical detail is evidence for a practical outcome; it does not prove a
+guaranteed saving. Replace this fictional claim with verified product evidence.
+
 ## Load only needed resources
 
-**Always apply `unslop`**, including during direct use. Load it once through the
+Before drafting, reuse the caller's source-selection handoff. If none is supplied,
+use Writing Fragments when available to select the relevant material, sources,
+qualifiers and gaps at the scale of this task. Otherwise perform that bounded
+selection directly without claiming the skill was applied. A direct invocation
+needs the same preparation, not a return to Good Writing or repeated scouting.
+
+**Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.
-If unavailable, name the missing dependency and leave the language review open;
-continue independent preparation without claiming the full method was applied.
+If unavailable, use this skill's meaning and clarity checks and report that
+Unslop was not applied.
 
 - Read [commercial-standard.md](references/commercial-standard.md) for substantial,
   high-stakes, financial or decision-oriented work.
-- Read [patterns.md](references/patterns.md) when a concrete transformation example
-  would help. Example numbers and promises are fictional, not reusable evidence.
+- Read [patterns.md](references/patterns.md) when another transformation or
+  argument structure would help. Its examples are fictional, not reusable evidence.
 - Use `scripts/copy_audit.py` only when its diagnostic would help locate repetition
   or generic phrasing. It is optional and does not establish factual quality.
 
@@ -124,7 +146,7 @@ Lead with the reader's decision or defensible opportunity. Keep a material limit
 
 Use the recipient's language and established tone. Show value through the
 supported mechanism and evidence. Do not manufacture praise, urgency or a
-commercial commitment. Apply Unslop for language and compression; keep every
+commercial commitment. Apply Unslop when available for language and compression; keep every
 condition that changes the offer, eligibility or decision. There is no target
 percentage to cut.
 

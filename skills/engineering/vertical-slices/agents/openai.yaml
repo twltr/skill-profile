@@ -1,4 +1,6 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "Vertical Slices"
   short_description: "Design agent-oriented capability boundaries"
 policy:

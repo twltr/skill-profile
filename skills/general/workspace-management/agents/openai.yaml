@@ -1,0 +1,5 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "Workspace Management"
+  short_description: "Organize workspaces and canonical source bindings"

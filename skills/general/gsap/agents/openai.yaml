@@ -1,4 +1,6 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "GSAP"
   short_description: "Choose the GSAP guidance needed for the animation"
 policy:

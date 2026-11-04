@@ -6,7 +6,23 @@ license: Complete terms in LICENSE.txt
 
 # Frontend Design
 
-Approach this as the design lead at a small studio known for giving every client a visual identity that could not be mistaken for anyone else's. This client has already rejected proposals that felt templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take one real aesthetic risk you can justify.
+Design from the actual brief and existing product. Make deliberate choices about
+palette, typography and layout that suit this subject; introduce a distinctive
+detail only when the content and context support it. Do not invent a client's
+history, rejected concepts, budget or appetite for risk.
+
+## A small worked direction
+
+**Illustrative brief:** A ceramics studio wants a collection page. The supplied
+images show warm clay textures and varied glaze colors.
+
+**Design direction:** Let the photographs carry color; use quiet, readable
+surrounding surfaces, clear collection names and generous image space. Add no
+sequence numbers unless the collection has a meaningful order.
+
+**Check:** At a narrow viewport, each image, title and purchase action remains
+clear without cropping the defining shape. The direction follows the supplied
+work instead of imposing a generic studio aesthetic.
 
 ## Ground it in the subject
 

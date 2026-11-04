@@ -1,5 +1,10 @@
 # State & Feedback Patterns
 
+The recipes below are starting points, not required effects. The state must be
+clear in the settled UI and without animation. Keep feedback brief, preserve
+entered data, and respect reduced-motion preferences; omit or simplify movement
+when it is unnecessary, distracting or uncomfortable.
+
 ## Button Press
 
 ### Playful
@@ -33,11 +38,15 @@ Hover enter <100ms; hover exit 150-200ms (slower = polished).
 
 ## Success State
 
-### Checkmark Success
+### Checkmark Success (Expressive option)
 1. Container: scale 0.9→1.0 (200ms, ease-out-back, 5-10% overshoot)
 2. Checkmark: stroke draw (150ms, ease-out, 100ms delay)
 3. Color: to green (200ms); ambient glow/particles (300ms)
 4. Total: 400-500ms
+
+Use this when the brief benefits from celebratory feedback. A concise “Saved”
+label, static checkmark or persistent success color may communicate the result
+more clearly; particles and scale overshoot are optional.
 
 ### Confirmation Badge
 1. Badge scales from 0 (200ms, ease-out-back)
@@ -51,9 +60,13 @@ Hover enter <100ms; hover exit 150-200ms (slower = polished).
 
 ## Error State
 
-### Error Shake
+### Error Shake (Optional locator cue)
 - Horizontal oscillation ±10-15px, 2-3 cycles decreasing amplitude
 - ease-in-out, 300-400ms total; red tint; no overshoot; settles at origin
+
+Do not rely on the shake or red color to communicate an error. Keep the message
+and affected field visibly identified after motion ends. Skip the shake when it
+could distract or discomfort the user, and honor reduced-motion settings.
 
 ### Inline Validation
 1. Error text slides down + fades in (200ms)

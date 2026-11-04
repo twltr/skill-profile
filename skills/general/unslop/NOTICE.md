@@ -1,6 +1,6 @@
 # Sources and licenses
 
-This is a maintained adaptation, revised on 2026-10-26. It combines selected
+This is a maintained adaptation, revised on 2026-11-04. It combines selected
 writing guidance rather than concatenating the upstream skills. The exact
 reviewed revisions and source hashes are in [sources.json](sources.json).
 
@@ -37,9 +37,14 @@ were found in the affected source or local standalone skills.
 The 2026-10-26 revision implements Tobi's explicit rejection of slogan-like
 paired and tripled phrasing. The earlier conditional rule about forced groups
 of three did not cover paired headings or require review of the final artifact.
-The adaptation now names that pattern, includes the demonstrated German failures
-and requires a final wording check while preserving factual lists and quotations.
+That revision named the pattern, included the demonstrated German failures
+and required a final wording check while preserving factual lists and quotations.
 This is an instruction revision, not a deterministic language filter.
+
+The 2026-11-04 revision keeps instructions, examples and interface descriptions
+in English. The translated examples preserve the same rejected phrasing patterns.
+The method still applies to German and English texts. Invocation information is
+kept in native metadata rather than repeated in the descriptions.
 
 Invocation uses the documented `agents/openai.yaml` policy. The upstream
 `disable-model-invocation` frontmatter and the conflicting “Must always apply”

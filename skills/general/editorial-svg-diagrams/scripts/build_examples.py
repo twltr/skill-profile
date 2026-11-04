@@ -126,7 +126,7 @@ def encapsulation():
 def entropy():
     b=[]
     start=12; cw=83; gap=10; bw=83; hi=77
-    b.append(text(12,29,'Position bekannt','f-ink small'))
+    b.append(text(12,29,'Known position','f-ink small'))
     for i in range(8):
         x=start+i*(cw+gap)
         if i==2:
@@ -135,15 +135,15 @@ def entropy():
             b.append(f'<circle cx="{x+cw/2}" cy="{53+hi/2}" r="15" class="f-teal"/>')
         else:
             b.append(f'<rect x="{x}" y="53" width="{cw}" height="{hi}" rx="11" fill="none" class="s-border" stroke-width="2"/>')
-    b.append(text(383,163,'1 Position   ·   0 Bit','f-ink label','middle'))
+    b.append(text(383,163,'1 position   ·   0 bits','f-ink label','middle'))
     b.append(line(12,194,751,194,'s-border',1))
-    b.append(text(12,232,'Position unbekannt','f-ink small'))
+    b.append(text(12,232,'Unknown position','f-ink small'))
     for i in range(8):
         x=start+i*(cw+gap)
         b.append(rect(x,256,cw,hi,11,'f-tealwash'))
         b.append(f'<rect x="{x}" y="256" width="{cw}" height="{hi}" rx="11" fill="none" class="s-teal" stroke-width="2.5"/>')
         b.append(f'<circle cx="{x+cw/2}" cy="{256+hi/2}" r="13" class="f-teal" fill-opacity="0.65"/>')
-    b.append(text(383,372,'8 Positionen   ·   3 Bit','f-ink label','middle'))
+    b.append(text(383,372,'8 positions   ·   3 bits','f-ink label','middle'))
     return 767,390,'\n'.join(b),'Knowledge and uncertainty','One highlighted known particle position has zero uncertainty; eight equally likely possible positions require three bits to specify one. Dots in bottom row denote alternatives, not eight particles.'
 
 
@@ -167,12 +167,12 @@ def endpoints():
     b.append(path('M556 100 H219','s-teal',3.6,'endpoint-teal-arrow'))
     b.append(text(384,87,'connect','f-ink small','middle'))
     b.append(path('M219 170 H556','s-blue',3,'endpoint-blue-arrow','6 7'))
-    b.append(text(384,160,'Antwort','f-ink small','middle'))
+    b.append(text(384,160,'Response','f-ink small','middle'))
     return 768,262,'\n'.join(b),'Two computers communicating via TCP','PC Y at 192.168.1.20:53124 connects to server PC X at 192.168.1.10:8080 and receives a reply.'
 
 
 def layers():
-    rows=[('7','Application','HTTP','blue'),('6','Presentation','Kodierung','blue'),('5','Session','Sitzung','blue'),('4','Transport','TCP / UDP','teal'),('3','Network','IP','green'),('2','Data Link','Ethernet','ochre'),('1','Physical','Signale','brown')]
+    rows=[('7','Application','HTTP','blue'),('6','Presentation','Encoding','blue'),('5','Session','Session','blue'),('4','Transport','TCP / UDP','teal'),('3','Network','IP','green'),('2','Data Link','Ethernet','ochre'),('1','Physical','Signals','brown')]
     b=[]
     for i,(idx,name,proto,col) in enumerate(rows):
         yy=i*53+6

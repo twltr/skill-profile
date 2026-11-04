@@ -1,6 +1,6 @@
 ---
 name: customer-writing
-description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers belong to Commercial Writing. Automatic selection disabled; use only by explicit user request or through Good Writing."
+description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers belong to Commercial Writing."
 ---
 
 # Customer Writing
@@ -12,10 +12,16 @@ Help the recipient understand the situation and act. Use the reader, purpose,
 facts and constraints from Good Writing, or infer them from a direct request.
 Ask only about a gap that changes the message. Do not route back to Good Writing.
 
-**Always apply `unslop`**, including during direct use. Load it once through the
+Before drafting, reuse the caller's source-selection handoff. If none is supplied,
+use Writing Fragments when available to select the relevant material, sources,
+qualifiers and gaps at the scale of this task. Otherwise perform that bounded
+selection directly without claiming the skill was applied. A direct invocation
+needs the same preparation, not a return to Good Writing or repeated scouting.
+
+**Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.
-If unavailable, name the missing dependency and leave the language review open;
-continue independent preparation without claiming the full method was applied.
+If unavailable, use this skill's clarity and meaning checks and report that
+Unslop was not applied.
 
 ## Make the message useful
 
@@ -32,6 +38,15 @@ and sign-off. Routine coordination needs neither a formal brief nor a sales pitc
 Keep internal agent activity, tool names and checks out of external messages
 unless the recipient needs them. Translate a finding into its practical effect.
 Keep a condition beside the offer or statement it limits.
+
+**Example, fictional:** The replacement is ready. Access depends on a confirmed
+maintenance window, and downtime is not measured yet. Write:
+
+> The replacement is ready. Please confirm when we can access the system so we
+> can schedule the change. We will confirm the expected downtime before then.
+
+This gives a next action without inventing a duration or implying that work is
+already scheduled.
 
 ## Shape it for the channel
 

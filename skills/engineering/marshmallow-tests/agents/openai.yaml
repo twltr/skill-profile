@@ -1,4 +1,6 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "Marshmallow Tests"
   short_description: "Prove meaningful behavior with coherent test units"
 policy:

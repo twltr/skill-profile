@@ -1,8 +1,8 @@
 interface:
   display_name: Golden Comments
-  short_description: 'Auto: Modelle und Gründe in Quellkommentaren'
-  icon_small: assets/icon.svg
-  icon_large: assets/icon.svg
+  short_description: "Explain models, invariants and reasons in source comments"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
 policy:
   allow_implicit_invocation: true
   products:

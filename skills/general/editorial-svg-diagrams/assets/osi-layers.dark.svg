@@ -44,11 +44,11 @@
 <rect x="14" y="59" width="566" height="45" rx="8" class="f-blue" />
 <text x="44" y="89" class="f-whitetxt label" text-anchor="start" >6</text>
 <text x="90" y="88" class="f-whitetxt small" text-anchor="start" >Presentation</text>
-<text x="548" y="88" class="f-whitetxt small" text-anchor="end" >Kodierung</text>
+<text x="548" y="88" class="f-whitetxt small" text-anchor="end" >Encoding</text>
 <rect x="14" y="112" width="566" height="45" rx="8" class="f-blue" />
 <text x="44" y="142" class="f-whitetxt label" text-anchor="start" >5</text>
 <text x="90" y="141" class="f-whitetxt small" text-anchor="start" >Session</text>
-<text x="548" y="141" class="f-whitetxt small" text-anchor="end" >Sitzung</text>
+<text x="548" y="141" class="f-whitetxt small" text-anchor="end" >Session</text>
 <rect x="14" y="165" width="566" height="45" rx="8" class="f-teal" />
 <text x="44" y="195" class="f-whitetxt label" text-anchor="start" >4</text>
 <text x="90" y="194" class="f-whitetxt small" text-anchor="start" >Transport</text>
@@ -64,5 +64,5 @@
 <rect x="14" y="324" width="566" height="45" rx="8" class="f-brown" />
 <text x="44" y="354" class="f-whitetxt label" text-anchor="start" >1</text>
 <text x="90" y="353" class="f-whitetxt small" text-anchor="start" >Physical</text>
-<text x="548" y="353" class="f-whitetxt small" text-anchor="end" >Signale</text>
+<text x="548" y="353" class="f-whitetxt small" text-anchor="end" >Signals</text>
 </svg>

@@ -1,17 +1,48 @@
 ---
 name: good-writing
-description: "Write or revise correspondence, commercial copy, shared notes, articles, reports and repository documentation. The automatic router for Customer Writing, Commercial Writing, Workspace Writing and Technical Writing. Ordinary replies and quick wording fixes use Unslop directly. Automatic selection enabled; explicit use also supported."
+description: "Write or revise correspondence, commercial copy, shared notes, articles, reports and repository documentation. Select the writing method for the reader and purpose. Ordinary replies and quick wording fixes use Unslop directly."
 ---
 
 # Good Writing
 
-Infer the reader, purpose, language, tone, facts and destination. Ask only about
-a gap that changes the meaning or permitted action. Preserve the brief and
-protected content when editing; pass them to the selected specialist once.
+Infer the reader, purpose, language, tone, facts and destination. Before drafting,
+select the useful evidence through Writing Fragments, then route to the method
+that owns the intended result. Preserve the brief and protected content when
+editing; pass them and the concise source handoff to the selected specialist once.
+Ask the user only about a gap that changes the meaning or permitted action.
 
-**Apply `unslop` to every writing task**, including explicit specialist choices.
-Load it once through the host's skill catalog and returned path or read interface.
-It owns clear language, meaningful formatting and protection against lost detail.
+## Prepare the material first
+
+If `writing-fragments` is available, deliberately load it from the host's
+installed-skill lookup and read its complete method; its native policy is
+explicit-only. Source selection is preparation for every Good Writing task,
+scaled to the material. A tiny
+wording fix needs only a local selection from the supplied text and instruction.
+A source-heavy report may need bounded scouting and a fuller handoff. If the brief
+is the only source, draft from the brief and state any consequential evidence gap;
+do not invent research or citations. The handoff preserves source locators,
+qualifiers, uncertainty and any figure suggestion for the selected writer.
+Writing Fragments returns to this workflow; it does not select a writer or call
+Good Writing again.
+
+If that supporting skill cannot be read, perform the bounded source selection
+locally: retain purpose-relevant claims with their locators, context, qualifiers,
+counterevidence and material gaps, then choose a useful prose or figure handoff.
+State that Writing Fragments itself was unavailable; do not skip preparation or
+invent sources. Reuse a current handoff already supplied by the task instead of
+scouting the same material again.
+
+**Example:** The user wants a customer told that a migration is ready but asks
+for a maintenance window before scheduling. Route the message to Customer Writing;
+its draft asks for the window and says the date will be confirmed before scheduling.
+Run the finished draft through Unslop. Keep it a draft unless sending was requested.
+This illustrates a route and result; use the supplied facts in real messages.
+
+**Apply `unslop` to every writing task**, including explicit specialist choices,
+when the skill is available. Load it once through the host's skill catalog and
+returned path or read interface. It owns clear language, meaningful formatting
+and protection against lost detail. If unavailable, preserve those requirements
+in your own final check and report that Unslop was not applied.
 
 | Intended result | Method |
 |---|---|
@@ -20,6 +51,13 @@ It owns clear language, meaningful formatting and protection against lost detail
 | Shared working notes in OpenAI ChatGPT Pages and Spaces | `workspace-writing` |
 | Repository README, system or architecture documentation | `technical-writing` |
 | Ordinary reply, quick wording fix or other prose | `unslop` and the reader's brief; no further route required |
+
+For repository docs, keep durable product and system knowledge in its canonical
+documentation owner. Put temporary progress, task status, agent diaries and
+"since the last update" notes in the active plan, roadmap item, issue, PR or
+changelog that owns that work. If a status note reveals a lasting behavior or
+constraint, rewrite that fact in the appropriate documentation instead of
+copying the transient update into the README.
 
 An explicit choice wins. Route by the text's job, not its source: a product pitch
 based on code is commercial writing. For mixed tasks, select the needed methods
@@ -34,17 +72,22 @@ use the configured skill roots; in a flat installation the file is the sibling
 uninstalled. Pass the existing brief, apply the method, then return the finished
 text to this task. Specialists never route back here or select another specialist.
 
-Use `writing-fragments` only when explicitly requested; it stays outside
-automatic routing.
+Writing Fragments is a deliberate preparation dependency before the specialist
+route, not another automatic router. Its explicit-only policy remains in native
+metadata; this workflow deliberately loads it when writing is routed through Good
+Writing. Specialists remain explicit-only and are loaded as needed below.
 
 Make the structure easy to see with the destination's supported formatting.
-Across all routes, load `editorial-svg-diagrams` when a visual explains relationships
-or behavior better. Pass the verified model, audience and output needs; it owns
-diagram sources, design, export and visual checks. A short reply needs no diagram.
+Across all routes, use `editorial-svg-diagrams` when available and a visual
+explains relationships or behavior better. Pass the verified model, audience and
+output needs; it owns diagram sources, design, export and visual checks. A short
+reply needs no diagram. If it is unavailable, use a clear list, table or prose and
+report the limit if a diagram was requested.
 
 Check meaning, conditions, uncertainty, links and requested depth against the
 source. After specialist work and artifact assembly, apply Unslop's final
-wording check to the complete reader-facing result, including titles and headings.
+wording check to the complete reader-facing result, including titles and headings,
+when available. If it cannot be read, run its preservation and clarity checks yourself.
 Text added by a renderer or another agent needs the same check. Reading Unslop
 at the start does not complete this step. Revise failures before returning the
 finished text; keep the language rules with Unslop rather than duplicating them

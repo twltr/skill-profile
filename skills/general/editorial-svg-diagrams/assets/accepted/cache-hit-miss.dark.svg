@@ -23,7 +23,7 @@
 </defs>
 <text x="198" y="29" class="f-ink small" text-anchor="middle" >Client</text>
 <text x="457" y="29" class="f-ink small" text-anchor="middle" >Cache</text>
-<text x="720" y="29" class="f-ink small" text-anchor="middle" >Datenbank</text>
+<text x="720" y="29" class="f-ink small" text-anchor="middle" >Database</text>
 <path d="M25 200 H850" fill="none" class="s-guide" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 9"/>
 <text x="27" y="124" class="f-teal label" text-anchor="start" >HIT</text>
 <text x="27" y="317" class="f-blue label" text-anchor="start" >MISS</text>

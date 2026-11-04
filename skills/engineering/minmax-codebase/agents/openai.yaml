@@ -1,5 +1,7 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "MinMax Codebase"
-  short_description: "Human-started structural improvement"
+  short_description: "Simplify architecture while preserving intended behavior"
 policy:
   allow_implicit_invocation: false

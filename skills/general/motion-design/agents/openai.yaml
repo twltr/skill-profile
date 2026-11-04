@@ -1,0 +1,5 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "Motion Design"
+  short_description: "Design purposeful animation and interface motion"

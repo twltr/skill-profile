@@ -3,7 +3,7 @@
 ## Visual Quality
 - [ ] Elements >40px for motion, >100px for detail
 - [ ] Readable at full speed without slow-motion
-- [ ] Clear primary, secondary, ambient layers
+- [ ] Any secondary or ambient layer has a clear purpose and does not distract
 - [ ] Counter-motion for balance where needed
 - [ ] Natural arcs (unless intentionally mechanical)
 - [ ] 1/3 rule (distance): no unbroken motion >1/3 container
@@ -15,14 +15,14 @@
 - [ ] Ease-out entrances, ease-in exits
 - [ ] Duration proportional to distance
 - [ ] Entrance duration >= exit duration
-- [ ] Not opacity-only for important state changes
+- [ ] State changes remain clear in the settled UI and without motion
 - [ ] Stagger total <500ms
-- [ ] Follow-through: child elements offset 50-150ms
+- [ ] Follow-through or child-element delay only when it clarifies the action
 
 ## Emotional Quality
-- [ ] Target emotion identified before properties
-- [ ] Personality archetype matches brand
-- [ ] Setup → action → resolution structure
+- [ ] Intended perception or emotion identified before properties
+- [ ] If the brief establishes a motion personality, it matches the product
+- [ ] Setup → action → resolution structure when it helps explain the motion
 - [ ] Intensity matches interaction importance
 - [ ] Consistent: same interaction = same motion
 - [ ] Appropriate on 100th viewing
@@ -43,25 +43,25 @@
 
 ## Severity Tiers
 
-### CRITICAL
+### Core constraints
 - Linear easing on spatial movement
-- Opacity-only for important states
+- State communicated only by motion, transient feedback or color where another cue is needed
 - Exceeds 1/3 screen rule
 - Missing primary layer
 - Stagger >500ms
 - Layout property animation causing jank
 
 ### HIGH
-- Missing secondary layer
+- A supporting motion layer adds no useful meaning
 - Duration mismatch with element type
 - Wrong directional easing
-- Inconsistent personality
-- No follow-through
+- Inconsistent personality when one is established
+- No follow-through when it would clarify substantial motion
 - Missing reduced-motion alternative
 
 ### MEDIUM
-- Missing ambient layer
-- No anticipation phase
+- Ambient motion distracts from the primary action
+- No anticipation phase when it would clarify substantial motion
 - Overshoot mismatch
 - Could use better arcs
 - Missing counter-motion

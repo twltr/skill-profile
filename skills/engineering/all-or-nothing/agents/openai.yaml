@@ -1,4 +1,6 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "All or Nothing"
   short_description: "Complete replacements and model corrections"
 policy:

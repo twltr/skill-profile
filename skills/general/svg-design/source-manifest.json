@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/tryopendata/skills",
+  "revision": "f97583ecb7eeb8a0c2a193fe9b80e55806d29823",
+  "path": "plugins/opendesign/skills/svg-design",
+  "reviewed_on": "2026-11-04",
+  "meaning": "Original installed files before the local design-scope adaptation; matched to public source Git blob hashes.",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "git_blob": "724330143d44b8181699f71258a4016c744d9be8"
+    },
+    {
+      "path": "assets/preview.html",
+      "git_blob": "85a5789dd92b1743d6ccbe5cabde98722b131812"
+    },
+    {
+      "path": "references/accessibility-and-pitfalls.md",
+      "git_blob": "c023a19c0ed9bdbb3910415943e1a182650c2d6a"
+    },
+    {
+      "path": "references/advanced-techniques.md",
+      "git_blob": "2588dc22304d4a3abdbc80908ca74ee343f62e94"
+    },
+    {
+      "path": "references/animation.md",
+      "git_blob": "b7fda6700feffdfcb02bc4303073f11918fe842f"
+    },
+    {
+      "path": "references/editing-workflow.md",
+      "git_blob": "6ef335cb363aff9c8e178fa5d0b3abf6fc5ea9dc"
+    },
+    {
+      "path": "references/icon-design.md",
+      "git_blob": "f405702af4602361657b0fa63c91b7b86a264e82"
+    },
+    {
+      "path": "references/logo-techniques.md",
+      "git_blob": "37c9aac8ca47833371be9a9ae616202a4bc391b4"
+    },
+    {
+      "path": "references/optimization.md",
+      "git_blob": "ed9b67cea5372369731a367a338d696a924bfa8e"
+    },
+    {
+      "path": "references/path-patterns.md",
+      "git_blob": "21e28db0da5b339e34709196cbae73445a32d6d6"
+    }
+  ]
+}

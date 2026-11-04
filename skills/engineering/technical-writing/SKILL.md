@@ -1,12 +1,13 @@
 ---
 name: technical-writing
-description: "Write or revise repository READMEs, system explanations and architecture documentation. Make the system understandable through purposeful Markdown, grouped topics and diagrams of relationships and behavior. Source comments belong to Golden Comments. Automatic selection disabled; use only by explicit user request or through Good Writing."
+description: "Write or revise repository READMEs, system explanations and architecture documentation. Make the system understandable through purposeful Markdown, grouped topics and diagrams of relationships and behavior. Source comments belong to Golden Comments."
 ---
 
 # Technical Writing
 
 Use this method only when explicitly requested by the user or selected by Good
-Writing. An ordinary matching request goes through that router.
+Writing. When Good Writing is available, use it for ordinary reader-and-purpose
+routing; a direct request supplies its own brief without routing back to Good Writing.
 
 Explain the system so a new developer can understand its construction, reasons
 and constraints without reconstructing them from scattered implementation.
@@ -19,11 +20,26 @@ Preserve a working book structure outside the requested change.
 
 Accept the reader, purpose, source material and constraints from Good Writing
 when supplied. Direct invocation works without that router. Do not invoke Good
-Writing from here. **Always apply `unslop`**, including during direct use. Load
-it once through the host's skill catalog and returned path or read interface
-unless already loaded. If unavailable, name the missing dependency and leave
-the language review open; continue independent preparation without claiming
-the full method was applied.
+Writing from here. Apply `unslop` when available, including during direct use.
+Load it once through the host's skill catalog and returned path or read interface
+unless already loaded. If unavailable, use this skill's checks for clear prose
+and preserved meaning, and report that Unslop was not applied.
+
+Before drafting, reuse the caller's source-selection handoff. If none is supplied,
+use Writing Fragments when available to select the relevant material, sources,
+qualifiers and gaps at the scale of this task. Otherwise perform that bounded
+selection directly without claiming the skill was applied. A direct invocation
+needs the same preparation, not a return to Good Writing or repeated scouting.
+
+**Example:** Source facts say a worker advances its cursor in the same transaction
+as the event effects, and a failed transaction leaves the event available again.
+Explain that relationship directly:
+
+> The worker stores the event effects and the new cursor in one transaction.
+> If that transaction fails, the cursor does not move and the event can be tried again.
+
+The prose explains the consequence a maintainer needs; verify each guarantee
+against the real implementation before publishing it.
 
 ## Make a mental map before writing paragraphs
 
@@ -174,10 +190,10 @@ when the reader can follow the verified relationships faster visually; do not
 wait for a separate diagram request. A simple list or exact attribute comparison
 may still be clearer as Markdown. Not every page needs a graphic.
 
-Load `editorial-svg-diagrams` through the host's catalog with the verified model, reader
-and intended output. It owns visual form, editable standalone SVG source, export
-and visual checks; do not copy its design manual here. Keep meaningful labels,
-conditions and direction. Link large flow diagrams from the relevant explanation
+When a diagram materially improves the explanation, use `editorial-svg-diagrams`
+if available, with the verified model, reader and intended output. It owns visual
+form, editable standalone SVG source, export and visual checks; do not copy its
+design manual here. Keep meaningful labels, conditions and direction. Link large flow diagrams from the relevant explanation
 instead of collecting them in a short overview. No Figma or new plugin is required.
 
 When revising documentation, modernize legacy diagrams encountered within the
@@ -194,24 +210,41 @@ figures meaningful alternative text. If the skill or exporter is unavailable,
 state the limit and use available prose, lists or tables without claiming a
 diagram was generated or checked. An explicitly required diagram remains open.
 
-## README, configuration and deployment have different jobs
+## Keep README orientation short and durable
 
-The README answers how to start, test and develop this component quickly, while
-showing what it is and why its construction matters. For a substantial system,
-use this orientation sequence where the content exists:
+The README gives the concise purpose, the verified fast start, and links to the
+deeper durable documentation a reader needs next. A substantial system README
+may add a small architecture overview or an explanatory diagram when that makes
+the system easier to grasp; do not turn it into a long narrative or a monolith of
+paragraphs. Group related topics and give each deeper page a clear question and
+owner. Every sentence should help a reader orient, start, develop or find an
+authoritative explanation. Preserve reasons and conditions that affect decisions;
+remove repeated wording, not useful meaning.
 
-1. One-sentence purpose, then what it is, why it exists and its distinctive constraints.
-2. A diagram or screenshot when it materially helps orientation.
-3. A quickstart that can be followed in minutes with literal, verified commands.
-4. What's in the box, relevant sibling repositories and the runtime landscape.
-5. A short architecture abstract linking into the book.
-6. Deployment notes when owned here, the documentation map, development gates and honest status.
+Keep product and system knowledge in maintained documentation. Temporary
+progress, task status, agent diaries and "since the last update" notes belong to
+the active plan, roadmap item, issue, PR or changelog. If work reveals a durable
+behavior or constraint, update its canonical explanation in place and let the
+task record carry the temporary history.
 
-The quickstart is operationally exact. Give the literal command and prerequisites
-for each supported environment, including a component-only start if it is a real
-supported workflow. Point to configuration and scripts instead of maintaining
-another copy of their values. Do not assume a particular runtime or container
-setup. Someone trying the system should not have to reverse-engineer its launcher.
+**Example:** A temporary note says, "Since the last update, the worker now
+retries a failed event." Put that progress in the active issue or plan. Verify
+the behavior, then update the system explanation with its durable contract, for
+example: "A failed transaction leaves the cursor unchanged, so the event is
+available for retry." Do not retain the dated progress note in the README.
+
+An explanatory Editorial SVG can replace several paragraphs when the verified
+architecture, relationship or flow is materially clearer as a picture. Use it
+only when it carries information more clearly; keep labels concise, include a
+caption and accessible text equivalent, and leave implementation details to the
+linked explanation. Editorial SVG Diagrams owns the diagram method when
+available.
+
+The quickstart is operationally exact. Give literal, verified commands and
+prerequisites for each supported environment, including a component-only start
+if that is a real supported workflow. A short README can hold this information;
+do not assume a particular runtime or container setup. Someone trying the
+system should not have to reverse-engineer its launcher.
 
 Configuration earns a chapter when it has a non-trivial surface. It answers:
 "I have something new; how do I wire it in?" Identify each config file and owner,

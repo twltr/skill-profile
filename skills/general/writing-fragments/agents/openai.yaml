@@ -1,10 +1,10 @@
 interface:
   display_name: Writing Fragments
-  short_description: 'Nur explizit: Schreibideen sammeln'
-  default_prompt: Use $writing-fragments to explore this idea and capture raw material
-    before structuring it.
-  icon_small: assets/icon.svg
-  icon_large: assets/icon.svg
+  short_description: "Select useful, traceable material before writing"
+  default_prompt: Use $writing-fragments to scout the relevant material and prepare a
+    concise, source-backed handoff for the writing task.
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
 policy:
   allow_implicit_invocation: false
   products:

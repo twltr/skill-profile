@@ -9,6 +9,19 @@ Maintain one stable local context entry for a body of work that may span several
 repositories, document roots and agent providers. A Workspace explains and
 routes; it does not copy or replace the sources it references.
 
+## A small finished map
+
+**Illustrative host-local map:**
+
+| Source | Canonical owner | This Mac | Cloud |
+|---|---|---|---|
+| Application repository | Git checkout and its `AGENTS.md` | Path checked | Not checked |
+| Business records | Connected document store | Provider read verified | Not checked |
+
+The Workspace links to both owners; it stores neither their contents nor a second
+copy. “Not checked” records uncertainty; it does not assert that cloud access is
+impossible. A provider read proves only the named account and route that were tested.
+
 ## Contract
 
 - Use `${HOME}/Workspaces/<workspace-name>` unless the host has an established
@@ -51,15 +64,15 @@ routes; it does not copy or replace the sources it references.
 
 ## Local and cloud boundary
 
-Default every cloud environment to `not available`. Mark a Workspace or source
-as cloud-accessible only after verifying the named provider, account, sync or
-upload mechanism, destination and access mode. Record that mechanism and the
-verification date in `README.md`. Never generalize one provider's sync to
-another provider, host or account.
+Treat cloud access as unverified until checked for the named provider, account,
+sync or upload mechanism, destination and access mode. Record the result, mechanism
+and verification date in `README.md`. Use `unavailable` only when the relevant route
+has been checked and found unavailable; otherwise retain `not checked`. Never
+generalize one provider's sync to another provider, host or account.
 
 If a synced Workspace contains local absolute paths, label them as local
 mappings. A cloud agent must receive an explicit cloud-side mapping or stop at
-the unavailable source; it must not guess a checkout or silently operate on a
+the unverified source; it must not guess a checkout or silently operate on a
 different copy.
 
 ## Keep context current

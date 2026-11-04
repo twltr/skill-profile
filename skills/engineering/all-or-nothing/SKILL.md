@@ -15,6 +15,15 @@ the assignment and current requirements; do not invent a replacement decision.
 An inspection or review produces findings, not permission to implement them.
 Complete means the affected contract, not an unsolicited sweep of the repository.
 
+## A complete replacement in miniature
+
+Illustrative approved change: batch delivery is retired and streaming is the only
+supported mode. Removing the batch button is not the transition. Move the real
+consumers and supported configuration, remove the retired option and behavior,
+update their tests and documentation, and verify the streaming path. A stale batch
+setting must produce the intended explicit error instead of silently selecting
+a removed behavior. Preserve historical records without leaving them active.
+
 ## Establish the change boundary
 
 Read the current owners and trace the affected behavior from entrypoint to state
@@ -80,3 +89,11 @@ completed plans and temporary artifacts and update the owning work record.
 Deliver the corrected model or replacement, the retired surfaces, actual evidence
 and remaining limits. If an external migration or decision is still outstanding,
 name that boundary explicitly; do not report the whole transition as complete.
+
+If **Puppeteer** is available for a broad transition, use it to investigate or
+change independent consumers after the shared target contract is settled. If
+**Road to Glory** is available for substantial work, keep sequencing, verification
+and cleanup in its active plan. If **Engineering Review** is available, use it
+for independent review of the complete result. Return to an existing caller rather
+than starting the same workflow again; without these methods, keep the same
+ownership and evidence boundaries in the task's existing workflow.

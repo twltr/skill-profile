@@ -53,7 +53,11 @@ Reduced motion means: remove spatial movement, keep opacity, remove spring easin
 
 ## Content Type Adaptation
 
-| Content Type | Personality | Duration | Motion Density |
+The styles below are optional expressive references, not defaults inferred from
+content category. Follow a personality only when the brief or existing product
+identity establishes one; otherwise use neutral, task-focused motion.
+
+| Content Type | Optional expressive direction | Duration | Motion Density |
 |-------------|-------------|----------|---------------|
 | Financial | Corporate/Premium | 250-500ms | Low |
 | Social media | Playful | 150-300ms | Medium |
@@ -63,6 +67,7 @@ Reduced motion means: remove spatial movement, keep opacity, remove spring easin
 | E-commerce | Varies | 200-400ms | Medium |
 | Editorial | Premium | 350-600ms | Low |
 | Children's apps | Playful | 150-300ms | High |
+| No established personality | Neutral/task-focused | Match the interaction | As needed |
 
 ## Responsive Motion
 

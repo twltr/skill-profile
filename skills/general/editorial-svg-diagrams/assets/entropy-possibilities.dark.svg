@@ -37,7 +37,7 @@
   <marker id="entropypossibilities-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
   <marker id="entropypossibilities-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
 </defs>
-<text x="12" y="29" class="f-ink small" text-anchor="start" >Position bekannt</text>
+<text x="12" y="29" class="f-ink small" text-anchor="start" >Known position</text>
 <rect x="12" y="53" width="83" height="77" rx="11" fill="none" class="s-border" stroke-width="2"/>
 <rect x="105" y="53" width="83" height="77" rx="11" fill="none" class="s-border" stroke-width="2"/>
 <rect x="198" y="53" width="83" height="77" rx="11" class="f-tealwash" />
@@ -48,9 +48,9 @@
 <rect x="477" y="53" width="83" height="77" rx="11" fill="none" class="s-border" stroke-width="2"/>
 <rect x="570" y="53" width="83" height="77" rx="11" fill="none" class="s-border" stroke-width="2"/>
 <rect x="663" y="53" width="83" height="77" rx="11" fill="none" class="s-border" stroke-width="2"/>
-<text x="383" y="163" class="f-ink label" text-anchor="middle" >1 Position   ·   0 Bit</text>
+<text x="383" y="163" class="f-ink label" text-anchor="middle" >1 position   ·   0 bits</text>
 <path d="M12 194 L751 194" fill="none" class="s-border" stroke-width="1" stroke-linecap="round" />
-<text x="12" y="232" class="f-ink small" text-anchor="start" >Position unbekannt</text>
+<text x="12" y="232" class="f-ink small" text-anchor="start" >Unknown position</text>
 <rect x="12" y="256" width="83" height="77" rx="11" class="f-tealwash" />
 <rect x="12" y="256" width="83" height="77" rx="11" fill="none" class="s-teal" stroke-width="2.5"/>
 <circle cx="53.5" cy="294.5" r="13" class="f-teal" fill-opacity="0.65"/>
@@ -75,5 +75,5 @@
 <rect x="663" y="256" width="83" height="77" rx="11" class="f-tealwash" />
 <rect x="663" y="256" width="83" height="77" rx="11" fill="none" class="s-teal" stroke-width="2.5"/>
 <circle cx="704.5" cy="294.5" r="13" class="f-teal" fill-opacity="0.65"/>
-<text x="383" y="372" class="f-ink label" text-anchor="middle" >8 Positionen   ·   3 Bit</text>
+<text x="383" y="372" class="f-ink label" text-anchor="middle" >8 positions   ·   3 bits</text>
 </svg>

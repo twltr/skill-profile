@@ -1,3 +1,5 @@
 interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
   display_name: "Skill Issue"
-  short_description: "Write focused skills with clear workflows"
+  short_description: "Build and review skills with clear, practical examples"

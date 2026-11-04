@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.svg"
+  display_name: "Improve Codebase Architecture"
+  short_description: "Reassess system choices and plan worthwhile improvements"
+policy:
+  allow_implicit_invocation: false

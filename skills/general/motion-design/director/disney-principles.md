@@ -1,5 +1,10 @@
 # Disney's 12 Principles — UI Adapted
 
+Use these principles as a design toolbox for motion that benefits from added
+expression or physicality, not as a checklist for every interaction. Functional
+feedback can stay direct; reduced-motion preferences, accessibility and the
+brief determine which principles apply.
+
 ## 1. Squash and Stretch
 
 - Squash: scale ~[1.2, 0.8]; Stretch: ~[0.85, 1.15]
@@ -88,7 +93,7 @@ Enter-exit asymmetry: entrances 30-50% longer than exits.
 ## 12. Appeal
 
 - Smooth curves over sharp angles; satisfying timing
-- Personality consistency across all elements
+- Consistent personality across elements when the project has an established motion identity
 - Appeal killers: jerky motion, inconsistent timing, abrupt stops, uniform animation
 
 ## Combining Principles

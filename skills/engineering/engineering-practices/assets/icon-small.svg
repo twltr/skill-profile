@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+<title id="title">Engineering Practices</title>
+<g aria-hidden="true"><path d="M12 12H18V47H45V53H12Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M18 18H33V24H24V39H18Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="35" y="21" width="8" height="24" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M43 21H52V27H48V47H43Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
+<g><path d="M12 12H18V47H45V53H12Z" fill="#26364A" stroke="none" stroke-width="2.5"/><path d="M18 18H33V24H24V39H18Z" fill="#318F95" stroke="none" stroke-width="2.5"/><rect x="35" y="21" width="8" height="24" rx="1" fill="#B58D3C" stroke="none" stroke-width="2.5"/><path d="M43 21H52V27H48V47H43Z" fill="#527CAF" stroke="none" stroke-width="2.5"/></g>
+</svg>

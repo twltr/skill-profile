@@ -1,70 +1,119 @@
 ---
 name: writing-fragments
-description: "Writing, explore: mine raw fragments, no structure yet. Explicit use only; automatic selection is disabled."
+description: "Scout source material and select relevant, well-supported content for a writing task, preserving citations, context and uncertainty in a concise handoff."
 ---
 
-This is pure explore: widen the space of what could be written without committing to structure. Committing is exploit, a separate skill's job. Run a grilling session that produces fragments, interviewing the user relentlessly about whatever they want to write about. Imposing phases, outlines, or article structure is out of scope here.
+# Writing Fragments
 
-As fragments emerge from either side of the conversation, append them to a single markdown file.
+Writing needs a useful selection of evidence before it needs polished sentences.
+This skill scouts the material already in scope, keeps the claims that serve the
+reader and purpose, and hands a compact, traceable brief to the writing method.
+That prevents a draft from confusing a persuasive line with a supported claim,
+or from carrying a whole source pile into the reader's text.
 
-If the user did not pass a path, ask once where to save the document, then remember it for the rest of the session.
+This is preparation, not a user interview, a raw-fragment diary or a draft.
+Do not make the user co-author the selection or ask where to save it. Return the
+handoff to the active writing task; create a separate file only when requested.
+Do not call Good Writing or restart the routing chain. The caller owns what
+happens after the handoff.
 
-Capture fragments from the very first thing the user says, including the initial prompt. When an upstream router invokes this skill, treat the clearly delimited original user material as the initial prompt. Do not turn the router's orchestration envelope, assigned lens, or file-path instruction into fragments.
+## A small source selection
 
-On first write, put a single H1 at the top with a working title (it can change later) and nothing else: no metadata, no TOC, no date.
+**Fictional brief:** Write a decision brief in the active rollout plan on whether to expand
+a staged service rollout beyond 20 accounts after a reliability review.
 
-## What is a fragment
+**Fictional source set:** `release-log.md#2026-05-03` says the rollout is capped
+at 20 accounts. `monitoring.md#2026-05-07` reports 18 of 20 accounts completed
+onboarding and says monitoring covers only this cohort. `operations-note.md#2026-05-08`
+schedules a reliability review and records that no expansion decision has been made.
 
-A fragment is any piece of text that might survive into the final artifact. It must be readable by the author (the author can tell what it means), but it does not need to define its terms or be comprehensible to a cold reader. The bar is "is this a piece of good writing?", not "is this a self-contained argument?"
+A useful selection might be:
 
-Fragments are deliberately heterogeneous. Examples of what could be a fragment:
+- The rollout is capped at 20 accounts (`release-log.md#2026-05-03`).
+- On May 7, 18 of those accounts had completed onboarding; two had not
+  (`monitoring.md#2026-05-07`). This describes onboarding, not service reliability.
+- The available monitoring covers only this capped cohort, so it cannot establish
+  performance at larger volume (`monitoring.md#2026-05-07`).
+- The May 8 note schedules a reliability review and records no expansion decision
+  (`operations-note.md#2026-05-08`). Do not imply approval.
 
-- A sharp sentence you'd want to deploy somewhere but don't yet know where.
-- A claim with a one-line justification.
-- A vignette: a thing that happened, a code snippet, a scenario, an analogy.
-- A half-thought: "something about how X feels like Y, work this out later."
-- A quote, a piece of dialogue, an overheard line.
-- A list of related observations that hang together by feel.
-- A complaint, a confession, a punchline.
-- A leading word: a compact metaphor or coinage the whole piece can hang on (one term that names the idea, the way tracer bullets or fog of war names a whole pattern).
+**Figure suggestion:** A small sequence—20-account cap → reliability review →
+expansion decision—could clarify the decision gate in a longer report. A short
+note can state it in one sentence, so no figure is needed there.
 
-Of these, the leading word is the most valuable fragment to land. It is load-bearing: name the right one in explore and it shapes the structure, the transitions, and the title later, paying dividends through the entire exploit phase. When the conversation circles a recurring idea, push to coin a word for it.
+**Handoff:** The selected writer can draft the decision brief in the active plan
+using the cited status and limitation, while treating the review gate as the
+brief's intent. This temporary rollout status does not belong in a maintained
+README. The next writer receives both what the sources support and what they
+do not establish.
 
-The novelist's diary is the model: years of unstructured noticings that later get mined for raw material. Fragments are noticings.
+## Scout and select
 
-## File format
+1. **Set the purpose and source boundary.** Identify the intended reader, desired
+   outcome, destination and material supplied or made available for this task.
+   Inspect only authorized, relevant sources. Do not assume a linked, private or
+   external source is accessible. Follow the active workflow's handling rules
+   for customer, business, personnel and other sensitive material; keep the
+   handoff within those boundaries and include only what the next writer needs.
+2. **Read for evidence that changes the text.** Select claims, examples, wording,
+   decisions or counterevidence that materially serve the purpose. For each
+   candidate, record the exact source and a useful locator: file and heading or
+   lines, page or section, URL and publication detail, or repository path and
+   revision when relevant. Keep the surrounding conditions, date, population,
+   scope and qualifications needed to interpret it.
+   Prioritize relevance to the reader's task, consequences of omitting the point,
+   strength of evidence, explanatory value and information not already covered.
+   A vivid quotation is not automatically more useful than a precise limitation;
+   remove duplication without selecting away meaningful counterevidence.
+3. **Separate evidence types.** Mark whether a point is supported by a source,
+   supplied only in the brief, an inference, contradicted, or still unresolved.
+   Keep meaningful counterevidence and disagreement visible. Do not turn a
+   plausible explanation, absence of evidence or requested outcome into a fact.
+4. **Name real gaps.** If the brief and available material do not support a
+   necessary claim, say which claim is unsupported and what source or decision
+   would resolve it. If the user supplied no source material, prepare from the
+   brief alone and identify only consequential evidence gaps. Do not invent
+   sources or add research steps when the brief is sufficient.
+5. **Choose prose or a figure.** Prefer prose for a point that fits plainly in a
+   sentence. Suggest an explanatory visual only when relationships, sequence,
+   comparisons or quantities become easier to understand as a figure. State the
+   idea a figure would show and whether the destination benefits from it; do not
+   draw it here. If a figure is useful, the caller can route it to Editorial SVG
+   Diagrams.
+6. **Return a compact handoff.** Include the purpose and likely writing method;
+   the selected points with source locators and necessary qualifiers; important
+   gaps or counterevidence; and a figure suggestion or a brief reason prose is
+   enough. Keep enough context for the next writer to verify the selection, not a
+   source-by-source diary.
 
-```markdown
-# Working title
+Scale this work to the material. For a typo, short revision or tiny supplied
+text, select locally from that text and the instruction; do not search for
+unneeded sources or write a research report. For a large codebase, book,
+research corpus or document set, scout only the relevant sections. If a current,
+consequential research question needs fresh evidence, use the task's authorized
+research method and distinguish it from supplied material.
 
-A first fragment lives here.
+For substantial corpora where independent scouting saves time, use Puppeteer if
+available and the host permits composition. Read its complete method, then define
+read-only scouts with bounded source sets and a shared return format. Keep simple,
+dependent reading direct. Check returned references and claims before using them.
+For a consequential customer document, repository document or other substantial
+text, Grilling with Agents may challenge coverage, claims and organization with
+the lead when available and useful. Resolve and read its complete method before
+using it. It returns internal findings, not questions for the user; the lead
+resolves the handoff. These methods are conditional aids, not a required tour.
 
-It can be multiple paragraphs. It can include lists, code, quotes: whatever
-shape the fragment naturally takes.
+## Handoff shape
 
----
-
-A second fragment.
-
----
-
-> A quoted line that the user wants to keep around.
-
-A reaction to it.
-
----
-
-- A cluster of related observations
-- That hang together by feel
-- And want to be near each other
+```text
+Purpose / reader / destination:
+Likely writing method:
+Selected material:
+- [supported | brief-only | inference | disputed] Point — source locator; scope or qualifier.
+Gaps / counterevidence:
+Figure:
 ```
 
-Fragments are separated by a horizontal rule (`\n---\n`). No headings inside the body. No tags. No order beyond the order they were added.
-
-## Writing rhythm
-
-Append silently. Don't ask permission for each fragment. Mention what you added in passing ("adding that"), but don't interrupt the conversation with save dialogs.
-
-Before every write: re-read the file from disk. The user may have edited, reordered, or deleted fragments between turns, so preserve their changes. Never overwrite the file; only append (or, if the user asks, edit a specific fragment in place).
-
-The user can say "cut the last one", "rewrite that one sharper", "merge those two" at any time. Treat those as first-class instructions.
+Use only fields that help the next writer. If there is no material beyond the
+brief, say so directly. A good handoff is short enough to use and precise enough
+to prevent unsupported claims.

@@ -1,12 +1,20 @@
 ---
 name: editorial-svg-diagrams
 description: >-
-  Create and teach explanation-first diagrams: clean visual aids with very few words, meaningful geometry, restrained color and theme-aware presentation. Use for short illustrative figures within explanations, documentation, papers, READMEs, software architecture, protocol handshakes, OSI layers, encapsulation, uncertainty/entropy, state changes or scientific concepts. Produce real standalone transparent SVGs plus optional dark/light variants, PNG or PDF exports when files are requested; in supported chat interfaces, prefer native theme-aware UI and inline SVG. Also use to refactor overly text-heavy diagram graphics into visual-first figures, or to learn SVG construction.
+  Create explanatory diagrams for documentation, architecture, workflows and learning material. Make concepts and relationships understandable with editable SVGs, theme variants and PNG/PDF exports. Use SVG Design for logos, icons, brand assets and decorative website graphics.
 ---
 
 # Editorial SVG Diagrams — explanation first
 
 **A diagram is a visual sentence, not a document in miniature.** Match the user's demonstrated reference: visual structure carries the idea; supporting prose lives *outside* the figure. Do not mistake more labels, bigger cards, longer descriptions or a giant canvas for higher fidelity.
+
+## A finished explanation example
+
+The accepted [cache hit/miss figure](assets/accepted/cache-hit-miss.svg) makes
+one distinction visible: a hit returns from the cache, while a miss adds a
+database round trip. It aligns Client, Cache and Database, then separates the
+two paths so the added work is immediately clear. Read the figure for the
+relationship; keep implementation caveats in the surrounding explanation.
 
 ## Choose the output mode before drawing
 
@@ -78,4 +86,16 @@ When the user wants to *learn* SVG, begin with `assets/starter.svg` or `assets/t
 
 ## Scope relative to other skills
 
-Use broader diagram-design skills for unusual or complicated graph semantics when available. This skill owns the **visual-minimal explainer**, portable SVG source, theming strategy, rendering, and QA. The user did not ask for dashboard layouts, default title cards or an SVG that is secretly a paragraph.
+Choose by the graphic's purpose, not its file format or placement. This skill
+owns diagrams that explain a concept, relationship, process or system, including
+those embedded in websites, presentations and articles. Documentation and
+learning material are its main uses; visual clarity must serve the explanation.
+
+If `svg-design` is available, use it for logos, icons, brand assets and decorative
+or expressive web graphics. A process diagram on a landing page belongs here;
+the site's logo, icon set and decorative hero artwork belong to SVG Design. If
+`frontend-design` is available, use it for the surrounding page layout and
+interface, passing the figure's purpose and space constraints. If either skill
+is unavailable, follow the existing design system and keep its work within this
+figure's scope. This skill owns the explanatory figure's editable SVG, themes,
+exports and visual checks.

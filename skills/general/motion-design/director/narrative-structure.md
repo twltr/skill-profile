@@ -1,6 +1,10 @@
 # Narrative Structure
 
-## Four-Act Structure
+Use these structures when a motion sequence benefits from a narrative arc.
+Short functional interactions can omit anticipation, reaction and resolution
+beats when they would add delay or decoration without improving clarity.
+
+## Optional Four-Act Structure
 
 ### Act 1: Anticipation (10-20%)
 - Wind-up: small motion opposite to main direction

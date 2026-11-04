@@ -1,8 +1,8 @@
 interface:
   display_name: "Editorial SVG Diagrams"
-  short_description: "Auto: Visuelle Erklärgrafiken mit wenig Text"
-  icon_small: assets/icon.svg
-  icon_large: assets/icon.svg
+  short_description: "Explain concepts and systems through clear diagrams"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.svg"
 policy:
   products:
   - chatgpt

@@ -1,6 +1,6 @@
 ---
 name: engineering-practices
-description: Choose and review software languages, architectures, protocols, frameworks and dependencies using current primary sources, established engineering knowledge and the needs of maintainers. Apply during development at the scale of the actual decision, from a small feature to a new system.
+description: Make and review engineering decisions about architecture, data, reliability, security and technology choices from requirements, current evidence and maintenance needs. Apply during development at the scale of the actual decision, from a small feature to a new system.
 ---
 
 # Engineering Practices
@@ -79,6 +79,51 @@ These ten are a starting set, not a permanent limit or universal ranking. Add or
 revise a practice only when it supplies useful decision guidance. Structure, domain naming,
 source explanations and test design retain their specialist owners below.
 
+## Find the relevant decision dimensions
+
+Start with required behavior and guarantees, not a technology or pattern catalogue.
+For a new application, consider the full spectrum below before narrowing the work.
+For an existing feature, investigate the dimensions it changes or depends on;
+reuse sound established decisions elsewhere. These are lenses for discovering
+questions, not a checklist that every task must complete. A dimension can require
+no new mechanism or investigation; explain that briefly when the scope is substantial.
+
+| Dimension | Questions that can change the design |
+|---|---|
+| State and data lifecycle | What concepts and objects exist? What does each consequential field mean, why is it needed, and which invariants govern identity, validity, ownership and change? Which information is authoritative, derived or disposable? |
+| Persistence and consistency | What must be retained, for how long, and with what acceptable loss or staleness? What do concurrent changes require? Which atomicity, durability, access and evolution guarantees follow from the workload? |
+| Failure modes and recovery | Which failures can occur, where can outcomes become partial or unknown, and what must remain true? What must be recovered, reconstructed or reconciled, within which tolerances, and how will that be demonstrated? |
+| Communication and contracts | What must participants agree on before acting? What does acceptance or completion mean, who owns the result, and what happens with delay, cancellation, repetition, ordering or lost contact? |
+| Security and trust | Which data and actions need protection, from whom, and across which trust boundaries? What confidentiality, integrity, authorization and lifecycle requirements follow? Which exposure or current security finding could change the choice? |
+| Mechanisms and language fit | Which concrete responsibility or invariant needs a mechanism? Can the existing design or language-native facility express it clearly? What would an additional pattern improve, and what cost or failure behavior would it introduce? |
+
+The same reasoning applies to deployment, performance, operability and human
+maintenance in the practices above. Follow interactions between dimensions:
+a recovery design may change access control, retention, consistency or cost.
+Do not optimize each topic independently and assume the results compose.
+
+Domain Modeling, when available, owns unsettled meanings, identities and lifecycle
+rules. Use those results to choose representations, storage and enforceable
+contracts; do not produce a full schema for a task that does not need one.
+Likewise, select synchronous or asynchronous communication, a storage technology
+or a language-idiomatic pattern only after its requirements are clear. A state
+machine, observer or factory is an example of a candidate, not a recommended
+default. Keep direct implementation and reuse among the alternatives.
+
+Use theoretical results only within their assumptions. For example, a partition
+question needs the required consistency model and acceptable service behavior;
+a CAP label alone does not decide a database or the design of an entire system.
+
+### Same failure, different requirements
+
+Illustrative contrast: a temporary report can be regenerated from retained source
+data, so restarting its calculation may meet the requirement. A valuable external
+operation whose acknowledgment was lost needs its outcome established before a
+repeat is considered safe. Both may follow a process crash; their preservation
+and recovery needs differ. Ask what must remain true, inspect the actual contract,
+then choose and verify the smallest sufficient mechanism. Neither example mandates
+a database, a status enum, a retry scheme or a particular architecture.
+
 ## Scale the investigation
 
 Start with the requested outcome, actual repository, current stack and existing
@@ -86,6 +131,14 @@ decisions. For a known local fix, inspect the affected contract and use establis
 practice. For a new service or a material technology decision, compare a small set
 of credible alternatives. For an architecture review, begin with the large choices
 and deepen only where evidence shows a meaningful problem.
+
+For substantial work, turn the relevant dimensions into bounded decision questions
+with shared requirements and explicit dependencies. If **Puppeteer** is available,
+use it to assign coherent topics or independent subquestions to agents, including
+multiple investigations of a difficult topic when useful. Keep cross-topic choices
+with the lead; do not commission a separate full-system design from every scout.
+Pass this same scope to State of the Art and any council instead of restarting
+topic discovery in each method. A small settled question stays direct.
 
 Do not default a substantial new non-browser system to JavaScript, TypeScript or
 an accumulation of MJS scripts because they are convenient to generate. Establish
@@ -117,6 +170,12 @@ It owns search strategy, source assessment and delegated research. Without it,
 consult current primary specifications, SDK/release documentation and relevant
 established literature directly. A forum claim about an "MCP council decision"
 is not proof that a transport, SDK or version was retired.
+
+For a security assessment or a choice that changes the attack surface, protected
+data or security-relevant components, include current advisory and support information.
+Assess applicability to actual versions, configuration and exposure before choosing
+a mitigation or replacement. Reuse established controls for unaffected areas;
+neither a familiar architecture nor a clean search establishes security.
 
 Keep temporary research under `.tmp/research/<topic>/` or the repository's established
 temporary equivalent. Keep accepted, durable decisions and their supporting

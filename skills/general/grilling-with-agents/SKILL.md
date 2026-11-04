@@ -100,6 +100,15 @@ and result verification. Assign coherent domains, capabilities or decision quest
 than mandatory personas or one agent per folder. Scale to the work and available
 slots; use waves where parallel capacity is limited.
 
+Reuse the caller's selected decision dimensions. A new application calls for a
+broad initial assessment; a feature calls for its affected concerns. Assign a
+coherent topic or independent subquestion, not automatically one agent per listed
+concept. A difficult topic may benefit from several independent investigations.
+Supply shared requirements and cross-topic dependencies, then challenge whether
+the combined decisions still hold together. For example, data recovery and
+security findings may constrain each other; neither scout owns that combined
+trade-off alone. These are investigation boundaries, not implementation layers.
+
 For engineering, use **Vertical Slices** when available for responsibility,
 interfaces, dependencies, invariants and Shared Machinery. Perform active domain modeling: distinguish
 overloaded terms, test definitions with counterexamples, compare them with actual

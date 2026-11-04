@@ -17,6 +17,8 @@ Use a small search set that can find both support and disconfirmation:
 | Candidate + official owner | `<candidate> official docs support lifecycle migration` |
 | Alternative and baseline | `existing database search vs dedicated index operational cost` |
 | Evidence that could challenge the proposal | `retrieval benchmark access filters update workload limitations` |
+| Required guarantee + failure condition | `<actual mechanism> documented durability recovery interrupted operation guarantees` |
+| Protection need + current component | `<component> <version> official security advisories affected configuration mitigation` |
 
 Replace placeholders with the actual product, load, deployment, data and failure
 conditions. Search synonyms when teams use different terms for the same mechanism.
@@ -33,6 +35,7 @@ not use result count, rank or search-engine summaries as an evidence threshold.
 | Whether a method works under measured conditions | The study itself and, where available, independent replication or later research | Research question, sample/workload, comparison, metrics, threats to validity and publication status |
 | Why a design failed operationally | A specific, first-person postmortem or engineering account | Author's role/date/context, observable evidence, selection bias and whether claim still holds |
 | What a pattern means | Original paper/book or a reputable catalogue grounded in it | Intended forces, context, costs and whether it addresses the current need |
+| Whether a known vulnerability applies | Maintainer/vendor advisory and authoritative vulnerability record | Exact affected/fixed versions, configuration, exposure, exploit prerequisites, mitigation and unresolved applicability |
 
 Primary does not mean infallible: official documentation is authoritative for a
 project's intended contract, while independent evidence may reveal gaps between

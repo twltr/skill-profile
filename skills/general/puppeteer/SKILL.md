@@ -48,6 +48,23 @@ Useful contrasts:
 
 ## Cut work at a stable boundary
 
+For research and design, a boundary can be an engineering concern rather than a
+code capability. Select questions relevant to the change; a new application needs
+an initial view across the concerns, while a small feature may touch only a few.
+Assign one coherent topic to an agent, or split a broad topic into independent
+subquestions or competing analyses. Several agents may investigate one topic when
+that produces distinct evidence; the topic list is not a required agent count.
+
+For example, a design investigation might separate data lifecycle and recovery
+requirements from protection needs and trust boundaries, sharing the same workload
+and constraints. The lead then resolves interactions such as retention versus
+deletion requirements. These are example topics, not a required design or team.
+Keep common assumptions, dependencies and decisions visible to all affected agents;
+return material decisions for challenge before integrating their recommendations.
+If **State of the Art** is available, it owns evidence research; if **Grilling with
+Agents** is available and selected, it owns iterative challenge. Reuse an active
+caller's topic scope and return results to it without restarting either method.
+
 For repository work, prefer a coherent user-visible capability or other independently testable outcome. Let one owner handle its necessary code and tests. Do not split UI, API, and data by layer while their contract is unsettled. A vertical slice is a design aid, not a rule that every slice gets an agent; use `vertical-slices` when available and the code boundary itself needs judgment. Without it, establish ownership and contracts directly.
 
 Before parallel work, identify prerequisites and shared resources in a short dependency list. Serialise a shared migration, contract decision, lockfile, generated output, Git index, database, or port unless ownership is isolated. Worktrees separate files, not contradictory semantics. One writer owns each shared resource.

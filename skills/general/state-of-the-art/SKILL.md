@@ -58,6 +58,29 @@ deployment target and required background jobs, what do the maintained candidate
 frameworks support, what compatibility or lifecycle constraints apply, and what
 must a representative slice prove?”
 
+Use the caller's scoped decision questions when supplied. Otherwise identify the
+dimensions that could change this outcome: data lifecycle and persistence,
+consistency, failure modes and recovery, communication contracts, security and
+language/architecture fit, alongside operational and human constraints. For a new
+application, consider the full spectrum; for a feature, follow affected guarantees
+and boundaries. Investigate unresolved, consequential questions, not every topic
+on every invocation. A settled choice may need no new research.
+
+### An interruption question without a prescribed solution
+
+Replace “Which persistence pattern should we add?” with “What must remain true
+after this work is interrupted, and what can the system actually establish?”
+Identify authoritative versus reconstructible state, acceptable loss or delay,
+and the meaning of the boundary's observed result. Then compare the current
+mechanism with credible alternatives against those requirements.
+
+For example, a reproducible temporary calculation may simply restart; losing
+contact after an external action leaves its outcome uncertain until evidence
+establishes it. Research the relevant owner's guarantees and their limits, then
+identify a discriminating check at the uncertain boundary. These are illustrative
+cases, not a requirement to add durable storage, retries or a particular pattern.
+Include evidence that could justify retaining the simpler design.
+
 ## Find and judge evidence
 
 Prefer the source that owns the claim:
@@ -91,6 +114,16 @@ and alternatives, follow primary citations, and distinguish a normative requirem
 documented capability, empirical result, maintainer recommendation and anecdote.
 Check an author's current role or an organization's current ownership only when
 that authority is material to the claim.
+
+For security-relevant decisions, check current maintainer/vendor advisories and
+authoritative vulnerability records for the actual component and version. Establish
+affected and fixed ranges, configuration and exploit prerequisites, exposure,
+available mitigations, support status and any verified exploitation evidence.
+Distinguish a confirmed match, an exclusion supported by evidence and an unresolved
+applicability question. A severity score or known-exploitation list helps prioritize;
+it does not replace that analysis, and no search hits is not proof of safety.
+Record the check date and relevant limitations. Scale this work to changed trust
+boundaries and risk; a small unrelated edit does not require a whole-system audit.
 
 No result should be called current merely because it is recent. Check the owner's
 latest release/support information and any applicable migration or deprecation
@@ -129,7 +162,15 @@ active caller's plan, return it there instead of creating a parallel owner.
 - If **Puppeteer** is available, delegate independent, meaningful research questions
   or a second design comparison before loading large source sets into the lead's
   context. Keep briefs bounded, prohibit recursive delegation, and verify decisive
-  returned claims against their cited sources. Do not delegate a simple lookup.
+  returned claims against their cited sources. Reuse active assignments and evidence;
+  delegate uncovered questions or deliberately independent comparisons, without
+  restarting an investigation already owned by another agent. Use the selected
+  topic questions: one agent can own a coherent topic, while a broad or contested
+  topic can use multiple independent subquestions or alternatives. Give all investigators the
+  same requirements and relevant cross-topic constraints. The lead reconciles
+  incompatible assumptions and combined trade-offs before making the handoff;
+  separate plausible reports do not yet establish a coherent design. Follow the
+  host's real capacity and use waves when needed. Do not delegate a simple lookup.
 - If **Grilling with Agents** is available and the decision is technical and
   consequential, use it to challenge the evidence and candidate decision. It always
   returns a reasoned report without user questions; no mode selection is needed.

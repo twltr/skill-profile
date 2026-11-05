@@ -16,6 +16,14 @@ database round trip. It aligns Client, Cache and Database, then separates the
 two paths so the added work is immediately clear. Read the figure for the
 relationship; keep implementation caveats in the surrounding explanation.
 
+Before substantial visual composition or review, assess the model's visual judgment
+and render access. If **Puppeteer** is available, use its current phase/model routing
+for a better-suited author or independent reviewer; pass the verified meaning,
+takeaway, embedding size and relevant theme renders. Reuse an active delegation
+owner. A small suitable edit can stay direct. Semantic correctness and visual
+clarity need their own evidence; author checks are not independent acceptance.
+Missing visual capability or render access cannot be replaced by passing SVG lints.
+
 ## Choose the output mode before drawing
 
 - **In a chat with native UI/diagram primitives:** prefer native host layout elements and inline SVG when they create the clearest illustration. Host-managed text, backgrounds, padding and semantic colors can follow the host theme. Use plain text outside the illustration for explanation. Never force the user into a downloadable PNG just to show a diagram in chat. Respect the host's supported component system; do not emit unsupported tags.

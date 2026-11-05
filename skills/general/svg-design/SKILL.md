@@ -25,6 +25,14 @@ the mark at both actual sizes and against each intended surface before adding
 color or detail. If those uses need different detail levels, make an explicit
 small-size variant instead of shrinking an unreadable mark.
 
+Before substantial composition or visual review, assess the model's visual capability
+and access to rendered use sizes and surfaces. If **Puppeteer** is available, use
+its current phase/model routing for a better-suited author or independent reviewer,
+passing the brief, established direction and target sizes. Reuse an active delegation
+owner; a small suitable edit can stay direct. The designer's own checks are not
+independent acceptance. Missing capability or rendered access leaves that check
+open; valid SVG alone does not establish a good design.
+
 ## Topic Routing
 
 | Task | Load reference |

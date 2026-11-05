@@ -185,8 +185,18 @@ the main agent retains a sensitive mutation. Follow the actual host capabilities
 and task restrictions; if agents are unavailable, state that limitation and proceed
 serially where the authorized task can still be completed correctly.
 
-The main agent retains steering, cross-domain decisions, integration and final
-review. Verify decisive returned evidence without repeating every delegated read.
+Use Puppeteer's phase/capability routing when available: planning can retain a
+suitable strong model, while implementation with settled contracts normally goes
+to a sufficient efficient worker. Route visual design and graphics to an appropriate
+author, even inside an otherwise routine refactor; assign a separate capable
+reviewer. A plan file does not make unresolved or high-consequence work mechanical.
+Record meaningful model choices and available whole-task usage/rework observations
+at this plan's owner when they inform the next assignment; do not create another
+model list or usage board here.
+
+The main agent retains steering, cross-domain decisions, integration and assurance
+that required acceptance evidence is complete. It delegates specialist judgments
+it cannot establish itself. Verify decisive returned evidence without repeating every delegated read.
 Delegation never substitutes for understanding the decisions needed to own the result.
 
 ## Maintain the plan while work happens
@@ -225,19 +235,23 @@ clearance, correct the owning style, then revisit those same states. An icon
 button also needs visual centering and comfortable spacing; a screenshot of a
 different control does not verify the reported defect.
 
-For an implemented UI change, use Puppeteer, when available, to obtain a separate read-only detail
-review by an agent who did not implement it, in addition to the main agent's own
-verification. Use Frontend Design, when available, for visual judgment against the actual brief and
+For an implemented UI or graphic change, use Puppeteer, when available, to obtain
+a separate capable read-only visual review by an agent who
+did not author the affected work. The main agent performs its own supported
+behavioral/integration checks and retains the specialist's visual findings; it
+does not claim visual acceptance when that judgment exceeds its capability.
+Use Frontend Design, when available, for visual judgment against the actual brief and
 existing design system. Give the reviewer the intended behavior, exact build or
 revision, screen access or screenshots, relevant states and checks already run.
 Ask for reproducible findings with location, observed defect, consequence and
 evidence; do not seed the review with the implementer's approval or a target score.
 
-The main agent evaluates findings, sends justified corrections to the implementation
-owner and obtains a fresh check of the changed states. A review of an older build
+The main agent reconciles findings against the requirements, sends justified
+corrections to the implementation owner and obtains a fresh specialist check of
+the changed states. A review of an older build
 does not approve a newer one. Independent agent agreement supports judgment; it
 does not replace rendered or behavioral evidence. If an independent agent or the
-needed UI access is unavailable, identify that specific open verification instead
+needed visual capability or rendered access is unavailable, identify that specific open verification instead
 of claiming the review happened or sending routine agent checks to the user.
 
 Escalate only the part that actually needs a human, such as access the agent cannot
@@ -248,8 +262,9 @@ outstanding human condition distinct in the active work record.
 ## Review in two phases
 
 Use **Engineering Review**, when available, for independent acceptance. The main
-agent normally reviews implementation by others; if it implemented the work,
-another agent must review it. Author checks never count as independent approval.
+agent may review implementation by others when qualified and able to inspect it;
+otherwise it assigns a suitable reviewer. If it authored the work, another agent
+must review it. Author checks never count as independent approval.
 Without that supporting skill, preserve the same independence and evidence
 requirements through native tools. If no independent reviewer is available,
 record the open gate rather than approving one's own work.

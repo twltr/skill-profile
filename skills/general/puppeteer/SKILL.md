@@ -6,8 +6,10 @@ description: Decide and coordinate native agent delegation for independent, veri
 # Puppeteer
 
 Keep large investigations out of the main agent's context until they produce
-useful evidence. Own requirements, cross-domain decisions, integration and final
-verification in the main agent. For substantial work, normally delegate coherent
+useful evidence. Keep requirements, cross-domain decisions, integration and
+evidence coverage with the main agent. Delegate specialist judgments the lead
+cannot competently establish; coordinating acceptance does not mean personally
+certifying every part. For substantial work, normally delegate coherent
 investigations, implementation packages or independent reviews; run independent
 assignments in parallel when supported. A small clear change or deterministic
 lookup stays direct when delegation adds more work than it saves.
@@ -46,6 +48,50 @@ Useful contrasts:
 - A blocked agent returns the exact missing contract, evidence or access and
   preserves useful partial work; the lead resizes or unblocks the assignment.
 
+## Match the phase and the capability
+
+Apply this routing by default when assigning work; it needs no special user switch.
+Match uncertainty, consequence and modality, not only the phase's name:
+
+- **Planning and unresolved design:** a suitable strong main model can retain the
+  work or use similarly capable scouts. A narrow factual lookup still belongs to
+  deterministic tools or a sufficient bounded researcher.
+- **Settled nonvisual implementation:** prefer a sufficient efficient worker when
+  requirements, contracts and acceptance are clear. A plan file alone does not
+  establish that clarity. Escalate unresolved or high-consequence implementation,
+  or a demonstrated capability gap, before accumulating repeated failed attempts.
+- **Independent review:** prefer a strong reviewer suited to the actual change.
+  Review strength does not expand scope: inspect the change and relevant consumers;
+  recheck affected behavior after corrections, widening only for new evidence.
+- **Visual planning, creation and review:** assess visual judgment and access to
+  rendered results separately from coding ability. A good refactoring worker may
+  need a different author for a diagram or interface, and another independent
+  reviewer for its visual quality.
+
+When selecting or reassessing delegate models, read the shared
+[model routing reference](references/model-routing.md). It owns current preferences,
+verified identifiers, host limitations and the usage feedback rule. Native client
+configuration owns executable bindings and defaults; do not change the main model,
+settings, account or provider merely to follow this table. Check the actual spawn
+schema and role restrictions: a preset can lock a model or effort. Use an available
+role that supports the required choice instead of assuming a label such as
+"reviewer" makes its fixed model suitable.
+
+For example, a code-focused lead refactors a settings flow and needs a diagram.
+It settles the behavior and hands the verified model, existing visual direction
+and embedding constraints to a visually capable author using the relevant design
+skill. After integration, a separate capable reviewer receives the brief, exact
+revision and rendered narrow/wide or light/dark states, without the author's
+approval. The lead verifies behavior and reconciles the specialist's findings;
+the author corrects defects and the reviewer checks the changed renders. Authoring
+includes material composition decisions, not only typing the SVG or CSS.
+
+Independent agents may use the same model in separate contexts. Provider diversity
+is not required. A small suitable task can stay direct, but that does not waive
+required independent review. If a capable author, independent reviewer or rendered
+access is missing, state that particular gap and continue unaffected work. Source
+validity, a model name or author self-critique cannot stand in for visual acceptance.
+
 ## Cut work at a stable boundary
 
 For research and design, a boundary can be an engineering concern rather than a
@@ -73,7 +119,12 @@ Before parallel work, identify prerequisites and shared resources in a short dep
 
 Provide the observable outcome, relevant requirements and invariants, exact inputs and accessible paths, starting revision and relevant local changes, allowed reads and writes, shared dependencies, acceptance evidence, output shape, and stop conditions. Include any user restriction that exists only in the main conversation. Use a fresh context when the client supports it; do not hand over the whole chat for convenience. Resolve the actual tool schema: in a host exposing only `fork_turns="none"` or `"all"`, a standalone brief uses `"none"`; do not invent a partial-history value.
 
-Use native read-only tools or sandboxing for research. A prompt saying "read-only" does not make a shell or connector harmless. Select a task-appropriate model and reasoning level. Narrow research may use a small model; difficult implementation or consequential review may need a stronger one. Do not force one cheap model on every task. Child agents must not delegate further; enforce this natively where available and otherwise mark it as an instruction, not a hard limit.
+Use native read-only tools or sandboxing for research. A prompt saying "read-only"
+does not make a shell or connector harmless. Select the model and effort through
+the phase/capability routing above and verify the effective selection where the
+host exposes it; a requested model is not proof of the model that ran. Child agents
+must not delegate further; enforce this natively where available and otherwise
+mark it as an instruction, not a hard limit.
 
 Require the result, changed artifacts or exact references, the checked starting state, tests actually run, unresolved risks, and the next action. No raw logs or work diary. A returned report is submitted for review, not verified. Inspect decisive evidence and changes without repeating all exploration. Resolve disagreement against the contract and reproducible behavior. After integration, run the checks affected by the combined state.
 

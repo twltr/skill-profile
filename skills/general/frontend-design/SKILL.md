@@ -24,6 +24,14 @@ sequence numbers unless the collection has a meaningful order.
 clear without cropping the defining shape. The direction follows the supplied
 work instead of imposing a generic studio aesthetic.
 
+Before substantial UI design or visual review, assess the model's visual capability
+and access to actual rendered states. If **Puppeteer** is available, use its current
+phase/model routing when a better-suited author or independent reviewer is needed;
+pass the brief, existing direction and required viewport/interaction states. Reuse
+an active delegation owner. Small suitable work can stay direct. Author critique
+is not independent acceptance; missing visual capability or rendered access remains
+an explicit open check, even when source and tests pass.
+
 ## Ground it in the subject
 
 If the brief does not pin down what the product or subject is, pin it yourself before designing: name one concrete subject, its audience, and the page's single job, and state your choice. If there's any information in your memory about the human's preferences, context about what they're building, or designs you've made before – use that as a hint. The subject's own world, its materials, instruments, artifacts, and vernacular, is where distinctive choices come from. Build with the brief's real content and subject matter throughout.

@@ -37,14 +37,19 @@ neither needs a theatrical debate or an arbitrary numerical score.
 
 ## Establish an independent reviewer
 
-Identify the authors of the affected change. The main agent normally reviews
-subagent implementation. If the main agent implemented the change, another agent
-must review it. Review authorship per affected work, not merely by job title. An
+Identify the authors of the affected change. The main agent can review subagent
+implementation when it has the relevant capability and evidence access. Otherwise
+delegate that judgment to a suitable independent reviewer. If the main agent
+implemented the change, another agent must review it. Review authorship per
+affected work, including material design/composition decisions, not merely by job title. An
 agent who fixes a disputed part becomes an author of that part; obtain an independent
 check of that correction rather than approving it itself.
 
-If **Puppeteer** is available, use it to arrange appropriate independent reviewers,
-scope access and coordinate responses. Use real native agents. If no independent
+If **Puppeteer** is available, use its phase/capability model routing to arrange
+appropriate independent reviewers, scope access and coordinate responses. Use
+real native agents; reuse an existing assignment that meets these requirements.
+A separate context on the same model can be independent.
+If no independent
 reviewer is available, perform honest author verification and report independent
 review as open; do not simulate a second opinion or call self-checks approval.
 
@@ -54,6 +59,16 @@ with the implementer's conclusion. Review the actual current state, not merely
 an earlier screenshot or a summary of what was supposed to change.
 
 ## Select the actual change
+
+Split a mixed review by the questions that need different expertise: behavioral
+correctness and contracts, visual presentation and interaction, and factual
+agreement between a figure and the system it explains. A strong code reviewer
+does not automatically establish visual quality. Give visual work to a capable
+independent reviewer with the actual renders, including when the main agent is
+not suited to judge them. The lead retains integration and evidence coverage;
+it resolves factual discrepancies with evidence and does not manufacture a missing
+specialist verdict. Use one capable reviewer when that suffices, or bounded
+specialists when the work benefits; do not duplicate the complete review for each.
 
 Establish whether the target is uncommitted work, a commit, a branch or an explicitly
 broader assessment. For a branch review, resolve the intended target and its verified
@@ -102,10 +117,13 @@ Read a supporting method once for its specific contribution. Without it, apply
 the bounded review criteria directly and disclose a material limit. Do not start
 a chain of new workflows or ask a caller to invoke itself again.
 
-## Inspect rendered UI in detail
+## Inspect rendered UI and graphics in detail
 
 For UI work, require the actual affected screen and relevant viewport sizes,
-themes and interaction states. Builds, source inspection and component tests do
+themes and interaction states. For diagrams, icons and other visual artifacts,
+inspect their real embedding size and intended surfaces as well as semantic
+accuracy. Use Editorial SVG Diagrams or SVG Design when available for the relevant
+craft criteria. Builds, source inspection and component tests do
 not prove visual quality. Use **Frontend Design** when available to assess the
 established visual direction; use **Motion Design** when available for relevant
 transitions and reduced-motion behavior. Do not invent a new aesthetic during review.
@@ -116,14 +134,19 @@ states relevant to the change, including focus, error and disabled states. Verif
 interaction and keyboard behavior when they are affected. A screenshot establishes
 only the state it shows; inspect the real interaction where needed.
 
-Obtain an independent read-only detail reviewer who did not implement the UI.
-The main agent also verifies the result, but may only act as an independent reviewer
-for work it did not author. Additional perspectives may help substantial UI work;
-do not claim provider diversity or access that the host does not expose.
+Obtain an independent read-only visual reviewer who did not author the affected
+design or implementation. Use Puppeteer's current model-routing reference when
+available rather than selecting by the parent's coding strength or a fixed role
+name. The main agent performs the checks it can establish and integrates the
+specialist's evidence; it does not need to duplicate or claim that visual judgment.
+Additional perspectives may help substantial visual work; do not claim provider
+diversity or access that the host does not expose. An image-capable model must
+actually receive rendered evidence; an accessibility tree or markup is insufficient.
 
 Return the screen/state, observed issue, consequence and reproduction or visual
 evidence. Send justified fixes to the implementer and recheck the affected states
-on the corrected build. Missing UI access is a specific blocked check, not a reason
+on the corrected build. Missing visual capability, an independent reviewer or
+rendered access is a specific blocked check, not a reason
 to ask the user to do all the routine visual work or to accept the UI unseen.
 
 ## Ask when the reason is materially unclear

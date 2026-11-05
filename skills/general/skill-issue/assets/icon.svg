@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
-<title id="title">Skill Issue</title>
-<g aria-hidden="true"><path d="M14 18H24C22 12 26 8 32 8C38 8 42 12 40 18H50V26C44 24 41 28 41 32C41 36 44 40 50 38V50H14Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><circle cx="29" cy="34" r="2.8" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
-<g><path d="M14 18H24C22 12 26 8 32 8C38 8 42 12 40 18H50V26C44 24 41 28 41 32C41 36 44 40 50 38V50H14Z" fill="#527CAF" stroke="none" stroke-width="2.5"/><circle cx="29" cy="34" r="2.8" fill="#B58D3C" stroke="none" stroke-width="2.5"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+  <title id="title">Skill Issue: a blue puzzle piece in flames</title>
+  <path d="M13 32C6 25 13 17 19 12C18 19 22 21 24 21C24 13 31 11 34 5C40 12 40 17 39 21C44 20 47 15 46 11C54 20 58 27 51 33Z" fill="#CF704D" stroke="#F3F2EE" stroke-width="1.5"/>
+  <path d="M17 30C14 25 18 22 20 19C20 25 25 24 27 30ZM29 24C27 19 31 16 33 12C33 18 38 19 38 24Z" fill="#E3BF69"/>
+  <path d="M14 26H24C22 20 26 16 32 16C38 16 42 20 40 26H50V34C44 32 41 36 41 40C41 44 44 48 50 46V58H14Z" fill="#527CAF" stroke="#F3F2EE" stroke-width="1.5"/>
+  <circle cx="29" cy="42" r="2.8" fill="#B58D3C"/>
 </svg>

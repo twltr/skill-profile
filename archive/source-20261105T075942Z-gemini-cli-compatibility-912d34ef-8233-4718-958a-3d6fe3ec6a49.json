@@ -1,0 +1,20 @@
+{
+  "source_revision": "0c84011c88078a3b463de012522c34879ce9f5e5",
+  "reason": "Preserve complete Puppeteer package and README before refreshing installed Gemini CLI compatibility after authorized 0.66.0 upgrade.",
+  "packages": [
+    "skills/general/puppeteer"
+  ],
+  "additional_files": [
+    "README.md"
+  ],
+  "archive": "archive/source-20261105T075942Z-gemini-cli-compatibility-912d34ef-8233-4718-958a-3d6fe3ec6a49.zip",
+  "files": {
+    "README.md": "51ce177aa3f392809d1cc0c4047a33e899e559110140dc8bc51e686c68929b76",
+    "skills/general/puppeteer/SKILL.md": "b2b3bbc4f7f98ff1f85e1445a88f9f568960a907a02c1d362aad74afb9aacb54",
+    "skills/general/puppeteer/agents/openai.yaml": "a1079ef0c85173a1b50bc5e7df3f6659762fee731866077c883c89bacff12931",
+    "skills/general/puppeteer/assets/icon-small.svg": "f5eb540bbcc6fd419334b1cba0674a96ea3f1b18f6dbe83025cba90bb03b4e88",
+    "skills/general/puppeteer/assets/icon.svg": "f5eb540bbcc6fd419334b1cba0674a96ea3f1b18f6dbe83025cba90bb03b4e88",
+    "skills/general/puppeteer/references/evidence.md": "299d0e9bb96dde0b6eed03232310b7cdb2c6c9d6da78cea3720a843fe00309d9",
+    "skills/general/puppeteer/references/model-routing.md": "d5a5b195c2b90561c609c2f72d8854f5502e4ad4579ea99825e8420cd21a8554"
+  }
+}

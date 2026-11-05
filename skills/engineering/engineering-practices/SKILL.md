@@ -1,6 +1,6 @@
 ---
 name: engineering-practices
-description: Make and review engineering decisions about architecture, data, reliability, security and technology choices from requirements, current evidence and maintenance needs. Apply during development at the scale of the actual decision, from a small feature to a new system.
+description: Make and review engineering decisions about architecture, data, configuration, security, reliability and delivery from requirements, current evidence and maintenance needs. Apply during development at the scale of the actual decision, from a small feature to a new system.
 ---
 
 # Engineering Practices
@@ -95,6 +95,9 @@ no new mechanism or investigation; explain that briefly when the scope is substa
 | Failure modes and recovery | Which failures can occur, where can outcomes become partial or unknown, and what must remain true? What must be recovered, reconstructed or reconciled, within which tolerances, and how will that be demonstrated? |
 | Communication and contracts | What must participants agree on before acting? What does acceptance or completion mean, who owns the result, and what happens with delay, cancellation, repetition, ordering or lost contact? |
 | Security and trust | Which data and actions need protection, from whom, and across which trust boundaries? What confidentiality, integrity, authorization and lifecycle requirements follow? Which exposure or current security finding could change the choice? |
+| Configuration and value ownership | Which values define the program, vary with its operating context, or belong to a business operation? Who may change each value, when should changes take effect, and which validation, precedence and protection rules apply? |
+| Repository and toolchain | What owns source, configuration contracts, templates, schemas, migrations and generated artifacts? Which inputs and conventions make work reproducible and discoverable for this language, project size and deployment model? |
+| Delivery and operation | What is built, verified, promoted and actually running? Which configuration, state, credentials and compatibility conditions must accompany a release or recovery, and what evidence establishes the intended result? |
 | Mechanisms and language fit | Which concrete responsibility or invariant needs a mechanism? Can the existing design or language-native facility express it clearly? What would an additional pattern improve, and what cost or failure behavior would it introduce? |
 
 The same reasoning applies to deployment, performance, operability and human
@@ -123,6 +126,93 @@ repeat is considered safe. Both may follow a process crash; their preservation
 and recovery needs differ. Ask what must remain true, inspect the actual contract,
 then choose and verify the smallest sufficient mechanism. Neither example mandates
 a database, a status enum, a retry scheme or a particular architecture.
+
+## Give values and operating changes explicit owners
+
+Apply these questions when the task changes configuration, retained state,
+execution environments or release automation. Reuse sound existing conventions
+for unrelated work. A disposable tool does not need a service's operating machinery.
+
+**Classify by meaning and lifecycle before choosing an encoding or location.**
+
+| Kind of value | Ownership decision |
+|---|---|
+| A stable part of the program's meaning | Keep a genuine constant with its code, type or domain-contract owner. Do not make an invariant configurable merely because it is a literal. |
+| A deployment or operating choice | Give it a cohesive configuration contract and an explicit source, independent of implementation changes when it needs to vary independently. |
+| A credential or other protected value | Establish its authorized consumer, protected source and lifecycle. Configuration may reference it; ordinary tracked examples must not contain the real value. |
+| Business identity, operation input, migration selection or test data | Keep it with the corresponding data, invocation, migration or fixture owner. A settings file must not become an accidental second database. |
+
+For example, “move these orders” does not establish where their IDs belong. A
+per-run order selection is an explicit input; imported identities belong to the
+data record, while a migration's selection belongs to its input; a test's fixed
+IDs are fixture data. A per-environment routing identifier may instead be
+configuration. Decide from the actual owner
+and change contract. Moving every literal into YAML would preserve the ambiguity.
+
+**Define how configuration becomes effective.** Choose the source and placement
+from the ecosystem, capability owner, project scale and operating model: a dedicated
+file, environment injection, command input or managed provider can each be appropriate.
+Reuse the language/framework's supported mechanism when it fits. Define the
+applicable semantics: required values, defaults and constraints; precedence when
+multiple sources exist; invalid-input behavior; and when changes take effect.
+Validate before dependent work; expose resolved values at a clear boundary rather than scattering literals or environment lookups
+through consumers. A change may require a release or restart; hot reload is not
+an automatic requirement.
+
+Keep cohesive settings and their applicable schema discoverable at their owner.
+Reusable templates should expose declared inputs for project-specific assignments.
+Version the non-sensitive contract, suitable defaults and placeholder examples,
+and actual non-sensitive configuration where appropriate for reproducibility.
+Keep real secrets and private local overrides with their approved owner.
+Follow actual language/project conventions for paths and formats instead of
+mandating one global config directory. Configuration provenance should be
+diagnosable without printing protected values.
+
+**Protect the whole secret lifecycle.** Distinguish a workload's identity or a
+resource identifier from credential material. Use the runtime's supported identity
+mechanism when it fits; an identifier alone does not establish authentication or
+secrecy. Determine provisioning, access, rotation, revocation and recovery for the
+actual consumer and trust boundary. Environment variables are an injection mechanism, not a confidentiality guarantee. Distinguish
+build-time from runtime access and prevent unintended inclusion in source,
+generated files, images, caches, logs, dumps or published artifacts. Choose controls
+proportionate to exposure; a new secret-management service must earn its cost.
+
+**Separate build inputs, release artifacts and live state.** Decide which manifests,
+dependency locks, schemas, templates and generation steps must be maintained to
+reproduce the intended artifact. Distinguish authored from generated content and
+record its owner. A container, when used, is an execution/package boundary: identify
+what is baked into it, supplied at runtime, retained elsewhere or reconstructible.
+Neither the presence of a persistent volume nor an image rebuild by itself
+establishes a backup. These questions also apply without containers; they do not prescribe Docker or a CI vendor.
+
+**Design recovery around the required outcome.** Establish acceptable loss and
+downtime, the actual recovery set, consistency, retention, protection and compatible
+application/data versions. Select a supported backup or reconstruction mechanism
+for those needs; a logical dump is one candidate, not a universal recovery plan.
+Include dependent stores, configuration and access to keys only where required;
+keep their distinct owners and restore order explicit. Producing backup bytes,
+checking integrity, restoring data and recovering the application are different
+claims. Before claiming operational recoverability, demonstrate a representative
+isolated restore and the relevant application invariants against the stated target.
+Repeat checks when material recovery assumptions change, not for every unrelated edit.
+
+**Make delivery verifiable at its trust boundaries.** When releases or CI/CD are
+relevant, establish artifact identity and origin, the checks it passed, environment
+configuration and permission scope. Keep untrusted changes away from privileged
+credentials. Promote the verified artifact when that guarantee matters; if a rebuild
+is necessary, establish its traceability and verify the resulting artifact. Address
+schema/data compatibility, deployment ordering and an appropriate recovery path
+where the change requires them; rollback may be unsafe for irreversible state changes.
+Verify the running result at its owner: a green pipeline alone does not establish
+the active revision, service health or intended business effect.
+
+Choose the smallest sufficient arrangement. A single local script may need only
+explicit inputs and a documented rebuild path; an operated service with valuable
+state needs stronger controls and evidence. Use State of the Art for unresolved
+current capabilities, Domain Modeling for ambiguous meanings and Vertical Slices
+for owner placement when available. Engineering Documentation, if available,
+owns the maintained configuration/use/recovery explanation; retain actual values
+and contracts at their proper sources instead of copying them into prose.
 
 ## Scale the investigation
 

@@ -99,8 +99,10 @@ what was expected and where. One fat test that cannot locate its failure is no
 better than many microscopic checks without context.
 
 Give the unit's file a compact explanation of what it covers, why those behaviors
-belong together and where they are specified. Each case needs a reason for its
-expected result, not a narration of the test code.
+belong together and where they are specified. Each case's expected result needs
+a discoverable reason: a clear case name, assertion and referenced contract can
+supply it. Add prose when the rationale is not evident there, especially for
+non-obvious boundaries; do not narrate the test code or repeat an obvious assertion.
 
 ## Make the evidence discriminate
 

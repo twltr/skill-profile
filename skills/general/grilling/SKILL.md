@@ -1,6 +1,6 @@
 ---
 name: grilling
-description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+description: Stress-test a plan, decision or idea by interviewing the user in prerequisite-aware rounds with recommended answers. Use for a requested human interview; a council that questions the lead agent belongs to Grilling with Agents.
 ---
 
 # Grilling
@@ -11,7 +11,33 @@ tree**: every decision branches into the decisions that hang off it. Working onl
 on questions whose prerequisites are settled prevents asking the user to decide
 against facts or choices that may change in the next answer.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+Keep the tree within the requested outcome and consequential decisions. Reuse
+answers the user already supplied; unrelated possibilities do not create branches
+to exhaust. Work the tree in **rounds**. The **frontier** is the in-scope decisions
+whose prerequisites are settled: questions you can ask now without guessing at
+answers you have not heard. Ask that frontier together, number each question and
+give your recommended answer. Then wait for the user's answers before the next round.
+
+## A dependent decision in two rounds
+
+Fictional brief: decide access rules for a shared equipment reservation service.
+The user has said it is for an internal team; whether guests may reserve is open.
+
+```text
+Round 1 — May guests reserve equipment, or only team members?
+Recommendation: members only for the stated internal-team purpose.
+
+User — Guests may reserve too, but a team member must sponsor each reservation.
+
+Round 2 — Does sponsorship need approval before a reservation holds equipment?
+Recommendation: yes, so an unapproved guest request cannot block team inventory.
+```
+
+The approval question depends on the guest-access answer. If the user had chosen
+members only, that guest-specific branch would disappear. Other independent
+questions can share a round; dependent questions wait for their prerequisite.
+
+## Run the interview
 
 Format a round like so:
 
@@ -38,4 +64,7 @@ wait for its result; ask the rest of the frontier now. The _decisions_ in this
 human interview are the user's: put each to them and wait. Without Puppeteer,
 keep the investigation bounded and distinguish checked facts from open evidence.
 
-The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.
+The session is done when the in-scope frontier is empty and consequential
+assumptions are settled or explicitly unresolved. State any unresolved prerequisite
+and the work it blocks; an inaccessible fact is not an answer. Summarize the
+decisions and confirm shared understanding with the user before acting on the plan.

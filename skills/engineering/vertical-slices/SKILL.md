@@ -108,12 +108,15 @@ never deep internals. Describe the inputs, results, error vocabulary, ordering
 and state guarantees callers need. Hide useful complexity behind that surface;
 an interface that only adds forwarding layers has not earned its place.
 
-Choose the language's native enforcement and a suitable architecture check:
-module-private visibility, import constraints or a dependency rule appropriate
-to the repository. Keep a machine-readable dependency map derived from actual
-imports or declarations. New cross-module edges must be deliberate, reviewable
-changes; an existing-edge baseline can support a ratchet during a migration.
-Do not maintain a second architectural truth manually.
+Respect existing public boundaries even on a small change. When module boundaries
+and dependency drift are consequential, use suitable enforcement such as native
+module-private visibility, import constraints or dependency checks. Reuse existing
+mechanisms before adding another. Derive a needed machine-readable dependency map from
+actual imports or declarations; do not maintain a second architectural truth
+manually. New cross-module edges must be deliberate, reviewable changes; an
+existing-edge baseline can support a ratchet during a migration. A single-script
+tool with no such boundaries does not need a map or new gate merely to follow
+this method.
 
 Keep operational scripts and contract checks with the system they protect.
 Temporary authoring aids and convention checks must be removable without breaking
@@ -121,11 +124,13 @@ builds, tests or operation. A one-off inspection does not earn a permanent gate;
 use existing commands and actual requirements rather than adding administration
 to complete an ordinary change.
 
-Each module carries a compact briefing at its package documentation or existing
-entrypoint: purpose, what it owns, public API, allowed and forbidden dependencies,
-and references to its contracts. Update it with the change it explains. A design
-proposal includes the proposed briefing; placing it in implementation is part of
-an authorized implementation, not an automatic consequence of a design review.
+Use a compact briefing where a module's responsibility or boundary would otherwise
+need reconstruction: purpose, ownership, public API, dependency constraints and
+contract references. Keep it at the existing package documentation or entrypoint,
+reuse an explanation that already serves this job and update it with relevant
+changes. Do not require a separate briefing for a self-explanatory script or leaf
+helper. A design proposal includes any needed briefing; placing it in implementation
+requires an authorized implementation, not merely a design review.
 
 ## Invariants live with their mechanism
 
@@ -204,8 +209,9 @@ state, error surface and context needed against useful alternatives.
 
 If a change still scatters across unrelated files, duplicates policy or requires
 knowledge hidden in another module, revise the ownership. Deliver the vocabulary,
-capability and dependency map, interface decisions, proposed briefings, reasons
-and remaining questions at the existing design owner. Do not launch a refactoring
+capability and dependency relationships, interface decisions, any needed briefings,
+reasons and remaining questions at the existing design owner, scaled to the change.
+Do not launch a refactoring
 from a design-only request. If implementation is separately authorized, use
 mechanical, compiler/test-checked moves where structure changes across the tree.
 

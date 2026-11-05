@@ -5,21 +5,29 @@ description: "Write or revise correspondence, commercial copy, shared notes, art
 
 # Good Writing
 
-Infer the reader, purpose, language, tone, facts and destination. Before drafting,
-select the useful evidence through Writing Fragments, then route to the method
-that owns the intended result. Preserve the brief and protected content when
-editing; pass them and the concise source handoff to the selected specialist once.
-Ask the user only about a gap that changes the meaning or permitted action.
+Match preparation to the writing job. An ordinary conversational reply or local
+wording fix uses Unslop directly with the brief and supplied text; fact-finding remains with the
+actual task. Check the finished wording and preserved meaning without starting
+a source-scouting or specialist workflow merely because the result contains prose.
+For example, correcting a typo in a supplied sentence needs no fragment handoff.
+
+For a document, correspondence or other writing artifact, infer the reader,
+purpose, language, tone, facts and destination. Select useful evidence through
+Writing Fragments, then route to the method that
+owns the intended result. A rewrite that changes claims or purpose, or combines
+sources, needs this preparation even when the final text is short. Preserve the
+brief and protected content; pass them and the source handoff to the specialist
+once. An explicit specialist choice wins. Ask the user only about a gap that
+changes the meaning or permitted action.
 
 ## Prepare the material first
 
 If `writing-fragments` is available, deliberately load it from the host's
 installed-skill lookup and read its complete method; its native policy is
-explicit-only. Source selection is preparation for every Good Writing task,
-scaled to the material. A tiny
-wording fix needs only a local selection from the supplied text and instruction.
-A source-heavy report may need bounded scouting and a fuller handoff. If the brief
-is the only source, draft from the brief and state any consequential evidence gap;
+explicit-only. This preparation applies to the routed writing work above,
+scaled to the material. A source-heavy report may need bounded scouting and a
+fuller handoff. If the brief is the only source, draft from the brief and state
+any consequential evidence gap;
 do not invent research or citations. The handoff preserves source locators,
 qualifiers, uncertainty and any figure suggestion for the selected writer.
 Writing Fragments returns to this workflow; it does not select a writer or call

@@ -16,8 +16,11 @@ interface metadata match the public baseline byte for byte:
 The local variant adds `policy.allow_implicit_invocation: false` to the native
 metadata. The local opening now explains why prerequisite-aware rounds are useful,
 and factual lookups distinguish direct tool use from substantial delegated research.
-The human decision owner and question template remain intact. Invocation control
-is not repeated in descriptions.
+The human decision owner and question template remain intact. The 2026-11-05
+quality review distinguishes human interviews from agent councils in discovery,
+bounds the decision tree to the requested outcome and adds a fictional two-round
+example showing a prerequisite-dependent question. Invocation control remains
+in native metadata, not description labels.
 
 `skills/general/grilling/` in Agent Profile owns this complete local variant.
 Installed directories are deployment copies. The former catalog-only entry and

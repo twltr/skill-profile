@@ -83,8 +83,12 @@ Distinguish local source verification from a deployed or migrated system.
 
 Keep nearby explanations and maintained contracts current in the same change.
 Review the combined diff for old assumptions, duplicate owners and unrelated
-edits. Preserve evidence still needed by open work, then remove the associated
-completed plans and temporary artifacts and update the owning work record.
+edits. Preserve evidence still needed by open work. When Road to Glory or another
+active workflow owns closure, return transition evidence and remaining retirement
+items to that owner; leave its plan and working artifacts until its review and
+closeout gates pass. For direct work without an enclosing workflow, finish cleanup
+within the authorized scope after the required verification and review. Retain the
+necessary evidence, retire completed temporary artifacts and update the owning record.
 
 Deliver the corrected model or replacement, the retired surfaces, actual evidence
 and remaining limits. If an external migration or decision is still outstanding,

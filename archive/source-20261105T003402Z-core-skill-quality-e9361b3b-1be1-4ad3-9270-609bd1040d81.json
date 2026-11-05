@@ -1,0 +1,39 @@
+{
+  "source_revision": "56bd20bac621c3631d68309425b63ad699beb2ec",
+  "reason": "Preserve complete released packages before the independent core-skill quality council refinements.",
+  "packages": [
+    "skills/general/good-writing",
+    "skills/general/grilling",
+    "skills/engineering/all-or-nothing",
+    "skills/engineering/vertical-slices",
+    "skills/engineering/marshmallow-tests"
+  ],
+  "archive": "archive/source-20261105T003402Z-core-skill-quality-e9361b3b-1be1-4ad3-9270-609bd1040d81.zip",
+  "files": {
+    "skills/general/good-writing/SKILL.md": "00131b5120e80e7fa298ae85d509040d7873030a1f02e74a4b9e9cb0f36c0e30",
+    "skills/general/good-writing/agents/openai.yaml": "5aba2b29718516dd0f593105b4482ff8a724a72d6b01d42ca305ec55732ae33a",
+    "skills/general/good-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/good-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/general/grilling/LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/general/grilling/LICENSE.txt": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/general/grilling/NOTICE.md": "f626b9f54bce5a5a61da30a0bc47191976826923acbe1b79077d2e41b1dd6dd4",
+    "skills/general/grilling/SKILL.md": "0281eebca2ba5aa1abaeb6bf6106a130335573584f747f9d24ad2c2270b6cb58",
+    "skills/general/grilling/agents/openai.yaml": "628f6ea00d526e3ab39a1464e7203975c4a15022f369f333cb5964489ff52d3d",
+    "skills/general/grilling/assets/icon-small.svg": "00f288a0b1e963d47ea0cef5ef1f5b9ed829a0a097c9e79d534b2f0d0e803b4b",
+    "skills/general/grilling/assets/icon.svg": "00f288a0b1e963d47ea0cef5ef1f5b9ed829a0a097c9e79d534b2f0d0e803b4b",
+    "skills/engineering/all-or-nothing/SKILL.md": "ae5d46d96f0c8f0041578203eff136528422d23ea7eaaefbcc6896bde9a33f55",
+    "skills/engineering/all-or-nothing/agents/openai.yaml": "1ef2d7c0006d0c2b0dd20056aec1c4d6d7705c1aa2d096a2ec7e3ddb2968ecb6",
+    "skills/engineering/all-or-nothing/assets/icon-small.svg": "982cbaf84e888aded2e9e662d99fae66e264e74090daff903911502694a76c2d",
+    "skills/engineering/all-or-nothing/assets/icon.svg": "982cbaf84e888aded2e9e662d99fae66e264e74090daff903911502694a76c2d",
+    "skills/engineering/vertical-slices/NOTICE.md": "035dbe4bfa33ea4469c2fc65a2c37f948fc7121bc3296983ac7ac4f21c0761e5",
+    "skills/engineering/vertical-slices/SKILL.md": "abf8b744d3d3012a04fce0ab2c150a2da5a400f6e32e3339e5e54368997b73f9",
+    "skills/engineering/vertical-slices/agents/openai.yaml": "bbeade7544a530d594f79d29680930813ae4b25456770965999a1bc13830a657",
+    "skills/engineering/vertical-slices/assets/icon-small.svg": "362c127f03f7a42937fcf7527ffb05cf33891465fbdb89aebbfcf0ed655290ac",
+    "skills/engineering/vertical-slices/assets/icon.svg": "362c127f03f7a42937fcf7527ffb05cf33891465fbdb89aebbfcf0ed655290ac",
+    "skills/engineering/marshmallow-tests/NOTICE.md": "638ca191ad13020f97182e83cc6a36aba701ca79c645a5fc836c98903a241967",
+    "skills/engineering/marshmallow-tests/SKILL.md": "0b716f521804463949246864ed5aa70b7db0329784f6369595a63f364d2593e0",
+    "skills/engineering/marshmallow-tests/agents/openai.yaml": "44d06c6105737ca45d22bb10117f852eb2c7f8f8a44a34dbbcfe6b0e0aa973bc",
+    "skills/engineering/marshmallow-tests/assets/icon-small.svg": "00aec9f67d475a6f880124d3ac26e7f563418533aa9c9abd99459eb7d6c97d65",
+    "skills/engineering/marshmallow-tests/assets/icon.svg": "36bede38e487f0bcb21d46559b6edebcc11470a9e5b6c8f6421f9b31bc1c3659"
+  }
+}

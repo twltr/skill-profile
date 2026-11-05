@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
-<title id="title">Frontend Design</title>
-<g aria-hidden="true"><rect x="8" y="11" width="48" height="42" rx="#26364A" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="3.9" /><rect x="8" y="11" width="48" height="8" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><circle cx="14" cy="15" r="1.2" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><circle cx="19" cy="15" r="1.2" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><circle cx="24" cy="15" r="1.2" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="13" y="25" width="20" height="21" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="37" y="25" width="13" height="8" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="37" y="37" width="13" height="9" rx="1" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M17 31L29 31" fill="none" stroke="#F3F2EE" stroke-width="3.4" /><path d="M17 36L26 36" fill="none" stroke="#F3F2EE" stroke-width="3.4" /></g>
-<g><rect x="8" y="11" width="48" height="42" rx="#26364A" fill="#F3F2EE" stroke="2" stroke-width="2.5"/><rect x="8" y="11" width="48" height="8" rx="1" fill="#26364A" stroke="none" stroke-width="2.5"/><circle cx="14" cy="15" r="1.2" fill="#CF704D" stroke="none" stroke-width="2.5"/><circle cx="19" cy="15" r="1.2" fill="#B58D3C" stroke="none" stroke-width="2.5"/><circle cx="24" cy="15" r="1.2" fill="#318F95" stroke="none" stroke-width="2.5"/><rect x="13" y="25" width="20" height="21" rx="1" fill="#318F95" stroke="none" stroke-width="2.5"/><rect x="37" y="25" width="13" height="8" rx="1" fill="#7866A4" stroke="none" stroke-width="2.5"/><rect x="37" y="37" width="13" height="9" rx="1" fill="#B58D3C" stroke="none" stroke-width="2.5"/><path d="M17 31L29 31" fill="none" stroke="#F3F2EE" stroke-width="2"/><path d="M17 36L26 36" fill="none" stroke="#F3F2EE" stroke-width="2"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+  <title id="title">Frontend Design: a polished interface on a screen</title>
+  <path d="M32 50V56M23 57H41" fill="none" stroke="#F3F2EE" stroke-width="5.5"/>
+  <path d="M32 50V56M23 57H41" fill="none" stroke="#26364A" stroke-width="3"/>
+  <rect x="7" y="15" width="48" height="35" rx="4" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="4"/>
+  <rect x="7" y="15" width="48" height="35" rx="4" fill="#F3F2EE" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M8 23H54" fill="none" stroke="#26364A" stroke-width="2.5"/>
+  <rect x="13" y="29" width="17" height="15" rx="1.5" fill="#318F95" stroke="none" stroke-width="0"/>
+  <rect x="35" y="29" width="13" height="6" rx="1" fill="#B58D3C" stroke="none" stroke-width="0"/>
+  <path d="M36 41H47" fill="none" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M50 6L53 14L61 17L53 20L50 28L47 20L39 17L47 14Z" fill="#E3BF69" stroke="#F3F2EE" stroke-width="2"/>
 </svg>

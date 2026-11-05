@@ -1,6 +1,6 @@
 interface:
-  icon_large: "./assets/icon.svg"
-  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
   display_name: "Road to Glory"
   short_description: "Keep roadmap, active plans and outcomes aligned"
 policy:

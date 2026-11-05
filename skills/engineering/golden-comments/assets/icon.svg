@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
-<title id="title">Golden Comments: a gold quotation seal</title>
-<g aria-hidden="true"><path d="M10 16H54V47H30L18 56V47H10Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M19 25H29V34L24 40H18L22 33H19ZM35 25H45V34L40 40H34L38 33H35Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M15 8L21 12L26 6L32 12L38 6L43 12L49 8V14H15Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
-<g><path d="M10 16H54V47H30L18 56V47H10Z" fill="#B58D3C" stroke="none" stroke-width="2.5"/><path d="M19 25H29V34L24 40H18L22 33H19ZM35 25H45V34L40 40H34L38 33H35Z" fill="#F3F2EE" stroke="none" stroke-width="2.5"/><path d="M15 8L21 12L26 6L32 12L38 6L43 12L49 8V14H15Z" fill="#26364A" stroke="none" stroke-width="2.5"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+  <title id="title">Golden Comments: a gold bullion bar</title>
+  <path d="M18 19H44L56 40V49H8V40Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="4"/>
+  <path d="M18 19H44L56 40V49H8V40Z" fill="#B58D3C" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M18 19H44L56 40H8Z" fill="#E3BF69" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M8 40H56V49H8Z" fill="#B58D3C" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M24 27H38" fill="none" stroke="#F8E7B6" stroke-width="3"/>
 </svg>

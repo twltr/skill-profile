@@ -3,8 +3,8 @@ interface:
   short_description: "Make technical manuals, procedures and references clear and usable"
   default_prompt: Use $technical-writing to write or revise this technical manual
     from its verified source material for its intended readers.
-  icon_small: "./assets/icon-small.svg"
-  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon.png"
 policy:
   allow_implicit_invocation: false
   products:

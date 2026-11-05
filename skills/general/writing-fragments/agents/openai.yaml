@@ -3,8 +3,8 @@ interface:
   short_description: "Select useful, traceable material before writing"
   default_prompt: Use $writing-fragments to scout the relevant material and prepare a
     concise, source-backed handoff for the writing task.
-  icon_small: "./assets/icon-small.svg"
-  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon.png"
 policy:
   allow_implicit_invocation: false
   products:

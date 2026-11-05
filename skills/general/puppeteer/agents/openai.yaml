@@ -1,6 +1,6 @@
 interface:
-  icon_large: "./assets/icon.svg"
-  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
   display_name: "Puppeteer"
   short_description: "Delegate bounded work and verify integration"
   default_prompt: "Use $puppeteer to divide this work into accountable, verifiable tasks."

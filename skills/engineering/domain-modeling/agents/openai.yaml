@@ -1,6 +1,6 @@
 interface:
-  icon_large: "./assets/icon.svg"
-  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
   display_name: "Domain Modeling"
   short_description: "Clarify domain concepts, relationships and names"
 policy:

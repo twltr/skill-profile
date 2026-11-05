@@ -1,5 +1,5 @@
 interface:
-  icon_large: "./assets/icon.svg"
-  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
   display_name: "Skill Issue"
   short_description: "Build and review skills with clear, practical examples"

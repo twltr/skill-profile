@@ -1,6 +1,6 @@
 interface:
-  icon_large: "./assets/icon.svg"
-  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
   display_name: "MinMax Codebase"
   short_description: "Simplify architecture while preserving intended behavior"
 policy:

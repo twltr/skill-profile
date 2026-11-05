@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
-<title id="title">Improve Codebase Architecture: fitting a keystone into an arch</title>
-<g aria-hidden="true"><path d="M10 39C10 29 16 22 25 19L28 30C24 32 22 35 22 40V56H10Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M39 19C48 22 54 29 54 39V56H42V40C42 35 40 32 36 30Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><path d="M25 6H39L36 16H28Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="8" y="55" width="16" height="4" rx="0.5" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /><rect x="40" y="55" width="16" height="4" rx="0.5" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4" /></g>
-<g><path d="M10 39C10 29 16 22 25 19L28 30C24 32 22 35 22 40V56H10Z" fill="#318F95" stroke="none" stroke-width="2.5"/><path d="M39 19C48 22 54 29 54 39V56H42V40C42 35 40 32 36 30Z" fill="#318F95" stroke="none" stroke-width="2.5"/><path d="M25 6H39L36 16H28Z" fill="#B58D3C" stroke="none" stroke-width="2.5"/><rect x="8" y="55" width="16" height="4" rx="0.5" fill="#26364A" stroke="none" stroke-width="2.5"/><rect x="40" y="55" width="16" height="4" rx="0.5" fill="#26364A" stroke="none" stroke-width="2.5"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+  <title id="title">Improve Codebase Architecture: a stable Roman arch</title>
+  <path d="M9 55V32A23 23 0 0 1 55 32V55H42V33A10 10 0 0 0 22 33V55Z" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="5"/>
+  <path d="M9 55V32A23 23 0 0 1 55 32V55H42V33A10 10 0 0 0 22 33V55Z" fill="#DACCAF" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M26 10H38L35 23H29Z" fill="#E3BF69" stroke="#26364A" stroke-width="2.5"/>
+  <path d="M14 18L23 27M50 18L41 27M10 33H21M43 33H54" fill="none" stroke="#26364A" stroke-width="2.5"/>
+  <rect x="6" y="53" width="19" height="5" rx="1" fill="#26364A" stroke="#F3F2EE" stroke-width="1.5"/>
+  <rect x="39" y="53" width="19" height="5" rx="1" fill="#26364A" stroke="#F3F2EE" stroke-width="1.5"/>
 </svg>

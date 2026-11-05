@@ -3,8 +3,8 @@ interface:
   short_description: "Explain software visually and maintain README, agent instructions and docs"
   default_prompt: Use $engineering-documentation to explain and maintain this
     repository's README, agent instructions and documentation for humans and agents.
-  icon_small: "./assets/icon-small.svg"
-  icon_large: "./assets/icon.svg"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon.png"
 policy:
   allow_implicit_invocation: false
   products:

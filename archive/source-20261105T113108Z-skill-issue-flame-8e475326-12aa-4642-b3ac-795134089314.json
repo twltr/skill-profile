@@ -1,0 +1,20 @@
+{
+  "source_revision": "fa4aa57c5fd110ac736e3f1ba8c6c8d33ac5af05",
+  "reason": "Preserve complete Skill Issue package before requested burning puzzle icon refinement. User reports having visually accepted the preceding icons in the app.",
+  "packages": [
+    "skills/general/skill-issue"
+  ],
+  "archive": "archive/source-20261105T113108Z-skill-issue-flame-8e475326-12aa-4642-b3ac-795134089314.zip",
+  "files": {
+    "skills/general/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/general/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/general/skill-issue/NOTICE.md": "b311dad14c4edc9ebb6f2e571999b1aee303bd8c276b8b97098cb955ba73a9be",
+    "skills/general/skill-issue/SKILL.md": "5b6709ef933bbc51c201f9d10de9e13cfc53c1c0eee343307214f730656631ba",
+    "skills/general/skill-issue/agents/openai.yaml": "63bbdac81cd3e1dc073143c716f33ec0bcb1a60a016de5b435e75b050430fcc0",
+    "skills/general/skill-issue/assets/icon-small.png": "20e8563a03aabad82e044acf6667f58d76f2ace0102f0c572eb93957b93c9ee7",
+    "skills/general/skill-issue/assets/icon-small.svg": "4c2c45dc84771f6e5a884968c8a77b40a79a31450025851cb0d081f3db99e59a",
+    "skills/general/skill-issue/assets/icon.png": "c75b9cc2a8900ca074a32fbd9d33951d6c66f631ac893208281badc9bce47d78",
+    "skills/general/skill-issue/assets/icon.svg": "4c2c45dc84771f6e5a884968c8a77b40a79a31450025851cb0d081f3db99e59a",
+    "skills/general/skill-issue/references/installation.md": "94da6eea7e03294bcd8fb1421309b6b0d0b6bf473e221d39ad15282d21fcfa3a"
+  }
+}

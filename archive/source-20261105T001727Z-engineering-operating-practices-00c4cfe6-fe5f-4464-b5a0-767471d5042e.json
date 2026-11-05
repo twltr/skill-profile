@@ -1,0 +1,15 @@
+{
+  "source_revision": "700f0cf9807768c3fbc4132f415d4be8bfbeb1ea",
+  "reason": "Preserve complete Engineering Practices before adding configuration and operating-boundary decision guidance.",
+  "packages": [
+    "skills/engineering/engineering-practices"
+  ],
+  "archive": "archive/source-20261105T001727Z-engineering-operating-practices-00c4cfe6-fe5f-4464-b5a0-767471d5042e.zip",
+  "files": {
+    "skills/engineering/engineering-practices/NOTICE.md": "a8dc5dc0268d3cc237db58b02e618bbb8b267e3f4aafa6d8daee5dcf6b666fee",
+    "skills/engineering/engineering-practices/SKILL.md": "6d13ecc7d814a28bd6a92e5f333229357fea3cbdbfc9e253b6788ce58385667f",
+    "skills/engineering/engineering-practices/agents/openai.yaml": "65d8237a6777dd2e8919d8e0ab60420fad56657915e5d58e24f19eaedd102a35",
+    "skills/engineering/engineering-practices/assets/icon-small.svg": "7ea77c91123227744bae41c97f888fcc3dc3301be80410494ab5a3c5af3f95ee",
+    "skills/engineering/engineering-practices/assets/icon.svg": "30c3fab7702d6512e7e3fa40c9fb7aff4bc3cf3ca2007f7b2b1213b4c2b783c4"
+  }
+}

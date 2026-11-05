@@ -62,10 +62,14 @@ Native mechanisms observed locally on 2026-11-05:
   effort; the installed pool/force/`primary` behavior differs from current English
   docs. Inspect its effective schema and configured pool rather than importing an
   API ID as a working alias. Image delivery depends on the selected provider route.
-- **Gemini CLI 0.24.5:** the installed custom-agent loader uses TOML with a model
-  field, unlike current Markdown examples. It has no custom-agent effort/thinking
-  field. Image-reading plumbing exists, but the newer browser `visualModel` route
-  and access to the listed model were not established on this installation.
+- **Gemini CLI 0.66.0:** after the authorized upgrade from 0.24.5, the installed
+  custom-agent loader reads Markdown with YAML frontmatter. Its strict local-agent
+  schema supports `model`, `temperature`, tools and execution limits, but no
+  effort/thinking field. Browser `visualModel` configuration and wiring are present;
+  actual screenshot analysis and account access to the listed model were not
+  exercised. The separate skill loader still retains only name and description
+  from frontmatter and does not enforce explicit-only invocation metadata. All 30
+  shared skills were discovered; the existing disabled list was preserved.
 
 These observations are host/version-specific, not minimum requirements or a
 promise about another machine. Record requested versus effective selection when

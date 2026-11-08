@@ -389,8 +389,15 @@ maintenance burden, not just files. Recheck that trade-off when requirements exp
   understanding, patterns, contracts or operation, load it directly for the affected
   explanation. Pass the existing evidence and source anchors; do not wait for an
   independent writing request or restart Good Writing. Good Writing remains the
-  general writing router. Without either specialist, preserve these explanations
-  at the same owners and state any material verification limit.
+  general writing router. Engineering Documentation is explicit-only and may be
+  absent from the automatic catalog. Resolve `engineering-documentation` through
+  the host's installed-skill lookup before treating it as unavailable. In a
+  filesystem runtime, inspect the configured skill roots; in a flat installation
+  its method is at `../engineering-documentation/SKILL.md`. Read the complete method
+  before applying it. This deliberate call does not change its invocation policy.
+  If either specialist cannot be read, preserve the affected explanation and its
+  verified references at the existing owners, and state the access or verification
+  gap. An unavailable specialist does not waive the source requirement.
 - If **Puppeteer** is available, use it to split substantial independent research or
   compare competing designs before filling the main context with raw sources.
 - If **Grilling with Agents** is available and a consequential decision benefits from

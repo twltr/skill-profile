@@ -10,6 +10,19 @@ README, agent instructions and deeper documentation answer different questions
 about the same system. Give each fact one owner; connect the entrypoints instead
 of copying the book into all three.
 
+Code and docs teach different parts of the same design. Detailed local intent,
+construction choices and failure reasons belong beside the implementing code.
+Docs explain the overall architecture, name applied patterns with their sources
+and locations, define cross-module contracts, and show how to use and operate the
+system. Link to local reasoning instead of rewriting it into a parallel manual.
+Accepted design knowledge must survive the originating chat or review round.
+
+Engineering workflows may load this method directly for affected explanations,
+passing their existing evidence; no separate writing request or Good Writing round
+is required. Good Writing remains the default router for general writing tasks.
+Return to the active caller after the scoped update; preserve native invocation
+policy rather than treating workflow composition as automatic catalog selection.
+
 **Let the figure carry the explanation.** For relationships and behavior, start
 with a visual explanation and replace the paragraphs it makes unnecessary.
 Keep prose for reasons, conditions and consequences the figure cannot convey.
@@ -43,6 +56,12 @@ diagram would answer *who sends which message when*; do not force both questions
 into one overloaded figure. This example is a teaching model, not a claim about
 the current repository or a guarantee about interrupted external effects.
 
+The same chapter should make the implemented pattern discoverable: name the
+**state machine**, identify the transition-policy owner, and link the inspected
+primary source that informed the choice. Keep the reason for a particular guard
+beside that guard. A pattern map routes a reader to both kinds of explanation;
+the picture alone does not preserve the design decision or its provenance.
+
 ## 1. Establish the source and the reader's job
 
 Read the applicable repository instructions, existing documentation map and
@@ -75,8 +94,8 @@ these methods, verify the same relevant distinctions at their existing owners.
 |---|---|
 | README | What is this, why is it useful, how does it fit, and how can I use or develop it? Give a compelling concrete entry, a fast start and precise routes to deeper material. |
 | Repository AGENTS.md or supported native equivalent | How should an agent work safely and verify changes here? Keep repository-specific commands, non-obvious constraints and task-conditioned pointers. |
-| Docs book / developer or SDK documentation | How does the system work, why is it constructed this way, and how do I perform or look up a substantial task? Own maintained explanations and procedures; route contract lookup to its existing authoritative definition. |
-| Source commentary | Why must this local mechanism work this way? Use Golden Comments, if available, for nearby models, invariants and failure consequences. |
+| Docs book / developer or SDK documentation | How does the system fit together, which patterns and external contracts shape it, where are they implemented, and how do I use or operate it? Own system-level explanations and procedures; route exact contracts and local design reasons to their existing owners. |
+| Source commentary | What role does this unit play in the wider system, why was this construction chosen, and what must a future change preserve? Use Golden Comments, if available, for local models, decisions, invariants and failure consequences. |
 | Workboard, plans, issues, PRs and changelog | What is proposed, in progress, blocked or shipped? Keep transient coordination and historical changes here. |
 
 README and docs serve both people and agents. Agent instructions are an operating
@@ -212,24 +231,49 @@ Use UML or another established notation when it improves precision, preserving
 its semantics. SVG is the delivery format, not a reason to invent a new notation
 or force every architecture into the same boxes and arrows.
 
-Each chapter opens with its question and scope, then gives the useful explanation:
-construction and relationships, reasons for that construction, owner/invariants,
-failure consequences and verified source anchors where relevant. For an invariant,
-state the rule, its enforcing mechanism and the consequence of violation. Keep
-local rules with their capability; do not copy every rule into a global catalogue.
-Explain why the boundary exists, not line-by-line syntax. Keep shared vocabulary,
-configuration fields and pattern references at one owner.
+Each chapter opens with its question and scope, then explains relationships,
+system-level reasons, contracts and verified implementation anchors. State an
+invariant and its consequence where a reader needs that contract; link to the
+mechanism for enforcement and detailed local rationale. Keep local rules with
+their capability instead of copying them into a global catalogue. Source commentary
+can be the canonical owner of a construction decision; it is not merely a shorter
+copy of a docs chapter. Keep shared vocabulary and configuration definitions at
+their existing owners.
 
-Explain an architectural or software pattern where it resolves a real design
-question. Name the pattern, the forces that make it fit, the enforced invariant,
-the relevant alternative and the implementation anchor. For the fictional turn
-model, a state machine makes permitted transitions and review loops explicit;
-a fixed linear pipeline would hide the revision and blocked-work branches.
-The shared turn chapter owns that explanation; individual role pages link to it.
+Name the architectural and software patterns actually applied, including ones
+reused in ordinary feature work. For a substantial system, maintain a compact
+applied-pattern map at the existing architecture owner, with primary sources and
+precise implementation locations. For example, in a fictional integration:
 
-External engineering examples can support the reasoning. Cite the actual paper,
+| Pattern and source | Where to look | Architectural reason |
+|---|---|---|
+| Gateway — [Fowler](https://martinfowler.com/eaaCatalog/gateway.html) | `providers/catalog.py:CatalogGateway` | External API shapes stop at this boundary; its briefing owns mapping and failure-policy reasons. |
+| Composition Root — [Seemann](https://blog.ploeh.dk/2011/07/28/CompositionRoot/) | `app.py:create_app` | Application dependencies are assembled at the entrypoint; consumers receive their dependencies. |
+
+Verify those mappings in the actual repository. A map is navigation, not a second
+catalogue of all decisions. Link its entries to the owning source/chapter for
+detail. Keep a small repository's few entries in its README. Update the map when
+an implemented pattern is added, moved or retired. Do not count rows as quality.
+
+Explain how the pattern fits and where the implementation departs from it. For the
+fictional turn model, a state machine makes permitted transitions and review loops
+explicit; a fixed linear pipeline would hide the revision and blocked branches.
+An enum alone does not establish the transition mechanism. Distinguish recognized
+patterns, protocols and project-local terms; label an analogy as an analogy.
+Code written locally can still implement an established pattern. Do not replace
+recognizable pattern names with generic mechanism labels to avoid the source map.
+If the implementation evidence is incomplete, identify the candidate and its exact
+unverified relationship. A reference added now supports a definition; it is not
+evidence that the original author used that source.
+
+Keep researched evidence with the accepted claim in Markdown, not only in chat.
+Cite the actual paper, original pattern description, specification section,
 maintainer documentation or first-person engineering account, what was adopted
-and which constraints differ. A company's name is not proof of suitability.
+and which constraints differ. Name the source and provide a usable direct link;
+a company's name or a general documentation homepage is not sufficient evidence.
+For a protocol such as MCP, identify the implemented version and relevant section,
+then the implementation owner. Separate the standard's requirement from local
+policy and from conformance checks actually performed.
 Use State of the Art, if available, to verify a material claim about current
 practice or an external precedent; record the relevant date/version and limits.
 Use Engineering Practices, if available, for an unresolved design trade-off;
@@ -294,6 +338,9 @@ clarity check directly without claiming the method was loaded.
   the reader find integration, build, test and deployment guidance where applicable?
 - Follow the agent entrypoint on a representative bounded change: can it find the
   correct owner, relevant instructions and checks without loading the whole book?
+  Follow one applied-pattern entry into code and one local briefing back to its
+  wider context. Verify that reasons needed for the change survive without chat
+  history and that source and docs do not maintain duplicate detailed accounts.
   Label a desk walkthrough separately from an actual agent trial; do not claim
   measured effectiveness from a tidy file tree or subagent agreement.
 - Check facts, commands, links and diagram transitions against their owners. Run
@@ -304,6 +351,13 @@ clarity check directly without claiming the method was loaded.
 - Update affected explanations with accepted implementation changes. Preserve
   blocked verification explicitly; a good-looking diagram does not establish a
   system guarantee. Retire obsolete pages/assets and repair callers in the same work.
+
+When consolidating a sprawling book, organize around reader questions and actual
+owners. Merge repeated explanations, move detailed construction reasons to the
+implementing source when appropriate, and retain a clear route to them. Preserve
+patterns, primary-source links, operating instructions and meaningful diagrams.
+A smaller file count alone is not an improvement, and no chapter needs to mirror
+every source file.
 
 When Road to Glory is the caller, return this result to its documentation phase;
 do not restart planning. Use Engineering Review, if available, for independent

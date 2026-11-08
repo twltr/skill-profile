@@ -20,6 +20,14 @@ brief and protected content; pass them and the source handoff to the specialist
 once. An explicit specialist choice wins. Ask the user only about a gap that
 changes the meaning or permitted action.
 
+An engineering change can include writing even when the user only asks to implement
+a feature. Source commentary is handled in that implementation by Golden Comments,
+when available. Engineering Practices or another active engineering workflow may
+load Engineering Documentation directly for affected architecture, pattern sources,
+contracts or operating instructions, using its existing evidence. It need not come
+through this router first. This preserves a short route without making each writing
+specialist an independent automatic entrypoint.
+
 ## Prepare the material first
 
 If `writing-fragments` is available, deliberately load it from the host's
@@ -78,9 +86,12 @@ An explicit choice wins. Route by the text's job, not its source: a product pitc
 based on code is commercial writing. For mixed tasks, select the needed methods
 here and apply each only to its relevant part.
 
-Good Writing is the sole automatic router for the five specialists. They disable
-implicit invocation and remain usable by explicit user choice or as resources
-loaded by this router. Resolve the selected name through the host's installed-skill
+Good Writing is the default automatic router for writing work across the five
+specialists. They disable implicit invocation and remain usable by explicit user
+choice, this router, or a scoped deliberate call from another authorized workflow.
+Technical Writing is directly callable for manuals; Engineering Documentation is
+directly callable for code-owned docs. Automatic selection and deliberate workflow
+composition are different routes. Resolve the selected name through the host's installed-skill
 lookup and read its complete `SKILL.md` before applying it. In a filesystem runtime,
 use the configured skill roots; in a flat installation the file is the sibling
 `../<skill-name>/SKILL.md`. Absence from the automatic catalog alone does not mean
@@ -89,12 +100,12 @@ text to this task. Specialists never route back here. A directly invoked method
 that discovers a scope mismatch may hand off once to the correct sibling; the
 receiving method completes the task without routing again. A specialist selected
 by this router returns a scope mismatch to the active caller instead of choosing
-another writer. Good Writing remains the sole automatic router.
+another writer.
 
 Writing Fragments is a deliberate preparation dependency before the specialist
 route, not another automatic router. Its explicit-only policy remains in native
 metadata; this workflow deliberately loads it when writing is routed through Good
-Writing. Specialists remain explicit-only and are loaded as needed below.
+Writing.
 
 Make the structure easy to see with the destination's supported formatting.
 Across all routes, use `editorial-svg-diagrams` when available and a visual

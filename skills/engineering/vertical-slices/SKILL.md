@@ -11,18 +11,36 @@ adding a feature or module, extending an existing capability and maintaining
 existing code. Start from the affected slice and respect its existing ownership.
 A small change uses these boundaries without requiring a whole-system redesign.
 
-## A small ownership example
+## Example: make composition and its participants visible
 
-In an illustrative cancellation feature, `ordering/` owns order state and
-cancellation orchestration, `inventory/` owns reservations, and `payments/` owns
-payment and refund outcomes. Each capability contains the API, state, logic and
-UI it actually needs. Ordering uses the other capabilities' public contracts;
-it does not update their storage directly.
+Fictional brief: a monitoring capability runs website and provider checks. Each
+provider has its own request mapping, evidence rules and fixtures. A flat list of
+`firebase.py`, `vercel.py` and `search_console.py` does not explain how a run works.
+Make the coordinating responsibility and cohesive participants discoverable:
 
-A reservation-expiry change belongs in inventory with its invariant and tests.
-Ordering changes only if the public outcomes it handles change. Shared transaction
-mechanics may be reusable; reservation policy remains with inventory. Derive the
-real boundaries from the system, not from this example's nouns or file count.
+```text
+monitoring/
+  __init__.py                 # public entry and capability briefing
+  pipeline/
+    run.py                    # stage order, admission and failure propagation
+    contracts.py              # Stage input/result, including unavailable evidence
+  stages/
+    website/                  # website probe and its evidence interpretation
+    firebase/                 # provider mapping and local check policy
+    vercel/
+    search_console/
+```
+
+Here `run.py` composes the stages through the Stage contract; stage implementations
+do not import or start each other. Its declaration makes ordering and permitted
+parallel work visible. Each provider folder owns the meaningful parts it needs,
+with tests beside it or under the matching test convention. `pipeline/` is the
+shared coordination owner, not a dumping ground for provider-specific rules.
+
+These names are illustrative. An existing `base/`, `core/` or composition module
+can serve the same job if its responsibility is explicit. A single small probe
+may remain one file; do not pre-create empty providers or one-file wrappers for
+symmetry. The improvement is a readable architectural relationship, not depth.
 
 ## Minimum Surface as the design measure
 
@@ -103,6 +121,27 @@ future change needs. Optimize for safe localization and manageable context.
 
 ## Public boundaries and dependency direction
 
+Make the architecture visible at each useful scale. Repository boundaries expose
+independent systems and their contracts; capability folders group cohesive behavior;
+submodules and files expose the roles of the chosen construction. A collection of
+well-named leaf files is incomplete if the reader cannot find what connects them.
+Show the composition owner and how control/data passes between participants in
+code, using the relevant native mechanism: a pipeline declaration, handler registry,
+transition table, subscription wiring or explicit constructor composition.
+
+Use folders when a responsibility has several parts that belong together. A state
+machine might own `states/` plus a transition policy and coordinator; an extensible
+integration may own adapter packages plus a factory or registry. Keep the policy
+and its assembly discoverable instead of scattering state transitions or hiding
+ordering in import side effects. A small machine can keep its states in one table.
+Folders express the model; they do not substitute for it or mandate a class per state.
+
+Separate the owner of runtime sequencing from application composition when those
+are different responsibilities. Creating dependencies at startup does not by itself
+explain which stage runs next or how a failed stage affects the remaining run.
+Do not call every coordinator a Composition Root, or every status enum a State
+pattern. Engineering Practices owns choosing and accurately naming the mechanism.
+
 Give each module one intentional public surface. Cross-module callers use it,
 never deep internals. Describe the inputs, results, error vocabulary, ordering
 and state guarantees callers need. Hide useful complexity behind that surface;
@@ -124,13 +163,14 @@ builds, tests or operation. A one-off inspection does not earn a permanent gate;
 use existing commands and actual requirements rather than adding administration
 to complete an ordinary change.
 
-Use a compact briefing where a module's responsibility or boundary would otherwise
-need reconstruction: purpose, ownership, public API, dependency constraints and
-contract references. Keep it at the existing package documentation or entrypoint,
-reuse an explanation that already serves this job and update it with relevant
-changes. Do not require a separate briefing for a self-explanatory script or leaf
-helper. A design proposal includes any needed briefing; placing it in implementation
-requires an authorized implementation, not merely a design review.
+Use Golden Comments, if available, during implementation for each affected important
+module's local briefing and decision reasons. Give it the actual model, accepted
+decisions and code; it returns explanations at their source owners. Without it,
+preserve purpose, system context, construction, reasons, public boundary and change
+constraints directly. Keep the briefing at the existing package documentation or
+entrypoint and link wider architecture instead of duplicating it. A self-explanatory
+leaf needs no separate briefing. A design proposal identifies the explanation's
+owner; placing it in source requires authorized implementation.
 
 ## Invariants live with their mechanism
 
@@ -206,6 +246,12 @@ Walk a normal domain change, a boundary failure and a likely extension through
 the design. Show where code, tests, invariants and explanation live, how callers
 reach the public surface and what new dependency edges appear. Compare actual
 state, error surface and context needed against useful alternatives.
+
+Try the extension without chat history: can a maintainer find the coordinator,
+participant contract and the correct folder for a new stage, state or adapter?
+Can they see which ordering, failure and ownership rules the extension must retain?
+Verify these against executable wiring, not a tree diagram alone. A flat module
+or a nested layout may pass; neither a file-count limit nor a required depth does.
 
 If a change still scatters across unrelated files, duplicates policy or requires
 knowledge hidden in another module, revise the ownership. Deliver the vocabulary,

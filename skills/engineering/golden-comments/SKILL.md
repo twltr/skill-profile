@@ -1,32 +1,50 @@
 ---
 name: golden-comments
-description: "Explain models, reasons, invariants and failure consequences in code comments and local briefings. Use when writing or changing source code that needs those explanations, or reviewing its comments; system books and READMEs use the Engineering Documentation route in Good Writing."
+description: "Preserve design intent, system context, named mechanisms and decision reasons beside source code. Apply while creating or changing source files and important modules, and when reviewing them, even if comments were not requested. Repository-wide architecture and operating guides belong to Engineering Documentation."
 ---
 
 # Golden Comments
 
-Make source code explain the model a future maintainer needs to change it safely.
-Golden Comments carry **why, how and why this construction**. Code already says
-what the statements do; repeating their syntax adds no understanding.
+Make source code carry the understanding needed to continue its design after the
+conversation is gone. The next maintainer should be able to read the implementation
+alongside the reasons for its construction: what it serves in the larger system,
+why it has this shape and what a seemingly harmless change would break.
 
-Use this method when writing or changing source commentary, including
-within ordinary implementation. A comment-only assignment does not authorize a
-code redesign. This skill owns source commentary, not a system documentation book.
-For system books and READMEs, use Good Writing's Engineering Documentation route when
-those skills are available; otherwise document the limit and keep the explanation
-inside the explicitly requested scope.
+Apply this method to each new or substantively changed source file during ordinary
+implementation. Important modules, public boundaries and policy owners need a
+local explanation; do not wait for a separate documentation request or a detected
+high-risk bug. A self-explanatory leaf needs no ceremonial header. Judge coverage
+by what a future reader must reconstruct, never by a comment count or percentage.
+A comment-only assignment still does not authorize code redesign.
 
-## A reason-bearing comment
+## Example: preserve the reason for a status model
 
-**Weak:** `Update the registry.`
+Fictional brief: several runtime consumers disagree about which waiting tasks
+still reserve an exclusive write slot. The accepted design gives the vocabulary
+and its question-specific sets one owner. The source briefing can say:
 
-**Better, if this matches the real mechanism:**
+```python
+"""Own task lifecycle vocabulary shared by the scheduler, store and client events.
 
-> This upsert must run before the registry write, or the id check races.
+TaskStatus uses StrEnum to retain the existing wire strings. Named sets answer
+different questions: LIVE identifies unfinished work; SLOT_HOLDING reserves the
+exclusive write slot. They overlap intentionally. A task waiting for approval
+has stopped executing but must keep that slot until its operation resumes.
 
-The second comment names the required ordering and the failure it prevents. Read
-the mechanism before writing it; if the implementation does not enforce that
-ordering, report the discrepancy instead of making the comment sound reassuring.
+A type alias alone would name the strings while leaving set membership scattered
+across consumers. Keep that policy here so a new status cannot silently mean
+different things to admission and recovery. Session status is a separate model.
+
+See docs/runtime.md#task-lifecycle for the lifecycle overview and public contract.
+"""
+```
+
+The module explains the design, its alternative and the consequence of collapsing
+two concepts. The docs own the wider lifecycle and route here for membership
+reasons. Verify every claim against the real code; this illustrative docstring
+does not implement a state machine or establish slot enforcement by itself.
+Farther down, a comment on the exceptional membership explains that case next to
+the set. Do not repeat the whole briefing beside every use.
 
 ## Find the explanation's local owner
 
@@ -34,6 +52,20 @@ Read the relevant mechanism and its canonical requirements before writing about
 it. Identify what a new maintainer cannot safely infer: the architectural model,
 dependency direction, invariant, assumption, ordering or failure mode. Explain
 that at the narrowest place that owns the reason.
+
+Recover accepted decisions from the current conversation, design review or agent
+handoff while that evidence is available. Translate the settled rationale into
+durable source explanation in the same change; do not paste the conversation or
+its participants into code. Preserve the constraint and any meaningful condition
+for revisiting the decision. Unsettled alternatives remain open at the task's
+decision owner; they must not become an invented account of why the code is right.
+
+Name an applied pattern or mechanism when it helps a reader recognize the design,
+and explain its concrete role here. For example, a Command dispatcher maps a typed
+envelope to its handler; the local briefing explains why execution stays out of
+the transport. The owning architecture chapter can carry the pattern's primary
+source and repository-wide locations. A local link connects those explanations.
+Use plain descriptive names for local mechanisms; do not invent a famous origin.
 
 If an explanation contradicts the code, determine whether the code is wrong,
 the explanation stale or the requirement changed. Do not make a comment justify
@@ -53,6 +85,12 @@ architecture briefing. Cover what the entrypoint actually needs:
 - **Canonical Semantics:** what the names, states and outcomes mean here.
 - **Design Rules / Assumptions:** what must remain true for the mechanism to work.
 - **Forbidden Responsibilities:** what this unit must not start owning.
+
+Explain the relationship to the larger system even when the local code is simple:
+who calls this unit, what decision it owns and why that boundary matters. A reader
+should not need the original chat to discover that a short helper is the only
+writer of a lifecycle transition. Name the actual entrypoints and relevant siblings
+when they provide a useful route; avoid an inventory of every file.
 
 Write coherent local prose rather than a stack of labels with no explanation.
 Keep a longer briefing when moving it elsewhere would separate a critical
@@ -80,6 +118,12 @@ does not create a new contract or authorize restructuring the code.
 
 ## Explain where the voltage is
 
+Explain ordinary design decisions as well as dangerous boundaries: why a factory
+centralizes construction, why an observer is unsubscribed at this lifetime boundary,
+why a pipeline owns ordering, or why a state handler must return control to its
+coordinator. These explanations help future changes preserve a coherent design;
+security and concurrency are not the only reasons to leave a useful comment.
+
 Critical-boundary comments are required where a small change can create a
 second truth, a race or data loss. Inspect optimistic concurrency, idempotency,
 event append/load boundaries, projection cursors, transactions, retry/claim/lease
@@ -98,6 +142,15 @@ comment is not a repair. Explain the real invariant or address the construction
 within the authorized scope.
 
 ## Keep the explanation durable
+
+Keep detailed local construction and decision reasons beside their implementation.
+Repository docs own overall architecture, applied-pattern/source navigation,
+cross-module contracts and operating procedures. Link between them instead of
+copying the same explanation. A brief orientation in both places is useful; two
+independently maintained accounts of the same rule are not. Use Engineering
+Documentation directly when available for an affected repository explanation;
+pass the verified change and its source anchors without restarting Good Writing.
+If unavailable, preserve this division of ownership and report a material gap.
 
 Write concise, complete, grammatical sentences in the repository's language.
 Source prose serves the next developer. It does not discuss the coding agent,
@@ -122,9 +175,11 @@ adjacent corrections into one coherent comment instead of accumulating defensive
 paragraphs after each edit. Preserve useful reasons and assumptions while removing
 repetition; commentary is not a line-count reduction target.
 
-Read the result with its mechanism: does it explain why, how and why this how;
-are the ownership, ordering and failure claims true; and could someone safely
-modify the unit using it? Verify referenced paths and recheck a claim whose
+Read each affected important file as a maintainer with no chat history: can they
+explain its system role, construction, reasons and change constraints, then follow
+a precise pointer for wider context? Check whether accepted rationale was left
+only in a plan or final reply. Verify the ownership, ordering and failure claims
+against the mechanism. Verify referenced paths and recheck a claim whose
 pointer was stale. Return the revised source commentary and any unresolved model
 question to the calling task. Use the work's relevant verification; a prose-only
 change does not need a new test farm.

@@ -17,13 +17,13 @@ supplementary Matt Pocock attribution where applicable.
 | <img src="skills/engineering/domain-modeling/assets/icon.svg" width="28" height="28" alt=""> [`domain-modeling`](skills/engineering/domain-modeling/SKILL.md) | Locally maintained domain-language and naming method, adapted from Matt Pocock; keeps existing canonical owners and conditional structural handoffs. [Provenance](skills/engineering/domain-modeling/NOTICE.md). |
 | <img src="skills/engineering/engineering-practices/assets/icon.svg" width="28" height="28" alt=""> [`engineering-practices`](skills/engineering/engineering-practices/SKILL.md) | Repository-owned decision criteria for architecture, configuration ownership, data, security, recovery, toolchains and delivery. Scaled to the actual project and change. [Source influences](skills/engineering/engineering-practices/NOTICE.md); current research belongs to State of the Art. |
 | <img src="skills/engineering/engineering-review/assets/icon.svg" width="28" height="28" alt=""> [`engineering-review`](skills/engineering/engineering-review/SKILL.md) | Independent review of implementation, rendered UI and documentation, with traceable questions and corrections. [Source influences](skills/engineering/engineering-review/NOTICE.md). |
-| <img src="skills/engineering/golden-comments/assets/icon.svg" width="28" height="28" alt=""> [`golden-comments`](skills/engineering/golden-comments/SKILL.md) | Explain reasons, invariants and failure consequences in source commentary. |
+| <img src="skills/engineering/golden-comments/assets/icon.svg" width="28" height="28" alt=""> [`golden-comments`](skills/engineering/golden-comments/SKILL.md) | Preserve design intent, system context and decision reasons beside source during ordinary implementation. |
 | <img src="skills/engineering/improve-codebase-architecture/assets/icon.svg" width="28" height="28" alt=""> [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) | Explicitly selected broad-to-fine architectural reassessment and planning handoff, adapted from Matt Pocock. [Provenance](skills/engineering/improve-codebase-architecture/NOTICE.md). |
 | <img src="skills/engineering/marshmallow-tests/assets/icon.svg" width="28" height="28" alt=""> [`marshmallow-tests`](skills/engineering/marshmallow-tests/SKILL.md) | Design tests around coherent units, invariants and precise failure addresses. |
 | <img src="skills/engineering/minmax-codebase/assets/icon.svg" width="28" height="28" alt=""> [`minmax-codebase`](skills/engineering/minmax-codebase/SKILL.md) | Human-initiated structural and architectural improvement; preserves agreed capability. |
 | <img src="skills/engineering/road-to-glory/assets/icon.svg" width="28" height="28" alt=""> [`road-to-glory`](skills/engineering/road-to-glory/SKILL.md) | Coordinate substantial work through versioned plans, conditional delegation, remote issues/PRs and separate implementation/documentation reviews before cleanup. |
 | <img src="skills/engineering/engineering-documentation/assets/icon.svg" width="28" height="28" alt=""> [`engineering-documentation`](skills/engineering/engineering-documentation/SKILL.md) | Maintain README, repository agent instructions and code-owned docs as distinct entrypoints to one system. Uses primary visual explanations and Synopsis's ordered chapters; [lineage and evidence](skills/engineering/engineering-documentation/NOTICE.md). |
-| <img src="skills/engineering/vertical-slices/assets/icon.svg" width="28" height="28" alt=""> [`vertical-slices`](skills/engineering/vertical-slices/SKILL.md) | Organize repository capabilities around clear owners and public boundaries. |
+| <img src="skills/engineering/vertical-slices/assets/icon.svg" width="28" height="28" alt=""> [`vertical-slices`](skills/engineering/vertical-slices/SKILL.md) | Make capabilities, coordinating mechanisms and participants visible through coherent modules and public boundaries. |
 
 ## Included General skills
 
@@ -74,9 +74,10 @@ and the ordered system book stay in one method with distinct responsibilities.
 procedures and reference material. Both retain the shared pencil and explicit
 invocation policy. The previous complete packages are committed under `archive/`.
 
-Good Writing is the sole automatic router for the five writing specialists.
+Good Writing is the default automatic router for the five writing specialists.
 Commercial, Customer, Workspace, Engineering Documentation and Technical Writing disable implicit
-invocation; they are loaded by the router or explicitly selected by the user.
+invocation; they are loaded by the router, explicitly selected by the user, or
+deliberately read by an authorized workflow for a scoped writing contribution.
 Good Writing uses Writing Fragments for source preparation, scaled to the task.
 Direct specialists reuse an existing handoff or prepare one without restarting
 the router. Missing supporting methods have bounded, honest fallbacks.
@@ -84,8 +85,9 @@ Good Writing and every specialist use Unslop when available even when used direc
 can call Editorial SVG Diagrams. Unslop and Editorial SVG Diagrams remain automatic.
 Descriptions explain the task and intended outcome; `agents/openai.yaml` owns
 the native invocation policy. Writing Fragments remains explicit-only. Policy
-configuration does not prove an actual model invocation. Golden Comments points
-documentation work to the Engineering Documentation route in Good Writing.
+configuration does not prove an actual model invocation. Engineering Practices
+and Golden Comments can call Engineering Documentation directly with their
+existing evidence; a repository update need not wait for a separate writing request.
 Workspace Writing emphasizes hierarchical topic grouping. Engineering Documentation
 keeps ordered chapters and a shallow structure with substantial topic folders.
 Explanatory figures replace the paragraphs they make unnecessary, with concise
@@ -97,6 +99,15 @@ percentage-cut targets are retired. Unslop's
 [notice](skills/general/unslop/NOTICE.md) owns the exact upstream revisions,
 adaptation decisions and licenses. Humanizer and Writing Clearly and Concisely
 are source material, not additional installed entry points.
+
+The 2026-11-08 revision strengthens the connection from engineering decisions to
+maintained explanations. Golden Comments preserves local design reasons and
+system context while code is written. Vertical Slices exposes composition and
+participant responsibilities without size or depth quotas. Engineering Practices
+and Engineering Documentation retain named, source-backed pattern mappings;
+the latter owns architecture navigation and operation, linking local rationale
+instead of duplicating it. Good Writing remains the automatic writing router;
+direct scoped workflow calls are explicit and native invocation policies unchanged.
 
 The 2026-10-26 writing revision makes Unslop's prohibition on slogan-like
 parallel phrasing explicit for paired and longer constructions, including

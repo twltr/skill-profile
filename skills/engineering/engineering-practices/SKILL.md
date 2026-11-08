@@ -1,6 +1,6 @@
 ---
 name: engineering-practices
-description: Make and review engineering decisions about architecture, data, configuration, security, reliability and delivery from requirements, current evidence and maintenance needs. Apply during development at the scale of the actual decision, from a small feature to a new system.
+description: Make and review engineering decisions about architecture, data, configuration, security, reliability and delivery. Name applied patterns, retain primary sources and carry accepted reasons into code and docs. Apply during development from a small feature to a new system.
 ---
 
 # Engineering Practices
@@ -9,6 +9,12 @@ Make engineering choices from the problem, evidence and human maintenance needs.
 Apply these criteria throughout development; a small change usually reuses the
 system's sound choices and needs no new research exercise. A new repository,
 capability or consequential replacement needs an explicit comparison.
+
+Carry accepted decisions into the repository before the work ends. A sound choice
+left only in chat, a design council or a closing report cannot guide the next
+maintainer. Keep detailed local reasons beside code and cross-system architecture,
+applied-pattern references and operating guidance with their documentation owner.
+Use precise links so those explanations complement each other.
 
 ## A worked choice
 
@@ -35,6 +41,22 @@ compatibility and required SDK support in their current official documentation.
 This is a conditional example, not a default recommendation of Java. Change the
 workload, team or operating constraints and the conclusion may change. State the
 actual choice, rejected alternative, evidence and what would justify revisiting it.
+
+## Example: leave a verifiable pattern decision
+
+Fictional brief: provider request and response details are leaking into a report's
+business logic. An accepted decision might leave this small architecture entry:
+
+| Applied mechanism and primary source | Implementation owner | Reason and boundary |
+|---|---|---|
+| Gateway — [Martin Fowler](https://martinfowler.com/eaaCatalog/gateway.html) | `reporting/providers/catalog.py:CatalogGateway` | Translate the external catalog API into the report's own contract. Provider fields stay at this boundary; detailed mapping and error reasons live in its source commentary. |
+| Composition Root — [Mark Seemann](https://blog.ploeh.dk/2011/07/28/CompositionRoot/) | `app.py:create_app` | Assemble the application dependencies at its entrypoint. The report receives a gateway; it does not discover a global container. |
+
+These links support the pattern meanings, not proof that the fictional files
+implement them. The gateway's local briefing explains the actual dependency,
+mapping decision and rejected option of spreading SDK calls through consumers.
+A tiny direct integration may not need a separate object; show what responsibility
+the boundary earns. A concise entry can live in the README for a small repository.
 
 ## A compact set of practices
 
@@ -251,6 +273,63 @@ when the brief and evidence suffice; do not return routine engineering decisions
 to the user as a menu. A missing fact stays unverified, and a genuine authority or
 preference boundary remains visible.
 
+## Name the implemented construction and keep its evidence
+
+During ordinary implementation, identify the established patterns already present
+or introduced by the change; the user need not ask for a pattern-selection exercise.
+For example, provider-shape translation behind a domain-facing interface deserves
+comparison with Adapter/Gateway; registering listeners with a publisher deserves
+comparison with Observer or Publish–Subscribe according to the actual coupling.
+Choose the term whose defining relationships fit and show those relationships.
+Do not call a recognizable pattern merely a "local mechanism" to avoid naming it
+or retaining its primary reference. Project-specific participants do not make the
+underlying pattern a new invention. When a defining relationship cannot be checked,
+mark the candidate mapping unverified instead of asserting or silently omitting it.
+
+For an architectural or software-pattern decision, explicitly name the adopted
+pattern, show its participants at real file/symbol locations and explain the
+forces that make it fit. Use the recognized term when the mechanism satisfies it;
+a generic claim such as "clean architecture" or "best practice" is insufficient.
+If the construction is project-local, give it an honest descriptive name and mark
+any resemblance as an analogy. Do not retrofit prestigious labels onto ordinary code.
+
+This applies from repository integration to module and file design: a process
+manager, pipeline, state machine, observer subscription, factory or adapter each
+has concrete roles and constraints. A WebSocket is a communication mechanism, not
+itself a design pattern. An enum declares states; transition policy establishes a
+state machine. Event delivery does not alone establish Event Sourcing. Describe
+what the actual code does, including limits and deliberate departures from a source.
+
+Keep a compact applied-pattern map at the existing architecture owner when several
+patterns need navigation. Each entry names the pattern, primary reference, actual
+implementation and brief reason. Link to the owning chapter or source for detail;
+do not create a second decision register. Add or revise the relevant entry with
+the implementation, even when the user did not separately request documentation.
+For one local decision, a short source explanation and existing docs anchor suffice.
+
+Persist the sources that informed accepted choices in the maintained Markdown,
+adjacent to the claim or in a precisely referenced source entry. Name the author
+or specification, link the actual section, and state what was adopted and any
+version or assumption that limits applicability. A list of prestigious homepages
+or citations confined to the final chat answer does not preserve the reasoning.
+Use stable references for established patterns and recheck version-sensitive claims
+at the actual owner. Reuse a verified source when it still answers the question.
+
+Distinguish a source supporting the pattern's meaning from evidence of historical
+influence. A reference located during this change may explain an existing design;
+it does not prove that the original author consulted it. Record actual provenance
+only when supported. Keep references at the owning explanation rather than adding
+the same citation to every implementation file.
+
+For example, a protocol chapter can link the versioned
+[MCP architecture specification](https://modelcontextprotocol.io/specification/2025-11-25/architecture)
+for host/client/server responsibilities and identify the local client/session owner.
+That is a pinned teaching reference, not a recommendation of the current version.
+Record the version actually implemented and inspected in the real task. Keep local
+timeout policy distinct from a protocol requirement; a specification link cannot
+prove local conformance. If a source cannot be checked, record the exact gap and
+avoid claiming it was researched or that its guarantee is implemented.
+
 ## Research at the actual source
 
 For substantive or version-sensitive choices, use **State of the Art** when
@@ -282,6 +361,15 @@ maintenance burden, not just files. Recheck that trade-off when requirements exp
   the relevant scenarios; receive settled terms, relationships and remaining ambiguity.
 - If **Vertical Slices** is available, use it for repository/module/file ownership,
   public boundaries and Shared Machinery. Do not maintain a second structural ruleset.
+- If **Golden Comments** is available, use it while implementing each affected
+  important source unit. Pass the chosen mechanism, accepted reasons and constraints;
+  receive a local explanation checked against the code, not only a chat summary.
+- If **Engineering Documentation** is available and the change affects system
+  understanding, patterns, contracts or operation, load it directly for the affected
+  explanation. Pass the existing evidence and source anchors; do not wait for an
+  independent writing request or restart Good Writing. Good Writing remains the
+  general writing router. Without either specialist, preserve these explanations
+  at the same owners and state any material verification limit.
 - If **Puppeteer** is available, use it to split substantial independent research or
   compare competing designs before filling the main context with raw sources.
 - If **Grilling with Agents** is available and a consequential decision benefits from

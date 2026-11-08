@@ -18,6 +18,16 @@ The following primary sources informed the revision. They are provenance and
 scoped evidence, not a mandatory reading list for every writing task. Verify
 current host behavior rather than freezing it to this research date.
 
+The 2026-11-08 revision was compared with the user's reference repository
+`twltr/agent-orchestration-backend` at `0215f3cee4bc29dc611729b79044b05422454bd9`,
+especially its architecture pattern map and command/runtime/status source briefings.
+The transferable method is complementary ownership: docs provide the system map,
+named patterns, inspected sources and operational guidance; code preserves detailed
+local intent. Its entire catalogue and convention gates are not prescribed here.
+Fowler's Gateway and Seemann's Composition Root pages linked in SKILL.md were
+inspected for the fictional examples. This is source-grounded method revision,
+not evidence that the older skill caused the reference repository's quality.
+
 | Source reviewed on 2026-11-05 | Contribution and limit |
 |---|---|
 | [GitHub: About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) | Supports purpose, usefulness and getting started as entrypoint jobs. The repository determines which integration/build/test/run/deploy steps apply. |

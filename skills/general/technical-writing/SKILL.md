@@ -43,6 +43,12 @@ missing, use Writing Fragments when available to select the relevant claims,
 source locators, qualifiers and gaps; otherwise do that bounded preparation
 directly. A direct request needs no return to Good Writing.
 
+This method can also be loaded directly by an authorized workflow that already
+knows it needs a standalone technical manual. Reuse that workflow's verified
+source handoff and return the result to it. Good Writing remains the default
+automatic writing router; direct use does not require changing this specialist's
+native explicit-invocation policy.
+
 Choose this method when the document's authoritative inputs are specifications,
 verified product behavior or supplied technical material. If the requested result
 is maintained with a software repository—its README, agent instructions,

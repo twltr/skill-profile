@@ -45,6 +45,15 @@ Configuration and operating-lifecycle influences reviewed on 2026-11-05:
   illustrate scoped release access and origin evidence. Provenance does not prove
   artifact safety or the live outcome; no CI vendor or attestation system is required.
 
+The 2026-11-08 revision adds explicit persistence of accepted design reasons and
+named pattern mappings. Fowler's Gateway and Seemann's Composition Root pages,
+and the pinned MCP 2025-11-25 architecture section linked in SKILL.md, were read
+for those examples. The examples are fictional applications, not verified product
+implementations or a recommendation of that MCP version. The user's reference
+`twltr/agent-orchestration-backend` at `0215f3cee4bc29dc611729b79044b05422454bd9`
+informed the separation of architecture/source navigation from local code reasons.
+Source inspection does not establish that a skill caused that repository's quality.
+
 These links record inspected influences, not a mandatory live reading list or
 current technology catalogue. State of the Art owns fresh discovery and evidence.
 The ten initial practices are original synthesis; the actual choice must be

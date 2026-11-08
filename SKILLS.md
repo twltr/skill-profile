@@ -89,7 +89,10 @@ configuration does not prove an actual model invocation. Engineering Practices
 and Golden Comments can call Engineering Documentation directly with their
 existing evidence; a repository update need not wait for a separate writing request.
 Workspace Writing emphasizes hierarchical topic grouping. Engineering Documentation
-keeps ordered chapters and a shallow structure with substantial topic folders.
+and Technical Writing prefer longer cohesive chapters organized from the larger
+subject to its parts, using sections and anchors before creating more files.
+Substantial independently useful guides can form topic folders; length or a new
+module/role/pattern alone does not justify another Markdown file.
 Explanatory figures replace the paragraphs they make unnecessary, with concise
 text equivalents, necessary conditions and source anchors retained. It updates
 legacy diagrams within an authorized revision.
@@ -108,6 +111,12 @@ and Engineering Documentation retain named, source-backed pattern mappings;
 the latter owns architecture navigation and operation, linking local rationale
 instead of duplicating it. Good Writing remains the automatic writing router;
 direct scoped workflow calls are explicit and native invocation policies unchanged.
+The descriptions explicitly match ordinary source implementation, debugging,
+refactoring and review. Their methods explain why named design traces should guide
+future changes after conversation context is lost, including the interaction of
+patterns and the assumptions that warrant reconsidering a decision. Selection and
+correct application are verified separately; no comment quota or automatic-execution
+guarantee is introduced.
 
 The 2026-10-26 writing revision makes Unslop's prohibition on slogan-like
 parallel phrasing explicit for paired and longer constructions, including

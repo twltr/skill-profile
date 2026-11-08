@@ -1,6 +1,6 @@
 ---
 name: engineering-practices
-description: Make and review engineering decisions about architecture, data, configuration, security, reliability and delivery. Name applied patterns, retain primary sources and carry accepted reasons into code and docs. Apply during development from a small feature to a new system.
+description: Use whenever implementing, debugging, refactoring or reviewing software behavior, and for architecture or design decisions. Choose mechanisms from requirements and evidence, name applied patterns and their relationships, verify relevant sources, and preserve accepted reasons in code and docs.
 ---
 
 # Engineering Practices
@@ -15,6 +15,21 @@ left only in chat, a design council or a closing report cannot guide the next
 maintainer. Keep detailed local reasons beside code and cross-system architecture,
 applied-pattern references and operating guidance with their documentation owner.
 Use precise links so those explanations complement each other.
+
+The purpose is to guide future implementation after its original conversation is
+lost. A named pattern connects local code to a recognizable model; its participants,
+relationships and rationale tell the next maintainer how to extend that model and
+when its assumptions warrant reconsideration. A working implementation alone does
+not retain that decision. Do not leave the reader to infer the intended architecture
+from syntax or remember an old design discussion.
+
+For source work, apply Golden Comments at the affected code owner when available;
+for structure, use Vertical Slices at the affected boundary. Do this during the
+implementation, including a routine feature or bug fix, rather than waiting for
+the user to request comments or architecture. When a decision affects system
+understanding, patterns, contracts or operation, update its existing documentation
+through Engineering Documentation. Reuse existing evidence and active methods;
+a local fix needs the relevant explanation, not a new research programme.
 
 ## A worked choice
 
@@ -275,6 +290,12 @@ preference boundary remains visible.
 
 ## Name the implemented construction and keep its evidence
 
+Make the result answer the next implementer's practical questions: which pattern
+is this, which code owns each role, why does it fit these constraints, how does it
+cooperate with the surrounding patterns, and what must change if those constraints
+stop holding? Put detailed local reasons in source and shared relationships in the
+architecture explanation. These are coverage questions, not mandatory headings.
+
 During ordinary implementation, identify the established patterns already present
 or introduced by the change; the user need not ask for a pattern-selection exercise.
 For example, provider-shape translation behind a domain-facing interface deserves
@@ -393,5 +414,12 @@ any material gap; never claim an unavailable method was applied. Return to the
 caller with decisions, sources, reasons and verification needs. Pass active workflow
 names into a handoff. Do not create a mandatory tour or re-enter a method already
 active anywhere in the call chain; return its needed result to that owner.
+
+Before delivery, follow a consequential changed decision from its named pattern
+and source to the implementing participants. Can a maintainer locate the local
+reason, understand its relationship to surrounding mechanisms and see which
+assumptions a future change must preserve or reconsider? Repair missing explanations
+at their owners before handoff. A loaded skill or a pattern name in the final reply
+does not establish that the repository carries this understanding.
 
 Source influences and limits are recorded in [NOTICE.md](NOTICE.md).

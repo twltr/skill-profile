@@ -1,6 +1,6 @@
 ---
 name: vertical-slices
-description: Organize repository code into vertical capabilities with clear public boundaries and Shared Machinery. Use whenever building, extending, changing or assessing a repository, feature or module, including implementation inside existing codebases.
+description: Use whenever adding, changing, debugging, refactoring or reviewing behavior in a repository, feature or module. Locate capability and coordination owners, expose the chosen patterns' participants and relationships, and keep coherent code and its explanation together. Apply within ordinary implementation, not only architecture tasks.
 ---
 
 # Vertical Slices
@@ -10,6 +10,13 @@ vertical structure throughout repository development: creating a repository,
 adding a feature or module, extending an existing capability and maintaining
 existing code. Start from the affected slice and respect its existing ownership.
 A small change uses these boundaries without requiring a whole-system redesign.
+
+The structure and its named roles leave a durable route for the next change.
+Future maintainers should discover where to extend a pattern and which other
+mechanisms constrain it without reconstructing the original conversation. Identify
+the affected capability, coordinating owner and participants before editing; keep
+their local explanations current while changing them. A tidy tree alone does not
+preserve the intent behind its boundaries.
 
 ## Example: make composition and its participants visible
 

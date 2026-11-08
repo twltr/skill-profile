@@ -79,7 +79,12 @@ turn every writing task into broad research or silently redesign the product.
 Use these Diátaxis distinctions to separate different jobs, not as four compulsory
 folders. Preserve a working manual's structure. A substantial manual can use
 numbered chapters and shallow topic folders, with a map and direct task/reference
-links. Keep one small guide together; do not produce empty chapters to look complete.
+links. Prefer longer cohesive Markdown chapters to many small pages. Explain the
+larger subject first, then its parts through sections and stable anchors. Split a
+page only for a substantial independent reading or maintenance purpose, not because
+it is long or another subtopic has appeared. Use a topic folder when its parts
+actually warrant separate guides. Keep one small guide together; do not produce
+empty chapters or a page per field, feature or component to look complete.
 Use one term per concept and one owner for shared prerequisites or definitions.
 
 ## 3. Make procedures and references exact

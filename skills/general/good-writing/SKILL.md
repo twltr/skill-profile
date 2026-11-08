@@ -1,6 +1,6 @@
 ---
 name: good-writing
-description: "Write or revise correspondence, commercial copy, shared notes, articles, reports, technical manuals and repository documentation. Select the writing method for the reader and purpose. Ordinary replies and quick wording fixes use Unslop directly."
+description: "Use whenever a task creates or substantively revises correspondence, commercial copy, shared notes, articles, reports, technical manuals or repository documentation, including docs within development work. Route by reader and purpose. Source commentary uses Golden Comments; ordinary replies and wording-only fixes use Unslop directly."
 ---
 
 # Good Writing

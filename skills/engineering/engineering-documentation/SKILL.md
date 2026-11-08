@@ -1,6 +1,6 @@
 ---
 name: engineering-documentation
-description: "Write and maintain software repository READMEs, agent instructions, architecture books and SDK documentation against their code and contracts. Explain behavior visually, give humans and agents usable entrypoints, and keep README, AGENTS.md and deeper docs coherent. Source commentary belongs to Golden Comments; standalone technical manuals use Technical Writing."
+description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs to Golden Comments; standalone manuals use Technical Writing."
 ---
 
 # Engineering Documentation
@@ -16,6 +16,13 @@ Docs explain the overall architecture, name applied patterns with their sources
 and locations, define cross-module contracts, and show how to use and operate the
 system. Link to local reasoning instead of rewriting it into a parallel manual.
 Accepted design knowledge must survive the originating chat or review round.
+
+Naming is part of that continuity: the next person or agent must be able to find
+the pattern, recognize its participants and understand how it cooperates with the
+rest of the system. A list of names and links is incomplete when it hides those
+relationships or the constraints that govern later changes. Preserve the reason
+for the chosen combination and the assumptions that would justify revisiting it;
+route detailed local reasoning to the code that owns it.
 
 Engineering workflows may load this method directly for affected explanations,
 passing their existing evidence; no separate writing request or Good Writing round
@@ -188,6 +195,15 @@ through relationships to capabilities and operations. Number chapters to expose
 that teaching order; also provide direct task-based links for reference use.
 Reading order is not an instruction for every agent to read every chapter.
 
+Prefer a longer, coherent Markdown chapter over many small files that a reader
+must assemble mentally. Group the system into substantial subjects, then explain
+their smaller parts through sections, tables, diagrams and stable anchors within
+those chapters. Length alone is not a reason to split. Create a separate page when
+it has a substantial, independently useful reading or maintenance purpose; a new
+module, role, pattern or heading does not by itself earn a file. Keep a compact
+chapter map so readers and agents can jump to the relevant section without loading
+the whole book. This preserves context while allowing focused retrieval.
+
 Illustrative structure for a system that warrants these subjects:
 
 ```text
@@ -196,17 +212,8 @@ AGENTS.md
 docs/
   00-README.md                 # map and reader/task paths
   01-architecture.md           # when this depth exceeds the README overview
-  02-turns/
-    README.md                  # shared contract and chapter routes
-    01-lifecycle.md
-    02-review.md
-    assets/turn-lifecycle.svg
-  03-agent-roles/
-    README.md                  # collaboration and shared role contract
-    01-coordinator.md
-    02-worker.md
-    03-reviewer.md
-    assets/reviewer-turn.svg
+  02-runtime.md                # lifecycle, cooperating roles, review and failures
+  03-integrations.md           # external contracts, adapters and protocol sources
   04-operations/
     README.md
     01-configuration.md
@@ -214,10 +221,13 @@ docs/
     03-recovery.md
 ```
 
-Use a folder when a substantial subject has several useful parts; keep related
-parts together and the hierarchy shallow. A small subject needs one chapter,
-not a directory. Do not mirror every code file into docs. Capabilities, modules,
-contracts and reader questions earn chapters when their explanation is useful.
+Here the runtime chapter explains its overall model before sections on coordinator,
+worker, reviewer and transition details. Those connected roles remain together.
+The operations folder is justified only when configuration, deployment and recovery
+each warrant substantial independently used guides; otherwise keep them as sections
+in one operations chapter. Add a folder for such a cohesive group, then split only
+its independently useful parts. Do not mirror every code file into docs or impose
+a maximum chapter length, file count or folder depth.
 Keep numbering and anchors stable; do not renumber the book for every addition.
 Repair inbound links when an authorized restructuring changes paths.
 
@@ -289,14 +299,12 @@ essay. A chapter can route to related jobs without mixing them into one narrativ
 A small repository may need only a README and short agent instructions. Respect
 explicit local exceptions, including a repository that forbids creating a docs book.
 
-The role group illustrates a substantial subject that earns separate pages. Its
-overview explains collaboration once; each role page owns its purpose, inputs,
-tools and permissions, turn behavior, outputs, boundaries and failure modes.
-Explain its lifecycle or handoffs with the appropriate figure and only the prose
-the figure cannot carry. Keep shared behavior at the group owner; role pages
-describe meaningful differences. A deeper role folder is justified by several
-independent explanations or assets, not by a desire for symmetry. These are
-runtime/domain roles, not copies of coding-agent operating instructions.
+For cooperating roles, explain the common model and lifecycle once, then describe
+each role's meaningful differences in purpose, inputs, permissions, behavior and
+failure handling. Start with sections in the shared chapter; separate role pages
+only if their depth and independent use justify that split. Use the appropriate
+figure for lifecycle or handoffs and retain the reasons it cannot convey. These
+are runtime/domain roles, not copies of coding-agent operating instructions.
 
 ## 6. Replace prose with verified visual explanations
 
@@ -341,6 +349,8 @@ clarity check directly without claiming the method was loaded.
   Follow one applied-pattern entry into code and one local briefing back to its
   wider context. Verify that reasons needed for the change survive without chat
   history and that source and docs do not maintain duplicate detailed accounts.
+  Check the interaction between relevant patterns and the assumptions governing
+  future extensions; a row of names and URLs is not a substitute for that model.
   Label a desk walkthrough separately from an actual agent trial; do not claim
   measured effectiveness from a tidy file tree or subagent agreement.
 - Check facts, commands, links and diagram transitions against their owners. Run

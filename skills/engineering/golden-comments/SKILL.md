@@ -1,6 +1,6 @@
 ---
 name: golden-comments
-description: "Preserve design intent, system context, named mechanisms and decision reasons beside source code. Apply while creating or changing source files and important modules, and when reviewing them, even if comments were not requested. Repository-wide architecture and operating guides belong to Engineering Documentation."
+description: "Use whenever writing, changing, debugging, refactoring or reviewing source code, including ordinary feature and bug-fix tasks without a comment request. Preserve named design intent, pattern relationships, system context and reasons beside code so future maintainers can extend it correctly."
 ---
 
 # Golden Comments
@@ -10,12 +10,26 @@ conversation is gone. The next maintainer should be able to read the implementat
 alongside the reasons for its construction: what it serves in the larger system,
 why it has this shape and what a seemingly harmless change would break.
 
+These explanations are durable traces intended to guide later people and agents.
+Chat history and design discussions may be gone when the next change arrives.
+Naming the actual pattern and its participants gives that reader a searchable
+handle for related code and established knowledge. Explaining their relationships
+shows how to continue the design. An unnamed implementation leaves future behavior
+to guesswork; a pattern label without its local reason leaves the same gap.
+
 Apply this method to each new or substantively changed source file during ordinary
 implementation. Important modules, public boundaries and policy owners need a
 local explanation; do not wait for a separate documentation request or a detected
 high-risk bug. A self-explanatory leaf needs no ceremonial header. Judge coverage
 by what a future reader must reconstruct, never by a comment count or percentage.
 A comment-only assignment still does not authorize code redesign.
+
+At the start of a source change, read the affected unit's existing briefing and
+identify the named construction and decisions the change must preserve. While
+implementing, write or update the local explanation with the mechanism. Before
+finishing, check the changed code for accepted reasons left only in conversation.
+This is part of implementation, not a later optional writing pass. A spelling or
+formatting-only edit preserves existing explanations and needs no new design prose.
 
 ## Example: preserve the reason for a status model
 
@@ -60,12 +74,16 @@ its participants into code. Preserve the constraint and any meaningful condition
 for revisiting the decision. Unsettled alternatives remain open at the task's
 decision owner; they must not become an invented account of why the code is right.
 
-Name an applied pattern or mechanism when it helps a reader recognize the design,
-and explain its concrete role here. For example, a Command dispatcher maps a typed
-envelope to its handler; the local briefing explains why execution stays out of
-the transport. The owning architecture chapter can carry the pattern's primary
-source and repository-wide locations. A local link connects those explanations.
-Use plain descriptive names for local mechanisms; do not invent a famous origin.
+Name the established patterns actually implemented by the affected unit, and name
+their concrete participants. Explain why they were chosen here, how they interact
+with adjacent mechanisms and what a future extension must preserve. For example,
+a Command dispatcher routes intent, a state machine owns legal transitions and a
+Gateway isolates an external service. Explain the division and their interaction;
+listing three names would not establish that design. Verify the defining roles
+before asserting a pattern. Use an honest descriptive name for a genuinely local
+mechanism and mark an uncertain mapping explicitly. The owning architecture
+chapter carries primary sources and repository-wide locations; link to it rather
+than repeating its catalogue in every file.
 
 If an explanation contradicts the code, determine whether the code is wrong,
 the explanation stale or the requirement changed. Do not make a comment justify
@@ -97,19 +115,28 @@ Keep a longer briefing when moving it elsewhere would separate a critical
 invariant from the mechanism. A module's domain and public-contract explanation
 keeps its canonical owner; link it instead of copying a documentation chapter.
 
-These are selection questions, not seven mandatory headings for every file. A
-short module docstring can establish purpose, dependency and one critical boundary:
+These are selection questions, not seven mandatory headings for every file. This
+fictional briefing connects several mechanisms and a later extension:
 
 ```python
-"""Apply accepted turn results through the event store's transaction boundary.
+"""Dispatch Commands while lifecycle.py owns the task state machine.
 
-Review decides acceptance; this module persists it with the cursor update.
-Both writes must commit together so recovery cannot skip an unapplied result.
+The registry selects a handler for each decoded command. Handlers request state
+changes through lifecycle.transition and call providers through CatalogGateway.
+Command dispatch keeps transport parsing out of execution; the state machine
+prevents handlers inventing transitions; the Gateway keeps provider fields out
+of both. These boundaries let multiple transports share one lifecycle policy.
+
+Add a command through its registry entry. Change lifecycle policy at its transition
+owner, not in a second handler branch. Reassess this synchronous dispatch if commands
+need durable delivery: the registry alone provides no persistence or replay.
+See docs/architecture.md#patterns for the system view and primary references.
 """
 ```
 
-This is a fictional example; verify the dependency and atomicity claim against
-the actual implementation. Put such a briefing at the file's natural entrypoint
+Verify the pattern roles, dependencies and guarantees against the actual code.
+The example does not establish that these mechanisms exist in the current task.
+Put such a briefing at the file's natural entrypoint
 when it saves a reader from reconstructing the module's job. Keep it short and
 specific; obvious files need no ceremonial header. Detailed local reasons remain
 beside the mechanism. Use Domain Modeling for precise concepts and Vertical Slices
@@ -176,8 +203,9 @@ paragraphs after each edit. Preserve useful reasons and assumptions while removi
 repetition; commentary is not a line-count reduction target.
 
 Read each affected important file as a maintainer with no chat history: can they
-explain its system role, construction, reasons and change constraints, then follow
-a precise pointer for wider context? Check whether accepted rationale was left
+name its applied patterns and participants, explain how they cooperate, identify
+where to extend them and when to reconsider the decision, then follow a precise
+pointer for wider context? Check whether accepted rationale was left
 only in a plan or final reply. Verify the ownership, ordering and failure claims
 against the mechanism. Verify referenced paths and recheck a claim whose
 pointer was stale. Return the revised source commentary and any unresolved model

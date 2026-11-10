@@ -49,6 +49,30 @@ supplementary Matt Pocock attribution where applicable.
 | <img src="skills/general/workspace-writing/assets/icon.svg" width="28" height="28" alt=""> [`workspace-writing`](skills/general/workspace-writing/SKILL.md) | Repository-owned method for shared working knowledge in OpenAI ChatGPT Pages and Spaces, organized by related topics and maintained in place. |
 | <img src="skills/general/writing-fragments/assets/icon.svg" width="28" height="28" alt=""> [`writing-fragments`](skills/general/writing-fragments/SKILL.md) | Locally rewritten source scouting and selection method before writing: keeps evidence, context, uncertainty and figure candidates in a compact handoff. Originated in the same export adapting [Matt Pocock's Writing Fragments](https://github.com/mattpocock/skills/blob/main/skills/in-progress/writing-fragments/SKILL.md); its MIT license and attribution are preserved. Native implicit invocation remains disabled; Good Writing loads the method deliberately. |
 
+### Writing family map
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="figures/writing-family.dark.svg">
+  <img src="figures/writing-family.svg" width="860" alt="Good Writing routes to one of five explicit-only specialists; all require Unslop and may use Editorial SVG Diagrams; the specialists still name Good Writing as their caller.">
+</picture>
+
+Good Writing is the only implicit entry: it prepares material through Writing
+Fragments, then routes to exactly one specialist. The five specialists share
+their outgoing edges, so the group stands for each of them.
+
+| Line | Meaning |
+|---|---|
+| Thick blue | Router selects exactly one target |
+| Solid teal | Required step whenever the target is available (Good Writing also applies Unslop to every route) |
+| Grey dashed | Conditional: used only when the situation needs it, for example no source handoff yet or a figure that explains better |
+| Red dashed | Back-reference: the callee names its caller ("do not route back"); a cycle candidate for the 2026-11-10 restructuring |
+| Grey dotted | Boundary mention only; nothing is loaded |
+
+Tinted nodes are implicitly invocable; white nodes are explicit-only. The
+editable sources are [`figures/writing-family.svg`](figures/writing-family.svg)
+and its dark variant; the dependency counts come from
+`skills/general/skill-issue/scripts/skill_graph.py`.
+
 ### Writing sources and composition
 
 Good Writing, Commercial Director and Writing Fragments originated in the

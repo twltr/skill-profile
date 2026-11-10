@@ -1,0 +1,17 @@
+{
+  "source_revision": "ccf10ec600385457eb50016b5a40011607f2c421",
+  "reason": "Preserve Workspace Management before its rework around machine viewpoint, workspace-worthiness, automatic onboarding, propose-never-create and shared knowledge references, defined by Tobi on 2026-11-10.",
+  "packages": [
+    "skills/core/workspace-management"
+  ],
+  "archive": "archive/source-20261110T142659Z-workspace-management-rework-b7b90253-46c3-41e4-9737-b9ab96bad029.zip",
+  "files": {
+    "skills/core/workspace-management/LICENSE": "620584c2cc9883f37e9ac947ed2d528e9a7c6c911be47d87c8d157bc66621682",
+    "skills/core/workspace-management/SKILL.md": "0749edfed081f4a441fabc670329df1504b3771d1485e11126c8681f5b658810",
+    "skills/core/workspace-management/agents/openai.yaml": "3d8bf7032bd88e1d90c956335ab68b4c88667a395fd09aeb50702283b3af5b7f",
+    "skills/core/workspace-management/assets/icon-small.png": "04b871c69a8e5aa5acbd115bb659861192237c2257b1eecf9e68d5bb017198b7",
+    "skills/core/workspace-management/assets/icon-small.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b",
+    "skills/core/workspace-management/assets/icon.png": "39a1d52968769723deb544b4197777eb17320bf5cceaa8749d7dcdd8f3ab9d3c",
+    "skills/core/workspace-management/assets/icon.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b"
+  }
+}

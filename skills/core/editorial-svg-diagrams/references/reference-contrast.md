@@ -1,12 +1,12 @@
-# User reference vs failed previous output
+# Reference vs failed earlier output
 
 Use these actual cropped visual examples of the **same** diagram. Images are comparisons, not source-of-truth network protocol documents.
 
-**Desired screenshot crop from conversation:** `assets/reference-handshake-crop.png`
+**Reference crop (the density to aim for), supplied with the original skill:** `assets/reference-handshake-crop.png`
 
 ![User reference, compact three-way handshake](../assets/reference-handshake-crop.png)
 
-**Previous skill output — anti-pattern:** `assets/anti-pattern-handshake.png`
+**Earlier skill output — anti-pattern:** `assets/anti-pattern-handshake.png`
 
 ![Old over-labeled sequence diagram](../assets/anti-pattern-handshake.png)
 

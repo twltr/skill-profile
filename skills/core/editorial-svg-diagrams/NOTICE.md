@@ -55,3 +55,14 @@ construction explicit: compare useful alternatives before drawing, align peer
 elements and spacing, plan clear connector routes, and judge the rendered result
 beyond structural lint. This changes the authoring method, not the imported
 example artwork, provenance records or invocation policy.
+
+## 2026-11-10 structure review
+
+Reviewed against Skill Issue without changing the method, the style contract's
+defaults or any figure. The description now names when to use the skill. The
+delegation decision has its own section before the workflow; the frame
+exclusions from the workflow steps live once in the style contract; validation
+commands, render checks and the missing-renderer fallback are listed in step 7.
+Wording that assumed the original authoring conversation ("the user's desired
+illustration", "the earlier failure") now describes the bundled reference
+contrast. The scope note returns design work to the agent without routing it.

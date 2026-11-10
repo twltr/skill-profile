@@ -25,7 +25,7 @@ This is a practical tutorial for building the compact TCP handshake shown in `as
 <path d="M650 56 V357" stroke="#9CA8B0" stroke-dasharray="7 10"/>
 ```
 
-The two vertical lifelines are a scaffold. Keep the visual field mostly open; don't need a heavy rectangle for each machine.
+The two vertical lifelines are a scaffold. Keep the visual field mostly open; a machine does not need a heavy rectangle.
 
 ## 3. Use paths for three movements
 

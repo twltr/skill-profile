@@ -157,7 +157,7 @@ purpose", not "Auto: choose a writing method".
 
 ## Place the skill in the tree
 
-Every skill in a collection has exactly one of six types. The type decides how it is
+Every skill in a collection has exactly one of five types. The type decides how it is
 selected, what it may load, and where it sits:
 
 | Type | Role in the tree | Selection | Loads |
@@ -165,13 +165,13 @@ selected, what it may load, and where it sits:
 | **Core** | Stands in the middle, on the agent's surface; useful in any context | Implicit | Nothing |
 | **Domain** | Root of a tree; establishes the context and routes into it | Implicit | Its children |
 | **Parent** | Inner node; applies its children together | Explicit-only | Its children |
-| **Core flow** | Runs steps left to right with roles; stands on the surface | Implicit | Its step skills, in any tree |
-| **Flow** | Runs steps left to right with roles, inside a tree | Explicit-only | Its step skills, in its tree |
+| **Flow** | Runs steps left to right with roles, inside a tree | Explicit-only | Its step skills |
 | **Leaf** | Self-contained method, invoked by a routing skill or a person | Explicit-only | Nothing |
 
-Domain, parent, flow and core-flow skills are **routing skills**. The type fixes
-selection: core, core flow and domain are implicit; parent, flow and leaf are
-explicit-only. A skill only a person calls by name is a leaf whose root is that
+Domain, parent and flow skills are **routing skills**. The type fixes selection:
+core and domain are implicit; parent, flow and leaf are explicit-only. There is
+no core flow: always-firing skills cannot keep an order, so a sequence that
+starts by itself is a domain that runs a flow. A skill only a person calls by name is a leaf whose root is that
 person. The agent starts in the
 middle, with core skills and domain roots; it moves down a tree, never up and
 never across into another tree. A leaf must work when a user calls it by name,

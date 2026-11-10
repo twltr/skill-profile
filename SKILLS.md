@@ -6,8 +6,8 @@ claim that the latest upstream revision is installed locally.
 
 Skills live in `skills/<group>/<skill>/`. Installation stays flat per client;
 the groups mark ownership, routing and future packaging. Each entry starts with
-the skill's type — core, core flow, domain, parent, flow or leaf — as defined in
-the [README](README.md#six-types) and Skill Issue's
+the skill's type — core, domain, parent, flow or leaf — as defined in
+the [README](README.md#five-types) and Skill Issue's
 [architecture reference](skills/core/skill-issue/references/skill-architecture.md).
 
 ## Core skills

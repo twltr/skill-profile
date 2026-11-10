@@ -5,7 +5,7 @@ review how skills load each other. It owns the type system and the edge rules;
 `SKILL.md` keeps only the summary.
 
 - [Why a tree](#why-a-tree)
-- [The six types](#the-six-types)
+- [The five types](#the-five-types)
 - [Edge rules](#edge-rules)
 - [Roles in domains and flows](#roles-in-domains-and-flows)
 - [Declare type and dependencies](#declare-type-and-dependencies)
@@ -34,37 +34,35 @@ A mesh, where skills call each other freely, loses all three: loads become
 unpredictable, cycles make agents restart workflows, and no skill can change
 without checking every other one.
 
-## The six types
+## The five types
 
 | Type | What it is | Selection | Loads |
 |---|---|---|---|
 | **Core** | A standalone method on the agent's surface, useful in any context | Implicit | Nothing |
-| **Domain** | The root of a tree: establishes the context and routes into it | Implicit | Its children — one, several, or a role's pack |
+| **Domain** | The root of a tree: establishes the context and routes into it | Implicit | Its children — one, several, a role's pack, or a flow |
 | **Parent** | An inner node that groups children and applies them together | Explicit-only | Its children, without an order |
-| **Core flow** | A sequence of steps and roles that stands on the surface | Implicit | Its step skills, left to right, in any tree |
-| **Flow** | A sequence of steps and the roles that run them, inside a tree | Explicit-only, reached through its domain | Its step skills, left to right, in its tree |
+| **Flow** | A sequence of steps and the roles that run them, inside a tree | Explicit-only, reached through its domain | Its step skills, left to right |
 | **Leaf** | A self-contained method, always invoked manually: by a routing skill or a person | Explicit-only | Nothing, ever |
 
-Domain, parent, flow and core-flow skills are **routing skills**: nodes that have
-children. Each skill has exactly one type, and the type fixes its selection:
-`core`, `core-flow` and `domain` are implicit; `parent`, `flow` and `leaf` are
-explicit-only. A tool can therefore check a skill's invocation policy against
+Domain, parent and flow skills are **routing skills**: nodes that have children.
+Each skill has exactly one type, and the type fixes its selection: `core` and
+`domain` are implicit; `parent`, `flow` and `leaf` are explicit-only. A tool can therefore check a skill's invocation policy against
 its declared type.
 
 **Selection decides the type.** A skill on the agent's surface — one the agent
-may select by itself — is a core skill, a domain root, or a core flow. A skill
+may select by itself — is a core skill or a domain root. A skill
 that is never selected implicitly is a leaf, or a parent or flow if it loads
 other skills. There is no explicit-only core skill: a skill that only a person
 calls by name, such as an interview started with "grill me", is a leaf whose
 root is that person. Core and leaf both load nothing; a core skill decides for
 itself when it applies, a leaf waits to be called.
 
-**Core flow and flow share a shape, not a position.** Both run steps in order.
-A core flow stands on the surface, implicit like a core skill; because it stands
-in the middle, it may enter several trees, as the agent itself may. A flow lives
-inside a tree, is explicit-only, is reached through its domain and never leaves
-that tree. Only this one combination gets its own type: a core skill that loads
-nothing is simply core, and a surface skill that roots a tree is a domain.
+**There is no core flow.** A flow on the surface could only order core skills,
+or it would depend on other trees. Core skills fire by themselves, so placing
+them in steps cannot hold an order: they would fire across it. A sequence works
+only when its steps wait to be called — and steps that wait, under a node that
+orders them, form a tree whose root is a domain. A process that should start by
+itself is therefore a domain that runs a flow, or orders its children itself.
 
 A method may stay core while no tree exists for its context yet. When you
 create one, ask whether more skills of that kind will follow; if so, give it its
@@ -86,10 +84,10 @@ its own with several parents or flows beneath it.
 
 ## Edge rules
 
-1. **Start in the middle.** Only core skills, core flows and domain roots are
-   implicit. Every other skill is reached through a routing skill or by a person
-   naming it; a person who calls a leaf by name is its root. Whatever stands in
-   the middle may enter one tree or several.
+1. **Start in the middle.** Only core skills and domain roots are implicit.
+   Every other skill is reached through a routing skill or by a person naming it;
+   a person who calls a leaf by name is its root. From the middle the agent may
+   enter one tree or several.
 2. **Edges point down.** A routing skill names its children; a child never names
    its caller. Results go back to whoever loaded the child.
 3. **Never across trees.** If a skill in one tree needs work from another tree —
@@ -143,8 +141,7 @@ metadata:
 ---
 ```
 
-- `skill-type` is exactly one of `core`, `core-flow`, `domain`, `parent`, `flow`,
-  `leaf`.
+- `skill-type` is exactly one of `core`, `domain`, `parent`, `flow`, `leaf`.
 - `skill-tree` names the domain a non-core skill belongs to.
 - `skill-requires` lists, space-separated, the children without which a routing
   skill cannot do its job. Optional children appear only in the body. Leaves and
@@ -181,8 +178,8 @@ distribute a tree as a whole, package it together, for example as one plugin.
    person. Yes: continue.
 2. **Does it load other skills?** No: core — useful in any context; if it only
    serves one context, it is a leaf of that tree, and the tree may need its
-   domain first. Yes: `domain` if it roots a tree and routes into it; `core-flow`
-   if it runs steps in order, possibly across trees.
+   domain first. Yes: `domain` — it roots a tree and routes into it, even when
+   it routes in a fixed order.
 3. **Inside a tree, does a node define ordered steps or roles?** Yes: flow.
    Otherwise, if it groups children it applies together: parent.
 4. **Check the edges** against the rules above with the collection's graph

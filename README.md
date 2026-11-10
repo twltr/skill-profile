@@ -40,27 +40,23 @@ mutually referencing pairs, the three most important engineering methods were lo
 none of 20 realistic coding requests in a trigger test, and a small task could
 pull in half the collection.
 
-### Six types
+### Five types
 
 | Type | What it is | Selected | Loads | In this profile |
 |---|---|---|---|---|
 | **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, Editorial SVG Diagrams, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
 | **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
 | **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
-| **Core flow** | Runs steps left to right, with roles, from the surface | Implicitly | Its step skills, in any tree | None yet |
-| **Flow** | Runs steps left to right, with roles, inside a tree | Through its domain | Its step skills, in its tree | Road to Glory |
+| **Flow** | Runs steps left to right, with roles, inside a tree | Through its domain | Its step skills | Road to Glory |
 | **Leaf** | Self-contained method, always invoked manually | Through a routing skill or by a person | Nothing | Golden Comments, Customer Writing, Grilling, Grilling with Agents, … |
 
-Domain, parent, flow and core-flow skills are **routing skills**: nodes that
-have children. Every skill has exactly one type, and the type fixes how it is
-selected: core, core flow and domain are implicit; parent, flow and leaf are
-explicit-only.
+Domain, parent and flow skills are **routing skills**: nodes that have
+children. Every skill has exactly one type, and the type fixes how it is
+selected: core and domain are implicit; parent, flow and leaf are explicit-only.
 
 **Selection decides the type.** What lies on the agent's surface — what it may
-select by itself — is a core skill, a core flow or a domain root. Core flow and flow
-share a shape: a core flow stands in the middle and may enter several trees; a
-flow lives inside one tree and is reached through its domain. Everything else is
-invoked manually: by a routing skill above it, or by a person. There is no
+select by itself — is a core skill or a domain root. Everything else is invoked
+manually: by a routing skill above it, or by a person. There is no
 manual core skill. Grilling, the interview you start with "grill me", is a leaf
 whose root is you: you call it, it loads nothing, and it works on its own.
 
@@ -69,10 +65,30 @@ specialist that owns the result. Software Engineering selects by **role** —
 implementer, orchestrator, reviewer, documenter — and loads that role's
 **pack**, the methods that always apply together in that role.
 
+### Why there is no core flow
+
+A flow that stands on the surface and starts by itself sounds useful, but it
+cannot exist, for three reasons that follow from each other:
+
+1. **It could only use core skills.** A flow in `core/` that called skills from a
+   tree would make core depend on that domain, and core must stand alone.
+2. **Core skills cannot be put in order.** They fire by themselves whenever they
+   apply. A flow that arranged them in steps could not hold its sequence; they
+   would fire across it.
+3. **A sequence needs steps that wait.** Steps that are only called when the
+   flow reaches them are not core but leaves or parents, and a node that orders
+   such children is the root of a tree — a domain.
+
+So every attempt at a core flow turns into a domain: a process that should start
+by itself is a domain whose routing runs a flow, or orders its children itself.
+The repository shows the same rule: `core/` holds no routing skill at all, and
+every flow lives inside a domain folder, below the one skill there that fires by
+itself.
+
 ### How an agent moves
 
-1. **Start in the middle.** Only core skills, core flows and domain roots are
-   implicit; from the middle the agent may enter one tree or several.
+1. **Start in the middle.** Only core skills and domain roots are implicit;
+   from the middle the agent may enter one tree or several.
 2. **Go down.** A routing skill names its children; a child never names its
    caller and returns its result to whoever loaded it.
 3. **Never cross trees.** When work in one tree needs another tree, the need

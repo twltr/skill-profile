@@ -59,3 +59,9 @@ The repository inventory records prior influence from Matt Pocock's
 `writing-for-agents` and OpenAI Skill Creator. The existing
 [LICENSE.txt](LICENSE.txt) and OpenAI license remain unchanged. This revision does
 not claim a newly verified Matt Pocock source snapshot.
+
+## 2026-11-10 quality pass
+
+The `agents/openai.yaml` example in `references/installation.md` now starts its
+short description with the skill's type, as `SKILL.md` requires; the example
+skill is explicit-only, so it is a leaf.

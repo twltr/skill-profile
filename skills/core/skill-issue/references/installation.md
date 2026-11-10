@@ -65,7 +65,7 @@ For Codex, a separate `agents/openai.yaml` can configure presentation and policy
 ```yaml
 interface:
   display_name: "Interface Audit"
-  short_description: "Review interface usability and visual design"
+  short_description: "Leaf: Review interface usability and visual design"
 policy:
   allow_implicit_invocation: false
 ```

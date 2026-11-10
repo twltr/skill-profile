@@ -1,0 +1,17 @@
+{
+  "source_revision": "d519989500ab851d6543789f446feb99952f1574",
+  "reason": "Before allowing provisional state while no knowledge system is connected",
+  "packages": [
+    "skills/core/workspace-management"
+  ],
+  "archive": "archive/source-20261110T150010Z-workspace-provisional-state-064ea74e-5479-4e63-a4a0-070e42cd6d15.zip",
+  "files": {
+    "skills/core/workspace-management/LICENSE": "620584c2cc9883f37e9ac947ed2d528e9a7c6c911be47d87c8d157bc66621682",
+    "skills/core/workspace-management/SKILL.md": "7397d4da4dec43bf2e2ff2cfa1f195f79ba8bb75609dba6d8fe54b087defdfb2",
+    "skills/core/workspace-management/agents/openai.yaml": "f52ffcb03c01f70932f686373e9f6567bb3bb3848135c330edad5fd70bdc4e6a",
+    "skills/core/workspace-management/assets/icon-small.png": "04b871c69a8e5aa5acbd115bb659861192237c2257b1eecf9e68d5bb017198b7",
+    "skills/core/workspace-management/assets/icon-small.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b",
+    "skills/core/workspace-management/assets/icon.png": "39a1d52968769723deb544b4197777eb17320bf5cceaa8749d7dcdd8f3ab9d3c",
+    "skills/core/workspace-management/assets/icon.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b"
+  }
+}

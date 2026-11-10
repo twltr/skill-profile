@@ -37,6 +37,14 @@ an archive entry, and keep executable instruction filenames inside archives
 rather than as loose nested SKILL.md files that loaders could discover. Git
 history alone does not satisfy this rule.
 
+Each skill keeps editable SVG icon originals in `assets/` and transparent PNG
+exports referenced by `agents/openai.yaml`: `icon-small.png` at 128 px and
+`icon.png` at 256 px. Some skill renderers treat custom SVGs as monochrome
+masks, so both slots need PNGs. After editing an SVG, regenerate its PNG, for
+example `inkscape assets/icon.svg --export-filename=assets/icon.png --export-width=256 --export-background-opacity=0`,
+and check small renders on light and dark surfaces. The writing family shares one
+pencil; other marks use restrained colors with a fine neutral edge.
+
 Review upstream changes before refreshing a vendored snapshot. Do not create a
 docs book or build system; README.md and SKILLS.md are the documentation. Keep
 one-off inspection in .tmp/, review the complete diff and run `git diff --check`

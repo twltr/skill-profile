@@ -7,7 +7,7 @@ metadata:
 
 # Grilling
 
-**Leaf skill** outside every tree; a person starts it by name.
+**Shared leaf skill** outside every tree, usable from any domain; a person starts it by name, and a routing skill may only suggest it.
 
 Expose the assumptions and dependent decisions that an attractive plan can hide.
 Interview the user until you reach a shared understanding. Map this as a **design

@@ -12,7 +12,8 @@ Ownership is explicit:
 - skills/core/ owns the core skills: implicit, first-level, cross-domain.
   skills/writing/, skills/software-engineering/ and skills/design/ own one tree
   each, where only the domain's routing skill is implicit. skills/extras/ owns
-  manually selected skills outside every tree. A skill's folder must match its
+  shared leaves: explicit-only skills several domains can use, outside every
+  tree, which routing skills may suggest but never load. A skill's folder must match its
   type and invocation policy.
 - SKILLS.md owns the inventory, each skill's type, provenance and catalog-only
   references. README.md owns the architecture explanation and its rationale.

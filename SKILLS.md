@@ -89,8 +89,9 @@ engineering work.
 
 ## Extras
 
-Manually selected skills outside every tree. Each is a leaf whose root is the
-person who starts it: Grilling interviews you, Grilling with Agents lets agents
+Shared leaves outside every tree: explicit-only, usable from any domain. Each
+is a leaf whose root is the person who starts it, directly or after a routing
+skill suggests it: Grilling interviews you, Grilling with Agents lets agents
 question the lead.
 
 | Skill | Purpose and provenance |

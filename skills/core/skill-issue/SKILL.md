@@ -172,7 +172,8 @@ Domain, parent and flow skills are **routing skills**. The type fixes selection:
 core and domain are implicit; parent, flow and leaf are explicit-only. There is
 no core flow: always-firing skills cannot keep an order, so a sequence that
 starts by itself is a domain that runs a flow. A skill only a person calls by name is a leaf whose root is that
-person. The agent starts in the
+person; a leaf that several domains can use is a **shared leaf** outside every
+tree, which routing skills may suggest to the person but never load. The agent starts in the
 middle, with core skills and domain roots; it moves down a tree, never up and
 never across into another tree. A leaf must work when a user calls it by name,
 so it never assumes or names a caller. A flow orders skills that stay usable

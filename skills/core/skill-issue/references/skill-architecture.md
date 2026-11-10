@@ -78,6 +78,12 @@ hand-offs between steps, and conditions such as "use this flow only as the
 orchestrating agent". Read a flow left to right; it does not reach further down
 the tree than its own steps.
 
+**Shared leaves stand beside the trees.** A leaf that belongs to no single
+domain but is not cross-cutting enough to fire by itself is a shared leaf: it is
+explicit-only like every leaf, lives in its own group outside the trees, and is
+reached by a person — directly, or after a routing skill suggests it. Make it
+core instead only if it should shape every session without being asked for.
+
 **Sub-domains are rare.** If a part of a domain needs its own selection, prefer
 a parent skill. Introduce a nested domain only when that part is a context of
 its own with several parents or flows beneath it.
@@ -99,6 +105,12 @@ its own with several parents or flows beneath it.
    parent for exactly those. When every tree needs it, it is core.
 5. **Boundary mentions are allowed.** A description may say "logos belong to SVG
    Design" to prevent a wrong selection. That sentence routes nothing.
+6. **Shared leaves are suggested, not loaded.** A leaf that several domains can
+   use — an interview, a decision council — sits outside every tree. A routing
+   skill may suggest it to the person under a stated condition ("if the
+   requirements are still unclear, suggest the decision-council skill"); it never
+   loads it. The person who accepts becomes the leaf's root, so the leaf stays
+   independent of every tree and names no caller.
 
 Example of rule 4: in an engineering domain, both the implementer and the
 reviewer need the test-design leaf. Neither role's skills load it; the domain

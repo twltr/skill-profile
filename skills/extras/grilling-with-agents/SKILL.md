@@ -7,7 +7,7 @@ metadata:
 
 # Grilling with Agents
 
-**Leaf skill** outside every tree; a person starts it by name.
+**Shared leaf skill** outside every tree, usable from any domain; a person starts it by name, and a routing skill may only suggest it.
 
 Questions follow a **design tree**: every decision branches into the decisions
 that hang off it. Work in **rounds**. The frontier is the in-scope decisions whose

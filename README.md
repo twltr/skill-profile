@@ -191,8 +191,10 @@ reached:
 - **`writing/`, `software-engineering/`, `design/`** each hold one tree. Only the
   domain's routing skill fires by itself; everything else in the folder is
   reached through it or by name.
-- **`extras/`** holds skills a person selects by hand, outside every tree, such
-  as Grilling and Grilling with Agents.
+- **`extras/`** holds shared leaves: explicit-only skills that several domains
+  can use, outside every tree, such as Grilling and Grilling with Agents. A
+  person starts them; a routing skill may suggest one under a stated condition
+  but never loads it.
 
 The domain folders are also the planned packaging units: Writing, Software
 Engineering and Design can each ship as one plugin; core and extras install as

@@ -53,6 +53,12 @@ Two methods are never loaded by this router on its own initiative:
 an architectural reassessment or deliberate simplification, or when Engineering
 Review selects them as lenses.
 
+Two shared leaves are suggested, never loaded. When the goal, requirements or a
+consequential design decision are still unclear before you change code, suggest
+that the user start `grilling-with-agents` (specialist agents question your
+plan) or `grilling` (you interview the user). Name the open question so they can
+decide; continue only with what is settled.
+
 ## Load a pack
 
 Read the role's pack right after choosing the role, before you explore the

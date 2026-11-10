@@ -1,0 +1,25 @@
+{
+  "source_revision": "f3ee623e94e6014805bf29073003b3abe9401503",
+  "reason": "Preserve Skill Issue before removing the core-flow type: a core flow collapses into a domain, reasoned by Tobi on 2026-11-10.",
+  "packages": [
+    "skills/core/skill-issue"
+  ],
+  "archive": "archive/source-20261110T122340Z-skill-issue-no-core-flow-75e0df0c-47df-4cb3-9253-650941b6613e.zip",
+  "files": {
+    "skills/core/skill-issue/LICENSE-Anthropic.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "skills/core/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/core/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/core/skill-issue/NOTICE.md": "93bd49a95c9b82ff1c78fa19b9d636dcd262a63a6bcdf18d8f24357a914c1d32",
+    "skills/core/skill-issue/SKILL.md": "f200841d8b5c8dad59a3e15ff2ad905e6090c8b25dc547a6adfb354d2e02279b",
+    "skills/core/skill-issue/agents/openai.yaml": "a1985b08efe7f2988de672fcd17d0f18ac76fc85f483ff0248608097379e2df6",
+    "skills/core/skill-issue/assets/icon-small.png": "825e3e2973788b4896eb853032cd9a5000f8c00a8ebf1dc9571801d56e63305f",
+    "skills/core/skill-issue/assets/icon-small.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/assets/icon.png": "3a851e8ce0490057f9feec042e1452c9cdb1467447ef602658bd0b7ab95184e7",
+    "skills/core/skill-issue/assets/icon.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/references/evaluation.md": "e08c9333b1cb9a6f88f6cff206443d93803e1158a0f842452ea8c85f72e893f4",
+    "skills/core/skill-issue/references/installation.md": "d13941597731f74b6b20d68551c0bc73d8b8d2410ce9f55d6a4a713c2b492c7c",
+    "skills/core/skill-issue/references/skill-architecture.md": "2fe2602b898f0e1414abf705f715a12e15f9483aa4a81adcbfccb5c42de56488",
+    "skills/core/skill-issue/scripts/skill_graph.py": "2cf0773223c929443291a0b293fd8d8fc3a5c0a3046a9dc5c8c97ed1ef4801bd",
+    "skills/core/skill-issue/scripts/trigger_window.py": "ac90c278cab60fac95d33e25e1228fd93475bc8f82eb50f96b3463fc50a9518a"
+  }
+}

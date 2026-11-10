@@ -21,6 +21,8 @@ from pathlib import Path
 
 import yaml
 
+# Installed skill folders must stay byte-identical to their source; no __pycache__ beside the scripts.
+sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import skill_graph  # noqa: E402  (sibling script, shares alias and edge detection)
 

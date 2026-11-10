@@ -1,0 +1,23 @@
+{
+  "source_revision": "5e7a48218912c2aa4059df590cf1cb7a6eb4c0ac",
+  "reason": "Preserve own skill packages outside Software Engineering before adding the MIT license file (2026-11-10).",
+  "packages": [
+    "skills/core/minmax-tokens",
+    "core/puppeteer",
+    "core/workspace-management",
+    "design/design",
+    "design/design-review",
+    "writing/customer-writing",
+    "writing/technical-writing",
+    "writing/workspace-writing"
+  ],
+  "archive": "archive/source-20261110T141353Z-add-licenses-d2b7502b-4866-4ce3-a09b-2c1dcb361f78.zip",
+  "files": {
+    "skills/core/minmax-tokens/SKILL.md": "344416c9406c087818fabf284aeace703b12c5107ac544440cbe209e1eac64d8",
+    "skills/core/minmax-tokens/agents/openai.yaml": "e32d06e783ea4bbb7cf5483aa4076e9d2c48406eb659ac8f8f554723b00b3550",
+    "skills/core/minmax-tokens/assets/icon-small.png": "5e87579b11139f32fa831e921e96068469dc1db0f22e31a60077b099efb7b184",
+    "skills/core/minmax-tokens/assets/icon-small.svg": "8faba06b44785a27ed650bd0a522c19d5528d89a48117c2351eeb7efe2ecfb4e",
+    "skills/core/minmax-tokens/assets/icon.png": "c07a41afe25f3f3019bec428da5d408c62c1552b66f8dcfec141bf605159d938",
+    "skills/core/minmax-tokens/assets/icon.svg": "5ae8711d0172a406f85aa75f235ca8232c42adb8597b2d18a9a9eda5db381896"
+  }
+}

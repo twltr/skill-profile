@@ -178,7 +178,7 @@ children, and how to declare type and dependencies are in
 before creating a skill, adding a router or restructuring a collection.
 
 A domain routes in one of two ways. It **selects** one child for the result —
-Good Writing picks the writing specialist. Or it selects by **role** and loads
+a writing domain picks the specialist that owns the text. Or it selects by **role** and loads
 that role's pack of methods that always apply together:
 
 ```markdown

@@ -82,7 +82,7 @@ its own with several parents or flows beneath it.
 5. **Boundary mentions are allowed.** A description may say "logos belong to SVG
    Design" to prevent a wrong selection. That sentence routes nothing.
 
-Example of rule 4: in Software Engineering, both the implementer and the
+Example of rule 4: in an engineering domain, both the implementer and the
 reviewer need the test-design leaf. Neither role's skills load it; the domain
 lists it in both role rows, so it remains one edge from the common parent.
 
@@ -95,9 +95,9 @@ the children that always apply in that role, plus conditional ones:
 ```markdown
 | You are…      | Load always                            | Load when needed        |
 |---------------|----------------------------------------|-------------------------|
-| Implementer   | engineering-practices, golden-comments | marshmallow-tests       |
-| Reviewer      | engineering-review                     | its lenses              |
-| Orchestrator  | road-to-glory                          | puppeteer               |
+| Implementer   | design-method, comment-method          | test-method             |
+| Reviewer      | review-parent                          | its lenses              |
+| Orchestrator  | delivery-flow                          | delegation-method       |
 ```
 
 Packs can combine when an agent holds two roles at once. Mark combinations that
@@ -114,12 +114,12 @@ access. Use `metadata` for the machine-readable declaration:
 
 ```yaml
 ---
-name: road-to-glory
+name: delivery-flow
 description: …
 metadata:
   skill-type: flow
-  skill-tree: software-engineering
-  skill-requires: engineering-review puppeteer
+  skill-tree: engineering
+  skill-requires: review-parent delegation-method
 ---
 ```
 
@@ -133,7 +133,7 @@ The agent learns the same facts after it has chosen the skill, from one line at
 the top of the body:
 
 ```markdown
-**Flow skill** in Software Engineering. Requires: engineering-review, puppeteer.
+**Flow skill** in the engineering domain. Requires: review-parent, delegation-method.
 If one is missing, stop, say this skill is incomplete without it, and do not run
 a partial flow.
 ```

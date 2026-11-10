@@ -130,6 +130,16 @@ row so agents with a connector can read it. A planned part may appear in
 **Parts** with the status "planned": that is the current state of the map, not
 a plan.
 
+**While no shared knowledge system is connected**, a Workspace may also hold the
+owner's current view of the wider system: a known dependency on one provider, an
+option under consideration, a part whose future is open. That is still state,
+seen from here, but it can change or turn out wrong. Put it under **Current
+state** in its own subsection marked provisional, with its date, and say that it
+moves to the knowledge system once one exists. The exception ends when the
+**Shared knowledge** row names a connected system: then move such subsections
+there and leave a pointer. Never turn the exception into a roadmap or to-do
+list; open work still belongs to its repository's issues or roadmap.
+
 Record which account an agent uses, never its credentials. When customer data is
 involved, the **Agents and accounts** row decides which agent may touch it; a
 local assistant without that agreement works through the agents that have it.
@@ -209,6 +219,6 @@ configuration.
 The root and the Workspace's files agree, and every non-canonical instruction
 file only points to `AGENTS.md`; every live part's location
 resolves on this host; the current state matches reality; plans and notes are
-referenced, not copied; requested AI projects enter through the Workspace; and
+referenced, not copied, and any provisional view is dated and marked; requested AI projects enter through the Workspace; and
 provider claims are verified. Report any cloud, restart or provider-interface
 boundary that remains.

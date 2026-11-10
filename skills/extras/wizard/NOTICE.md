@@ -1,17 +1,21 @@
 # Source and local adaptation
 
-Based on Matt Pocock's [Wizard skill](https://github.com/mattpocock/skills/tree/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/wizard)
-at commit `3cca18b368ae95cdbdebbff572ccafa662551015`. The MIT license from the
+Based on Matt Pocock's [Wizard skill](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/engineering/wizard)
+at commit `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d`. The MIT license from the
 upstream repository root is preserved in [LICENSE](LICENSE).
 
-Imported on 2026-11-10 from a locally installed Codex copy, at the owner's
-request to add Wizard to the extras. The installed files match the upstream
-files at that commit byte for byte:
+Imported on 2026-11-10 at the owner's request to add Wizard to the extras.
+`SKILL.md`, `agents/openai.yaml` and `LICENSE` came from a locally installed
+Codex copy of commit `3cca18b368ae95cdbdebbff572ccafa662551015`. They are
+unchanged at `4ae2317`. `template.sh` was taken whole from `4ae2317`, which
+includes the later template fixes in `868c4cf20cb7e08bc805c388ff1f305dbedd261a`
+and `49dd158d1076134a641b33efb035946536778336` (PR #1237). The upstream files at
+`4ae2317`:
 
 | Upstream file | SHA-256 |
 |---|---|
 | `skills/engineering/wizard/SKILL.md` | `bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1` |
-| `skills/engineering/wizard/template.sh` | `33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153` |
+| `skills/engineering/wizard/template.sh` | `6566f147299bc6f1d941e64591ed04385416d543e11f96f564c7228f5018d0ed` |
 | `skills/engineering/wizard/agents/openai.yaml` | `98f44d682d58e262f160dc59a8befc365e0aa65820dd0261864af26aa8e59d83` |
 | `LICENSE` (repository root) | `0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5` |
 
@@ -32,21 +36,18 @@ Only the repository's shared-leaf conventions required changes:
 `template.sh` is byte-identical to upstream, including the library above the
 `STAGES` marker that the method says never to hand-edit.
 
-## Later upstream changes not included
+## Review on 2026-11-10
 
-Upstream `main` at `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d` changes
-`template.sh` in two later commits:
-`868c4cf20cb7e08bc805c388ff1f305dbedd261a` and
-`49dd158d1076134a641b33efb035946536778336` (PR #1237). In the library they
-single-quote values written to `.env` and decode them on re-runs, create a new
-`.env` with mode 0600, write through a symlinked `.env` instead of replacing it,
-make a prompt fail at end of input instead of continuing with an empty value,
-edit visible input with Readline and drop the unused `RED` variable, which
-`shellcheck` reports as SC2034 in this snapshot. Below the marker they wrap the
-example stages in a `run_wizard` function so an edit during a run cannot break
-it. `SKILL.md` and `agents/openai.yaml` are unchanged upstream. Adopting these
-fixes is a vendored snapshot refresh: review them, then replace `template.sh`
-as a whole.
+`bash -n` passes. The helpers `SKILL.md` names (`stage`, `say`, `step`,
+`open_url`, `ask`, `ask_secret`, `write_env`, `set_secret`, `set_var`, `pause`,
+`confirm`, `TOTAL_STAGES`) all exist in the template. The template's own comment
+adds that stages stay inside `run_wizard`. `shellcheck` reports SC1087 on
+`$e[Enter keeps current]` in `ask`. That is a false positive: `$e` is a scalar
+followed by literal text. It also reports SC2329 for `confirm` and `set_var`,
+which the example stage does not call.
 
-`skills/extras/wizard/` in the Skill Profile owns this local variant. Installed
-directories are deployment copies.
+On bash 3.2, the default `bash` on macOS, `_existing` keeps the backslash when
+decoding a stored value that contains a single quote: `it's` comes back as
+`it\'s`, and keeping it on a re-run writes the backslash back into `.env`.
+Bash 4.4 and 5.2 decode it correctly. The 0600 mode, symlink and
+end-of-input fixes behave as intended on all three.

@@ -1,11 +1,14 @@
 ---
 name: skill-issue
-description: Create, revise, review or audit agent skills, from capturing intent through drafting, realistic test prompts, trigger tuning and iteration. Use whenever someone wants to turn a workflow into a skill, improve or restructure a SKILL.md, fix a skill that fires too often or too rarely, design a router over sibling skills, untangle dependencies inside a skill collection, or review skills for quality, even when they only say "this skill is bad" or "make my skills better". Executing another skill's own workflow stays with that skill.
+description: Create, revise, review or audit agent skills, from capturing intent through drafting, realistic test prompts, trigger tuning and iteration. Use whenever someone wants to turn a workflow into a skill, improve or restructure a SKILL.md, fix a skill that fires too often or too rarely, design a router, domain or flow over sibling skills, untangle dependencies inside a skill collection, or review skills for quality, even when they only say "this skill is bad" or "make my skills better". Executing another skill's own workflow stays with that skill.
 metadata:
-  short-description: Build, test and sharpen skills agents actually use
+  short-description: "Core: Build, test and sharpen skills agents actually use"
+  skill-type: core
 ---
 
 # Skill Issue
+
+**Core skill.** Usable in any context; loads no other skills.
 
 A skill is a briefing for a capable colleague who has never met you. It is read
 at the moment of need by an agent that knows its craft but not your situation,
@@ -57,8 +60,9 @@ to fit, reason from these instead.
   `scripts/` and tell the skill to use it.
 - **One owner per fact.** Each decision, rule or procedure lives in exactly one
   place. Other places link to it. Duplicates drift apart and contradict each other.
-- **Trees, not meshes.** Skills compose downward: a caller names the skills it
-  uses; a callee does not name its callers. A collection where everything mentions
+- **Trees, not meshes.** Skills compose downward from a few implicit roots: a
+  routing skill names the skills it uses; a child never names its caller, and no
+  edge crosses into another tree. A collection where everything mentions
   everything is expensive to load and impossible to reason about.
 
 ## A small worked example
@@ -147,22 +151,35 @@ plausible, or the description fills up with exclusions.
 Write the description in one to three sentences, under the 1024-character limit
 of the skill specification. Lead with the task and outcome. The human-facing
 short description (`metadata.short-description`, or `short_description` in
-`agents/openai.yaml`) states the concrete benefit in plain words: "Write and
-revise texts for their audience and purpose", not "Auto: choose a writing method".
+`agents/openai.yaml`) starts with the skill's type and then states the concrete
+benefit in plain words: "Domain: Write and revise texts for their audience and
+purpose", not "Auto: choose a writing method".
 
-## Routers over sibling skills
+## Place the skill in the tree
 
-When several specialists share one trigger surface — writing, visual design,
-testing — their descriptions compete. Each one either undertriggers or fires for
-its sibling's work. A **router** resolves this:
+Every skill in a collection has one of five types. The type decides how it is
+selected, what it may load, and where it sits:
 
-- One router skill carries the broad, implicit description for the whole surface.
-- The specialists become explicit-only through host policy. The router loads
-  the right one; a user can still call any specialist by name.
-- The router body is a switchboard, not a manual: a selection table, the few
-  rules every route shares, and what to hand the specialist. Keep it short;
-  depth belongs in the specialists.
-- A specialist works fully when called directly and never routes back to the router.
+| Type | Role in the tree | Selection | Loads |
+|---|---|---|---|
+| **Core** | Stands in the middle; useful in any context | Implicit | Nothing |
+| **Domain** | Root of a tree; establishes the context and routes into it | Implicit | Its children |
+| **Parent** | Inner node; applies its children together | Explicit-only | Its children |
+| **Flow** | Inner node; runs steps left to right with roles | Explicit-only or via its domain | Its step skills |
+| **Leaf** | Self-contained method | Explicit-only | Nothing |
+
+Domain, parent and flow skills are **routing skills**. The agent starts in the
+middle, with core skills and domain roots; it moves down a tree, never up and
+never across into another tree. A leaf must work when a user calls it by name,
+so it never assumes or names a caller. A flow orders skills that stay usable
+without it. The full rules, the reasons, role packs, how to resolve shared
+children, and how to declare type and dependencies are in
+[references/skill-architecture.md](references/skill-architecture.md); read it
+before creating a skill, adding a router or restructuring a collection.
+
+A domain routes in one of two ways. It **selects** one child for the result —
+Good Writing picks the writing specialist. Or it selects by **role** and loads
+that role's pack of methods that always apply together:
 
 ```markdown
 | Signal in the request          | Load              | Owns                         |
@@ -172,57 +189,23 @@ its sibling's work. A **router** resolves this:
 | Movement, transition, timing   | ui-motion         | Motion principles            |
 ```
 
-A router costs one extra hop on every use. It pays off when misrouting is
-common or expensive. Siblings with clearly distinct triggers are cheaper as
-plain skills with one boundary sentence each.
+Keep a routing skill a switchboard, not a manual: its table, the few rules
+every route shares, and what to hand the child. A routing node costs one hop on
+every use; it pays off when siblings share a trigger surface and misrouting is
+common or expensive. Because one broad domain description then carries a whole
+context, measure it: run a trigger evaluation against the current configuration
+before you make its children explicit-only.
 
-Routers come in two kinds. A **selection router** picks one specialist for the
-result, as above. A **context router** establishes the working context and the
-agent's current role, then loads a fixed pack of methods that always apply in
-that role, plus a few conditional ones:
-
-```markdown
-| You are…     | Load always                          | Load when needed            |
-|--------------|--------------------------------------|-----------------------------|
-| Implementer  | design-method, comment-method, ...   | test-method for new tests   |
-| Reviewer     | review-method                        | its lenses                  |
-| Orchestrator | flow-method                          | delegation-method           |
-```
-
-Use a context router when several methods should apply together whenever a
-context is active — and never outside it. One broad description then carries
-the whole context, so it must be measured: before making the pack members
-explicit-only, run a trigger evaluation of the router against the current
-configuration as a baseline. Delegates receive their role pack by name in the
-brief, so they load the methods themselves.
-
-## Composition and dependencies
-
-Reference another skill only for an independently useful capability, and say:
-the condition that needs it, what to pass, what comes back, and the honest
-fallback if it is unavailable ("If a prose-cleanup skill is available, run it
-on the final draft; otherwise do a manual filler pass"). Resolve and read the actual skill
-before claiming it was applied.
-
-Keep the graph a tree:
-
-- **Callers name callees; callees stay ignorant of callers.** A specialist does
-  not need to know which router or workflow loaded it. Back-references create
-  cycles that agents follow, loading half the collection for a small task.
-- **Leaves stay leaves.** A pure technique skill (prose cleanup, diagram drawing,
-  test design) references nothing, or only other leaves.
-- **Mention shared concerns where they decide something.** If three workflows
-  delegate work, those three reference the delegation skill; the other twenty do not.
-- **Never re-enter an active ancestor.** Pass the names of active workflows in a
-  handoff so the callee does not restart them.
-- **Discovery and composition are different routes.** An explicit-only skill
-  stays out of implicit selection, but an authorized workflow may still read it
-  deliberately. A reference grants no authority the runtime does not give.
+When a skill loads a child, say the condition, what to pass, what comes back
+and the honest fallback if the child is missing. Resolve and read the child
+before claiming it was applied. An explicit-only skill stays out of implicit
+selection, but its routing parent may read it deliberately; a reference grants
+no authority the runtime does not give.
 
 To audit a collection, run [scripts/skill_graph.py](scripts/skill_graph.py) on
 its skill roots. It counts cross-references and lists mutual pairs and the most
-referenced skills. Mutual pairs and very high fan-out are smells to inspect, not
-automatic errors: a count shows a mention, not a real call.
+referenced skills. A mutual pair or an edge into another tree is a defect to
+explain; a count shows a mention, not a real call.
 
 ## Write the body
 
@@ -338,6 +321,8 @@ user of its method and check:
 - Are reasons given where the skill uses MUST, ALWAYS or NEVER?
 - Does verification distinguish a useful outcome from the relevant failure?
 - Is there an honest fallback when a tool, skill or host capability is missing?
+- Is the type declared in `metadata`, the first body line and the short
+  description, and do its edges follow the tree rules?
 
 Then walk four requests through the description and workflow without doing the
 downstream work: a normal one, a different valid one, a near-miss and, where

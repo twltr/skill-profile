@@ -1,11 +1,11 @@
 ---
 name: motion-design
 description: >
-  Applies motion design principles to create emotionally-driven, technically sound animations and transitions.
-  Provides timing, easing, choreography, and Disney animation principles adapted for UI.
-  Use when creating animations, transitions, micro-interactions, loading states, page transitions,
-  scroll-triggered effects, or any motion work. Works with CSS, Framer Motion, GSAP, Lottie, Spring,
-  or any animation system.
+  Applies motion design principles to create purposeful, technically sound animations and transitions.
+  Provides timing, easing, springs, choreography, reduced-motion alternatives and Disney animation
+  principles adapted for UI. Use when designing or reviewing animations, transitions, micro-interactions,
+  loading states, page transitions, scroll-linked effects or a product's motion identity. Independent of
+  the animation system: CSS, Motion (formerly Framer Motion), GSAP, Lottie, native platform springs.
 license: MIT
 metadata:
   skill-type: leaf
@@ -168,30 +168,17 @@ For a project that needs a distinct motion identity, define three constants:
 - **On-screen** → smooth both ends: ease-in-out family
 - **Looping ambient** → seamless: sine-based ease-in-out
 
-**Industry standards**:
+**Curves or springs**: a cubic-bezier curve fixes duration and shape; a spring
+derives both from stiffness and damping and keeps its velocity when a gesture
+interrupts it. SwiftUI's default animation has been a spring since iOS 17, and
+Material 3 Expressive adds a spring-based motion physics system beside its
+easing and duration tokens. Prefer springs for interactive, interruptible
+motion; use curves where a fixed duration must line up with other motion.
+Follow the project's existing system.
 
-| Standard | Cubic Bezier | Use For |
-|----------|-------------|---------|
-| Material Design 3 | (0.2, 0, 0, 1) | Default on-screen |
-| MD3 Emphasized | (0.05, 0.7, 0.1, 1) | Entrances, attention |
-| MD3 Accelerate | (0.3, 0, 1, 1) | Exits, dismissals |
-| Apple HIG | (0.25, 0.1, 0.25, 1) | Standard iOS |
-| Snappy UI | (0.2, 0, 0, 1) | Fast, decisive |
-| Gentle float | (0.4, 0, 0.2, 1) | Ambient, background |
-| Bounce settle | (0.175, 0.885, 0.32, 1.275) | Overshoot, playful |
-
-**Material-based easing**:
-
-| Material | Duration Scale | Overshoot |
-|----------|---------------|-----------|
-| Rigid (metal, stone) | 1.2x | 0% |
-| Elastic (rubber, gel) | 0.8x | 15-25% |
-| Fluid (water, paint) | 1.5x | 5% |
-| Paper (cards, sheets) | 1.0x | 3-5% |
-| Gas (smoke, fog) | 2.0x | 0% |
-| Glass (brittle) | 0.9x | 0% |
-
-> Deep dive: [reference/timing-easing-tables.md](reference/timing-easing-tables.md)
+The named platform curves (Material 3, CSS defaults), spring parameters and
+material-based easing are in
+[reference/timing-easing-tables.md](reference/timing-easing-tables.md).
 
 ---
 
@@ -259,7 +246,9 @@ do not make motion the sole carrier of error information.
 | Dramatic | 100-200ms | <600ms | Hero sections |
 | Wave | 30-60ms | <500ms | Data visualizations |
 
-**Critical**: Total stagger must stay under 500ms.
+Keep the total stagger under 500ms: beyond that the last element arrives after
+the viewer has moved on. A dramatic hero reveal with few elements may stretch to
+600ms, because it is the one moment the page asks to be watched.
 
 > Deep dive: [director/choreography.md](director/choreography.md)
 

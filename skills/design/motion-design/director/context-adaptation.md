@@ -34,7 +34,11 @@ Reduced motion means: remove spatial movement, keep opacity, remove spring easin
 
 ### Cognitive Accessibility
 - Same interaction = same animation every time
-- Pause controls for animations >5 seconds
+- Pause controls for moving content that starts by itself and lasts >5 seconds
+  (WCAG 2.2.2 Pause, Stop, Hide, Level A)
+- Nothing flashes more than three times per second (WCAG 2.3.1, Level A)
+- Motion triggered by interaction can be turned off (WCAG 2.3.3, Level AAA;
+  honoring prefers-reduced-motion is the usual way)
 - Don't convey critical info through motion alone
 
 ## Performance Budgets
@@ -46,10 +50,18 @@ Reduced motion means: remove spatial movement, keep opacity, remove spring easin
 | Acceptable | + width, height, margin | 5-8 |
 | Avoid | box-shadow, border-radius, filter | 1-3 |
 
-- Target 60fps (16.67ms/frame); animation logic <10ms/frame
+- Target 60fps (16.67ms/frame); animation logic <10ms/frame. On 120Hz displays
+  the frame budget halves to 8.3ms, so transform and opacity matter more.
 - will-change sparingly; keep animated elements <20 per viewport
 - Stagger reduces peak load vs simultaneous
 - Fallback: 30fps acceptable for ambient
+
+On the web, platform features now cover much that needed scripts: CSS
+transitions with `@starting-style` for entering elements, the View Transitions
+API for page and state changes, and CSS scroll-driven animations
+(`animation-timeline: scroll()` / `view()`), Baseline since Firefox 159 enabled
+them in October 2026. Check the project's browser targets before relying on
+them.
 
 ## Content Type Adaptation
 

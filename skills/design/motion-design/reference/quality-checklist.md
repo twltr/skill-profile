@@ -16,7 +16,7 @@
 - [ ] Duration proportional to distance
 - [ ] Entrance duration >= exit duration
 - [ ] State changes remain clear in the settled UI and without motion
-- [ ] Stagger total <500ms
+- [ ] Stagger total <500ms (600ms only for a single dramatic hero reveal)
 - [ ] Follow-through or child-element delay only when it clarifies the action
 
 ## Emotional Quality

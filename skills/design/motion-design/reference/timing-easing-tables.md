@@ -48,16 +48,21 @@ Entrance=ease-out | Exit=ease-in | On-screen=ease-in-out | Looping=sine | Rotati
 
 | Name | Cubic Bezier | Use |
 |------|-------------|-----|
-| MD3 Standard | (0.2, 0, 0, 1) | Default on-screen |
-| MD3 Emphasized | (0.05, 0.7, 0.1, 1) | Entrances |
-| MD3 Accelerate | (0.3, 0, 1, 1) | Exits |
-| MD3 Decelerate | (0, 0, 0, 1) | Entering |
-| Apple HIG | (0.25, 0.1, 0.25, 1) | iOS default |
-| Apple Spring | stiffness:300 damping:20 | Interactive |
-| Snappy UI | (0.2, 0, 0, 1) | Fast, decisive |
-| Gentle float | (0.4, 0, 0.2, 1) | Ambient |
-| Bounce settle | (0.175, 0.885, 0.32, 1.275) | Playful |
+| MD3 Standard | (0.2, 0, 0, 1) | Default on-screen; fast, decisive |
+| MD3 Standard decelerate | (0, 0, 0, 1) | Entering |
+| MD3 Standard accelerate | (0.3, 0, 1, 1) | Exits |
+| MD3 Emphasized decelerate | (0.05, 0.7, 0.1, 1) | Entrances, attention |
+| CSS `ease` | (0.25, 0.1, 0.25, 1) | Browser default; not an Apple curve |
+| CSS `ease-in-out` | (0.42, 0, 0.58, 1) | Also UIKit's default `easeInOut` |
+| MD2 Standard | (0.4, 0, 0.2, 1) | Gentle, ambient |
+| Bounce settle | (0.175, 0.885, 0.32, 1.275) | Playful overshoot |
 | Elastic snap | (0.68, -0.55, 0.265, 1.55) | Dramatic |
+
+Apple platforms favor springs over named curves: SwiftUI's default animation has
+been a non-bouncing spring since iOS 17, and its presets (`.smooth`, `.snappy`,
+`.bouncy`) are set by duration and bounce rather than stiffness and damping.
+Material 3 Expressive adds spring tokens beside the curves above. Checked
+2026-11-10.
 
 ## Material-Based Easing
 
@@ -80,7 +85,12 @@ Entrance=ease-out | Exit=ease-in | On-screen=ease-in-out | Looping=sine | Rotati
 | Very bouncy | 100-200 | 5-10 |
 | Gentle | 100-150 | 20-25 |
 
-Damping: <1.0=oscillates, 1.0=fastest no-oscillation, >1.0=slow settle.
+Stiffness and damping here are absolute values with mass 1, as in Motion and
+React Spring. Whether a spring overshoots depends on the damping ratio
+ζ = damping / (2 · √(stiffness · mass)): below 1 it oscillates, 1 settles
+fastest without overshoot, above 1 settles slowly. Example: stiffness 300 and
+damping 20 give ζ ≈ 0.58, a visible bounce. Tools that take a ratio or a
+"bounce" value, such as SwiftUI, need conversion.
 
 ## Stagger Patterns
 
@@ -93,7 +103,8 @@ Damping: <1.0=oscillates, 1.0=fastest no-oscillation, >1.0=slow settle.
 
 Direction: top-to-bottom (lists) | L-to-R (horizontal) | center-out (hero) | random (organic) | reverse (exits)
 
-Total stagger MUST stay <500ms.
+Keep total stagger under 500ms, or the last element arrives after the viewer has
+moved on; only a dramatic hero reveal with few elements may reach 600ms.
 
 ## Overshoot Budget
 

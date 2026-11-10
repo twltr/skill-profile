@@ -170,9 +170,10 @@ The type system and the two existing domains are in place:
   and source comments belong to Software Engineering.
 
 Every skill declares its type in `metadata`, in the first line of its body and
-in the prefix of its short description. Not yet done: removing the remaining
-back-references inside the trees, and switching the Software Engineering leaves
-that still fire by themselves to explicit-only after measuring.
+in the prefix of its short description. No skill names its caller or a sibling
+leaf, and no edge crosses between trees. Not yet done: switching the Software
+Engineering skills that still fire by themselves to explicit-only after
+measuring, and a trigger evaluation of Good Writing.
 `skills/core/skill-issue/scripts/check_tree.py skills` lists every remaining rule
 finding; the installer refuses a collection with a missing type or required child. The [writing map](SKILLS.md#writing-family-map) and the
 [engineering matrix](SKILLS.md#engineering-and-general-map) show what is left;

@@ -1,6 +1,6 @@
 ---
 name: customer-writing
-description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers belong to Commercial Writing."
+description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers are commercial writing, not this method."
 metadata:
   skill-type: leaf
   skill-tree: writing
@@ -10,18 +10,16 @@ metadata:
 
 **Leaf skill** in Writing; reached through its domain or by name.
 
-Use this method only when explicitly requested by the user or selected by Good
-Writing. An ordinary matching request goes through that router.
+Use this method only when the user asks for it or a routing skill selects it.
 
 Help the recipient understand the situation and act. Use the reader, purpose,
-facts and constraints from Good Writing, or infer them from a direct request.
-Ask only about a gap that changes the message. Do not route back to Good Writing.
+facts and constraints from the brief you were given, or infer them from a direct
+request. Ask only about a gap that changes the message.
 
-Before drafting, reuse the caller's source-selection handoff. If none is supplied,
-use Writing Fragments when available to select the relevant material, sources,
-qualifiers and gaps at the scale of this task. Otherwise perform that bounded
-selection directly without claiming the skill was applied. A direct invocation
-needs the same preparation, not a return to Good Writing or repeated scouting.
+Before drafting, reuse the source-selection handoff you were given. If no source
+handoff was supplied, select the relevant material, sources, qualifiers and gaps
+yourself, scaled to the task. A direct invocation needs the same preparation,
+not repeated scouting.
 
 **Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.
@@ -66,9 +64,10 @@ For a process, relationship or handoff that benefits from a graphic, load
 editable source, export and visual checks. If unavailable, disclose the limit
 and use a clear supported form; an explicitly requested graphic remains open.
 
-For mixed correspondence and sales arguments, apply the commercial brief selected
-by Good Writing to that part. Keep this method focused on the relationship and
-channel; specialist selection belongs to the router or an explicit user choice.
+For mixed correspondence and sales arguments, return the commercial part to
+whoever loaded this method. Keep this method focused on the relationship and
+channel; choosing a method for the commercial part belongs to that caller or an
+explicit user choice.
 
 ## Check and deliver
 

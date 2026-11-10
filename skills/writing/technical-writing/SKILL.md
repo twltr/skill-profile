@@ -44,15 +44,14 @@ guarantees are fictional; use the actual product's labels and contract.
 
 Identify the reader, intended outcome, product/version/platform, source owner and
 publishing destination. Reuse a supplied brief and source-selection handoff. If
-missing, use Writing Fragments when available to select the relevant claims,
-source locators, qualifiers and gaps; otherwise do that bounded preparation
-directly. A direct request needs no return to Good Writing.
+no source handoff was supplied, select the relevant claims, source locators,
+qualifiers and gaps yourself, scaled to the task. A direct invocation needs the
+same preparation.
 
 This method can also be loaded directly by an authorized workflow that already
 knows it needs a standalone technical manual. Reuse that workflow's verified
-source handoff and return the result to it. Good Writing remains the default
-automatic writing router; direct use does not require changing this specialist's
-native explicit-invocation policy.
+source handoff and return the result to it. Direct use does not require changing
+this method's native explicit-invocation policy.
 
 Choose this method when the document's authoritative inputs are specifications,
 verified product behavior or supplied technical material. If the requested result
@@ -64,7 +63,7 @@ the requested scope rather than pretending this manual workflow verified the
 repository. A vendor API manual can belong here; an SDK's code-owned reference
 does not.
 Missing repository access is a blocked source check, not permission to pretend
-its implementation was inspected. Do not re-enter an already active caller.
+its implementation was inspected.
 
 Verify current product/version claims with their actual owner. Mark unsupported
 or planned behavior explicitly. For a consequential unresolved technical fact,

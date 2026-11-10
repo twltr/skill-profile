@@ -19,8 +19,7 @@ or from carrying a whole source pile into the reader's text.
 This is preparation, not a user interview, a raw-fragment diary or a draft.
 Do not make the user co-author the selection or ask where to save it. Return the
 handoff to the active writing task; create a separate file only when requested.
-Do not call Good Writing or restart the routing chain. The caller owns what
-happens after the handoff.
+Whoever loaded this method owns what happens after the handoff.
 
 ## A small source selection
 
@@ -103,10 +102,10 @@ available and the host permits composition. Read its complete method, then defin
 read-only scouts with bounded source sets and a shared return format. Keep simple,
 dependent reading direct. Check returned references and claims before using them.
 For a consequential customer document, repository document or other substantial
-text, Grilling with Agents may challenge coverage, claims and organization with
-the lead when available and useful. Resolve and read its complete method before
-using it. It returns internal findings, not questions for the user; the lead
-resolves the handoff. These methods are conditional aids, not a required tour.
+text, an independent challenge of its coverage, claims and organization may be
+useful; Puppeteer can arrange that reviewer. The challenge returns internal
+findings, not questions for the user, and the lead resolves the handoff. These
+aids are conditional, not a required tour.
 
 ## Handoff shape
 

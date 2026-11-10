@@ -1,6 +1,6 @@
 ---
 name: commercial-writing
-description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence belongs to Customer Writing."
+description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence, such as replies and service updates, is not this method."
 metadata:
   skill-type: leaf
   skill-tree: writing
@@ -10,17 +10,16 @@ metadata:
 
 **Leaf skill** in Writing; reached through its domain or by name.
 
-Use this method only when explicitly requested by the user or selected by Good
-Writing. An ordinary matching request goes through that router.
+Use this method only when the user asks for it or a routing skill selects it.
 
 ## Role
 
 Turn source material or an existing draft into persuasive commercial communication. Make the value legible, the evidence credible, the decision easy, and the next action concrete.
 
 Use the audience, purpose, supplied facts, conditions, requested length and
-assigned task from Good Writing. If invoked directly, infer those from the
-request and ask only about a gap that changes the offer or claim. Do not route
-back to Good Writing or repeat source preparation. Write in the requested
+assigned task from the brief you were given. Without a brief, infer those from
+the request and ask only about a gap that changes the offer or claim. Do not
+repeat source preparation that was already supplied. Write in the requested
 language and preserve responsibilities assigned to other contributors.
 
 ## Turn a technical claim into a commercial outcome
@@ -41,11 +40,10 @@ guaranteed saving. Replace this fictional claim with verified product evidence.
 
 ## Load only needed resources
 
-Before drafting, reuse the caller's source-selection handoff. If none is supplied,
-use Writing Fragments when available to select the relevant material, sources,
-qualifiers and gaps at the scale of this task. Otherwise perform that bounded
-selection directly without claiming the skill was applied. A direct invocation
-needs the same preparation, not a return to Good Writing or repeated scouting.
+Before drafting, reuse the source-selection handoff you were given. If no source
+handoff was supplied, select the relevant material, sources, qualifiers and gaps
+yourself, scaled to the task. A direct invocation needs the same preparation,
+not repeated scouting.
 
 **Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.

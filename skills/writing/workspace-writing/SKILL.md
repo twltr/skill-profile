@@ -10,14 +10,12 @@ metadata:
 
 **Leaf skill** in Writing; reached through its domain or by name.
 
-Use this method only when explicitly requested by the user or selected by Good
-Writing. An ordinary matching request goes through that router.
+Use this method only when the user asks for it or a routing skill selects it.
 
 Treat **OpenAI ChatGPT Pages and Spaces** as a shared working and knowledge
 surface for the person and agent. Help them find what matters and what comes
 next. This skill owns content and organization, not host-local Workspace folders
-or repository bindings. Accept the brief from Good Writing or a direct request;
-do not route back to Good Writing.
+or repository bindings. Use the brief you were given or the direct request.
 
 Before writing or revising, check the target Space and the surrounding system or
 workspace context available to this task for applicable instructions, conventions
@@ -34,11 +32,10 @@ or the skill collection's repository. No permanent local overlay is needed. If r
 guidance is inaccessible, distinguish that from finding none: report the material
 gap and leave dependent choices open while continuing independent work.
 
-Before drafting, reuse the caller's source-selection handoff. If none is supplied,
-use Writing Fragments when available to select the relevant material, sources,
-qualifiers and gaps at the scale of this task. Otherwise perform that bounded
-selection directly without claiming the skill was applied. A direct invocation
-needs the same preparation, not a return to Good Writing or repeated scouting.
+Before drafting, reuse the source-selection handoff you were given. If no source
+handoff was supplied, select the relevant material, sources, qualifiers and gaps
+yourself, scaled to the task. A direct invocation needs the same preparation,
+not repeated scouting.
 
 **Apply `unslop` when available**, including during direct use. Load it once through the
 host's skill catalog and returned path or read interface unless already loaded.

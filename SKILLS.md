@@ -104,7 +104,7 @@ question the lead.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/writing-family.dark.svg">
-  <img src="figures/writing-family.svg" width="860" alt="Good Writing routes to one of four explicit-only specialists; all require the core skill Unslop and may use the core skill Editorial SVG Diagrams; the specialists still name Good Writing as their caller.">
+  <img src="figures/writing-family.svg" width="860" alt="Good Writing routes to one of four explicit-only specialists; all require the core skill Unslop and may use the core skill Editorial SVG Diagrams; no specialist names its caller.">
 </picture>
 
 Good Writing is the only implicit entry: it prepares material through Writing
@@ -118,7 +118,6 @@ software engineering work.
 | Thick blue | Router selects exactly one target |
 | Solid teal | Required step whenever the target is available (Good Writing also applies Unslop to every route) |
 | Grey dashed | Conditional: used only when the situation needs it, for example no source handoff yet or a figure that explains better |
-| Red dashed | Back-reference: the callee names its caller ("do not route back"); a cycle candidate for the 2026-11-10 restructuring |
 
 Tinted nodes are implicitly invocable — Good Writing as the domain, Unslop and
 Editorial SVG Diagrams as core skills; white nodes are explicit-only. The

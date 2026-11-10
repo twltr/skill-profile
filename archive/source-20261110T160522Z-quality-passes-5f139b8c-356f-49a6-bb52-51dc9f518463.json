@@ -1,0 +1,9 @@
+{
+  "source_revision": "b26d5e8960dde9aa6faf23105d4fc07b38be5497",
+  "reason": "Before the #7 quality passes and #3 design leaf refinement",
+  "packages": [
+    " skills/software-engineering/golden-comments skills/software-engineering/vertical-slices skills/core/editorial-svg-diagrams skills/software-engineering/engineering-review skills/core/workspace-management skills/software-engineering/state-of-the-art skills/design/gsap skills/design/motion-design skills/software-engineering/minmax-codebase skills/design/frontend-design skills/design/ux-copy skills/design/design-system skills/design/design-critique skills/design/accessibility-review skills/design/design-handoff"
+  ],
+  "archive": "archive/source-20261110T160522Z-quality-passes-5f139b8c-356f-49a6-bb52-51dc9f518463.zip",
+  "files": {}
+}

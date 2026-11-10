@@ -28,13 +28,14 @@ when its assumptions warrant reconsideration. A working implementation alone doe
 not retain that decision. Do not leave the reader to infer the intended architecture
 from syntax or remember an old design discussion.
 
-For source work, apply Golden Comments at the affected code owner when available;
-for structure, use Vertical Slices at the affected boundary. Do this during the
-implementation, including a routine feature or bug fix, rather than waiting for
-the user to request comments or architecture. When a decision affects system
-understanding, patterns, contracts or operation, update its existing documentation
-through Engineering Documentation. Reuse existing evidence and active methods;
-a local fix needs the relevant explanation, not a new research programme.
+For source work, record the reasons at the affected code owner and keep the
+structure at the affected boundary. Do this during the implementation, including
+a routine feature or bug fix, rather than waiting for the user to request comments
+or architecture. When a decision affects system understanding, patterns, contracts
+or operation, its existing documentation changes in the same work: update it, or
+report the affected explanation and its source anchors to the lead. Reuse existing
+evidence and active methods; a local fix needs the relevant explanation, not a new
+research programme.
 
 ## A worked choice
 
@@ -119,7 +120,8 @@ the boundary earns. A concise entry can live in the README for a small repositor
 
 These ten are a starting set, not a permanent limit or universal ranking. Add or
 revise a practice only when it supplies useful decision guidance. Structure, domain naming,
-source explanations and test design retain their specialist owners below.
+source explanations and test design have their own methods; this one does not
+restate them.
 
 ## Find the relevant decision dimensions
 
@@ -147,9 +149,10 @@ maintenance in the practices above. Follow interactions between dimensions:
 a recovery design may change access control, retention, consistency or cost.
 Do not optimize each topic independently and assume the results compose.
 
-Domain Modeling, when available, owns unsettled meanings, identities and lifecycle
-rules. Use those results to choose representations, storage and enforceable
-contracts; do not produce a full schema for a task that does not need one.
+When meanings, identities or lifecycle rules are unsettled, report that to the
+lead instead of settling them here. Choose representations, storage and enforceable
+contracts from the settled meanings; do not produce a full schema for a task that
+does not need one.
 Likewise, select synchronous or asynchronous communication, a storage technology
 or a language-idiomatic pattern only after its requirements are clear. A state
 machine, observer or factory is an example of a candidate, not a recommended
@@ -250,11 +253,11 @@ the active revision, service health or intended business effect.
 
 Choose the smallest sufficient arrangement. A single local script may need only
 explicit inputs and a documented rebuild path; an operated service with valuable
-state needs stronger controls and evidence. Use State of the Art for unresolved
-current capabilities, Domain Modeling for ambiguous meanings and Vertical Slices
-for owner placement when available. Engineering Documentation, if available,
-owns the maintained configuration/use/recovery explanation; retain actual values
-and contracts at their proper sources instead of copying them into prose.
+state needs stronger controls and evidence. Report unresolved current capabilities
+or ambiguous meanings to the lead, and place owners at the affected capability
+boundary. The repository's documentation owner keeps the maintained
+configuration/use/recovery explanation; retain actual values and contracts at
+their proper sources instead of copying them into prose.
 
 ## Scale the investigation
 
@@ -269,8 +272,9 @@ with shared requirements and explicit dependencies. If **Puppeteer** is availabl
 use it to assign coherent topics or independent subquestions to agents, including
 multiple investigations of a difficult topic when useful. Keep cross-topic choices
 with the lead; do not commission a separate full-system design from every scout.
-Pass this same scope to State of the Art and any council instead of restarting
-topic discovery in each method. A small settled question stays direct.
+Return this same scope with any research or challenge question, so later
+research or a council does not restart topic discovery. A small settled question
+stays direct.
 
 Do not default a substantial new non-browser system to JavaScript, TypeScript or
 an accumulation of MJS scripts because they are convenient to generate. Establish
@@ -358,12 +362,12 @@ avoid claiming it was researched or that its guarantee is implemented.
 
 ## Research at the actual source
 
-For substantive or version-sensitive choices, use **State of the Art** when
-available. Supply the problem, constraints, candidates and evidence needed to
-choose; receive supported findings, alternatives, uncertainty and a recommendation.
-It owns search strategy, source assessment and delegated research. Without it,
-consult current primary specifications, SDK/release documentation and relevant
-established literature directly. A forum claim about an "MCP council decision"
+For substantive or version-sensitive choices, consult current primary
+specifications, SDK/release documentation and relevant established literature
+directly. When a consequential current-practice question needs research of its
+own, report it to the lead with the problem, constraints, candidates and evidence
+needed to choose; the answer should bring supported findings, alternatives,
+uncertainty and a recommendation. A forum claim about an "MCP council decision"
 is not proof that a transport, SDK or version was retired.
 
 For a security assessment or a choice that changes the attack surface, protected
@@ -383,48 +387,34 @@ maintenance burden, not just files. Recheck that trade-off when requirements exp
 
 ## Compose only the needed methods
 
-- If **Domain Modeling** is available and meanings or names need work, use it with
-  the relevant scenarios; receive settled terms, relationships and remaining ambiguity.
-- If **Vertical Slices** is available, use it for repository/module/file ownership,
-  public boundaries and Shared Machinery. Do not maintain a second structural ruleset.
-- If **Golden Comments** is available, use it while implementing each affected
-  important source unit. Pass the chosen mechanism, accepted reasons and constraints;
-  receive a local explanation checked against the code, not only a chat summary.
-- If **Engineering Documentation** is available and the change affects system
-  understanding, patterns, contracts or operation, load it directly for the affected
-  explanation. Pass the existing evidence and source anchors; do not wait for a
-  separate writing request. Engineering Documentation is explicit-only and may be
-  absent from the automatic catalog. Resolve `engineering-documentation` through
-  the host's installed-skill lookup before treating it as unavailable. In a
-  filesystem runtime, inspect the configured skill roots; in a flat installation
-  its method is at `../engineering-documentation/SKILL.md`. Read the complete method
-  before applying it. This deliberate call does not change its invocation policy.
-  If either specialist cannot be read, preserve the affected explanation and its
-  verified references at the existing owners, and state the access or verification
-  gap. An unavailable specialist does not waive the source requirement.
-- If **Puppeteer** is available, use it to split substantial independent research or
-  compare competing designs before filling the main context with raw sources.
-- If **Grilling with Agents** is available and a consequential decision benefits from
-  challenge, supply the constraints and evidence; receive challenged decisions,
-  reasons, rejected alternatives and explicit unresolved prerequisites. Its council
-  questions stay between agents for every invocation; do not relay them to the user.
-  It returns here without starting a second planning or implementation workflow.
-- If **Road to Glory** is available, preserve the planning handoff: an existing plan
-  receives the decisions, reasons, evidence, alternatives and unresolved prerequisites,
-  including council results. If implementation needs new coordinated packages, hand
-  off accepted work for planning at the authorized scope. Return to an active caller
-  or ancestor instead of starting it again. Without a plan or substantial planning
-  need, return the decision report; a small choice does not create a roadmap item.
-- If **MinMax Codebase** or **All or Nothing** is available for an authorized structural
-  correction, use the appropriate method for simplification or complete replacement.
-  A design assessment itself does not authorize that correction.
+This method loads no other. Report these conditions to the lead with the evidence
+they need, and keep working on what does not depend on them:
 
-Use an available skill's actual catalog/path and read it once for the relevant
-subtask. Without it, perform the bounded necessary reasoning directly and identify
-any material gap; never claim an unavailable method was applied. Return to the
-caller with decisions, sources, reasons and verification needs. Pass active workflow
-names into a handoff. Do not create a mandatory tour or re-enter a method already
-active anywhere in the call chain; return its needed result to that owner.
+- **Documentation affected.** When the change affects system understanding,
+  patterns, contracts or operation, report the affected explanation, existing
+  evidence and source anchors; do not wait for a separate writing request. Until
+  it is updated, preserve the explanation and its verified references at the
+  existing owners and state any access or verification gap. A missing method
+  does not waive the source requirement.
+- **Challenge needed.** When a consequential decision benefits from challenge,
+  report its constraints and evidence; the result should bring challenged
+  decisions, reasons, rejected alternatives and explicit unresolved prerequisites.
+- **Planning needed.** Return the decisions, reasons, evidence, alternatives and
+  unresolved prerequisites, including council results, so an existing plan can
+  receive them. When implementation needs new coordinated packages, report the
+  accepted work for planning at the authorized scope. Without a plan or substantial
+  planning need, return the decision report; a small choice does not create a
+  roadmap item.
+- **Structural correction.** When an authorized structural correction needs
+  deliberate simplification or complete replacement, report it. A design
+  assessment itself does not authorize that correction.
+
+If **Puppeteer** is available, use it to split substantial independent research or
+compare competing designs before filling the main context with raw sources.
+
+Until a needed method is supplied, perform the bounded necessary reasoning directly
+and identify any material gap; never claim an unloaded method was applied. Return
+decisions, sources, reasons and verification needs to whoever loaded this method.
 
 Before delivery, follow a consequential changed decision from its named pattern
 and source to the implementing participants. Can a maintainer locate the local

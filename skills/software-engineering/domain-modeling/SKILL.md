@@ -87,25 +87,25 @@ Decisions do not disappear when their temporary plan is deleted.
 
 ## Hand off the model without duplicating architecture rules
 
-If **Vertical Slices** is available and the clarified model changes ownership or
-module structure, pass the concepts, relationships, lifecycle rules and invariants
-to it. Receive the structural consequences; do not impose a folder per noun. If
-Vertical Slices called this skill, return the resolved model directly to that call.
+When the clarified model changes ownership or module structure, report the
+concepts, relationships, lifecycle rules and invariants to the lead instead of
+restructuring here. Structure follows from them; do not impose a folder per
+noun. Return the resolved model to whoever loaded this method.
 
-If **Engineering Practices** is available and a technology or protocol decision
-is genuinely unresolved, pass the constraints to it. Naming alone does not require
-a fresh stack comparison. If **Grilling with Agents** is already conducting the
-discussion, report domain questions to its lead rather than starting a human interview.
+When a technology or protocol decision is genuinely unresolved, report its
+constraints to the lead. Naming alone does not require a fresh stack comparison.
+When an agent discussion is already under way, report domain questions to its
+lead rather than starting a human interview.
 
 If **Puppeteer** is available for a large existing system, use bounded scouts to
 compare meanings and behavior across contexts. Return exact evidence and conflicts;
-the lead owns the reconciled model. If **All or Nothing** is available and a model
-correction is authorized, use it to carry the correction through affected declarations
-and consumers. A model review alone does not authorize migration.
+the lead owns the reconciled model. When a model correction is authorized, name
+the affected declarations and consumers it must reach and report them to the
+lead. A model review alone does not authorize migration.
 
-Use available methods only for their distinct needed contribution. Without one,
-continue the bounded domain analysis and state any resulting limit. Avoid recursive
-skill calls. Deliver settled vocabulary, relations, naming choices, unresolved
+Use delegation only for a distinct needed contribution. Without it, continue the
+bounded domain analysis and state any resulting limit. Avoid recursive skill
+calls. Deliver settled vocabulary, relations, naming choices, unresolved
 business questions and affected owners. Check the normal case and counterexample
 again against the resulting model.
 

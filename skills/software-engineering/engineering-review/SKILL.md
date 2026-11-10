@@ -90,8 +90,9 @@ that scope instead of presenting them as newly introduced regressions.
 
 ## Review the result and its explanation
 
-Establish the review phase. Road to Glory first requests implementation review,
-then a separate review of documentation updated to match that accepted result.
+Establish the review phase. Substantial work is reviewed in two phases: first the
+implementation, then, separately, the documentation updated to match that
+accepted result.
 A Phase 1 acceptance is not permission to merge before Phase 2. Review source
 comments with code; review the durable README and documentation in Phase 2. If
 the latter exposes a behavior defect, reopen the affected implementation review.
@@ -102,25 +103,35 @@ Inspect the README and affected durable documentation in its review phase;
 the complete change must leave source and explanation in agreement. A passing test does not excuse a false model,
 duplicated owner, missing requirement or misleading documentation.
 
-Use these supporting methods when available and relevant:
+Apply these criteria where relevant, from the methods the domain loaded for the
+reviewer role:
 
-- **Engineering Practices:** assess justified language, pattern, protocol, framework
+- **Technology choices:** assess justified language, pattern, protocol, framework
   and dependency choices, with current evidence where the choice is consequential.
-- **Domain Modeling:** test meanings and names against actual scenarios and lifecycles.
-- **Vertical Slices:** check coherent ownership, public boundaries and file/module placement.
+- **Domain language:** test meanings and names against actual scenarios and
+  lifecycles.
+- **Ownership and placement:** check coherent ownership, public boundaries and
+  file/module placement.
+- **Reason comments:** check the explanation of reasons, models and invariants
+  beside code.
+- **Test evidence:** assess whether evidence distinguishes the relevant failures.
+- **Documentation:** assess README, agent instructions and durable docs against
+  their distinct owners; check usable entrypoints, concise explanation and
+  accurate primary visuals, with **Editorial SVG Diagrams** for explanatory figures.
+- **Complete replacement:** check whether an agreed replacement reached affected
+  consumers and whether a purported completion still leaves the retired owner active.
+
+Add this skill's own lenses when the change calls for them:
+
 - **MinMax Codebase:** assess system complexity, redundant owners and preserved behavior
   in review mode; do not turn a finding into an unrelated refactoring assignment.
-- **Golden Comments:** check the explanation of reasons, models and invariants beside code.
-- **Marshmallow Tests:** assess whether evidence distinguishes the relevant failures.
-- **Engineering Documentation** and **Editorial SVG Diagrams**:
-  assess README, agent instructions and durable docs against their distinct owners;
-  check usable entrypoints, concise explanation and accurate primary visuals.
-- **All or Nothing:** check whether an agreed replacement reached affected consumers
-  and whether a purported completion still leaves the retired owner active.
+- **Improve Codebase Architecture:** for an explicitly broader architectural
+  assessment, judge language and architecture choices down to interfaces, names,
+  modules and files; report prioritized, evidence-backed improvements as findings.
 
-Read a supporting method once for its specific contribution. Without it, apply
-the bounded review criteria directly and disclose a material limit. Do not start
-a chain of new workflows or ask a caller to invoke itself again.
+Read each lens or loaded method once for its specific contribution. Without one,
+apply the bounded review criteria directly and disclose a material limit. Do not
+start a chain of new workflows or ask a caller to invoke itself again.
 
 ## Inspect rendered UI and graphics in detail
 
@@ -159,9 +170,10 @@ to ask the user to do all the routine visual work or to accept the UI unseen.
 
 Separate a reproducible defect from an uncertain rationale. For a material question,
 state the observed choice, the requirement or evidence in tension with it and what
-answer would resolve the concern. If **Grilling** is available, use its question and
-recommended-answer pattern for a short exchange with the implementer; the implementer
-is the respondent here, not the human user. Do not start a full human interview.
+answer would resolve the concern. Ask only questions whose prerequisites are
+settled, number them and give your recommended answer to each, in a short
+exchange with the implementer; the implementer is the respondent here, not the
+human user. Do not start a full human interview.
 
 Evaluate the reply against evidence and consequences. Accept a supported reason,
 request a correction or preserve an unresolved disagreement. Do not require a
@@ -196,6 +208,6 @@ recheck affected behavior and any newly exposed risk; previous approval does not
 automatically cover new edits. Resolve a discussion only after its disposition
 and required evidence are recorded.
 
-Return the outcome to **Road to Glory** when available or to the existing work owner.
-Road to Glory owns final cleanup, changelog, issue closure and merge sequencing.
-This skill neither deletes plans nor merges merely because the review passed.
+Return the outcome to whoever owns the work. That owner handles final cleanup,
+changelog, issue closure and merge sequencing; this skill neither deletes plans
+nor merges merely because the review passed.

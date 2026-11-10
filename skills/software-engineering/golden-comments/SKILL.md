@@ -144,9 +144,10 @@ The example does not establish that these mechanisms exist in the current task.
 Put such a briefing at the file's natural entrypoint
 when it saves a reader from reconstructing the module's job. Keep it short and
 specific; obvious files need no ceremonial header. Detailed local reasons remain
-beside the mechanism. Use Domain Modeling for precise concepts and Vertical Slices
-for actual ownership and dependencies when those skills are available; a comment
-does not create a new contract or authorize restructuring the code.
+beside the mechanism. Take precise concepts, actual ownership and dependencies
+from the settled model and the code; report an unsettled concept or ownership
+question to the lead. A comment does not create a new contract or authorize
+restructuring the code.
 
 ## Explain where the voltage is
 
@@ -179,10 +180,10 @@ Keep detailed local construction and decision reasons beside their implementatio
 Repository docs own overall architecture, applied-pattern/source navigation,
 cross-module contracts and operating procedures. Link between them instead of
 copying the same explanation. A brief orientation in both places is useful; two
-independently maintained accounts of the same rule are not. Use Engineering
-Documentation directly when available for an affected repository explanation;
-pass the verified change and its source anchors.
-If unavailable, preserve this division of ownership and report a material gap.
+independently maintained accounts of the same rule are not. When a change affects
+a repository explanation, update it or report the verified change and its source
+anchors to the lead. Either way, preserve this division of ownership and report
+any material gap.
 
 Write concise, complete, grammatical sentences in the repository's language.
 Source prose serves the next developer. It does not discuss the coding agent,

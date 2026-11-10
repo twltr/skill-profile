@@ -38,8 +38,8 @@ delegation, no ceremony.
 | You are… | Typical request | Load always | Load when the situation needs it |
 |---|---|---|---|
 | **Implementer** — including every delegated worker | Build, fix, debug, refactor, migrate | `engineering-practices`, `golden-comments`, `vertical-slices` | `domain-modeling` when names or lifecycle are ambiguous; `all-or-nothing` when a change supersedes an existing owner; `marshmallow-tests` when choosing test boundaries or adding tests; `state-of-the-art` for a consequential current-practice question |
-| **Orchestrator** — the lead of substantial work | A feature across capabilities, a cross-system investigation, work that needs resumable state | `road-to-glory` | `puppeteer` to delegate |
-| **Reviewer** | Review a diff, PR or finished package | `engineering-review` | Its lenses, which it selects itself |
+| **Orchestrator** — the lead of substantial work | A feature across capabilities, a cross-system investigation, work that needs resumable state | `road-to-glory` | `puppeteer` to delegate; for ownership, concept or technology decisions, take the implementer role |
+| **Reviewer** | Review a diff, PR or finished package | `engineering-review` | The methods whose criteria apply to the change (`engineering-practices`, `golden-comments`, `vertical-slices`, `domain-modeling`, `marshmallow-tests`, `all-or-nothing`, `engineering-documentation`); Engineering Review adds its lenses itself |
 | **Documenter** | README, agent instructions, architecture or SDK docs maintained with code | `engineering-documentation` | — |
 
 Pick the role from what you will do next, not from the size of the repository.

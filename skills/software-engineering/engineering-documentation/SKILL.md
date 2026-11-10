@@ -1,6 +1,6 @@
 ---
 name: engineering-documentation
-description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs to Golden Comments; standalone manuals without a codebase are writing work, not this method."
+description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs beside the code; standalone manuals without a codebase are writing work, not this method."
 metadata:
   skill-type: leaf
   skill-tree: software-engineering
@@ -92,11 +92,11 @@ an unimplemented guarantee. Missing source access remains a verification limit.
 SDK docs owned with the implementation belong here even when aimed at external
 developers; lack of access does not turn them into a verified standalone manual.
 
-Use Domain Modeling, if available, to resolve ambiguous names, roles and lifecycle
-concepts. Use Vertical Slices, if available, to trace capability ownership, public
-boundaries and dependencies. Preserve the repository's actual vocabulary and
-architecture; a documentation task does not authorize redesigning them. Without
-these methods, verify the same relevant distinctions at their existing owners.
+Verify ambiguous names, roles and lifecycle concepts, and trace capability
+ownership, public boundaries and dependencies, at their existing owners. When a
+distinction stays unresolved there, report it to the lead instead of settling it
+in the docs. Preserve the repository's actual vocabulary and architecture; a
+documentation task does not authorize redesigning them.
 
 ## 2. Give each surface a clear responsibility
 
@@ -105,7 +105,7 @@ these methods, verify the same relevant distinctions at their existing owners.
 | README | What is this, why is it useful, how does it fit, and how can I use or develop it? Give a compelling concrete entry, a fast start and precise routes to deeper material. |
 | Repository AGENTS.md or supported native equivalent | How should an agent work safely and verify changes here? Keep repository-specific commands, non-obvious constraints and task-conditioned pointers. |
 | Docs book / developer or SDK documentation | How does the system fit together, which patterns and external contracts shape it, where are they implemented, and how do I use or operate it? Own system-level explanations and procedures; route exact contracts and local design reasons to their existing owners. |
-| Source commentary | What role does this unit play in the wider system, why was this construction chosen, and what must a future change preserve? Use Golden Comments, if available, for local models, decisions, invariants and failure consequences. |
+| Source commentary | What role does this unit play in the wider system, why was this construction chosen, and what must a future change preserve? Local models, decisions, invariants and failure consequences belong here, beside the code. |
 | Workboard, plans, issues, PRs and changelog | What is proposed, in progress, blocked or shipped? Keep transient coordination and historical changes here. |
 
 README and docs serve both people and agents. Agent instructions are an operating
@@ -156,8 +156,8 @@ precedence before changing agent instructions. A file's presence does not establ
 that a client loads it. Preserve local overrides and one canonical instruction
 owner; do not invent parallel AGENTS.md/CLAUDE.md copies with drifting rules.
 Repository documentation work does not authorize changing global profiles or
-client settings. Use State of the Art, if available, for a consequential unresolved
-host question; verify against current installed behavior or official documentation.
+client settings. Report a consequential unresolved host question to the lead for
+research; verify against current installed behavior or official documentation.
 
 Keep only information that changes how an agent should work here:
 
@@ -287,10 +287,10 @@ a company's name or a general documentation homepage is not sufficient evidence.
 For a protocol such as MCP, identify the implemented version and relevant section,
 then the implementation owner. Separate the standard's requirement from local
 policy and from conformance checks actually performed.
-Use State of the Art, if available, to verify a material claim about current
-practice or an external precedent; record the relevant date/version and limits.
-Use Engineering Practices, if available, for an unresolved design trade-off;
-documentation records the accepted decision rather than inventing a new one.
+Verify a material claim about current practice or an external precedent against
+current sources, or report it to the lead when it needs research; record the
+relevant date/version and limits. Report an unresolved design trade-off to the
+lead; documentation records the accepted decision rather than inventing a new one.
 Keep settled rationale with its chapter or existing decision owner, not duplicated
 in every role page or in a second pattern catalogue. Do not add research citations
 to every page or call an unverified choice “state of the art.”
@@ -372,11 +372,11 @@ patterns, primary-source links, operating instructions and meaningful diagrams.
 A smaller file count alone is not an improvement, and no chapter needs to mirror
 every source file.
 
-When Road to Glory is the caller, return this result to its documentation phase;
-do not restart planning. Use Engineering Review, if available, for independent
-acceptance, or request a bounded native review. Author checks are not independent
-approval. Record the changed owners and actual checks at the task's existing owner,
-not as a diary appended to the README.
+Return this result to whoever loaded this method; do not restart planning.
+Independent acceptance needs a separate review: report that need to the lead or
+request a bounded native review. Author checks are not independent approval.
+Record the changed owners and actual checks at the task's existing owner, not as
+a diary appended to the README.
 
 Read [NOTICE.md](NOTICE.md) when maintaining this method or checking its lineage
 and evidence limits; normal use does not require a research tour.

@@ -4,12 +4,11 @@ description: Plan and maintain substantial Engineering work through roadmaps, ex
 metadata:
   skill-type: flow
   skill-tree: software-engineering
-  skill-requires: engineering-review engineering-documentation
 ---
 
 # Road to Glory
 
-**Flow skill** in Software Engineering. Requires: engineering-review, engineering-documentation. If one is missing, stop, say this skill is incomplete without it, and do not run a partial flow.
+**Flow skill** in Software Engineering. Use it as the orchestrating agent for substantial work; each phase names the role whose pack the Software Engineering domain loads.
 
 Make what is actually left to do visible, executable and safe to resume. This
 method keeps the roadmap and active execution plans aligned. Project-specific instructions or
@@ -25,6 +24,20 @@ choices from the brief and evidence. Report genuinely unresolved direction as an
 explicit prerequisite, with dependent work blocked; do not invent a decision or
 turn ordinary planning into a user interview. Mandatory host approval requirements
 still govern actions outside the task's existing authority.
+
+## Run each phase in its role
+
+The lead holds the orchestrator role and switches role as the work moves. Each
+phase names the role that runs it; when the lead switches, the Software
+Engineering domain loads that role's pack. This flow names roles, not methods.
+
+| Phase | Role | Condition |
+|---|---|---|
+| Plan: scout, decide, cut packages | Orchestrator | Ownership, concept and technology decisions are implementer judgments: take that role for them or give them to an implementer delegate. |
+| Implement | Implementer, including every delegate | A delegate's brief carries the implementer pack in Puppeteer's `Skills:` field. |
+| Review: implementation, then documentation | Reviewer, independent of the author | The lead does not approve work it authored. |
+| Document | Documenter | Starts only after the implementation is accepted. |
+| Close: board, changelog, cleanup, merge | Orchestrator | Starts only after both review phases succeed. |
 
 ## Scale the work before creating records
 
@@ -155,17 +168,18 @@ substantive roadmap work, use `puppeteer`, when available, as the normal method 
 bounded implementation and independent review. Divide research before loading
 the entire affected codebase into the main conversation. Give scouts coherent
 capabilities or questions, then reconcile their evidence and dependencies into
-the plan. Use `vertical-slices`, when available, for repository ownership and
-boundaries; use `domain-modeling`, when available, for unresolved concepts and
-`engineering-practices`, when available, for consequential technology decisions.
+the plan. Repository ownership and boundaries, unresolved concepts and
+consequential technology decisions are implementer judgments: take the
+implementer role for them, or give them to an implementer delegate, so the domain
+loads that role's methods.
 
-During deeper planning of a substantial feature or repository, use
-`grilling-with-agents` when available to let scouts question the main agent and
-challenge its decisions before implementation. Supply the current scope and plan;
-receive the reconciled decisions, reasons, evidence, rejected alternatives and
-remaining blockers. The council asks the user no questions, including when called
-through Engineering Practices or State of the Art. Keep its questions between
-agents; do not relay them as a clarification round or start ordinary Grilling.
+During deeper planning of a substantial feature or repository, convene a council:
+let scouts question the main agent and challenge its decisions before
+implementation. Supply the current scope and plan; receive the reconciled
+decisions, reasons, evidence, rejected alternatives and remaining blockers. The
+council asks the user no questions, including when a technology or
+current-practice question prompted it. Keep its questions between agents; do not
+relay them as a clarification round or start an interview of the user.
 Record the result in the owning plan, with unsupported choices still unresolved.
 A small, clear task does not need a council. If the council handed work to this
 plan, continue from its settled decisions instead of recursively starting it again.
@@ -181,7 +195,9 @@ Handle a small, clear item directly when briefing and integrating another agent
 would cost more than completing and checking it. Existing understanding, uncertainty,
 independent work and the value of a second view matter more than agent count.
 Run independent assignments in parallel when supported; settle shared contracts
-and serialize dependent or shared writes. Puppeteer owns the delegation mechanics.
+and serialize dependent or shared writes. Puppeteer owns the delegation mechanics;
+a delegated worker is an implementer, and its brief's `Skills:` field carries
+the implementer pack so the worker loads those methods itself.
 Direct implementation of a small task does not waive an independent review of
 work being accepted or the detailed verification required by an affected UI.
 
@@ -267,23 +283,24 @@ outstanding human condition distinct in the active work record.
 
 ## Review in two phases
 
-Use **Engineering Review**, when available, for independent acceptance. The main
-agent may review implementation by others when qualified and able to inspect it;
-otherwise it assigns a suitable reviewer. If it authored the work, another agent
-must review it. Author checks never count as independent approval.
-Without that supporting skill, preserve the same independence and evidence
-requirements through native tools. If no independent reviewer is available,
-record the open gate rather than approving one's own work.
+Independent acceptance runs in the reviewer role; the domain loads its pack for
+whoever takes it. The main agent may review implementation by others when
+qualified and able to inspect it; otherwise it assigns a suitable reviewer. If it
+authored the work, another agent must review it. Author checks never count as
+independent approval. If the reviewer's methods are unavailable, preserve the same
+independence and evidence requirements through native tools. If no independent
+reviewer is available, record the open gate rather than approving one's own work.
 
 ### Phase 1: implementation and code review
 
-Complete the feature and its behavioral verification, including rendered UI and
-independent detail review where relevant. Update source comments that explain the
-changed mechanism as part of the code. Review requirements, correctness, architecture,
-tests and those explanations before commissioning the broad documentation refresh.
-Use MinMax Codebase, Vertical Slices, Engineering Practices and Golden Comments
-when available for their relevant review criteria. Return defects to the author
-and recheck the corrected implementation. Passing this phase does not finish the PR.
+Implementers complete the feature and its behavioral verification, including
+rendered UI and independent detail review where relevant. They update source
+comments that explain the changed mechanism as part of the code. The reviewer
+then reviews requirements, correctness, architecture, tests and those
+explanations before the broad documentation refresh is commissioned, applying
+the criteria for complexity, ownership and boundaries, technology choices and
+reason comments where relevant. Return defects to the author and recheck the
+corrected implementation. Passing this phase does not finish the PR.
 
 ### Phase 2: documentation and documentation review
 
@@ -291,10 +308,11 @@ Once the implementation is accepted, give its reviewed revision, behavior and
 changes to bounded documentation scouts through **Puppeteer**, when available.
 They inspect the affected README, repository agent instructions, setup instructions, contracts, diagrams and
 explanations, returning stale or missing material with exact locations and reasons.
-The main agent reconciles the findings and assigns the documentation update.
+The main agent reconciles the findings and assigns the documentation update to
+the documenter role.
 
-Use **Engineering Documentation** when available for the update, including
-**Unslop** when available for the assembled wording. Use **Editorial SVG Diagrams**
+The documenter makes the update with that role's methods, including **Unslop**
+when available for the assembled wording. Use **Editorial SVG Diagrams**
 when available to make relationships and flows visible and replace the paragraphs
 the figure makes unnecessary. Keep README purpose and quick start concise, link deeper durable
 knowledge and preserve essential reasons and conditions. No transient progress
@@ -339,8 +357,8 @@ remaining blockers and the final verification result visible on the PR; reconcil
 the linked issue at milestones. Confirm remote writes by reading back the provider's
 result. A prepared comment or local report is not a published review.
 Material questions and the implementer's answers belong in that record even when
-agents also exchanged them directly. Engineering Review, when available, owns
-the questioning and finding format; this workflow owns progress and closure.
+agents also exchanged them directly. The reviewer role's methods own the
+questioning and finding format; this workflow owns progress and closure.
 
 ## Close the work in the same slice
 
@@ -353,8 +371,9 @@ content to the proper owner before deleting its temporary carrier.
 For remote work, make this cleanup part of the reviewed change before merge.
 Include it in the branch/PR and have an independent reviewer check the final cleanup
 diff and relevant checks before merging; do not add unreviewed behavior under cleanup.
-Use All or Nothing, when available, to verify complete retirement of affected old
-owners. Merge or publish only within the task's established authorization.
+When the change supersedes an existing owner, have the reviewer verify complete
+retirement of the affected old owners. Merge or publish only within the task's
+established authorization.
 Preserve a useful historical plan link by pinning it to its last committed revision
 before removal, or retain the necessary decision summary in the issue when the plan
 was never remotely accessible. Close the issue only when its acceptance conditions

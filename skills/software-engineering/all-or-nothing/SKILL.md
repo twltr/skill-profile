@@ -88,8 +88,8 @@ Distinguish local source verification from a deployed or migrated system.
 
 Keep nearby explanations and maintained contracts current in the same change.
 Review the combined diff for old assumptions, duplicate owners and unrelated
-edits. Preserve evidence still needed by open work. When Road to Glory or another
-active workflow owns closure, return transition evidence and remaining retirement
+edits. Preserve evidence still needed by open work. When an active plan or
+workflow owns closure, return transition evidence and remaining retirement
 items to that owner; leave its plan and working artifacts until its review and
 closeout gates pass. For direct work without an enclosing workflow, finish cleanup
 within the authorized scope after the required verification and review. Retain the
@@ -100,9 +100,9 @@ and remaining limits. If an external migration or decision is still outstanding,
 name that boundary explicitly; do not report the whole transition as complete.
 
 If **Puppeteer** is available for a broad transition, use it to investigate or
-change independent consumers after the shared target contract is settled. If
-**Road to Glory** is available for substantial work, keep sequencing, verification
-and cleanup in its active plan. If **Engineering Review** is available, use it
-for independent review of the complete result. Return to an existing caller rather
-than starting the same workflow again; without these methods, keep the same
-ownership and evidence boundaries in the task's existing workflow.
+change independent consumers after the shared target contract is settled. For
+substantial work, keep sequencing, verification and cleanup in the active plan.
+The complete result needs independent review; report that need to the lead.
+Return the result to whoever loaded this method rather than starting the same
+workflow again; without an enclosing workflow, keep the same ownership and
+evidence boundaries in the task's existing workflow.

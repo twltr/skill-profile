@@ -16,8 +16,8 @@ error surface, duplication, search and operational machinery. This is deliberate
 structural work, not a line-count contest.
 
 **Start structural changes only on an explicit human request for that work.**
-An authorized Engineering Review or Road to Glory workflow may read this method's
-criteria for a bounded review; that does not authorize refactoring. A reference
+An authorized reviewing or planning workflow may read this method's criteria
+for a bounded review; that does not authorize refactoring. A reference
 in another skill does not by itself authorize implementation. An analysis-only
 assignment ends with findings and a proposal. Once the human has authorized the improvement,
 complete the ordinary steps within that scope without asking again for each edit.
@@ -115,9 +115,8 @@ requirement. Check the actual contracts and loading paths after removal.
 
 Compare the complete resulting system with the stated Min-Max gain, including
 its consumers and operating parts. A smaller helper beside unchanged parallel
-logic has not completed the consolidation. Keep source explanations current where
-the construction changed; use **Golden Comments** when available for their models,
-reasons and invariants.
+logic has not completed the consolidation. Keep the source explanations of
+models, reasons and invariants current where the construction changed.
 
 Update the owning workboard and outcome record, remove completed temporary plans
 and artifacts, and finish cleanup in the same work. Preserve evidence still needed

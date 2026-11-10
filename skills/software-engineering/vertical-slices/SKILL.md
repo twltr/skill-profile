@@ -84,10 +84,10 @@ Read the affected code, current vocabulary, requirements and architecture.
 Trace a representative behavior from its entrypoint through decisions, state
 and outputs. Distinguish the actual model from the requested change.
 
-If **Domain Modeling** is available, use it when concepts, lifecycles or names need
-clarification; pass the affected scenarios and receive the settled model. If it
-called this skill to map an already-settled model, use that model without calling
-back. Without it, resolve the relevant meanings through the checks below.
+When a settled model is supplied, map it as given. Otherwise resolve the relevant
+meanings through the checks below. When concepts, lifecycles or names stay
+ambiguous, report that to the lead with the affected scenarios instead of settling
+them here.
 
 Clarify terms with real counterexamples: can two concepts change independently,
 have different lifetimes or mean different things across contexts? Keep the
@@ -152,7 +152,7 @@ Separate the owner of runtime sequencing from application composition when those
 are different responsibilities. Creating dependencies at startup does not by itself
 explain which stage runs next or how a failed stage affects the remaining run.
 Do not call every coordinator a Composition Root, or every status enum a State
-pattern. Engineering Practices owns choosing and accurately naming the mechanism.
+pattern. Name a mechanism only after checking its defining roles in the code.
 
 Give each module one intentional public surface. Cross-module callers use it,
 never deep internals. Describe the inputs, results, error vocabulary, ordering
@@ -175,13 +175,12 @@ builds, tests or operation. A one-off inspection does not earn a permanent gate;
 use existing commands and actual requirements rather than adding administration
 to complete an ordinary change.
 
-Use Golden Comments, if available, during implementation for each affected important
-module's local briefing and decision reasons. Give it the actual model, accepted
-decisions and code; it returns explanations at their source owners. Without it,
-preserve purpose, system context, construction, reasons, public boundary and change
-constraints directly. Keep the briefing at the existing package documentation or
-entrypoint and link wider architecture instead of duplicating it. A self-explanatory
-leaf needs no separate briefing. A design proposal identifies the explanation's
+During implementation, give each affected important module a local briefing and
+its decision reasons, written from the actual model, accepted decisions and code.
+Preserve purpose, system context, construction, reasons, public boundary and change
+constraints at their source owners. Keep the briefing at the existing package
+documentation or entrypoint and link wider architecture instead of duplicating
+it. A self-explanatory leaf needs no separate briefing. A design proposal identifies the explanation's
 owner; placing it in source requires authorized implementation.
 
 ## Invariants live with their mechanism
@@ -236,21 +235,21 @@ or make evolution safer: a state machine, registry, factory, adapter, repository
 event log, outbox or process manager can each earn a place. A pattern that adds a
 layer without reducing the search or error surface is decoration.
 
-If **Engineering Practices** is available, use it for consequential language,
-architecture, framework, provider, security, persistence, protocol or runtime
-choices. If **State of the Art** is available and current evidence is needed,
-use its research method through that decision owner. Without those methods,
-consult current primary sources and established literature directly. Keep the
-accepted choice and rationale at the repository's canonical design owner.
+Consequential language, architecture, framework, provider, security, persistence,
+protocol or runtime choices are decisions of their own, not a by-product of the
+layout. Consult current primary sources and established literature for them;
+when such a choice needs dedicated current-practice research, report it to the
+lead. Keep the accepted choice and rationale at the repository's canonical
+design owner.
 Do not invent citations or rename a system after a methodology. Bounded contexts,
 ports, events and invariants matter through the boundaries they express.
 
 If **Puppeteer** is available, use it for substantial exploration of independent
 capabilities or competing boundaries before loading the whole system into the
 main context. Scouts return current owners, contracts, evidence and disagreements;
-the main agent reconciles the architecture. If **Grilling with Agents** is already
-the caller, answer its scoped structural questions instead of starting another
-council. A known local change needs no parallel architecture study.
+the main agent reconciles the architecture. When this method answers scoped
+structural questions, return the answers to whoever loaded it; do not start a
+council of its own. A known local change needs no parallel architecture study.
 
 ## Check and deliver the design
 

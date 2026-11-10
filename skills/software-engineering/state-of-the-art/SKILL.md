@@ -160,10 +160,10 @@ active caller's plan, return it there instead of creating a parallel owner.
 
 ## Use related methods only when they fit
 
-- If **Engineering Practices** is available, use it for evaluating the actual
-  engineering trade-offs; this skill supplies the scoped evidence and citations.
-  If it is already the caller or an active ancestor, return the evidence and
-  recommendation to that owner instead of invoking it again.
+- This method supplies the scoped evidence and citations; evaluating the actual
+  engineering trade-offs stays with the lead. Return the evidence and
+  recommendation to whoever loaded this method instead of reopening an
+  evaluation already under way.
 - If **Puppeteer** is available, delegate independent, meaningful research questions
   or a second design comparison before loading large source sets into the lead's
   context. Keep briefs bounded, prohibit recursive delegation, and verify decisive
@@ -176,21 +176,19 @@ active caller's plan, return it there instead of creating a parallel owner.
   incompatible assumptions and combined trade-offs before making the handoff;
   separate plausible reports do not yet establish a coherent design. Follow the
   host's real capacity and use waves when needed. Do not delegate a simple lookup.
-- If **Grilling with Agents** is available and the decision is technical and
-  consequential, use it to challenge the evidence and candidate decision. It always
-  returns a reasoned report without user questions; no mode selection is needed.
-  Return decisions, reasons and unresolved prerequisites to the caller and its
-  existing plan; do not relay council questions to the user or launch
-  another council if one is already active in the calling workflow. Without it, challenge the strongest
-  alternative and assumptions directly.
-- If **Domain Modeling** is available and concepts or names are unsettled, use it
-  only for those questions. If **Vertical Slices** is available and boundaries or
-  module structure are in scope, use it for structure. Do not duplicate their
-  methods in this research or invent a glossary/architecture owner here.
-- If **Road to Glory** is available and accepted downstream work is substantial,
-  hand its owner the settled evidence and decisions. If this research was requested
-  by an active Road to Glory plan, return there; do not create a second plan or
-  start implementation. Small verified choices need no roadmap entry.
+- When the decision is technical and consequential, challenge the evidence and
+  candidate decision: argue the strongest alternative and test the assumptions,
+  without asking the user questions. If an agent council is already active in
+  the calling workflow, return decisions, reasons and unresolved prerequisites to
+  it and its existing plan; do not relay council questions to the user or launch
+  another council.
+- When concepts or names are unsettled, or boundaries and module structure are
+  in scope, report those questions to the lead. Do not settle them inside this
+  research or invent a glossary/architecture owner here.
+- When accepted downstream work is substantial, hand the settled evidence and
+  decisions to the owner of its plan. If an active plan requested this research,
+  return there; do not create a second plan or start implementation. Small
+  verified choices need no roadmap entry.
 
 If a supporting skill or research service is unavailable, continue with the
 bounded work possible, say what was not applied or accessible, and do not imply it

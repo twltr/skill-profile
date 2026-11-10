@@ -49,12 +49,11 @@ performance. Start with observed friction and the parts that are changing.
 
 ## 2. Investigate from broad to fine
 
-If **Engineering Practices** is available, use it for current research, language,
-framework, dependency, architecture and protocol comparisons. If **Domain Modeling**
-is available, use it for names, relationships and lifecycle distinctions. If
-**Vertical Slices** is available, use it for ownership, boundaries, interfaces,
-file/module placement and Shared Machinery. Load only the contribution needed at
-each level; the three methods are not three competing owners of the same decision.
+Three lenses recur: current research with language, framework, dependency,
+architecture and protocol comparisons; names, relationships and lifecycle
+distinctions; and ownership, boundaries, interfaces, file/module placement and
+Shared Machinery. Apply only the lens needed at each level; the three are not
+three competing owners of the same decision.
 
 Examine in this order, adjusting to the task:
 
@@ -67,11 +66,11 @@ Examine in this order, adjusting to the task:
 If **Puppeteer** is available, delegate independent investigations before loading
 all source into the main context. Give each scout an evidence question and return
 shape, not a license to refactor. Settle shared assumptions before detailed designs.
-If **Grilling with Agents** is available, use it when competing consequential
-options need challenge. Its questions stay between agents; return decisions,
+When competing consequential options need challenge, ask the lead for a
+challenge between agents. Its questions stay between agents; return decisions,
 reasons and unresolved prerequisites without asking the user or relaying council
-questions. Ordinary Grilling is the separate user-chosen human interview, not a
-mode of this council. Preserve unresolved prerequisites instead of guessing or
+questions. A human interview is a separate step the user chooses, not a mode of
+this council. Preserve unresolved prerequisites instead of guessing or
 letting discussion loop indefinitely.
 
 When a consequential interface admits genuinely different designs, compare a few
@@ -95,27 +94,26 @@ For each material candidate, show:
 
 Use diagrams when they clarify ownership or behavior; a report does not require
 HTML, a CDN or opening a foreground browser. Temporary research belongs in `.tmp/`.
-If **MinMax Codebase** is available, use its review criteria to compare the whole
-system's complexity and preserve the behavioral oracle. This does not start a
-refactoring. If **Golden Comments** is available, use it to evaluate whether the
-important models, reasons and invariants are understandable beside their mechanisms.
+Compare the whole system's complexity: the state, error surface, duplication,
+search and operational machinery its capability needs. Preserve the behavioral
+oracle; this does not start a refactoring. Evaluate whether the important
+models, reasons and invariants are understandable beside their mechanisms.
 
 ## 4. Hand off accepted work
 
 Recommend a course with reasons. The user's request and existing authority decide
-whether it is accepted for implementation; a council score does not. If **Road to
-Glory** is available, pass agreed outcomes, decisions, reasons, rejected alternatives,
-sources, dependencies and verification to its plan. If that plan is already active,
-update the existing owner instead of restarting the workflow. Keep later work coarse
-until its prerequisites settle. Local
-work uses roadmap and plans; remote work adds meaningful issues, PRs and traceable
-review. Do not create one ticket per opinion or file.
+whether it is accepted for implementation; a council score does not. Pass agreed
+outcomes, decisions, reasons, rejected alternatives, sources, dependencies and
+verification to the planning owner. If a plan is already active, update it
+instead of restarting the workflow. Keep later work coarse until its
+prerequisites settle. Local work uses roadmap and plans; remote work adds
+meaningful issues, PRs and traceable review. Do not create one ticket per
+opinion or file.
 
-If implementation was authorized, continue through the active Road to Glory plan.
-If **All or Nothing** is available, apply it to an agreed replacement and its
-affected consumers. Preserve needed tests and temporary migration evidence until
-the replacement proves the same intended capability; retire old owners in the
-authorized lifecycle. Do not introduce permanent coexistence merely to avoid
+If implementation was authorized, continue in the active plan. Carry an agreed
+replacement through all its affected consumers. Preserve needed tests and
+temporary migration evidence until the replacement proves the same intended
+capability; retire old owners in the authorized lifecycle. Do not introduce permanent coexistence merely to avoid
 finishing the migration.
 
 Return the assessment, recommendation, actual planning artifacts and open gates.

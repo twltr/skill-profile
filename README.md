@@ -16,7 +16,7 @@ the skills route to each other so an agent loads only what a task needs.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/skill-architecture.dark.svg">
-  <img src="figures/skill-architecture.svg" width="840" alt="The agent starts in the middle with six core skills and three domain trees; edges point only down or along the Road to Glory flow.">
+  <img src="figures/skill-architecture.svg" width="840" alt="The agent starts in the middle with five core skills and three domain trees; edges point only down or along the Road to Glory flow.">
 </picture>
 
 Picture a room. The agent stands in the middle. Around it are **core skills** it
@@ -44,14 +44,22 @@ pull in half the collection.
 
 | Type | What it is | Selected | Loads | In this profile |
 |---|---|---|---|---|
-| **Core** | Standalone method useful in any context | Implicitly | Nothing | Unslop, MinMax Tokens, Puppeteer, Skill Issue, Grilling with Agents, Workspace Management |
+| **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
 | **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
 | **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
 | **Flow** | Inner node that runs steps left to right, with roles | Through its domain | Its step skills | Road to Glory |
-| **Leaf** | Self-contained method | Through a routing skill or by name | Nothing | Golden Comments, Customer Writing, Marshmallow Tests, … |
+| **Leaf** | Self-contained method, always invoked manually | Through a routing skill or by a person | Nothing | Golden Comments, Customer Writing, Grilling, Grilling with Agents, … |
 
 Domain, parent and flow skills are **routing skills**: nodes that have
-children. A domain routes in one of two ways. Good Writing **selects** the one
+children.
+
+**Selection decides the type.** What lies on the agent's surface — what it may
+select by itself — is either a core skill or a domain root. Everything else is
+invoked manually: by a routing skill above it, or by a person. There is no
+manual core skill. Grilling, the interview you start with "grill me", is a leaf
+whose root is you: you call it, it loads nothing, and it works on its own.
+
+A domain routes in one of two ways. Good Writing **selects** the one
 specialist that owns the result. Software Engineering selects by **role** —
 implementer, orchestrator, reviewer, documenter — and loads that role's
 **pack**, the methods that always apply together in that role.

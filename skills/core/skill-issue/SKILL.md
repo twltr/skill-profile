@@ -162,13 +162,15 @@ selected, what it may load, and where it sits:
 
 | Type | Role in the tree | Selection | Loads |
 |---|---|---|---|
-| **Core** | Stands in the middle; useful in any context | Implicit | Nothing |
+| **Core** | Stands in the middle, on the agent's surface; useful in any context | Implicit | Nothing |
 | **Domain** | Root of a tree; establishes the context and routes into it | Implicit | Its children |
 | **Parent** | Inner node; applies its children together | Explicit-only | Its children |
 | **Flow** | Inner node; runs steps left to right with roles | Explicit-only or via its domain | Its step skills |
-| **Leaf** | Self-contained method | Explicit-only | Nothing |
+| **Leaf** | Self-contained method, invoked by a routing skill or a person | Explicit-only | Nothing |
 
-Domain, parent and flow skills are **routing skills**. The agent starts in the
+Domain, parent and flow skills are **routing skills**. Selection decides the
+type: a skill the agent may select by itself is core or domain; a skill only a
+person calls by name is a leaf whose root is that person. The agent starts in the
 middle, with core skills and domain roots; it moves down a tree, never up and
 never across into another tree. A leaf must work when a user calls it by name,
 so it never assumes or names a caller. A flow orders skills that stay usable
@@ -339,9 +341,9 @@ separate from edits and avoid numeric scores without criteria. Report desk
 review, executed checks and fresh model trials separately: a metadata check
 does not prove reliable selection or good output.
 
-If **Grilling with Agents** is available and an authorized collection review
-needs deeper challenge, give independent agents bounded skills to test against
-realistic uses; the lead answers and fixes supported issues.
+When an authorized collection review needs deeper challenge, give independent
+agents bounded skills to test against realistic uses; the lead answers and
+fixes supported issues.
 
 ## Install only when that is part of the task
 

@@ -123,7 +123,7 @@ directly linked. Use a structured list or table where appropriate, not a duplica
 essay. Keep literal commands, identifiers and source citations searchable outside
 the image; do not rely on SVG metadata alone.
 
-If Editorial SVG is unavailable, use a faithful available representation and
+If Editorial SVG Diagrams is unavailable, use a faithful available representation and
 report the missing method; a required figure remains open. Preserve verified
 meaning and supported output formats when revising an existing figure.
 
@@ -143,7 +143,7 @@ alternatives. Where a material contract remains unclear, state the exact source 
 
 Revise the canonical explanation in place. Keep publication history, temporary
 progress and open work with their existing record owner rather than appending
-dated commentary to the manual. Return to the calling workflow without starting
-another router, council or implementation task.
+dated commentary to the manual. Return the manual to whoever asked for it,
+without starting another router, council or implementation task.
 
 Read [NOTICE.md](NOTICE.md) only when maintaining this method or checking its lineage.

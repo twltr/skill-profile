@@ -1,6 +1,6 @@
 ---
 name: workspace-management
-description: Find, read and keep current the local Workspace that maps a body of work spanning several repositories, systems, providers or document stores, so the agent is onboarded without being told. Use at the start of any work on a project, client, product or system — even when the user only says "let's work on X" — and whenever work changes where its parts live or what state they are in. Propose, never create unasked, a Workspace when multi-part work has none; a single repository never needs one.
+description: Find, read and keep current the local Workspace that maps a body of work spanning several repositories, systems, providers or document stores, so the agent is onboarded without being told. Use at the start of any work on a project, client, product or system — even when the user only says "let's work on X" — and whenever work changes where its parts live or what state they are in. Also keeps the machine's agent environment — instruction files, agent profile, skill collection — current at session start. Propose, never create unasked, a Workspace when multi-part work has none; a single repository never needs one.
 metadata:
   short-description: "Core: Onboard from local Workspaces and keep them current"
   skill-type: core
@@ -52,12 +52,14 @@ it is Workspace-worthy. If everything lives in one repository, it is not.
 
 ```text
 ~/Workspaces/
-├── README.md        this machine's view: its environment, clusters of
+├── README.md        this machine's view: its agent environment, clusters of
 │                    Workspaces, where shared knowledge lives
 ├── AGENTS.md        rules for every Workspace on this machine
+├── CLAUDE.md        a pointer to AGENTS.md (one line: @AGENTS.md)
 └── <workspace>/
     ├── README.md    the map: purpose, parts, their state, boundaries
-    └── AGENTS.md    how an agent enters: which part to open for what
+    ├── AGENTS.md    how an agent enters: which part to open for what
+    └── CLAUDE.md    a pointer to AGENTS.md
 ```
 
 Use `${HOME}/Workspaces/` unless the host has an established alternative.
@@ -66,6 +68,38 @@ the Workspaces into clusters — clients, products, internal operations — so a
 agent can find the right one from a vague request. Provider-specific binding
 files are allowed only where a provider needs local configuration; they consume
 the Workspace and never describe it.
+
+## The agent environment
+
+The root `README.md` also describes how agents are set up on this machine, in
+an **Agent environment** section: the repository that owns the global agent
+profile, the repository that owns the skill collection, the command that
+installs both into the local clients, and where the local checkouts live. These
+are parts of the machine's view like any other, and they change how every
+session behaves.
+
+**One instruction file per level, the others point to it.** At the root, in
+each Workspace and in the global profile, `AGENTS.md` is the canonical
+instruction file. Files that other agents read — `CLAUDE.md`, `GEMINI.md` and the
+like — contain only a pointer to it, such as Claude Code's `@AGENTS.md` import,
+or are generated from it by the profile's installer. Never maintain two copies:
+they drift, and each agent then follows different rules.
+
+**Check it once at the start of a session.** When the root `README.md` names an
+agent environment:
+
+1. Fetch the profile and skill repositories and compare the local checkouts with
+   their remotes.
+2. If a remote has new commits and the local checkout is clean, fast-forward it
+   and run the named install command, then read its result.
+3. If nothing is new and the install command's audit reports no difference,
+   assume the machine is current and go on with the task — no further checks.
+4. If a checkout has local changes, is ahead of or diverged from its remote, or
+   the audit reports a conflict, report that and do not overwrite anything.
+
+A plain fetch and audit cost seconds; skip the check when the session already
+ran it. Changing the profile or the skills themselves remains work in their own
+repositories, under their own instructions.
 
 ## What a Workspace README holds
 
@@ -107,6 +141,9 @@ documents or transient work notes in a Workspace. They keep their own owners.
   one provider; shall I create a Workspace for it?" Create it only after the
   user agrees. Never create one for a single repository, and never rename,
   merge or retire a Workspace on your own.
+- **Keep instruction files single.** When you change a Workspace's rules, edit
+  its `AGENTS.md`; make sure every other agent's instruction file there is only
+  a pointer to it.
 - **Stay local.** A Workspace describes this machine. Its existence proves
   nothing about another computer or a cloud session; a cloud agent without a
   verified mapping must stop at an unverified source instead of guessing a copy.
@@ -119,8 +156,9 @@ documents or transient work notes in a Workspace. They keep their own owners.
 2. Inventory every important part: repository, running system, provider,
    document root, shared drive, knowledge base. Record its role, location and
    instruction owner. Never infer a missing part from an old path.
-3. Write `README.md` with the sections above and `AGENTS.md` so an entering
-   agent reads the map, selects the right part and then that part's own rules.
+3. Write `README.md` with the sections above, `AGENTS.md` so an entering agent
+   reads the map, selects the right part and then that part's own rules, and a
+   `CLAUDE.md` (or the host's equivalent) that only points to `AGENTS.md`.
 4. Add the Workspace to the root `README.md` under its cluster; create the root
    files first if this is the machine's first Workspace.
 5. Point requested AI applications at the Workspace directory as their project
@@ -147,7 +185,8 @@ configuration.
 
 ## Done when
 
-The root and the Workspace's two files agree; every live part's location
+The root and the Workspace's files agree, and every non-canonical instruction
+file only points to `AGENTS.md`; every live part's location
 resolves on this host; the current state matches reality; plans and notes are
 referenced, not copied; requested AI projects enter through the Workspace; and
 provider claims are verified. Report any cloud, restart or provider-interface

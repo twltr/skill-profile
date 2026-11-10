@@ -107,7 +107,7 @@ and result verification. Assign coherent domains, capabilities or decision quest
 than mandatory personas or one agent per folder. Scale to the work and available
 slots; use waves where parallel capacity is limited.
 
-Reuse the caller's selected decision dimensions. A new application calls for a
+Reuse decision dimensions already selected for this work. A new application calls for a
 broad initial assessment; a feature calls for its affected concerns. Assign a
 coherent topic or independent subquestion, not automatically one agent per listed
 concept. A difficult topic may benefit from several independent investigations.
@@ -124,9 +124,8 @@ is available, use it for those decisions; do not claim an uninstalled skill
 was invoked or create a competing glossary by default.
 
 If **Engineering Practices** is available, use it for unresolved language, framework,
-protocol, architecture and dependency choices, with current primary evidence. If
-it is the caller or an active ancestor, challenge its supplied alternatives and return the decision;
-do not invoke it recursively or start a new research council inside the council.
+protocol, architecture and dependency choices, with current primary evidence.
+Do not start a new research council inside the council.
 
 Repository and module names should express settled concepts and avoid collisions.
 Check an existing naming convention before inventing one. A name for a local
@@ -170,11 +169,9 @@ depend on it. Do not mistake absence of evidence for absence of a problem.
 
 ## 4. Resolve within the team; report unresolved prerequisites
 
-Use one rule for every entry: this method asks the user no questions. It applies
-when the user invokes it directly and when another authorized workflow uses it.
-There is no question-budget option or separate technical mode. A caller must not
-relay council questions to the user or start a human interview to work around
-this boundary.
+Use one rule for every entry: this method asks the user no questions. There is
+no question-budget option or separate technical mode. Do not relay council
+questions to the user or start a human interview to work around this boundary.
 
 Decide from the supplied requirements and verified evidence. Choose defensible
 trade-offs within the brief, label assumptions and return the reasoning to the
@@ -205,16 +202,14 @@ Consensus or a numerical score is not proof of correctness or a perfect design.
 
 Summarize decisions the lead made, why they were made, relevant evidence, rejected
 alternatives, previously supplied user decisions, remaining assumptions and what
-would reopen an important choice. Direct invocation returns that report to the
-user without questions or a confirmation gate. It does not automatically start
+would reopen an important choice. Return that report to the user without
+questions or a confirmation gate. It does not automatically start
 Road to Glory or create planning artifacts before the requested planning scope
 calls for them.
 
-When a workflow called the council, return the same result to that owner. If a
-Road to Glory plan already owns the work, integrate decisions, reasons, evidence,
-rejected alternatives and unresolved prerequisites there, including when the
-immediate caller was Engineering Practices or State of the Art. Do not leave the
-rationale only in chat or create a parallel council log.
+If an active plan already owns the work, integrate decisions, reasons,
+evidence, rejected alternatives and unresolved prerequisites there. Do not leave
+the rationale only in chat or create a parallel council log.
 
 For engineering work that includes roadmap planning, if **Road to Glory** is
 available, hand off with:
@@ -229,7 +224,7 @@ available, hand off with:
 - Verification needs, including rendered UI and independent review where applicable.
 - Remote issue/PR expectations when a remote exists; local work needs no ticket store.
 
-For other requests limited to a decision report, return it to the caller or user
+For other requests limited to a decision report, return it to the user
 without creating repositories, plans or tickets. When planning is in scope but
 Road to Glory is unavailable, preserve the decisions and next work at the task's
 existing planning owner.
@@ -238,7 +233,7 @@ Create a missing local repository when repository creation is part of the author
 task and its destination is settled. Otherwise provide the concrete proposal and
 name the unresolved destination. Planning alone does not authorize product
 implementation or remote publication. Road to Glory owns planning artifacts and
-lifecycle; this skill does not start another council when it returns to that caller.
+lifecycle; handing off to it does not start another council.
 
 ## Another example: a new repository
 
@@ -265,9 +260,7 @@ as a limitation without asking the user. Return an outline, decisions, reasons
 and source gaps at the document's owner; do not create an engineering repository,
 roadmap or issue tracker for a writing task.
 
+Direct entry is explicit: a person starts this method, directly or after a
+routing skill suggests it. Encountering a complex task does not start it.
 
 Source influences are recorded in [NOTICE.md](NOTICE.md).
-
-Direct entry is explicit. A declared step in an authorized planning workflow may
-resolve and read this method deliberately when the host permits composition;
-merely encountering a complex task does not bypass native invocation controls.

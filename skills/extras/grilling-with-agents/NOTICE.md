@@ -19,3 +19,11 @@ between a five-question allowance and a technical zero-question mode.
 Domain Modeling, Codebase Design / Design It Twice, Wayfinder and To Tickets at
 the same upstream revision also informed the composition; they are not mandatory
 runtime dependencies. Ordinary Grilling remains the separate human-interview method.
+
+## 2026-11-10 quality pass
+
+Passages that assumed another workflow calls this method, including the names of
+Engineering Practices and State of the Art as callers, were removed or made
+caller-neutral: as a shared leaf, a person starts it, directly or after a routing
+skill suggests it. The closing note on direct entry now says the same. The
+method, its no-question rule, examples and hand-off content are unchanged.

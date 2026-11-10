@@ -1,0 +1,34 @@
+{
+  "source_revision": "5ef0407d798a6f59df7bfda34035e5c2a783234f",
+  "reason": "Preserve Software Engineering router and Skill Issue before making pack loading unconditional and counting shell reads in trigger_window.py (2026-11-10).",
+  "packages": [
+    "skills/software-engineering/software-engineering",
+    "skills/core/skill-issue"
+  ],
+  "archive": "archive/source-20261110T114708Z-se-router-pack-loading-5cf9083d-9ba5-4b90-a8bc-e7352b0c8a5e.zip",
+  "files": {
+    "skills/software-engineering/software-engineering/NOTICE.md": "b67301c02048f9f50925f55e99a5ce7757f9416d9371d61b6e5f1f9a8e59315a",
+    "skills/software-engineering/software-engineering/SKILL.md": "a1e18efc3b18b79f03aad1ad7a95e2d154e0eb6de0fb9a8fbe67783a1ec76491",
+    "skills/software-engineering/software-engineering/agents/openai.yaml": "8f7c3c34492946b199992526352c9d9a353f4b94d9903c52518d866fe01305f0",
+    "skills/software-engineering/software-engineering/assets/icon-small.png": "25a12b4d7ea3b786347c5b2cda681091d61175fb853164a7b3e8108ed52a8be0",
+    "skills/software-engineering/software-engineering/assets/icon-small.svg": "82d7dbdd43c1229f31f2c5ca8809aaccb4b275041c6253a9b6b8c00d3107fad4",
+    "skills/software-engineering/software-engineering/assets/icon.png": "04ece9e3fdc462fba8c438fc556ef9e3d7ace073e25282061bd84628c5771914",
+    "skills/software-engineering/software-engineering/assets/icon.svg": "82d7dbdd43c1229f31f2c5ca8809aaccb4b275041c6253a9b6b8c00d3107fad4",
+    "skills/software-engineering/software-engineering/trigger-evals/holdout.json": "dacc2476d9b96ac3db33b51190121871609c0d42c8047fc51e11a4898a4c773e",
+    "skills/software-engineering/software-engineering/trigger-evals/train.json": "2da6c3e6c868cbdf936ad02e9621f332967642f91917a9ba0227cbd2dc1a9634",
+    "skills/core/skill-issue/LICENSE-Anthropic.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "skills/core/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/core/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/core/skill-issue/NOTICE.md": "93bd49a95c9b82ff1c78fa19b9d636dcd262a63a6bcdf18d8f24357a914c1d32",
+    "skills/core/skill-issue/SKILL.md": "eaae48d156ec93e7fa7bf0a4479a9841c8929c94494a35b2551d58bb88357c7a",
+    "skills/core/skill-issue/agents/openai.yaml": "147165491ba35069993de9d5ecc82da834c350977eb1347e4c1425cb65499000",
+    "skills/core/skill-issue/assets/icon-small.png": "825e3e2973788b4896eb853032cd9a5000f8c00a8ebf1dc9571801d56e63305f",
+    "skills/core/skill-issue/assets/icon-small.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/assets/icon.png": "3a851e8ce0490057f9feec042e1452c9cdb1467447ef602658bd0b7ab95184e7",
+    "skills/core/skill-issue/assets/icon.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/references/evaluation.md": "e08c9333b1cb9a6f88f6cff206443d93803e1158a0f842452ea8c85f72e893f4",
+    "skills/core/skill-issue/references/installation.md": "d13941597731f74b6b20d68551c0bc73d8b8d2410ce9f55d6a4a713c2b492c7c",
+    "skills/core/skill-issue/scripts/skill_graph.py": "2cf0773223c929443291a0b293fd8d8fc3a5c0a3046a9dc5c8c97ed1ef4801bd",
+    "skills/core/skill-issue/scripts/trigger_window.py": "68eb71cd15e86bc23991169ef9dbc8c96426c91df7f5cd03bfc65d22eda29e07"
+  }
+}

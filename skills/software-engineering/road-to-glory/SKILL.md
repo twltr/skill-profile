@@ -246,8 +246,8 @@ a separate capable read-only visual review by an agent who
 did not author the affected work. The main agent performs its own supported
 behavioral/integration checks and retains the specialist's visual findings; it
 does not claim visual acceptance when that judgment exceeds its capability.
-Use Frontend Design, when available, for visual judgment against the actual brief and
-existing design system. Give the reviewer the intended behavior, exact build or
+Visual judgment against the actual brief and existing design system is design
+review, which the lead runs from the middle as a separate step. Give the reviewer the intended behavior, exact build or
 revision, screen access or screenshots, relevant states and checks already run.
 Ask for reproducible findings with location, observed defect, consequence and
 evidence; do not seed the review with the implementer's approval or a target score.

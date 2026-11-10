@@ -127,11 +127,12 @@ a chain of new workflows or ask a caller to invoke itself again.
 For UI work, require the actual affected screen and relevant viewport sizes,
 themes and interaction states. For diagrams, icons and other visual artifacts,
 inspect their real embedding size and intended surfaces as well as semantic
-accuracy. Use Editorial SVG Diagrams or SVG Design when available for the relevant
-craft criteria. Builds, source inspection and component tests do
-not prove visual quality. Use **Frontend Design** when available to assess the
-established visual direction; use **Motion Design** when available for relevant
-transitions and reduced-motion behavior. Do not invent a new aesthetic during review.
+accuracy; Editorial SVG Diagrams owns the criteria for explanatory figures.
+Builds, source inspection and component tests do not prove visual quality.
+Judging the visual direction, motion, iconography or accessibility is design
+review: hand that part back to the agent, which runs it from the middle, and
+keep the checks below for this review. Do not invent a new aesthetic
+during review.
 
 Check spacing and padding, optical/icon alignment, text clearance around chevrons,
 typography, readable contrast, clipping, overflow, responsive behavior and the

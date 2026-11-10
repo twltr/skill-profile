@@ -4,4 +4,4 @@ interface:
   display_name: "Domain Modeling"
   short_description: "Leaf: Clarify domain concepts, relationships and names"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

@@ -1,6 +1,6 @@
 ---
 name: design
-description: Entry point for design decisions — how an interface looks, reads and moves; use it before acting, and alongside software engineering when the design is built in code. Covers layout and visual direction, themes and design tokens, logos and icons, animations and transitions, UX copy such as button labels, error messages and empty states, developer handoff specs, and design critique or accessibility review, even when the user only says "make this prettier", "this looks off" or "what should this button say". Not for system or architecture figures, slide decks, or code changes that raise no design question.
+description: Entry point for design decisions — how an interface looks, reads and moves; use it before acting, and alongside software engineering when the design is built in code. Covers layout and visual direction, themes and design tokens, logos and icons, animations and transitions, UX copy such as button labels, error messages and empty states, developer handoff specs, and design critique or accessibility review, even when the user only says "make this prettier", "this looks off" or "what should this button say". Not for system or architecture figures, presentations or slide decks, or code changes that raise no design question — tooling such as linters and the Prettier formatter is engineering work.
 metadata:
   skill-type: domain
   skill-tree: design

@@ -4,4 +4,4 @@ interface:
   display_name: "Engineering Review"
   short_description: "Parent: Independently review behavior, UI and documentation"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

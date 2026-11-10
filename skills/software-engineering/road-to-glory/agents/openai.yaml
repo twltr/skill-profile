@@ -4,4 +4,4 @@ interface:
   display_name: "Road to Glory"
   short_description: "Flow: Keep roadmap, active plans and outcomes aligned"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

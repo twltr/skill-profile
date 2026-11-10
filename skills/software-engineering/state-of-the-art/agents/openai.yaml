@@ -6,4 +6,4 @@ interface:
   default_prompt: Use $state-of-the-art to research this engineering question
     and return a cited decision handoff.
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

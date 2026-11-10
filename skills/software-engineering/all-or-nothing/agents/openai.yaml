@@ -4,4 +4,4 @@ interface:
   display_name: "All or Nothing"
   short_description: "Leaf: Complete replacements and model corrections"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

@@ -16,3 +16,9 @@ The local scope extends from language/platform/architecture choices to domain
 semantics, interfaces and file structure. Optional research and review methods
 have distinct owners. There is no mandatory HTML report, foreground preview,
 provider count or automatic rewrite.
+
+## 2026-11-10 quality pass
+
+"Shared Machinery" is now glossed where it is used, so the method reads without
+another skill's vocabulary, and the agent challenge is named a council before
+later sentences refer to it.

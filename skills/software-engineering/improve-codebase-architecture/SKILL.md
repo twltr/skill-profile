@@ -52,7 +52,9 @@ performance. Start with observed friction and the parts that are changing.
 Three lenses recur: current research with language, framework, dependency,
 architecture and protocol comparisons; names, relationships and lifecycle
 distinctions; and ownership, boundaries, interfaces, file/module placement and
-Shared Machinery. Apply only the lens needed at each level; the three are not
+shared machinery: capability-neutral mechanics, such as a persistence skeleton or
+handler factory, that carry no capability-specific logic. Apply only the lens
+needed at each level; the three are not
 three competing owners of the same decision.
 
 Examine in this order, adjusting to the task:
@@ -67,7 +69,7 @@ If **Puppeteer** is available, delegate independent investigations before loadin
 all source into the main context. Give each scout an evidence question and return
 shape, not a license to refactor. Settle shared assumptions before detailed designs.
 When competing consequential options need challenge, ask the lead for a
-challenge between agents. Its questions stay between agents; return decisions,
+council: a challenge between agents. Its questions stay between agents; return decisions,
 reasons and unresolved prerequisites without asking the user or relaying council
 questions. A human interview is a separate step the user chooses, not a mode of
 this council. Preserve unresolved prerequisites instead of guessing or

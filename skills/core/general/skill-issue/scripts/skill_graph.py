@@ -3,8 +3,9 @@
 
 Usage: skill_graph.py ROOT [ROOT ...] [--json]
 
-A skill is any directory holding SKILL.md, one or two levels below a root
-(root/<skill>/SKILL.md or root/<group>/<skill>/SKILL.md). A skill is recognized
+A skill is any directory holding SKILL.md at any depth below a root, except a
+SKILL.md nested inside another skill (for example a vendored entrypoint under
+references/), which belongs to its enclosing skill. A skill is recognized
 in another skill's SKILL.md and references/*.md by its directory name, its
 frontmatter `name`, the Title Case form of that name, and its `display_name`
 from agents/openai.yaml. Longer aliases are matched first, so "Grilling with
@@ -29,7 +30,13 @@ def frontmatter_name(text):
 def discover(roots):
     skills = {}
     for root in roots:
-        for path in sorted(Path(root).glob("*/SKILL.md")) + sorted(Path(root).glob("*/*/SKILL.md")):
+        found = sorted(Path(root).rglob("SKILL.md"), key=lambda p: len(p.parts))
+        owners = []
+        for path in found:
+            # Shallowest first, so an enclosing skill claims its nested files.
+            if any(owner in path.parents for owner in owners):
+                continue
+            owners.append(path.parent)
             skills.setdefault(path.parent.name, path.parent)
     return skills
 

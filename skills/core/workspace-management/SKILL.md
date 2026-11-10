@@ -114,6 +114,7 @@ repositories, under their own instructions.
 | Local host scope | That every path applies to this machine only |
 | Parts | A table: kind, role, location (path, URL, host or provider), instruction owner — including running systems and scheduled automations |
 | Agents and accounts | Which agents act on this work — automations, role agents on a server, the owner's local assistants — with which account or seat, and which of them may process customer data under which agreement |
+| Access and credentials | For every part: how it is reached — provider, management CLI, SSH alias, console — and where its credentials are kept — keychain item, password-manager vault and entry, path on a server. Locations and names only, never values |
 | Required access | The tools, connectors, MCP servers and logins an agent needs to work here, and whether each is set up in the clients on this machine |
 | Current state | Each part's actual status — live, in development, planned, retired — as it is now |
 | Shared knowledge | Where notes, lore, cross-cutting to-dos and direction live, such as a Notion or Obsidian space, or "none yet" |
@@ -148,7 +149,12 @@ documents or transient work notes in a Workspace. They keep their own owners.
   used.
 - **Keep it current.** When the work creates, moves, renames, retires or changes
   the state of a part, update the affected Workspace in the same task, and the
-  root `README.md` when clusters change. This happens when a task exposes the
+  root `README.md` when clusters change.
+- **Record what you had to find out.** When you discover how a part is reached
+  or where its credentials live — a provider console, a CLI, an SSH alias, a
+  keychain item, a vault entry — add it to **Access and credentials** in the same
+  task. The owner should never have to remember it; the next agent should never
+  have to search for it again. This happens when a task exposes the
   change; it is not a background watcher.
 - **Propose, never create unasked.** When work spans several important parts
   and no Workspace covers it, say so once, with the parts you found: "This work

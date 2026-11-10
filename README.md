@@ -229,7 +229,10 @@ anyone may use, copy, modify, merge, publish and redistribute it, keeping the
 copyright and permission notice. Each skill package carries its own license file,
 so the terms travel with every installed copy.
 
-Many skills are adapted from other people's work and modified here. They keep
+When you reuse a skill, say where it comes from — "adapted from the Skill
+Profile's Golden Comments", "contains material from Matt Pocock's skills" — as
+we do for every source below. Many skills are adapted from other people's work
+and modified here. They keep
 their original license beside a `NOTICE.md` that names the source and what we
 changed:
 

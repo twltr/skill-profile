@@ -1,0 +1,17 @@
+{
+  "source_revision": "84374a25e46a17508cdda9837bc0f5b9840b5b9b",
+  "reason": "Preserve Workspace Management before it covers the machine's agent environment: instruction files kept as one canonical AGENTS.md with pointers, and a session-start check of the agent profile and skill collection (2026-11-10).",
+  "packages": [
+    "skills/core/workspace-management"
+  ],
+  "archive": "archive/source-20261110T142957Z-workspace-agent-environment-8fe87be0-05fc-468e-b10e-bce0ce72d686.zip",
+  "files": {
+    "skills/core/workspace-management/LICENSE": "620584c2cc9883f37e9ac947ed2d528e9a7c6c911be47d87c8d157bc66621682",
+    "skills/core/workspace-management/SKILL.md": "c11f1baa8bed943a5754a308f2409e5b0f1e4f0f9958e60eba3c8429d74d98b2",
+    "skills/core/workspace-management/agents/openai.yaml": "f52ffcb03c01f70932f686373e9f6567bb3bb3848135c330edad5fd70bdc4e6a",
+    "skills/core/workspace-management/assets/icon-small.png": "04b871c69a8e5aa5acbd115bb659861192237c2257b1eecf9e68d5bb017198b7",
+    "skills/core/workspace-management/assets/icon-small.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b",
+    "skills/core/workspace-management/assets/icon.png": "39a1d52968769723deb544b4197777eb17320bf5cceaa8749d7dcdd8f3ab9d3c",
+    "skills/core/workspace-management/assets/icon.svg": "8b096f3940e595daba8a6f965e6f4d1b016b56084097360bbdd435976fe93f9b"
+  }
+}

@@ -247,7 +247,7 @@ changed:
 | Skill Issue | Anthropic and OpenAI Skill Creator, earlier Matt Pocock influence | Apache-2.0 (see its notice) |
 | Unslop | Pstack Unslop, Humanizer, Writing Clearly and Concisely | MIT |
 | GSAP · Motion Design · SVG Design | GreenSock · LottieFiles · OpenData | MIT |
-| Grilling, Grilling with Agents, Writing Fragments, Domain Modeling, Improve Codebase Architecture | Matt Pocock | MIT |
+| Grilling, Grilling with Agents, Wizard, Writing Fragments, Domain Modeling, Improve Codebase Architecture | Matt Pocock | MIT |
 | Engineering Review | Theo Browne | MIT |
 | Road to Glory, Marshmallow Tests, Vertical Slices | Own work with adapted techniques from Matt Pocock | MIT (both notices) |
 

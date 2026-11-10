@@ -1,2 +1,2 @@
 # These vendored references are hash-pinned to their reviewed upstream bytes.
-skills/general/gsap/references/*.md -whitespace
+skills/extras/gsap/references/*.md -whitespace

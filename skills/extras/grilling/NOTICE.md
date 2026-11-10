@@ -22,6 +22,6 @@ bounds the decision tree to the requested outcome and adds a fictional two-round
 example showing a prerequisite-dependent question. Invocation control remains
 in native metadata, not description labels.
 
-`skills/general/grilling/` in Agent Profile owns this complete local variant.
+`skills/extras/grilling/` in Agent Profile owns this complete local variant.
 Installed directories are deployment copies. The former catalog-only entry and
 separate policy overlay are retired; future changes belong in this directory.

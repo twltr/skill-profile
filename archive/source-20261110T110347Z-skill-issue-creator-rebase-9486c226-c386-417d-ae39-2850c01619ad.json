@@ -1,0 +1,20 @@
+{
+  "source_revision": "e5e5e2634f217dc554663d16b39ce2d587c143c0",
+  "reason": "Preserve complete Skill Issue package before rebasing it on Anthropic Skill Creator principles (progressive disclosure, triggering, evals, composition/routing) as requested by Tobi on 2026-11-10.",
+  "packages": [
+    "skills/general/skill-issue"
+  ],
+  "archive": "archive/source-20261110T110347Z-skill-issue-creator-rebase-9486c226-c386-417d-ae39-2850c01619ad.zip",
+  "files": {
+    "skills/general/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/general/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/general/skill-issue/NOTICE.md": "b311dad14c4edc9ebb6f2e571999b1aee303bd8c276b8b97098cb955ba73a9be",
+    "skills/general/skill-issue/SKILL.md": "5b6709ef933bbc51c201f9d10de9e13cfc53c1c0eee343307214f730656631ba",
+    "skills/general/skill-issue/agents/openai.yaml": "63bbdac81cd3e1dc073143c716f33ec0bcb1a60a016de5b435e75b050430fcc0",
+    "skills/general/skill-issue/assets/icon-small.png": "825e3e2973788b4896eb853032cd9a5000f8c00a8ebf1dc9571801d56e63305f",
+    "skills/general/skill-issue/assets/icon-small.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/general/skill-issue/assets/icon.png": "3a851e8ce0490057f9feec042e1452c9cdb1467447ef602658bd0b7ab95184e7",
+    "skills/general/skill-issue/assets/icon.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/general/skill-issue/references/installation.md": "94da6eea7e03294bcd8fb1421309b6b0d0b6bf473e221d39ad15282d21fcfa3a"
+  }
+}

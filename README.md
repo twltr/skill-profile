@@ -220,5 +220,30 @@ Codex. Install a routing skill together with the children it lists in
 `disable-model-invocation: true` in the frontmatter of the installed copy.
 Tools, MCP servers and accounts a skill mentions are not installed by copying it.
 
-Each skill keeps its licenses and a `NOTICE.md` where it adapts other work;
-[SKILLS.md](SKILLS.md) records the provenance of the collection.
+## License
+
+Original work in this repository — the skills that name no other source, the
+documentation and the figures — is released under the [MIT License](LICENSE):
+anyone may use, copy, modify, merge, publish and redistribute it, keeping the
+copyright and permission notice. Each skill package carries its own license file,
+so the terms travel with every installed copy.
+
+Many skills are adapted from other people's work and modified here. They keep
+their original license beside a `NOTICE.md` that names the source and what we
+changed:
+
+| Skills | Source | License |
+|---|---|---|
+| Accessibility Review, Design Critique, Design Handoff, Design System, UX Copy | Anthropic design plugin 1.2.0 | Apache-2.0 |
+| Frontend Design | Anthropic skills | Apache-2.0 |
+| Skill Issue | Anthropic and OpenAI Skill Creator, earlier Matt Pocock influence | Apache-2.0 (see its notice) |
+| Unslop | Pstack Unslop, Humanizer, Writing Clearly and Concisely | MIT |
+| GSAP · Motion Design · SVG Design | GreenSock · LottieFiles · OpenData | MIT |
+| Grilling, Grilling with Agents, Writing Fragments, Domain Modeling, Improve Codebase Architecture | Matt Pocock | MIT |
+| Engineering Review | Theo Browne | MIT |
+| Road to Glory, Marshmallow Tests, Vertical Slices | Own work with adapted techniques from Matt Pocock | MIT (both notices) |
+
+Not yet cleared for redistribution: Editorial SVG Diagrams, Good Writing and
+Commercial Writing originate in packages supplied without a license or authorship
+record; their rights must be confirmed before this repository is shared.
+[SKILLS.md](SKILLS.md) records the provenance of every skill.

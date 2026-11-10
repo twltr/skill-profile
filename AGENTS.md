@@ -32,7 +32,10 @@ trigger behavior before making its children explicit-only.
 Write skill instructions, metadata descriptions and authored examples in English.
 Keep personal data out of this repository: no local paths, hostnames, account
 names, customer details or private machine setup. Those belong in the private
-agent profile. Preserve original licenses and provenance records.
+agent profile. Preserve original licenses and provenance records. Every skill
+package carries a license file: an adapted skill keeps its upstream license and
+names its changes in `NOTICE.md`; original work carries the repository's MIT
+`LICENSE`. Do not license a package whose origin is unrecorded.
 
 Before replacing, changing or removing a skill package, archive its complete
 previous bytes inside this repository and commit the recovery point before the

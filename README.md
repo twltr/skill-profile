@@ -249,7 +249,7 @@ changed:
 | Engineering Review | Theo Browne | MIT |
 | Road to Glory, Marshmallow Tests, Vertical Slices | Own work with adapted techniques from Matt Pocock | MIT (both notices) |
 
-Not yet cleared for redistribution: Editorial SVG Diagrams, Good Writing and
-Commercial Writing originate in packages supplied without a license or authorship
-record; their rights must be confirmed before this repository is shared.
-[SKILLS.md](SKILLS.md) records the provenance of every skill.
+Editorial SVG Diagrams, Good Writing and Commercial Writing came from the
+owner's own exports without a license file; the owner confirmed authorship on
+2026-11-10, so they are original work under MIT. [SKILLS.md](SKILLS.md) records
+the provenance of every skill.

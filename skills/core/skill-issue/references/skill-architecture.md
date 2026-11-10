@@ -104,7 +104,11 @@ its own with several parents or flows beneath it.
    common parent loads it once for both. When only some siblings need it, add a
    parent for exactly those. When every tree needs it, it is core.
 5. **Boundary mentions are allowed.** A description may say "logos belong to SVG
-   Design" to prevent a wrong selection. That sentence routes nothing.
+   Design" to prevent a wrong selection. That sentence routes nothing. A leaf
+   may likewise name a core skill as a hint where the work needs it — "check the
+   final text with the prose-cleanup skill". Core skills stand in the middle and
+   apply anyway, so the hint loads nothing; it only keeps the reminder where the
+   work happens.
 6. **Shared leaves are suggested, not loaded.** A leaf that several domains can
    use — an interview, a decision council — sits outside every tree. A routing
    skill may suggest it to the person under a stated condition ("if the

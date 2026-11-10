@@ -58,10 +58,22 @@ def run_query(query, args, targets):
         process.wait(timeout=10)
     except (OSError, subprocess.SubprocessError) as error:
         tools.append(("ERROR", str(error)[:80]))
-    # A skill counts as loaded through the Skill tool, a Read of its file, or a shell read
-    # (agents often cat explicit-only skills they cannot invoke by name).
-    hit = any(name in ("Skill", "Read", "Bash") and any(t in detail for t in targets) for name, detail in tools)
+    hit = any(loads_target(name, detail, targets) for name, detail in tools)
     return hit, tools
+
+
+def loads_target(name, detail, targets):
+    """A skill counts as loaded through the Skill tool, or a Read or shell read of its
+    directory (agents often cat explicit-only skills they cannot invoke by name).
+    A bare word is not enough: `ls design` in a fixture with a design/ folder
+    must not count as loading a skill named `design`."""
+    for t in targets:
+        word = rf"(?<![\w-]){re.escape(t)}(?![\w-])"
+        if name == "Skill" and (detail == t or detail.endswith(":" + t)):
+            return True
+        if name in ("Read", "Bash") and re.search(rf"skills/(?:{word}|\{{[^}}]*{word})|{word}/SKILL\.md", detail):
+            return True
+    return False
 
 
 def inject(skill_dir, project):

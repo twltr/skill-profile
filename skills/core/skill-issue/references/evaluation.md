@@ -185,7 +185,7 @@ about 40% of the queries, propose description changes only from failures in the
 other 60%, and choose the final description by its held-out score so the wording
 is not fitted to the examples. Report before/after descriptions and both scores.
 
-Three lessons from measuring a context router decide whether such a test means
+Four lessons from measuring context routers decide whether such a test means
 anything:
 
 - **Measure a window, in a fixture repository.** For coding requests, agents
@@ -198,6 +198,11 @@ anything:
 - **Measure at the real placement.** The same description triggered more often
   as a project skill than among many user-level skills; make the final
   measurement with a temporary user-level copy and remove it afterwards.
+- **Read every near-miss hit before tuning on it.** A hit must be the skill
+  loading, not its name appearing: a skill called `layout` "fired" on `ls layout`
+  because the fixture had a `layout/` folder. The harness now counts only the
+  Skill tool or reads of the skill's directory; still check the recorded tool
+  sequence of each surprising hit.
 
 Anthropic's `skill-creator` automates this loop in Claude Code through `claude -p`;
 its `run_eval` counts only the first tool call, so mind the first lesson above

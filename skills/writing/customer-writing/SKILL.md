@@ -1,9 +1,14 @@
 ---
 name: customer-writing
 description: "Draft or revise external business correspondence with customers and partners, including emails, replies, service updates, reminders and coordination. Sales arguments and offers belong to Commercial Writing."
+metadata:
+  skill-type: leaf
+  skill-tree: writing
 ---
 
 # Customer Writing
+
+**Leaf skill** in Writing; reached through its domain or by name.
 
 Use this method only when explicitly requested by the user or selected by Good
 Writing. An ordinary matching request goes through that router.

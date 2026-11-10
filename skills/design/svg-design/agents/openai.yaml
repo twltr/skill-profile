@@ -2,4 +2,4 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "SVG Design"
-  short_description: "Design logos, icons and visual graphics for websites"
+  short_description: "Leaf: Design logos, icons and visual graphics for websites"

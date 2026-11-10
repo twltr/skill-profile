@@ -1,9 +1,13 @@
 ---
 name: workspace-management
 description: Manage host-local, provider-neutral Workspace context folders and their AI-project bindings. Use when creating, renaming, moving, auditing, or retiring a Workspace; adding, removing, or moving one of its repositories or document roots; changing an AI project's local path; or when current work reveals stale Workspace context. Do not use to implement work inside the referenced repositories.
+metadata:
+  skill-type: core
 ---
 
 # Workspace Management
+
+**Core skill.** On the agent's surface and usable in any context.
 
 Maintain one stable local context entry for a body of work that may span several
 repositories, document roots and agent providers. A Workspace explains and

@@ -1,9 +1,14 @@
 ---
 name: commercial-writing
 description: "Create or revise sales and marketing copy, proposals, business cases, pricing narratives, positioning, executive decisions, fundraising materials, landing pages and campaigns. Routine external correspondence belongs to Customer Writing."
+metadata:
+  skill-type: leaf
+  skill-tree: writing
 ---
 
 # Commercial Writing
+
+**Leaf skill** in Writing; reached through its domain or by name.
 
 Use this method only when explicitly requested by the user or selected by Good
 Writing. An ordinary matching request goes through that router.

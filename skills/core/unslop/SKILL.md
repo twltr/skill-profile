@@ -1,9 +1,13 @@
 ---
 name: unslop
 description: "Use when composing or editing prose, including ordinary replies, to remove filler and AI mannerisms while preserving meaning, voice and necessary detail. Applies to German and English without starting a document workflow."
+metadata:
+  skill-type: core
 ---
 
 # Unslop
+
+**Core skill.** On the agent's surface and usable in any context.
 
 Make the point clear in the reader's language. Apply a quick language pass to
 ordinary replies. This pass adds no brief, checklist report, research process

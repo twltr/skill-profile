@@ -1,9 +1,15 @@
 ---
 name: software-engineering
 description: Entry point for all software engineering work in a code repository; use it before acting. Covers building, fixing, debugging and refactoring code; reviewing a diff, branch or PR; diagnosing failing tests, builds or CI; planning a multi-step change; and updating a README or architecture doc to match the code — including quick asks like "fix this quickly", "review my branch" or "why does the build fail", even when no method is named. Picks your role (implementer, reviewer, orchestrator, documenter) and loads that role's method pack. Not for explaining programming concepts without a codebase, or for non-software engineering.
+metadata:
+  skill-type: domain
+  skill-tree: software-engineering
+  skill-requires: engineering-practices golden-comments vertical-slices road-to-glory engineering-review engineering-documentation
 ---
 
 # Software Engineering
+
+**Domain skill** for Software Engineering. Requires: engineering-practices, golden-comments, vertical-slices, road-to-glory, engineering-review, engineering-documentation. If one is missing, stop and say this skill is incomplete without it.
 
 Engineering methods only help when they are applied together and at the right
 moment: the reason behind a construction is written while the code is fresh,

@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Vertical Slices"
-  short_description: "Expose capability ownership and architectural relationships"
+  short_description: "Leaf: Expose capability ownership and relationships"
 policy:
   allow_implicit_invocation: false

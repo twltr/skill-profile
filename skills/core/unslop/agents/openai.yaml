@@ -1,6 +1,6 @@
 interface:
   display_name: Unslop
-  short_description: "Remove filler and make prose clear, natural and precise"
+  short_description: "Core: Remove filler and make prose clear, natural and precise"
   default_prompt: Use $unslop to improve this text while preserving its meaning and
     voice.
   icon_small: "./assets/icon-small.png"

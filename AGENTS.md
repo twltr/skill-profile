@@ -9,8 +9,11 @@ Ownership is explicit:
 
 - Each skill directory owns its complete package: instructions, metadata,
   references, scripts, assets, licenses and notices.
-- skills/core/ owns the core skills; skills/writing/, skills/software-engineering/
-  and skills/design/ own their domain trees; skills/extras/ owns optional skills.
+- skills/core/ owns the core skills: implicit, first-level, cross-domain.
+  skills/writing/, skills/software-engineering/ and skills/design/ own one tree
+  each, where only the domain's routing skill is implicit. skills/extras/ owns
+  manually selected skills outside every tree. A skill's folder must match its
+  type and invocation policy.
 - SKILLS.md owns the inventory, each skill's type, provenance and catalog-only
   references. README.md owns the architecture explanation and its rationale.
 - figures/ owns the editable maps of the collection.

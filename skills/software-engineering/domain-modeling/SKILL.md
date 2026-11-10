@@ -1,9 +1,14 @@
 ---
 name: domain-modeling
 description: Clarify domain concepts, names, relationships and lifecycle rules while designing or changing software. Resolve overloaded terms through concrete scenarios and actual behavior, and keep the agreed vocabulary with its canonical owner.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Domain Modeling
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Make the system's language express the actual concepts. Use this method when a
 design or change introduces meanings, relationships or names; an ordinary edit

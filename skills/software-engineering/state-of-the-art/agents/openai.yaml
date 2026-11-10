@@ -2,7 +2,7 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: State of the Art
-  short_description: "Research current evidence for an engineering decision"
+  short_description: "Leaf: Research current evidence for an engineering decision"
   default_prompt: Use $state-of-the-art to research this engineering question
     and return a cited decision handoff.
 policy:

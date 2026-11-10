@@ -1,9 +1,13 @@
 ---
 name: minmax-tokens
 description: Reduce unnecessary context and tool output during file, search, Git, test, log, and web work while preserving requirements and verification. Use for tool-driven tasks; skip self-contained conversation.
+metadata:
+  skill-type: core
 ---
 
 # MinMax Tokens
+
+**Core skill.** On the agent's surface and usable in any context.
 
 Use the smallest sufficient evidence, not the smallest possible answer. Keep active requirements, contrary evidence, safety constraints, unresolved failures, and final checks intact. If a filtered result cannot establish the answer, expand the scope.
 

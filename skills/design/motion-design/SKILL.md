@@ -8,11 +8,15 @@ description: >
   or any animation system.
 license: MIT
 metadata:
+  skill-type: leaf
+  skill-tree: design
   author: LottieFiles
   version: "1.0.0"
 ---
 
 # Motion Design Skill
+
+**Leaf skill** in Design; reached through its domain or by name.
 
 ## A small interaction example
 

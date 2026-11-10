@@ -1,9 +1,14 @@
 ---
 name: all-or-nothing
 description: Carry an agreed replacement or model correction through its affected declarations, consumers, data and documentation, retiring the old implementation. Use when an authorized change supersedes an existing model, responsibility, contract or code path.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # All or Nothing
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Make a settled change true throughout the system it affects. A new implementation
 beside the old one, or a new label hiding the old model, has not completed the

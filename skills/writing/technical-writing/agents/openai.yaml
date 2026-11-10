@@ -1,6 +1,6 @@
 interface:
   display_name: Technical Writing
-  short_description: "Make technical manuals, procedures and references clear and usable"
+  short_description: "Leaf: Make technical manuals and references clear"
   default_prompt: Use $technical-writing to write or revise this technical manual
     from its verified source material for its intended readers.
   icon_small: "./assets/icon-small.png"

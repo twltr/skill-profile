@@ -1,6 +1,6 @@
 interface:
   display_name: Golden Comments
-  short_description: "Preserve design intent and system context beside code"
+  short_description: "Leaf: Preserve design intent and system context beside code"
   icon_small: "./assets/icon-small.png"
   icon_large: "./assets/icon.png"
 policy:

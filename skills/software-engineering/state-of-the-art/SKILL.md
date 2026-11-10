@@ -1,9 +1,14 @@
 ---
 name: state-of-the-art
 description: Research current practice and evidence for a defined engineering question, then return a scoped, cited decision handoff with alternatives and limits.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # State of the Art
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Research only as far as the decision needs. Start from the user's outcome and
 actual system, then work down to the specific question evidence can answer. The

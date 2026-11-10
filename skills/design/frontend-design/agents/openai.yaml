@@ -2,4 +2,4 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Frontend Design"
-  short_description: "Design distinctive interfaces and visual systems"
+  short_description: "Leaf: Design distinctive interfaces and visual systems"

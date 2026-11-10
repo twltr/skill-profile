@@ -1,9 +1,13 @@
 ---
 name: grilling
 description: Stress-test a plan, decision or idea by interviewing the user in prerequisite-aware rounds with recommended answers. Use for a requested human interview; a council that questions the lead agent belongs to Grilling with Agents.
+metadata:
+  skill-type: leaf
 ---
 
 # Grilling
+
+**Leaf skill** outside every tree; a person starts it by name.
 
 Expose the assumptions and dependent decisions that an attractive plan can hide.
 Interview the user until you reach a shared understanding. Map this as a **design

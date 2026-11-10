@@ -1,9 +1,14 @@
 ---
 name: vertical-slices
 description: Use whenever adding, changing, debugging, refactoring or reviewing behavior in a repository, feature or module. Locate capability and coordination owners, expose the chosen patterns' participants and relationships, and keep coherent code and its explanation together. Apply within ordinary implementation, not only architecture tasks.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Vertical Slices
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Keep the context needed to change a system local and understandable. Apply
 vertical structure throughout repository development: creating a repository,

@@ -1,9 +1,14 @@
 ---
 name: engineering-practices
 description: Use whenever implementing, debugging, refactoring or reviewing software behavior, and for architecture or design decisions. Choose mechanisms from requirements and evidence, name applied patterns and their relationships, verify relevant sources, and preserve accepted reasons in code and docs.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Engineering Practices
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Make engineering choices from the problem, evidence and human maintenance needs.
 Apply these criteria throughout development; a small change usually reuses the

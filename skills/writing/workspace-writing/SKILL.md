@@ -1,9 +1,14 @@
 ---
 name: workspace-writing
 description: "Write or reconcile shared working notes and knowledge in OpenAI ChatGPT Pages and Spaces. Group related topics into useful hierarchies, keep current decisions and next actions visible, and link to established owners. Native Page operations belong to the host's Pages skills."
+metadata:
+  skill-type: leaf
+  skill-tree: writing
 ---
 
 # Workspace Writing
+
+**Leaf skill** in Writing; reached through its domain or by name.
 
 Use this method only when explicitly requested by the user or selected by Good
 Writing. An ordinary matching request goes through that router.

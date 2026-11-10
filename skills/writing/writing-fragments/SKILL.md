@@ -1,9 +1,14 @@
 ---
 name: writing-fragments
 description: "Scout source material and select relevant, well-supported content for a writing task, preserving citations, context and uncertainty in a concise handoff."
+metadata:
+  skill-type: leaf
+  skill-tree: writing
 ---
 
 # Writing Fragments
+
+**Leaf skill** in Writing; reached through its domain or by name.
 
 Writing needs a useful selection of evidence before it needs polished sentences.
 This skill scouts the material already in scope, keeps the claims that serve the

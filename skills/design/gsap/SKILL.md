@@ -1,9 +1,14 @@
 ---
 name: gsap
 description: Build, explain or debug GSAP animations, including tweens, timelines, scroll effects, plugins and React/Vue/Svelte integration. Use for GSAP work or JavaScript animation-library selection; respect an already chosen alternative.
+metadata:
+  skill-type: leaf
+  skill-tree: design
 ---
 
 # GSAP
+
+**Leaf skill** in Design; reached through its domain or by name.
 
 Select the reference matching the animation task and continue that task. Establish
 whether the work is explanation, implementation or diagnosis, which framework and

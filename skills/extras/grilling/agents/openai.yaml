@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Grilling"
-  short_description: "Stress-test thinking a round of questions at a time"
+  short_description: "Leaf: Stress-test thinking a round of questions at a time"
 policy:
   allow_implicit_invocation: false

@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Engineering Review"
-  short_description: "Independently review behavior, UI and documentation"
+  short_description: "Parent: Independently review behavior, UI and documentation"
 policy:
   allow_implicit_invocation: true

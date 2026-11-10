@@ -1,9 +1,14 @@
 ---
 name: engineering-documentation
 description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs to Golden Comments; standalone manuals without a codebase are writing work, not this method."
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Engineering Documentation
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Help a person understand the software and an agent make a correct, bounded change.
 README, agent instructions and deeper documentation answer different questions

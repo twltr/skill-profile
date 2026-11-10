@@ -1,9 +1,13 @@
 ---
 name: puppeteer
 description: Decide whether to hand work to native subagents, then cut it into independent assignments, brief each agent, choose its model for the phase and check what comes back. Use when work could be investigated, implemented or reviewed in parallel, needs an independent reviewer, or needs a delegate model chosen, even if the user only says "use agents", "parallelize this" or "get a second opinion". Review criteria belong to Engineering Review; this skill only arranges the reviewer. Not the Puppeteer browser-automation library.
+metadata:
+  skill-type: core
 ---
 
 # Puppeteer
+
+**Core skill.** On the agent's surface and usable in any context.
 
 Delegation fails in four predictable ways. The lead's context fills with raw
 exploration until it can no longer steer. A confident summary is accepted as a

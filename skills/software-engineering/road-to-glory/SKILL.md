@@ -1,9 +1,15 @@
 ---
 name: road-to-glory
 description: Plan and maintain substantial Engineering work through roadmaps, executable plans, delegated work and verified completion. Coordinate remote issues and pull requests when available; keep small, clear tasks lightweight.
+metadata:
+  skill-type: flow
+  skill-tree: software-engineering
+  skill-requires: engineering-review engineering-documentation
 ---
 
 # Road to Glory
+
+**Flow skill** in Software Engineering. Requires: engineering-review, engineering-documentation. If one is missing, stop, say this skill is incomplete without it, and do not run a partial flow.
 
 Make what is actually left to do visible, executable and safe to resume. This
 method keeps the roadmap and active execution plans aligned. Project-specific instructions or

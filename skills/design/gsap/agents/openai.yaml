@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "GSAP"
-  short_description: "Choose the GSAP guidance needed for the animation"
+  short_description: "Leaf: Choose the GSAP guidance needed for the animation"
 policy:
   allow_implicit_invocation: true

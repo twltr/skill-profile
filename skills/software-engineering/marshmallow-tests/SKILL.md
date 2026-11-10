@@ -1,9 +1,14 @@
 ---
 name: marshmallow-tests
 description: Design tests around coherent units, invariants and precise failure addresses. Use when choosing test boundaries, adding cases or regression guards, or improving a suite; merely running existing checks does not need this method.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Marshmallow Tests
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Prove invariants, contracts and final-state behavior with the smallest suite that
 can honestly do so. A suite is not worth its count. Its structure must let a

@@ -1,9 +1,14 @@
 ---
 name: svg-design
 description: Design and refine SVG logos, icons, brand assets and visual graphics for websites and user interfaces. Use for visual identity, icon systems, decorative or animated web artwork and vector refinement. Explanatory diagrams belong to Editorial SVG Diagrams; full page layouts belong to Frontend Design.
+metadata:
+  skill-type: leaf
+  skill-tree: design
 ---
 
 # SVG Design
+
+**Leaf skill** in Design; reached through its domain or by name.
 
 Start with the graphic's role in the brand or interface. Choose its composition,
 silhouette, proportions, typography and color for that setting, preserving an

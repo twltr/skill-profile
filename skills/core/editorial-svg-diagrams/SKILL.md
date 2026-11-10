@@ -2,9 +2,13 @@
 name: editorial-svg-diagrams
 description: >-
   Create explanatory diagrams for documentation, architecture, workflows and learning material. Make concepts and relationships understandable with editable SVGs, theme variants and PNG/PDF exports. Use SVG Design for logos, icons, brand assets and decorative website graphics.
+metadata:
+  skill-type: core
 ---
 
 # Editorial SVG Diagrams — explanation first
+
+**Core skill.** On the agent's surface and usable in any context.
 
 **A diagram is a visual sentence, not a document in miniature.** Match the user's demonstrated reference: visual structure carries the idea; supporting prose lives *outside* the figure. Do not mistake more labels, bigger cards, longer descriptions or a giant canvas for higher fidelity.
 

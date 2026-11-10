@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Improve Codebase Architecture"
-  short_description: "Reassess system choices and plan worthwhile improvements"
+  short_description: "Leaf: Reassess system choices and plan worthwhile improvements"
 policy:
   allow_implicit_invocation: false

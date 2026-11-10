@@ -20,7 +20,6 @@ Judgment is a project-owned core method listed under
 | Skill | Purpose and provenance |
 |---|---|
 | <img src="skills/core/editorial-svg-diagrams/assets/icon.svg" width="28" height="28" alt=""> [`editorial-svg-diagrams`](skills/core/editorial-svg-diagrams/SKILL.md) | **Core.** Reviewed adaptation of the user-supplied 2026-10-23 `skill.zip`, with the three accepted test figures. Owns visual-first transparent SVGs, explicit theme variants, exports and visual review. [Provenance and review changes](skills/core/editorial-svg-diagrams/NOTICE.md); [current import hashes](skills/core/editorial-svg-diagrams/source-manifest-20261023.json). Implicit invocation enabled. |
-| <img src="skills/core/grilling-with-agents/assets/icon.svg" width="28" height="28" alt=""> [`grilling-with-agents`](skills/core/grilling-with-agents/SKILL.md) | **Leaf.** Scouts question the lead and challenge its decisions. Every entry returns decisions, reasons and unresolved prerequisites without user questions; an existing plan owns the result. Native metadata keeps direct selection explicit. [Provenance](skills/core/grilling-with-agents/NOTICE.md). |
 | <img src="skills/core/minmax-tokens/assets/icon.svg" width="28" height="28" alt=""> [`minmax-tokens`](skills/core/minmax-tokens/SKILL.md) | **Core.** Repository-owned method for reducing unnecessary context and tool output without weakening verification. |
 | <img src="skills/core/puppeteer/assets/icon.svg" width="28" height="28" alt=""> [`puppeteer`](skills/core/puppeteer/SKILL.md) | **Core.** Repository-owned delegation method for bounded tasks, shared-resource ownership and verified integration. |
 | <img src="skills/core/skill-issue/assets/icon.svg" width="28" height="28" alt=""> [`skill-issue`](skills/core/skill-issue/SKILL.md) | **Core.** Repository-owned skill authoring, evaluation and review method, rebased on 2026-11-10 on Anthropic's Skill Creator: create–test–improve loop, progressive disclosure, triggering and description tuning, `evals/` cases, plus local router and composition rules and a `scripts/skill_graph.py` dependency audit. Earlier Matt Pocock and OpenAI influences remain; [sources and adaptation](skills/core/skill-issue/NOTICE.md) record the snapshots. All three source licenses are preserved. |
@@ -82,12 +81,14 @@ remain implicit.
 
 ## Extras
 
-Optional skills kept for occasional use, outside every tree. Grilling is a leaf
-whose root is the person who starts the interview.
+Manually selected skills outside every tree. Each is a leaf whose root is the
+person who starts it: Grilling interviews you, Grilling with Agents lets agents
+question the lead.
 
 | Skill | Purpose and provenance |
 |---|---|
 | <img src="skills/extras/grilling/assets/icon.svg" width="28" height="28" alt=""> [`grilling`](skills/extras/grilling/SKILL.md) | **Leaf.** Locally maintained adaptation of Matt Pocock's decision-tree interview. Native metadata disables implicit invocation. The complete skill, MIT license and [provenance](skills/extras/grilling/NOTICE.md) are included. |
+| <img src="skills/extras/grilling-with-agents/assets/icon.svg" width="28" height="28" alt=""> [`grilling-with-agents`](skills/extras/grilling-with-agents/SKILL.md) | **Leaf.** Scouts question the lead and challenge its decisions. Every entry returns decisions, reasons and unresolved prerequisites without user questions; an existing plan owns the result. Native metadata keeps direct selection explicit. [Provenance](skills/extras/grilling-with-agents/NOTICE.md). |
 
 ## Writing family
 

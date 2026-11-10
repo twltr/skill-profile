@@ -1,9 +1,14 @@
 ---
 name: technical-writing
 description: "Write technical manuals, product guides, procedures and reference material from verified specifications and source documents. Organize learning, tasks, explanations and lookup for the reader. Repository READMEs, agent instructions and documentation maintained with code are software engineering work, not this method."
+metadata:
+  skill-type: leaf
+  skill-tree: writing
 ---
 
 # Technical Writing
+
+**Leaf skill** in Writing; reached through its domain or by name.
 
 Help the reader understand a technical subject or complete a task without
 guessing prerequisites, sequence or meaning. A manual may describe a device,

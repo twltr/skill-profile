@@ -1,6 +1,6 @@
 interface:
   display_name: Engineering Documentation
-  short_description: "Explain software visually and maintain README, agent instructions and docs"
+  short_description: "Leaf: Explain software and keep README and docs current"
   default_prompt: Use $engineering-documentation to explain and maintain this
     repository's README, agent instructions and documentation for humans and agents.
   icon_small: "./assets/icon-small.png"

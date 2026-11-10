@@ -149,20 +149,38 @@ The type system and the two existing domains are in place:
 - **Writing and Software Engineering** share no edges: code-owned documentation
   and source comments belong to Software Engineering.
 
-Not yet applied everywhere: the `metadata` declarations and type prefixes on
-every skill, and the removal of the remaining back-references and cross-tree
-edges. The [writing map](SKILLS.md#writing-family-map) and the
+Every skill declares its type in `metadata`, in the first line of its body and
+in the prefix of its short description. Not yet done: removing the remaining
+back-references inside the trees, and switching the Software Engineering leaves
+that still fire by themselves to explicit-only after measuring. The [writing map](SKILLS.md#writing-family-map) and the
 [engineering matrix](SKILLS.md#engineering-and-general-map) show what is left;
 `skills/core/skill-issue/scripts/skill_graph.py` measures it.
 
 ## Layout
 
+The folders follow the selection rule, so a skill's place tells how it is
+reached:
+
+- **`core/`** holds skills that fire by themselves on the first level and shape
+  behavior throughout a session. A core skill may serve several domains — Unslop
+  is about prose and Editorial SVG Diagrams about figures, yet both apply in any
+  context, so neither waits below a domain.
+- **`writing/`, `software-engineering/`, `design/`** each hold one tree. Only the
+  domain's routing skill fires by itself; everything else in the folder is
+  reached through it or by name.
+- **`extras/`** holds skills a person selects by hand, outside every tree, such
+  as Grilling and Grilling with Agents.
+
+The domain folders are also the planned packaging units: Writing, Software
+Engineering and Design can each ship as one plugin; core and extras install as
+plain skills.
+
 ```text
-skills/core/                   Core skills
+skills/core/                   Core skills: automatic, cross-domain
 skills/writing/                Good Writing and its specialists
 skills/software-engineering/   Software Engineering, its flow, parent and leaves
 skills/design/                 Design leaves: interface, motion, identity (domain planned)
-skills/extras/                 Optional skills kept for occasional use
+skills/extras/                 Manually selected skills outside every tree
 figures/                       Editable SVG maps of the collection, light and dark
 archive/                       Complete previous package snapshots (ZIP + manifest)
 ```

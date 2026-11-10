@@ -2,9 +2,14 @@
 name: frontend-design
 description: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.
 license: Complete terms in LICENSE.txt
+metadata:
+  skill-type: leaf
+  skill-tree: design
 ---
 
 # Frontend Design
+
+**Leaf skill** in Design; reached through its domain or by name.
 
 Design from the actual brief and existing product. Make deliberate choices about
 palette, typography and layout that suit this subject; introduce a distinctive

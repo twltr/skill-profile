@@ -1,6 +1,6 @@
 interface:
   display_name: Commercial Writing
-  short_description: "Write persuasive proposals and evidence-based business copy"
+  short_description: "Leaf: Write persuasive, evidence-based business copy"
   default_prompt: Use $commercial-writing to write or revise this commercial text.
   icon_small: "./assets/icon-small.png"
   icon_large: "./assets/icon.png"

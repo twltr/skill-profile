@@ -1,9 +1,14 @@
 ---
 name: improve-codebase-architecture
 description: Assess an existing system from language and architecture choices down to interfaces, domain names, modules and files. Research alternatives, prioritize evidence-backed improvements and turn accepted recommendations into a coordinated plan.
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Improve Codebase Architecture
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Reassess an existing system deliberately, from broad choices to local structure.
 Produce a grounded recommendation and executable planning handoff. An assessment

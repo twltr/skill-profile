@@ -1,9 +1,13 @@
 ---
 name: grilling-with-agents
 description: Develop a plan through domain scouting and iterative questioning between specialist agents and the lead agent. Resolve design decisions, expose consequential uncertainty and return a reasoned decision report or planning handoff for a repository, feature or conceptual task.
+metadata:
+  skill-type: leaf
 ---
 
 # Grilling with Agents
+
+**Leaf skill** outside every tree; a person starts it by name.
 
 If **Grilling** is available, use its decision tree, prerequisite-aware rounds
 and recommended answers. If **Puppeteer** is available, use it for delegation

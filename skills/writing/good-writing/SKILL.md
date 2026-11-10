@@ -1,9 +1,15 @@
 ---
 name: good-writing
 description: "Use whenever a task creates or substantively revises correspondence, commercial copy, shared notes, articles, reports or technical manuals. Route by reader and purpose. Documentation maintained with code and source comments are software engineering work, not a writing route; ordinary replies and wording-only fixes use Unslop directly."
+metadata:
+  skill-type: domain
+  skill-tree: writing
+  skill-requires: writing-fragments
 ---
 
 # Good Writing
+
+**Domain skill** for Writing. Requires: writing-fragments. If one is missing, stop and say this skill is incomplete without it.
 
 Match preparation to the writing job. An ordinary conversational reply or local
 wording fix uses Unslop directly with the brief and supplied text; fact-finding remains with the

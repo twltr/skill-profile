@@ -1,9 +1,14 @@
 ---
 name: golden-comments
 description: "Use whenever writing, changing, debugging, refactoring or reviewing source code, including ordinary feature and bug-fix tasks without a comment request. Preserve named design intent, pattern relationships, system context and reasons beside code so future maintainers can extend it correctly."
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # Golden Comments
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Make source code carry the understanding needed to continue its design after the
 conversation is gone. The next maintainer should be able to read the implementation

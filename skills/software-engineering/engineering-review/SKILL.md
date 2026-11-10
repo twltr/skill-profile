@@ -1,9 +1,14 @@
 ---
 name: engineering-review
 description: Independently review software changes and their documentation against requirements, behavior, architecture and rendered UI. Resolve material questions with the implementer, record evidence-backed findings and recheck corrections on the current revision.
+metadata:
+  skill-type: parent
+  skill-tree: software-engineering
 ---
 
 # Engineering Review
+
+**Parent skill** in Software Engineering; applies its lenses together where they are relevant.
 
 Review a concrete change against its intended result and actual evidence. The
 reviewer must not be the author of the work being accepted. Implementers run

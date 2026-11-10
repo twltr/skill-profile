@@ -1,6 +1,6 @@
 interface:
   display_name: Customer Writing
-  short_description: "Write clear messages to customers and business partners"
+  short_description: "Leaf: Write clear messages to customers and business partners"
   default_prompt: Use $customer-writing to draft or revise this customer message.
   icon_small: "./assets/icon-small.png"
   icon_large: "./assets/icon.png"

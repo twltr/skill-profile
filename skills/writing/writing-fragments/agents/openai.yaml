@@ -1,6 +1,6 @@
 interface:
   display_name: Writing Fragments
-  short_description: "Select useful, traceable material before writing"
+  short_description: "Leaf: Select useful, traceable material before writing"
   default_prompt: Use $writing-fragments to scout the relevant material and prepare a
     concise, source-backed handoff for the writing task.
   icon_small: "./assets/icon-small.png"

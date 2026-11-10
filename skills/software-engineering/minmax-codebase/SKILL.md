@@ -2,9 +2,14 @@
 name: minmax-codebase
 description: "Improve codebase structure and architecture to reduce system complexity while preserving agreed capability and behavior. Use for deliberate refactoring and architectural simplification."
 disable-model-invocation: true
+metadata:
+  skill-type: leaf
+  skill-tree: software-engineering
 ---
 
 # MinMax Codebase
+
+**Leaf skill** in Software Engineering; reached through its domain or by name.
 
 Improve the chosen system so the same intended capability needs less state,
 error surface, duplication, search and operational machinery. This is deliberate

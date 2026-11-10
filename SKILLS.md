@@ -12,13 +12,14 @@ the [README](README.md#six-types) and Skill Issue's
 
 ## Core skills
 
-Cross-cutting methods that fire on their own in any domain: delegation, skill
-authoring, agent councils, information economy, prose and workspace context.
+Cross-cutting methods on the agent's surface: delegation, skill authoring,
+information economy, prose, explanatory figures and workspace context.
 Judgment is a project-owned core method listed under
 [project-owned skills](#project-owned-skills).
 
 | Skill | Purpose and provenance |
 |---|---|
+| <img src="skills/core/editorial-svg-diagrams/assets/icon.svg" width="28" height="28" alt=""> [`editorial-svg-diagrams`](skills/core/editorial-svg-diagrams/SKILL.md) | **Core.** Reviewed adaptation of the user-supplied 2026-10-23 `skill.zip`, with the three accepted test figures. Owns visual-first transparent SVGs, explicit theme variants, exports and visual review. [Provenance and review changes](skills/core/editorial-svg-diagrams/NOTICE.md); [current import hashes](skills/core/editorial-svg-diagrams/source-manifest-20261023.json). Implicit invocation enabled. |
 | <img src="skills/core/grilling-with-agents/assets/icon.svg" width="28" height="28" alt=""> [`grilling-with-agents`](skills/core/grilling-with-agents/SKILL.md) | **Leaf.** Scouts question the lead and challenge its decisions. Every entry returns decisions, reasons and unresolved prerequisites without user questions; an existing plan owns the result. Native metadata keeps direct selection explicit. [Provenance](skills/core/grilling-with-agents/NOTICE.md). |
 | <img src="skills/core/minmax-tokens/assets/icon.svg" width="28" height="28" alt=""> [`minmax-tokens`](skills/core/minmax-tokens/SKILL.md) | **Core.** Repository-owned method for reducing unnecessary context and tool output without weakening verification. |
 | <img src="skills/core/puppeteer/assets/icon.svg" width="28" height="28" alt=""> [`puppeteer`](skills/core/puppeteer/SKILL.md) | **Core.** Repository-owned delegation method for bounded tasks, shared-resource ownership and verified integration. |
@@ -68,25 +69,25 @@ triggers for now. See the [engineering map](#engineering-and-general-map).
 
 ## Design
 
-Interface design, explanatory figures and motion principles. A design router
-over these and the extras SVG Design and GSAP is planned.
+Interface design, motion and visual identity: Frontend Design, Motion Design,
+GSAP and SVG Design. A Design domain over them is planned; until it exists they
+remain implicit.
 
 | Skill | Purpose and provenance |
 |---|---|
-| <img src="skills/design/editorial-svg-diagrams/assets/icon.svg" width="28" height="28" alt=""> [`editorial-svg-diagrams`](skills/design/editorial-svg-diagrams/SKILL.md) | **Leaf (implicit until the Design domain exists).** Reviewed adaptation of the user-supplied 2026-10-23 `skill.zip`, with the three accepted test figures. Owns visual-first transparent SVGs, explicit theme variants, exports and visual review. [Provenance and review changes](skills/design/editorial-svg-diagrams/NOTICE.md); [current import hashes](skills/design/editorial-svg-diagrams/source-manifest-20261023.json). Implicit invocation enabled. |
 | <img src="skills/design/frontend-design/assets/icon.svg" width="28" height="28" alt=""> [`frontend-design`](skills/design/frontend-design/SKILL.md) | **Leaf (implicit until the Design domain exists).** Reviewed adaptation of [Anthropic's `frontend-design`](https://github.com/anthropics/skills/tree/2235be7c60b551f5de82ade908fd3816455afcda/skills/frontend-design) at commit `2235be7c60b551f5de82ade908fd3816455afcda`. [Local changes](skills/design/frontend-design/NOTICE.md); Apache-2.0 license preserved. |
+| <img src="skills/design/gsap/assets/icon.svg" width="28" height="28" alt=""> [`gsap`](skills/design/gsap/SKILL.md) | **Leaf (implicit until the Design domain exists).** Repository-owned router around eight byte-preserved entrypoints from [GreenSock's official `gsap-skills`](https://github.com/greensock/gsap-skills/tree/aed9cfd3277740755f6bfc1155c7aa645403b760/skills) at commit `aed9cfd3277740755f6bfc1155c7aa645403b760`. The manifest records each source hash; MIT license preserved. This is a standalone skill, not a plugin-managed installation. |
 | <img src="skills/design/motion-design/assets/icon.svg" width="28" height="28" alt=""> [`motion-design`](skills/design/motion-design/SKILL.md) | **Leaf (implicit until the Design domain exists).** Reviewed adaptation of [LottieFiles `motion-design-skill`](https://github.com/LottieFiles/motion-design-skill/tree/b6606e101601ef027f01729a7289e97c329ad0cd/skills/motion-design) at commit `b6606e101601ef027f01729a7289e97c329ad0cd`. [Local changes](skills/design/motion-design/NOTICE.md); MIT license preserved. |
+| <img src="skills/design/svg-design/assets/icon.svg" width="28" height="28" alt=""> [`svg-design`](skills/design/svg-design/SKILL.md) | **Leaf (implicit until the Design domain exists).** Locally maintained SVG design method for logos, icons, brand assets and website graphics. Includes eight technical references and a preview asset. The original installed files match an OpenData snapshot; [provenance and local changes](skills/design/svg-design/NOTICE.md), original hashes and MIT license are preserved. |
 
 ## Extras
 
-Optional skills kept for occasional use. They install like every other skill;
-being an extra means lower maintenance priority, not lower availability.
+Optional skills kept for occasional use, outside every tree. Grilling is a leaf
+whose root is the person who starts the interview.
 
 | Skill | Purpose and provenance |
 |---|---|
 | <img src="skills/extras/grilling/assets/icon.svg" width="28" height="28" alt=""> [`grilling`](skills/extras/grilling/SKILL.md) | **Leaf.** Locally maintained adaptation of Matt Pocock's decision-tree interview. Native metadata disables implicit invocation. The complete skill, MIT license and [provenance](skills/extras/grilling/NOTICE.md) are included. |
-| <img src="skills/extras/gsap/assets/icon.svg" width="28" height="28" alt=""> [`gsap`](skills/extras/gsap/SKILL.md) | **Leaf.** Repository-owned router around eight byte-preserved entrypoints from [GreenSock's official `gsap-skills`](https://github.com/greensock/gsap-skills/tree/aed9cfd3277740755f6bfc1155c7aa645403b760/skills) at commit `aed9cfd3277740755f6bfc1155c7aa645403b760`. The manifest records each source hash; MIT license preserved. This is a standalone skill, not a plugin-managed installation. |
-| <img src="skills/extras/svg-design/assets/icon.svg" width="28" height="28" alt=""> [`svg-design`](skills/extras/svg-design/SKILL.md) | **Leaf.** Locally maintained SVG design method for logos, icons, brand assets and website graphics. Includes eight technical references and a preview asset. The original installed files match an OpenData snapshot; [provenance and local changes](skills/extras/svg-design/NOTICE.md), original hashes and MIT license are preserved. |
 
 ## Writing family
 
@@ -94,12 +95,14 @@ being an extra means lower maintenance priority, not lower availability.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/writing-family.dark.svg">
-  <img src="figures/writing-family.svg" width="860" alt="Good Writing routes to one of five explicit-only specialists; all require Unslop and may use Editorial SVG Diagrams; the specialists still name Good Writing as their caller.">
+  <img src="figures/writing-family.svg" width="860" alt="Good Writing routes to one of four explicit-only specialists; all require the core skill Unslop and may use the core skill Editorial SVG Diagrams; the specialists still name Good Writing as their caller.">
 </picture>
 
 Good Writing is the only implicit entry: it prepares material through Writing
-Fragments, then routes to exactly one specialist. The five specialists share
-their outgoing edges, so the group stands for each of them.
+Fragments, then routes to exactly one specialist. The four specialists share
+their outgoing edges, so the group stands for each of them. No edge leads into
+the software engineering tree: code-owned documentation and source comments are
+software engineering work.
 
 | Line | Meaning |
 |---|---|
@@ -107,9 +110,9 @@ their outgoing edges, so the group stands for each of them.
 | Solid teal | Required step whenever the target is available (Good Writing also applies Unslop to every route) |
 | Grey dashed | Conditional: used only when the situation needs it, for example no source handoff yet or a figure that explains better |
 | Red dashed | Back-reference: the callee names its caller ("do not route back"); a cycle candidate for the 2026-11-10 restructuring |
-| Grey dotted | Boundary mention only; nothing is loaded |
 
-Tinted nodes are implicitly invocable; white nodes are explicit-only. The
+Tinted nodes are implicitly invocable — Good Writing as the domain, Unslop and
+Editorial SVG Diagrams as core skills; white nodes are explicit-only. The
 editable sources are [`figures/writing-family.svg`](figures/writing-family.svg)
 and its dark variant; the dependency counts come from
 `skills/core/skill-issue/scripts/skill_graph.py`.

@@ -176,7 +176,7 @@ cross-module contracts and operating procedures. Link between them instead of
 copying the same explanation. A brief orientation in both places is useful; two
 independently maintained accounts of the same rule are not. Use Engineering
 Documentation directly when available for an affected repository explanation;
-pass the verified change and its source anchors without restarting Good Writing.
+pass the verified change and its source anchors.
 If unavailable, preserve this division of ownership and report a material gap.
 
 Write concise, complete, grammatical sentences in the repository's language.

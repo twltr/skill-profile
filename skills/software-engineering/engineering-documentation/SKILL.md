@@ -1,6 +1,6 @@
 ---
 name: engineering-documentation
-description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs to Golden Comments; standalone manuals use Technical Writing."
+description: "Use for repository README, architecture, SDK and agent-documentation work, and within engineering changes to patterns, contracts, configuration or deployment. Preserve named design decisions, pattern relationships, primary sources and implementation routes against the code. Local source rationale belongs to Golden Comments; standalone manuals without a codebase are writing work, not this method."
 ---
 
 # Engineering Documentation
@@ -25,8 +25,7 @@ for the chosen combination and the assumptions that would justify revisiting it;
 route detailed local reasoning to the code that owns it.
 
 Engineering workflows may load this method directly for affected explanations,
-passing their existing evidence; no separate writing request or Good Writing round
-is required. Good Writing remains the default router for general writing tasks.
+passing their existing evidence; no separate writing request is required.
 Return to the active caller after the scoped update; preserve native invocation
 policy rather than treating workflow composition as automatic catalog selection.
 
@@ -76,12 +75,11 @@ affected implementation, public contracts, configuration, tests and runnable
 entrypoints. Scope inspection to the requested change. Preserve a working book
 and explicit local exceptions; this method does not require a new docs directory.
 
-Reuse a source handoff from Good Writing or Writing Fragments when supplied.
-Otherwise use Writing Fragments, if available, for bounded source selection.
-For a large system, use Puppeteer, if available, to scout coherent capabilities
-and return exact source anchors, stale explanations and proposed figures.
-Without those methods, gather the same bounded evidence directly. Do not route
-back to Good Writing or restart an active caller.
+Reuse a source handoff when supplied. Otherwise select the relevant sources,
+claims, qualifiers and gaps directly, scaled to the change. For a large system,
+use Puppeteer, if available, to scout coherent capabilities and return exact
+source anchors, stale explanations and proposed figures. Without it, gather the
+same bounded evidence directly. Do not restart an active caller.
 
 Distinguish the implemented behavior, intended contract and planned work. Resolve
 contradictions at their owner: do not document a bug as a design decision or promise

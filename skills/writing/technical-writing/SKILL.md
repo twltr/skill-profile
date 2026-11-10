@@ -1,6 +1,6 @@
 ---
 name: technical-writing
-description: "Write technical manuals, product guides, procedures and reference material from verified specifications and source documents. Organize learning, tasks, explanations and lookup for the reader. Repository READMEs, agent instructions and documentation maintained with code belong to Engineering Documentation."
+description: "Write technical manuals, product guides, procedures and reference material from verified specifications and source documents. Organize learning, tasks, explanations and lookup for the reader. Repository READMEs, agent instructions and documentation maintained with code are software engineering work, not this method."
 ---
 
 # Technical Writing
@@ -52,20 +52,20 @@ native explicit-invocation policy.
 Choose this method when the document's authoritative inputs are specifications,
 verified product behavior or supplied technical material. If the requested result
 is maintained with a software repository—its README, agent instructions,
-architecture or SDK contracts—Engineering Documentation owns it. On direct
-invocation, hand off once to that method when available; it completes the work
-without routing again. If Good Writing supplied the brief, return the scope
-mismatch to that active caller instead of selecting another writer. If the owning
-method is unavailable, report the limit and preserve the requested scope rather
-than pretending this manual workflow verified the repository.
-A vendor API manual can belong here; an SDK's code-owned reference belongs there.
+architecture or SDK contracts—it is software engineering work, verified against
+the code. Return that scope mismatch to whoever loaded this method, or to the
+agent, instead of writing it here or choosing another method yourself; preserve
+the requested scope rather than pretending this manual workflow verified the
+repository. A vendor API manual can belong here; an SDK's code-owned reference
+does not.
 Missing repository access is a blocked source check, not permission to pretend
 its implementation was inspected. Do not re-enter an already active caller.
 
 Verify current product/version claims with their actual owner. Mark unsupported
-or planned behavior explicitly. For a consequential unresolved engineering fact,
-use State of the Art if available and return its scoped evidence here; do not
-turn every writing task into broad research or silently redesign the product.
+or planned behavior explicitly. For a consequential unresolved technical fact,
+return it as an open question with what would settle it, so the agent can
+research it; do not turn every writing task into broad research or silently
+redesign the product.
 
 ## 2. Organize by the reader's job
 

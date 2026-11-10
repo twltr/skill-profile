@@ -16,7 +16,7 @@ the skills route to each other so an agent loads only what a task needs.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/skill-architecture.dark.svg">
-  <img src="figures/skill-architecture.svg" width="840" alt="The agent starts in the middle with five core skills and three domain trees; edges point only down or along the Road to Glory flow.">
+  <img src="figures/skill-architecture.svg" width="840" alt="The agent starts in the middle with six core skills and three domain trees; edges point only down or along the Road to Glory flow.">
 </picture>
 
 Picture a room. The agent stands in the middle. Around it are **core skills** it
@@ -44,7 +44,7 @@ pull in half the collection.
 
 | Type | What it is | Selected | Loads | In this profile |
 |---|---|---|---|---|
-| **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
+| **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, Editorial SVG Diagrams, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
 | **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
 | **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
 | **Core flow** | Runs steps left to right, with roles, from the surface | Implicitly | Its step skills, in any tree | None yet |
@@ -98,10 +98,12 @@ pack by name in its brief through Puppeteer's `Skills:` field. The review step
 loads Engineering Review, a parent that applies its lenses; the documentation
 step switches the lead to the documenter role.
 
-**Two domains at once.** "Write the release notes and add a diagram of the new
-flow." The agent opens Good Writing, which routes to Technical Writing, and the
-Design domain for the explanatory figure. Technical Writing does not call the
-diagram skill itself: that would be an edge across trees.
+**Two trees, one task.** "Update the README for the new event bus, and write a
+customer email announcing it." The README is documentation maintained with
+code, so the agent enters Software Engineering in the documenter role; the email
+goes through Good Writing to Customer Writing. Neither tree calls into the
+other. Both may use the core skills Unslop and Editorial SVG Diagrams, which the
+agent applies from the middle.
 
 **A shared child.** The implementer and the reviewer both need Marshmallow
 Tests. Neither role's methods load it; the Software Engineering domain lists it
@@ -142,8 +144,10 @@ The type system and the two existing domains are in place:
   and Vertical Slices are explicit-only and loaded through it. The evidence is in
   [its notice](skills/software-engineering/software-engineering/NOTICE.md).
 - **Good Writing** routes to explicit-only writing specialists.
-- **Design** is planned: Frontend Design, Editorial SVG Diagrams and Motion
-  Design remain implicit until their domain exists.
+- **Design** is planned over Frontend Design, Motion Design, GSAP and SVG Design;
+  they remain implicit until their domain exists. Editorial SVG Diagrams is core.
+- **Writing and Software Engineering** share no edges: code-owned documentation
+  and source comments belong to Software Engineering.
 
 Not yet applied everywhere: the `metadata` declarations and type prefixes on
 every skill, and the removal of the remaining back-references and cross-tree
@@ -157,7 +161,7 @@ edges. The [writing map](SKILLS.md#writing-family-map) and the
 skills/core/                   Core skills
 skills/writing/                Good Writing and its specialists
 skills/software-engineering/   Software Engineering, its flow, parent and leaves
-skills/design/                 Design leaves (domain planned)
+skills/design/                 Design leaves: interface, motion, identity (domain planned)
 skills/extras/                 Optional skills kept for occasional use
 figures/                       Editable SVG maps of the collection, light and dark
 archive/                       Complete previous package snapshots (ZIP + manifest)

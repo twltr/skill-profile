@@ -287,7 +287,7 @@ They inspect the affected README, repository agent instructions, setup instructi
 explanations, returning stale or missing material with exact locations and reasons.
 The main agent reconciles the findings and assigns the documentation update.
 
-Use **Good Writing** and its **Engineering Documentation** route when available, including
+Use **Engineering Documentation** when available for the update, including
 **Unslop** when available for the assembled wording. Use **Editorial SVG Diagrams**
 when available to make relationships and flows visible and replace the paragraphs
 the figure makes unnecessary. Keep README purpose and quick start concise, link deeper durable

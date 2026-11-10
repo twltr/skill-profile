@@ -1,6 +1,6 @@
 ---
 name: good-writing
-description: "Use whenever a task creates or substantively revises correspondence, commercial copy, shared notes, articles, reports, technical manuals or repository documentation, including docs within development work. Route by reader and purpose. Source commentary uses Golden Comments; ordinary replies and wording-only fixes use Unslop directly."
+description: "Use whenever a task creates or substantively revises correspondence, commercial copy, shared notes, articles, reports or technical manuals. Route by reader and purpose. Documentation maintained with code and source comments are software engineering work, not a writing route; ordinary replies and wording-only fixes use Unslop directly."
 ---
 
 # Good Writing
@@ -20,13 +20,11 @@ brief and protected content; pass them and the source handoff to the specialist
 once. An explicit specialist choice wins. Ask the user only about a gap that
 changes the meaning or permitted action.
 
-An engineering change can include writing even when the user only asks to implement
-a feature. Source commentary is handled in that implementation by Golden Comments,
-when available. Engineering Practices or another active engineering workflow may
-load Engineering Documentation directly for affected architecture, pattern sources,
-contracts or operating instructions, using its existing evidence. It need not come
-through this router first. This preserves a short route without making each writing
-specialist an independent automatic entrypoint.
+Documentation maintained with code — a repository README, agent instructions,
+architecture or SDK docs — and source comments are software engineering work, not
+a writing route: they are verified against the code they describe. When such a
+task arrives here, hand it back to the agent, which takes it into the software
+engineering domain; do not load engineering methods from this router.
 
 ## Prepare the material first
 
@@ -65,32 +63,23 @@ in your own final check and report that Unslop was not applied.
 | Customer or business-partner correspondence | `customer-writing` |
 | Offer, sales copy, pitch or commercial decision | `commercial-writing` |
 | Shared working notes in OpenAI ChatGPT Pages and Spaces | `workspace-writing` |
-| Repository README, agent instructions, architecture or SDK docs maintained with code | `engineering-documentation` |
 | Technical manual, product guide or reference maintained from specifications or other non-repository sources | `technical-writing` |
 | Ordinary reply, quick wording fix or other prose | `unslop` and the reader's brief; no further route required |
 
-Choose between the two technical routes by the document's owner and task. An SDK's
-code-owned documentation uses Engineering Documentation even for external readers;
-a vendor API manual based on published specifications uses Technical Writing.
-Missing code access remains an unresolved verification, not a reason to pretend
-repository documentation was checked through the other route.
-
-For repository docs, keep durable product and system knowledge in its canonical
-documentation owner. Put temporary progress, task status, agent diaries and
-"since the last update" notes in the active plan, roadmap item, issue, PR or
-changelog that owns that work. If a status note reveals a lasting behavior or
-constraint, rewrite that fact in the appropriate documentation instead of
-copying the transient update into the README.
+Choose technical writing by the document's owner. Documentation owned by a code
+repository, even an SDK's docs for external readers, belongs to the software
+engineering domain; a vendor API manual based on published specifications uses
+`technical-writing`. Missing code access remains an unresolved verification, not a
+reason to write code-owned documentation through this router.
 
 An explicit choice wins. Route by the text's job, not its source: a product pitch
 based on code is commercial writing. For mixed tasks, select the needed methods
 here and apply each only to its relevant part.
 
-Good Writing is the default automatic router for writing work across the five
+Good Writing is the default automatic router for writing work across the four
 specialists. They disable implicit invocation and remain usable by explicit user
 choice, this router, or a scoped deliberate call from another authorized workflow.
-Technical Writing is directly callable for manuals; Engineering Documentation is
-directly callable for code-owned docs. Automatic selection and deliberate workflow
+Technical Writing is directly callable for manuals. Automatic selection and deliberate workflow
 composition are different routes. Resolve the selected name through the host's installed-skill
 lookup and read its complete `SKILL.md` before applying it. In a filesystem runtime,
 use the configured skill roots; in a flat installation the file is the sibling

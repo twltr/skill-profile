@@ -387,9 +387,8 @@ maintenance burden, not just files. Recheck that trade-off when requirements exp
   receive a local explanation checked against the code, not only a chat summary.
 - If **Engineering Documentation** is available and the change affects system
   understanding, patterns, contracts or operation, load it directly for the affected
-  explanation. Pass the existing evidence and source anchors; do not wait for an
-  independent writing request or restart Good Writing. Good Writing remains the
-  general writing router. Engineering Documentation is explicit-only and may be
+  explanation. Pass the existing evidence and source anchors; do not wait for a
+  separate writing request. Engineering Documentation is explicit-only and may be
   absent from the automatic catalog. Resolve `engineering-documentation` through
   the host's installed-skill lookup before treating it as unavailable. In a
   filesystem runtime, inspect the configured skill roots; in a flat installation

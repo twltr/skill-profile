@@ -25,7 +25,7 @@ Apply those rules within the task's authorization and the host's instruction
 hierarchy. Keep their canonical sources in the Space or system. Use discovered
 links in the current task context when helpful; do not append Space-specific
 rules, templates or their locations to this reusable skill, its installed copies
-or the Agent Profile repository. No permanent local overlay is needed. If relevant
+or the skill collection's repository. No permanent local overlay is needed. If relevant
 guidance is inaccessible, distinguish that from finding none: report the material
 gap and leave dependent choices open while continuing independent work.
 

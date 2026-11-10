@@ -7,6 +7,6 @@ packaging adaptation; it does not claim to be an upstream GSAP release.
 `references-manifest.json` records the original entrypoint names and SHA-256 hashes.
 Updates replace the matching reference from its reviewed source, refresh the hash
 and check the router mapping. The references are resources, not nested SKILL.md
-entrypoints. The installed Codex directory is the local distribution source for
-the matching Claude, Kimi and Gemini copies. The pre-change installation remains
-in the external Agent Profile recovery bundle.
+entrypoints. The Skill Profile is the source for every installed copy. The pre-change
+installation of this router remains in the external recovery bundle recorded at
+the time.

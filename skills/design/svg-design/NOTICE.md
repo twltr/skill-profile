@@ -28,5 +28,5 @@ foreground window with a platform-specific command. Conditional cross-references
 state the handoff and fallback. The editing-workflow reference is locally adapted;
 the other technical references and preview asset retain the matched source.
 
-Agent Profile owns this complete local variant under `skills/extras/svg-design/`.
+The Skill Profile owns this complete local variant under `skills/design/svg-design/`.
 Installed directories are deployment copies; future local changes belong here.

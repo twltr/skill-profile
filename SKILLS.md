@@ -91,12 +91,13 @@ engineering work.
 Shared leaves outside every tree: explicit-only, usable from any domain. Each
 is a leaf whose root is the person who starts it, directly or after a routing
 skill suggests it: Grilling interviews you, Grilling with Agents lets agents
-question the lead.
+question the lead, Wizard scripts the steps only you can perform.
 
 | Skill | Purpose and provenance |
 |---|---|
 | <img src="skills/extras/grilling/assets/icon.svg" width="28" height="28" alt=""> [`grilling`](skills/extras/grilling/SKILL.md) | **Leaf.** Locally maintained adaptation of Matt Pocock's decision-tree interview. Native metadata disables implicit invocation. The complete skill, MIT license and [provenance](skills/extras/grilling/NOTICE.md) are included. |
 | <img src="skills/extras/grilling-with-agents/assets/icon.svg" width="28" height="28" alt=""> [`grilling-with-agents`](skills/extras/grilling-with-agents/SKILL.md) | **Leaf.** Scouts question the lead and challenge its decisions. Every entry returns decisions, reasons and unresolved prerequisites without user questions; an existing plan owns the result. Native metadata keeps direct selection explicit. [Provenance](skills/extras/grilling-with-agents/NOTICE.md). |
+| <img src="skills/extras/wizard/assets/icon.svg" width="28" height="28" alt=""> [`wizard`](skills/extras/wizard/SKILL.md) | **Leaf.** Snapshot of [Matt Pocock's Wizard](https://github.com/mattpocock/skills/tree/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/wizard) at commit `3cca18b368ae95cdbdebbff572ccafa662551015`: generates an interactive bash script that walks a person through setup, credentials or a migration step by step. `template.sh` is byte-identical to upstream; later upstream template fixes are not yet included. Native metadata disables implicit invocation. MIT license and [provenance](skills/extras/wizard/NOTICE.md) are included. |
 
 ## Writing family
 

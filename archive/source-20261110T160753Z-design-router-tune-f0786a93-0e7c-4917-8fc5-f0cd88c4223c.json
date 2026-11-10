@@ -1,0 +1,31 @@
+{
+  "source_revision": "7231bf0703e6eb40272d58cc0b91afee8bba82fa",
+  "reason": "Before tuning the design router from re-measured training misses",
+  "packages": [
+    "skills/design/design",
+    "skills/software-engineering/software-engineering"
+  ],
+  "archive": "archive/source-20261110T160753Z-design-router-tune-f0786a93-0e7c-4917-8fc5-f0cd88c4223c.zip",
+  "files": {
+    "skills/design/design/LICENSE": "620584c2cc9883f37e9ac947ed2d528e9a7c6c911be47d87c8d157bc66621682",
+    "skills/design/design/NOTICE.md": "0012af99e5420e434c8f29f1f7bd6069cafdb125196f83c44197d037304cf265",
+    "skills/design/design/SKILL.md": "c80f4145fff56f261ce2243d96caf6dd508c60c5e88e5d507d14089595c813b9",
+    "skills/design/design/agents/openai.yaml": "c3f1b3f5f2a6ecf35ea68cfc16f54f49bd8911fc7f699b39b67c2e661ca612de",
+    "skills/design/design/assets/icon-small.png": "f1663c2bbbce0ee7f98eae944b99b66d0f67dc0d22b4f3b365de47ea1102b0c9",
+    "skills/design/design/assets/icon-small.svg": "a8ff67a7d9175fb704913908e88357096cd3c5901362410ef2365b2eb31e0673",
+    "skills/design/design/assets/icon.png": "beb531e9a2fcf2917036bc9ba1d4a998ae0d32cf5835e820c438a2530cd88492",
+    "skills/design/design/assets/icon.svg": "a8ff67a7d9175fb704913908e88357096cd3c5901362410ef2365b2eb31e0673",
+    "skills/design/design/trigger-evals/holdout.json": "7b6e25e42d059c3c3dcfa8f4af54d7dc776831a2050743bf9f1cf3d62ffd33ee",
+    "skills/design/design/trigger-evals/train.json": "8304e887e32f0ce890cb028ce7e6cd42ce772ece95ad317c1046f70715943e3e",
+    "skills/software-engineering/software-engineering/LICENSE": "620584c2cc9883f37e9ac947ed2d528e9a7c6c911be47d87c8d157bc66621682",
+    "skills/software-engineering/software-engineering/NOTICE.md": "b67301c02048f9f50925f55e99a5ce7757f9416d9371d61b6e5f1f9a8e59315a",
+    "skills/software-engineering/software-engineering/SKILL.md": "8c093e479381985655b038bc94de517192e3073affa1bbb4936c365990d8b861",
+    "skills/software-engineering/software-engineering/agents/openai.yaml": "f787da60b282b885c76bd6777cf17587442a3f0b63c3a7e3ec55b4ae609cb3d0",
+    "skills/software-engineering/software-engineering/assets/icon-small.png": "25a12b4d7ea3b786347c5b2cda681091d61175fb853164a7b3e8108ed52a8be0",
+    "skills/software-engineering/software-engineering/assets/icon-small.svg": "82d7dbdd43c1229f31f2c5ca8809aaccb4b275041c6253a9b6b8c00d3107fad4",
+    "skills/software-engineering/software-engineering/assets/icon.png": "04ece9e3fdc462fba8c438fc556ef9e3d7ace073e25282061bd84628c5771914",
+    "skills/software-engineering/software-engineering/assets/icon.svg": "82d7dbdd43c1229f31f2c5ca8809aaccb4b275041c6253a9b6b8c00d3107fad4",
+    "skills/software-engineering/software-engineering/trigger-evals/holdout.json": "dacc2476d9b96ac3db33b51190121871609c0d42c8047fc51e11a4898a4c773e",
+    "skills/software-engineering/software-engineering/trigger-evals/train.json": "2da6c3e6c868cbdf936ad02e9621f332967642f91917a9ba0227cbd2dc1a9634"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source_revision": "4d4f01d26d201ca5594497dff6df89645b1682ed",
+  "reason": "Preserve Engineering Review and Road to Glory before their visual judgment moves to the design domain instead of naming design leaves (2026-11-10).",
+  "packages": [
+    "skills/software-engineering/engineering-review",
+    "skills/software-engineering/road-to-glory"
+  ],
+  "archive": "archive/source-20261110T140702Z-se-design-boundary-6116e7d0-b644-4689-932d-49b28a95c4a5.zip",
+  "files": {
+    "skills/software-engineering/engineering-review/LICENSE-Theo.txt": "8095f9a9f97d074131f6a2ce09b952d12c18b36f09f4e5df0517c4e64e82c851",
+    "skills/software-engineering/engineering-review/NOTICE.md": "c5f6bdedae3057b6f0f466e933d183af6ea063274a7f3f995b97acaf5e88cba5",
+    "skills/software-engineering/engineering-review/SKILL.md": "d8aa218eb2dcbd390664f1d2a3b9ee170adda269029ad7b96e390582bd120db8",
+    "skills/software-engineering/engineering-review/agents/openai.yaml": "23ccc345379f1009dc38f9dbb6117c970f4e1b87b828f5670a94f0c7503d1e46",
+    "skills/software-engineering/engineering-review/assets/icon-small.png": "36a837ac10a8ee7da4365d5c9b8d9dfbbe360f1ba9fff2fd0d2d0115c91ae273",
+    "skills/software-engineering/engineering-review/assets/icon-small.svg": "e9e4fd9363391dd70f8498b03e28daf73d1d9efe3edb8438993c7273374f04bf",
+    "skills/software-engineering/engineering-review/assets/icon.png": "3a4c86cab7e8277c1143bd0cd84f3c099fa4b91aef6e36a25431fc4edcc08cef",
+    "skills/software-engineering/engineering-review/assets/icon.svg": "e9e4fd9363391dd70f8498b03e28daf73d1d9efe3edb8438993c7273374f04bf",
+    "skills/software-engineering/road-to-glory/NOTICE.md": "6885b6fa9b2ade9f56e5547f7bd22dfe2e2db15b3a5a199264f3a46bea5e1920",
+    "skills/software-engineering/road-to-glory/SKILL.md": "89d59a47a07059588179a28f49b032d861cdc19efeaf8a15e61494804ec13666",
+    "skills/software-engineering/road-to-glory/agents/openai.yaml": "070b31c4aa50aa63647e19b52591a6f8b4f8670d2ef312667de3603d830d0b3f",
+    "skills/software-engineering/road-to-glory/assets/icon-small.png": "69743084570e68a301d19d0649feee0d024804e9b7eab1ad0d0a85e5be824632",
+    "skills/software-engineering/road-to-glory/assets/icon-small.svg": "a53a44308b2b7c57fff5da5e6237b60f6b7fa02f14510f38059177f5938406a5",
+    "skills/software-engineering/road-to-glory/assets/icon.png": "c051e31b8a61a3684468c845f0eae073255a23df33e12a71ae4f3c552cf66134",
+    "skills/software-engineering/road-to-glory/assets/icon.svg": "aca25154a103caa5ada69f46bd8ef905b84a8b0d825d0701623b1bb134eec6ec"
+  }
+}

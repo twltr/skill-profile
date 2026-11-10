@@ -185,7 +185,22 @@ about 40% of the queries, propose description changes only from failures in the
 other 60%, and choose the final description by its held-out score so the wording
 is not fitted to the examples. Report before/after descriptions and both scores.
 
-Anthropic's `skill-creator` automates this loop in Claude Code through `claude -p`
+Three lessons from measuring a context router decide whether such a test means
+anything:
+
+- **Measure a window, in a fixture repository.** For coding requests, agents
+  usually explore files before loading a skill. A check that counts only the
+  first tool call in an empty folder scored the same for a good and a weak
+  description. [scripts/trigger_window.py](../scripts/trigger_window.py) counts a
+  hit within the first few tool calls and records what happened instead.
+- **Always run a baseline** with the same queries — the current description or
+  configuration — so a number has something to be better than.
+- **Measure at the real placement.** The same description triggered more often
+  as a project skill than among many user-level skills; make the final
+  measurement with a temporary user-level copy and remove it afterwards.
+
+Anthropic's `skill-creator` automates this loop in Claude Code through `claude -p`;
+its `run_eval` counts only the first tool call, so mind the first lesson above
 (`python -m scripts.run_loop --eval-set <json> --skill-path <skill> --model <id>
 --max-iterations 5 --verbose`, run from the skill-creator directory). Read its
 current `SKILL.md` before using it; use the model that powers the user's actual

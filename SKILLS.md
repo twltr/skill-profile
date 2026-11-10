@@ -42,8 +42,10 @@ loaded by it. See the [writing family map](#writing-family-map).
 These skills are maintained as part of this repository. Their primary source is
 Tobi's former global Engineering instructions and the revision decisions in the
 joined `engineering-skills` Git history. Individual `NOTICE.md` files preserve
-supplementary Matt Pocock attribution where applicable. A context router for this
-group is planned; see the [engineering map](#engineering-and-general-map).
+supplementary Matt Pocock attribution where applicable. Software Engineering is
+the group's context router: Engineering Practices, Golden Comments and Vertical
+Slices are loaded only through it, while the other methods keep their own
+triggers for now. See the [engineering map](#engineering-and-general-map).
 
 | Skill | Purpose and provenance |
 |---|---|
@@ -57,6 +59,7 @@ group is planned; see the [engineering map](#engineering-and-general-map).
 | <img src="skills/software-engineering/marshmallow-tests/assets/icon.svg" width="28" height="28" alt=""> [`marshmallow-tests`](skills/software-engineering/marshmallow-tests/SKILL.md) | Design tests around coherent units, invariants and precise failure addresses. |
 | <img src="skills/software-engineering/minmax-codebase/assets/icon.svg" width="28" height="28" alt=""> [`minmax-codebase`](skills/software-engineering/minmax-codebase/SKILL.md) | Human-initiated structural and architectural improvement; preserves agreed capability. |
 | <img src="skills/software-engineering/road-to-glory/assets/icon.svg" width="28" height="28" alt=""> [`road-to-glory`](skills/software-engineering/road-to-glory/SKILL.md) | Coordinate substantial work through versioned plans, conditional delegation, remote issues/PRs and separate implementation/documentation reviews before cleanup. |
+| <img src="skills/software-engineering/software-engineering/assets/icon.svg" width="28" height="28" alt=""> [`software-engineering`](skills/software-engineering/software-engineering/SKILL.md) | Context router and the implicit entry for code work: picks the role (implementer, orchestrator, reviewer, documenter) and loads its method pack. Engineering Practices, Golden Comments and Vertical Slices are explicit-only and loaded through it. [Trigger evidence](skills/software-engineering/software-engineering/NOTICE.md). |
 | <img src="skills/software-engineering/state-of-the-art/assets/icon.svg" width="28" height="28" alt=""> [`state-of-the-art`](skills/software-engineering/state-of-the-art/SKILL.md) | Repository-owned research method with problem-led discovery, current primary evidence, scoped alternatives and conditional agent challenge. [Provenance](skills/software-engineering/state-of-the-art/NOTICE.md). |
 | <img src="skills/software-engineering/vertical-slices/assets/icon.svg" width="28" height="28" alt=""> [`vertical-slices`](skills/software-engineering/vertical-slices/SKILL.md) | Make capabilities, coordinating mechanisms and participants visible through coherent modules and public boundaries. |
 

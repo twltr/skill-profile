@@ -1,0 +1,14 @@
+[
+ {"query": "the orders page takes 8 seconds to load, profile it and make it faster", "should_trigger": true},
+ {"query": "add an endpoint GET /reports/monthly that returns totals per customer, with pagination", "should_trigger": true},
+ {"query": "look at PR #482 and tell me if the migration is safe to run in prod", "should_trigger": true},
+ {"query": "test_retry_timeout is flaky, fails like 1 in 5 runs on CI, find out why", "should_trigger": true},
+ {"query": "convert the remaining class components in src/legacy to hooks", "should_trigger": true},
+ {"query": "write unit tests for src/utils/money.ts, especially the rounding edge cases", "should_trigger": true},
+ {"query": "docs are stale after the auth rewrite, fix docs/auth.md and the setup section in the README", "should_trigger": true},
+ {"query": "bump next from 14 to 15 and fix whatever breaks", "should_trigger": true},
+ {"query": "what's a good name for a product that helps freelancers track invoices?", "should_trigger": false},
+ {"query": "explain the CAP theorem like I'm a junior dev, no code needed", "should_trigger": false},
+ {"query": "translate this into French: Our office will be closed on Friday for maintenance.", "should_trigger": false},
+ {"query": "plan my week: three client calls, a dentist appointment and the gym twice", "should_trigger": false}
+]

@@ -1,0 +1,22 @@
+[
+ {"query": "ok the checkout test in tests/test_cart.py fails since yesterday's merge, can you figure out why and fix it", "should_trigger": true},
+ {"query": "just patch it: the API returns 500 when email is null in /users/signup, make it a 400 with a proper message", "should_trigger": true},
+ {"query": "refactor src/billing/invoice.py, generate() is like 300 lines, split it up without changing behavior", "should_trigger": true},
+ {"query": "add a dark mode toggle to the settings page in our next.js app and persist the choice in localStorage", "should_trigger": true},
+ {"query": "can you review the diff on my branch feature/retry-queue before I open the PR? mostly worried about the backoff logic", "should_trigger": true},
+ {"query": "we need to move the whole frontend from moment.js to date-fns, plan it and then do it, there are ~80 call sites", "should_trigger": true},
+ {"query": "why does pnpm build fail with 'Cannot find module @/lib/env' only in CI but works on my machine?", "should_trigger": true},
+ {"query": "rename the Customer model to Account everywhere in the django app, including the db migration and admin", "should_trigger": true},
+ {"query": "update the README and docs/architecture.md for the new event bus we added in packages/events last week", "should_trigger": true},
+ {"query": "schnell: im Header ist der Logout-Button kaputt, beim Klick passiert nix, fix das bitte", "should_trigger": true},
+ {"query": "what's the difference between a mutex and a semaphore? explain with an everyday analogy", "should_trigger": false},
+ {"query": "write a short linkedin post announcing that our public API v2 is live, upbeat but not cringe", "should_trigger": false},
+ {"query": "design a minimal svg logo for my coffee startup called Bitter Bean, two colors max", "should_trigger": false},
+ {"query": "draft an email to the client explaining that the deployment slips by two days because of the payment provider", "should_trigger": false},
+ {"query": "how do I calculate the bending moment of a 6 m steel beam with a uniform load of 2 kN/m?", "should_trigger": false},
+ {"query": "summarize the transformer scaling-laws paper I saved in ~/Downloads/scaling.pdf in 5 bullets", "should_trigger": false},
+ {"query": "make a 6-slide deck on our Q3 engineering roadmap for the board, no code details, just outcomes", "should_trigger": false},
+ {"query": "compare GPT-6 and Claude Opus pricing for running code review on about 200 PRs a month", "should_trigger": false},
+ {"query": "set up a reminder every monday at 9 to check the dependabot PRs", "should_trigger": false},
+ {"query": "explain how git rebase --onto works, with a small example of three branches", "should_trigger": false}
+]

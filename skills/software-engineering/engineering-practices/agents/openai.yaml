@@ -4,4 +4,4 @@ interface:
   display_name: "Engineering Practices"
   short_description: "Choose architecture, configuration and delivery from evidence"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

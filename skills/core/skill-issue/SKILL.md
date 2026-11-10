@@ -176,6 +176,26 @@ A router costs one extra hop on every use. It pays off when misrouting is
 common or expensive. Siblings with clearly distinct triggers are cheaper as
 plain skills with one boundary sentence each.
 
+Routers come in two kinds. A **selection router** picks one specialist for the
+result, as above. A **context router** establishes the working context and the
+agent's current role, then loads a fixed pack of methods that always apply in
+that role, plus a few conditional ones:
+
+```markdown
+| You are…     | Load always                          | Load when needed            |
+|--------------|--------------------------------------|-----------------------------|
+| Implementer  | design-method, comment-method, ...   | test-method for new tests   |
+| Reviewer     | review-method                        | its lenses                  |
+| Orchestrator | flow-method                          | delegation-method           |
+```
+
+Use a context router when several methods should apply together whenever a
+context is active — and never outside it. One broad description then carries
+the whole context, so it must be measured: before making the pack members
+explicit-only, run a trigger evaluation of the router against the current
+configuration as a baseline. Delegates receive their role pack by name in the
+brief, so they load the methods themselves.
+
 ## Composition and dependencies
 
 Reference another skill only for an independently useful capability, and say:

@@ -4,7 +4,7 @@ interface:
   icon_small: "./assets/icon-small.png"
   icon_large: "./assets/icon.png"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
   products:
   - chatgpt
   - codex

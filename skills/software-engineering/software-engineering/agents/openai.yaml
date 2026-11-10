@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "Software Engineering"
+  short_description: "Pick your engineering role and load its methods"
+policy:
+  allow_implicit_invocation: true

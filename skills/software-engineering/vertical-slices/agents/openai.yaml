@@ -4,4 +4,4 @@ interface:
   display_name: "Vertical Slices"
   short_description: "Expose capability ownership and architectural relationships"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

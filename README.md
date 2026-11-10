@@ -40,23 +40,26 @@ mutually referencing pairs, the three most important engineering methods were lo
 none of 20 realistic coding requests in a trigger test, and a small task could
 pull in half the collection.
 
-### Five types
+### Six types
 
 | Type | What it is | Selected | Loads | In this profile |
 |---|---|---|---|---|
 | **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
 | **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
 | **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
-| **Flow** | Runs steps left to right, with roles — on the surface as a core flow, or inside a tree | Implicitly as a core flow; through its domain inside a tree | Its step skills | Road to Glory |
+| **Core flow** | Runs steps left to right, with roles, from the surface | Implicitly | Its step skills, in any tree | None yet |
+| **Flow** | Runs steps left to right, with roles, inside a tree | Through its domain | Its step skills, in its tree | Road to Glory |
 | **Leaf** | Self-contained method, always invoked manually | Through a routing skill or by a person | Nothing | Golden Comments, Customer Writing, Grilling, Grilling with Agents, … |
 
-Domain, parent and flow skills are **routing skills**: nodes that have
-children.
+Domain, parent, flow and core-flow skills are **routing skills**: nodes that
+have children. Every skill has exactly one type, and the type fixes how it is
+selected: core, core flow and domain are implicit; parent, flow and leaf are
+explicit-only.
 
 **Selection decides the type.** What lies on the agent's surface — what it may
-select by itself — is a core skill, a domain root or a core flow. A flow is a
-shape, not a position: on the surface it is implicit and may enter several
-trees from the middle; inside a tree it is reached through its domain. Everything else is
+select by itself — is a core skill, a core flow or a domain root. Core flow and flow
+share a shape: a core flow stands in the middle and may enter several trees; a
+flow lives inside one tree and is reached through its domain. Everything else is
 invoked manually: by a routing skill above it, or by a person. There is no
 manual core skill. Grilling, the interview you start with "grill me", is a leaf
 whose root is you: you call it, it loads nothing, and it works on its own.

@@ -5,7 +5,7 @@ review how skills load each other. It owns the type system and the edge rules;
 `SKILL.md` keeps only the summary.
 
 - [Why a tree](#why-a-tree)
-- [The five types](#the-five-types)
+- [The six types](#the-six-types)
 - [Edge rules](#edge-rules)
 - [Roles in domains and flows](#roles-in-domains-and-flows)
 - [Declare type and dependencies](#declare-type-and-dependencies)
@@ -34,17 +34,22 @@ A mesh, where skills call each other freely, loses all three: loads become
 unpredictable, cycles make agents restart workflows, and no skill can change
 without checking every other one.
 
-## The five types
+## The six types
 
 | Type | What it is | Selection | Loads |
 |---|---|---|---|
 | **Core** | A standalone method on the agent's surface, useful in any context | Implicit | Nothing |
 | **Domain** | The root of a tree: establishes the context and routes into it | Implicit | Its children — one, several, or a role's pack |
 | **Parent** | An inner node that groups children and applies them together | Explicit-only | Its children, without an order |
-| **Flow** | A sequence of steps and the roles that run them — on the surface as a core flow, or inside a tree | Implicit as a core flow; explicit-only inside a tree | Its step skills, left to right |
+| **Core flow** | A sequence of steps and roles that stands on the surface | Implicit | Its step skills, left to right, in any tree |
+| **Flow** | A sequence of steps and the roles that run them, inside a tree | Explicit-only, reached through its domain | Its step skills, left to right, in its tree |
 | **Leaf** | A self-contained method, always invoked manually: by a routing skill or a person | Explicit-only | Nothing, ever |
 
-Domain, parent and flow skills are **routing skills**: nodes that have children.
+Domain, parent, flow and core-flow skills are **routing skills**: nodes that have
+children. Each skill has exactly one type, and the type fixes its selection:
+`core`, `core-flow` and `domain` are implicit; `parent`, `flow` and `leaf` are
+explicit-only. A tool can therefore check a skill's invocation policy against
+its declared type.
 
 **Selection decides the type.** A skill on the agent's surface — one the agent
 may select by itself — is a core skill, a domain root, or a core flow. A skill
@@ -54,11 +59,12 @@ calls by name, such as an interview started with "grill me", is a leaf whose
 root is that person. Core and leaf both load nothing; a core skill decides for
 itself when it applies, a leaf waits to be called.
 
-**Flow is a shape, not a position.** A flow on the surface is a **core flow**:
-implicit like a core skill, but it runs its steps in order. Because it stands
-in the middle, a core flow may enter several trees, as the agent itself may. A
-flow inside a tree is explicit-only and reached through its domain; it never
-leaves that tree.
+**Core flow and flow share a shape, not a position.** Both run steps in order.
+A core flow stands on the surface, implicit like a core skill; because it stands
+in the middle, it may enter several trees, as the agent itself may. A flow lives
+inside a tree, is explicit-only, is reached through its domain and never leaves
+that tree. Only this one combination gets its own type: a core skill that loads
+nothing is simply core, and a surface skill that roots a tree is a domain.
 
 A method may stay core while no tree exists for its context yet. When you
 create one, ask whether more skills of that kind will follow; if so, give it its
@@ -137,7 +143,8 @@ metadata:
 ---
 ```
 
-- `skill-type` is one of `core`, `domain`, `parent`, `flow`, `leaf`.
+- `skill-type` is exactly one of `core`, `core-flow`, `domain`, `parent`, `flow`,
+  `leaf`.
 - `skill-tree` names the domain a non-core skill belongs to.
 - `skill-requires` lists, space-separated, the children without which a routing
   skill cannot do its job. Optional children appear only in the body. Leaves and
@@ -174,7 +181,7 @@ distribute a tree as a whole, package it together, for example as one plugin.
    person. Yes: continue.
 2. **Does it load other skills?** No: core — useful in any context; if it only
    serves one context, it is a leaf of that tree, and the tree may need its
-   domain first. Yes: a domain if it roots a tree and routes into it; a core flow
+   domain first. Yes: `domain` if it roots a tree and routes into it; `core-flow`
    if it runs steps in order, possibly across trees.
 3. **Inside a tree, does a node define ordered steps or roles?** Yes: flow.
    Otherwise, if it groups children it applies together: parent.

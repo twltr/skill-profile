@@ -49,16 +49,26 @@ Review selects them as lenses.
 
 ## Load a pack
 
-The pack's methods are explicit-only, so they do not compete for selection;
-this router loads them deliberately. Use the host's skill tool where it accepts
-an explicit-only skill by name; otherwise read the skill's `SKILL.md` from the
-host's installed skill root (for example `~/.claude/skills/<name>/` or
-`~/.codex/skills/<name>/`). Read each method completely before claiming it was
-applied. If one is unavailable, say which, and keep its intent through your own
-direct check rather than skipping the concern.
+Read the role's pack right after choosing the role, before you explore the
+code — also for a one-line fix. The methods decide where to look and what to
+record, so reading them after exploring is too late; and quick fixes are
+exactly where reasons go unrecorded and ownership erodes. The pack's
+methods are explicit-only, so they do not compete for selection; this router
+loads them deliberately. Use the host's skill tool where it accepts an
+explicit-only skill by name; otherwise read the files from the installed skill
+root, for example:
 
-Scale every method to the change. A one-line fix still gets its reason comment
-where the mechanism is not obvious, but no plan, no new module and no research.
+```bash
+cat ~/.claude/skills/{engineering-practices,golden-comments,vertical-slices}/SKILL.md
+```
+
+Read each method completely before claiming it was applied. If one is
+unavailable, say which, and keep its intent through your own direct check
+rather than skipping the concern.
+
+Scaling applies to what you do with the methods, not to whether you read them.
+A one-line fix still gets its reason comment where the mechanism is not
+obvious, but no plan, no new module and no research.
 
 When you delegate, put the delegate's role pack in the brief's `Skills:` field,
 so the delegate loads the methods itself instead of receiving your paraphrase.

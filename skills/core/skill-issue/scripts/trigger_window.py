@@ -5,8 +5,8 @@ Usage: trigger_window.py EVALS PROJECT OUT --targets a,b [--inject SKILL_DIR]
                          [--window 4] [--runs 2] [--model ID]
 
 EVALS is a JSON list of {"query", "should_trigger"}. Each query runs RUNS times
-in PROJECT; a run is a hit when any target skill is loaded (Skill tool or a Read
-of its file) within the first WINDOW tool calls. OUT receives per-query hits and
+in PROJECT; a run is a hit when any target skill is loaded (Skill tool, a Read of
+its file or a shell command naming it) within the first WINDOW tool calls. OUT receives per-query hits and
 the observed tool sequence, so misses show what the agent did instead.
 
 Run it in a small fixture repository, not an empty folder: agents explore files
@@ -58,7 +58,9 @@ def run_query(query, args, targets):
         process.wait(timeout=10)
     except (OSError, subprocess.SubprocessError) as error:
         tools.append(("ERROR", str(error)[:80]))
-    hit = any(name in ("Skill", "Read") and any(t in detail for t in targets) for name, detail in tools)
+    # A skill counts as loaded through the Skill tool, a Read of its file, or a shell read
+    # (agents often cat explicit-only skills they cannot invoke by name).
+    hit = any(name in ("Skill", "Read", "Bash") and any(t in detail for t in targets) for name, detail in tools)
     return hit, tools
 
 

@@ -53,6 +53,26 @@ answers a remaining question; do not traverse the whole collection or restart
 this router. If a resource is missing, report the missing topic and consult its
 official GSAP documentation when needed rather than inventing the contents.
 
+## What is newer than the references
+
+The references are GreenSock's own text and stop at GSAP 3.14. Checked on
+2026-11-10, the current release is 3.15.1:
+
+- **3.15** added `easeReverse`, a separate ease for when the playhead moves
+  backwards (`true` reuses the forward ease; also valid in timeline `defaults`).
+  It deprecates `yoyoEase`, which still works; write `easeReverse` in new code.
+- **`@gsap/react`** is stable at 2.1.2; a 4.0 beta exists. Use the beta only if
+  the project already does, and then read its release notes.
+- **Licensing:** since 3.13 (April 2025) GSAP and every plugin, including the
+  former Club plugins such as SplitText and MorphSVG, are free from the public
+  `gsap` package, also commercially. The library's license is Webflow's
+  standard "no charge" GSAP license, not MIT — the MIT license in this folder
+  covers only the skill text. Its one notable restriction concerns no-code
+  visual animation builders that compete with Webflow; if the project is such a
+  tool, say so rather than assume the license allows it.
+
+Check the installed version (`npm ls gsap`) before using anything from 3.13 on.
+
 ## Apply and verify
 
 Return an explanation for an explanation request. For an authorized code change,

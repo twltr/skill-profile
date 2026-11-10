@@ -9,6 +9,12 @@ The following sources record those additions and are not mandatory runtime readi
 - https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/domain-modeling/SKILL.md
 - https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/codebase-design/SKILL.md
 
+Changes on 2026-11-10: the locally authored worked examples were replaced or
+added (a layered-to-capability discount example, before/after declarations for
+"one name, one job", a `None` that hides an outage, a concrete plan-change
+invariant and a Shared Machinery contrast), and repeated prose was tightened.
+The adapted techniques are unchanged in substance.
+
 The following notice applies to the adapted upstream material. It does not
 assign a license to the other material in this repository.
 

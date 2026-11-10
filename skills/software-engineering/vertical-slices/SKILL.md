@@ -10,25 +10,145 @@ metadata:
 
 **Leaf skill** in Software Engineering; reached through its domain or by name.
 
-Keep the context needed to change a system local and understandable. Apply
-vertical structure throughout repository development: creating a repository,
-adding a feature or module, extending an existing capability and maintaining
-existing code. Start from the affected slice and respect its existing ownership.
-A small change uses these boundaries without requiring a whole-system redesign.
+Keep the context needed to change a system local and understandable. A change
+should be readable at the capability it affects, not reconstructed across global
+`controllers/`, `services/` and `repositories/` folders. Apply this throughout
+repository work — creating a repository, adding a feature, extending a
+capability, maintaining existing code — starting from the affected slice and
+respecting its existing ownership. A small change uses these boundaries; it does
+not require a whole-system redesign.
 
-The structure and its named roles leave a durable route for the next change.
-Future maintainers should discover where to extend a pattern and which other
-mechanisms constrain it without reconstructing the original conversation. Identify
-the affected capability, coordinating owner and participants before editing; keep
-their local explanations current while changing them. A tidy tree alone does not
-preserve the intent behind its boundaries.
+Structure and named roles leave a route for the next change. A maintainer should
+find where to extend a pattern, and which other mechanisms constrain it, without
+the original conversation. A tidy tree alone does not preserve the intent behind
+its boundaries, so identify the capability, its coordinating owner and its
+participants before editing, and keep their explanations current while changing
+them.
 
-## Example: make composition and its participants visible
+## Example: one change, one address
 
-Fictional brief: a monitoring capability runs website and provider checks. Each
-provider has its own request mapping, evidence rules and fixtures. A flat list of
-`firebase.py`, `vercel.py` and `search_console.py` does not explain how a run works.
-Make the coordinating responsibility and cohesive participants discoverable:
+Fictional request: "Discount codes may now be used once per customer." The
+repository is layered by technical role:
+
+```text
+src/
+  controllers/checkout.py        # parses the code from the request
+  services/pricing.py            # applies the discount
+  services/orders.py             # re-checks expiry before placing the order
+  validators/discounts.py        # checks expiry
+  repositories/discounts.py
+```
+
+Expiry already has two owners, `validators/discounts.py` and `services/orders.py`,
+and a usage limit would need a third decision about where it belongs. Arranged
+by capability, the same behavior has one address:
+
+```text
+src/
+  pricing/
+    __init__.py          # public surface: quote(cart, code) -> Quote
+    discounts.py         # code rules: expiry, usage limit, stacking
+    store.py             # discount persistence; imported only inside pricing
+    test_discounts.py
+  checkout/
+    api.py               # parses the request and calls pricing.quote
+```
+
+The gain is the single owner of discount rules, not the folder move: the limit
+becomes one rule and one store query, and checkout cannot bypass it because it
+only sees `pricing.quote`. In an ordinary feature task, that restructuring is
+not yours to start. Add the rule beside the existing expiry check that actually
+decides, and report the duplicate owner with its consequence; the move needs its
+own authorization.
+
+## Minimum surface as the design measure
+
+Build the full intended capability with the smallest coherent system that can
+honestly own it. **Min-Max Engineering** means maximum useful behavior for the
+state, code, modules, dependencies, configuration and operational moving parts
+needed to deliver it. The same capability with less system is an architectural
+gain. Smallest means least error, state and search surface, not fewest lines: a
+shared choke point may add code while giving a wrong behavior one address.
+
+Ask before and after a design or implementation: what can be removed, what now
+has one owner, and what became easier to change without losing capability,
+robustness or safety? Before adding machinery, consider deleting obsolete
+surfaces, consolidating owners, reusing an existing boundary, table-driving
+repeated behavior or using an established pattern. Compatibility layers, broad
+abstractions, fallback paths and parallel workflows must justify the states and
+maintenance they add; a green suite does not excuse them.
+
+There are no file-count or line-count targets. Comments, module briefings and
+explanations preserve the model and its reasons; they are not volume to shave.
+
+## Establish the model before cutting files
+
+Read the affected code, vocabulary, requirements and architecture, and trace a
+representative behavior from its entrypoint through decisions, state and
+outputs. Distinguish the actual model from the requested change. When a settled
+model is supplied, map it as given. When concepts, lifecycles or names stay
+ambiguous, report that to the lead with the affected scenarios instead of
+settling them here.
+
+Test terms with real counterexamples: can two concepts change independently,
+live for different times or mean different things in different contexts? Keep
+the resolved vocabulary at its existing canonical owner; extend that explanation
+rather than adding a second glossary or another methodology's folder names. A
+substantial system needs a context map, each context's responsibility and
+lexicon, and the terms whose meaning changes across boundaries.
+
+Give each responsibility and maintained truth one canonical owner. Several
+inputs are fine; independent writers or competing implementations of the same
+responsibility drift. Similar code alone does not mean the same responsibility.
+
+**One name, one job.** Separate meanings need honest names even while their
+values agree:
+
+```python
+# Before: one constant, two jobs
+MAX_RESULTS = 100        # API response cap, also used as the upstream page size
+
+# After: either can change without silently changing the other
+RESPONSE_CAP = 100       # most results one request may return to a client
+FETCH_PAGE_SIZE = 100    # rows per upstream request, bounded by the provider
+```
+
+A comment cannot excuse a false declaration.
+
+**Withhold, never fabricate.** Represent unavailable or undetermined separately
+from absent, empty, false or expired, and make consumers decide what to do with
+it. A `last_backup_age() -> timedelta | None` whose `None` means both "never
+backed up" and "storage unreachable" lets a dashboard show a healthy blank during
+an outage; a separate `Unknown` result forces the decision. A fallback may give
+a less useful answer, but it keeps the contract's promises, including timeout
+nesting, budget pairing and invariants when a dependency is missing.
+
+## Co-locate by capability
+
+Start from the business capability; technical roles live inside the owning
+module. For each capability, identify its inputs, state, decisions, invariants,
+outputs and expected changes, and keep what must be understood together
+together. Split where responsibility, technology, failure behavior or a genuine
+contract creates an independently understandable boundary. A broad product area
+can be a namespace; independent capabilities inside it still need their own
+owners.
+
+Do not create tiny packages or numbered file chunks to hit a size target. A large
+coherent file is a signal to examine its responsibilities, not permission to
+scatter one state machine. Judge the blast radius and the implicit knowledge a
+future change needs.
+
+## Make the composition visible
+
+A set of well-named leaf files is incomplete if the reader cannot find what
+connects them. Show the composition owner, and how control and data pass between
+participants, in code: a pipeline declaration, handler registry, transition
+table, subscription wiring or explicit constructor composition.
+
+Fictional brief: a monitoring capability runs website and provider checks, each
+with its own request mapping, evidence rules and fixtures. A flat list of
+`firebase.py`, `vercel.py` and `search_console.py` does not explain how a run
+works:
 
 ```text
 monitoring/
@@ -43,233 +163,133 @@ monitoring/
     search_console/
 ```
 
-Here `run.py` composes the stages through the Stage contract; stage implementations
-do not import or start each other. Its declaration makes ordering and permitted
-parallel work visible. Each provider folder owns the meaningful parts it needs,
-with tests beside it or under the matching test convention. `pipeline/` is the
-shared coordination owner, not a dumping ground for provider-specific rules.
+`run.py` composes the stages through the Stage contract, and its declaration
+shows ordering and permitted parallel work; stages never import or start each
+other. Each provider folder owns its parts, with tests beside it or under the
+matching test convention. `pipeline/` coordinates; it is not a place for
+provider-specific rules. An existing `base/` or composition module can do the
+same job if its responsibility is explicit, and a single small probe may stay
+one file. Do not pre-create empty providers or wrappers for symmetry.
 
-These names are illustrative. An existing `base/`, `core/` or composition module
-can serve the same job if its responsibility is explicit. A single small probe
-may remain one file; do not pre-create empty providers or one-file wrappers for
-symmetry. The improvement is a readable architectural relationship, not depth.
+Use folders when a responsibility has several parts that belong together: a
+state machine with `states/`, a transition policy and a coordinator; an
+integration with adapter packages and a registry. A small machine can keep its
+states in one table. Keep ordering out of import side effects. Separate the
+owner of runtime sequencing from application startup when they differ: creating
+dependencies does not explain which stage runs next or what a failure does to
+the rest of the run. Name a mechanism — Composition Root, State pattern — only
+after checking its defining roles in the code.
 
-## Minimum Surface as the design measure
+## Public surface and dependency direction
 
-Build the full intended capability with the smallest coherent system that can
-honestly own it. **Min-Max Engineering** means maximum useful behavior for the
-state, code, modules, dependencies, configuration and operational moving parts
-needed to deliver it. Same capability with less system is an architectural gain.
-Smallest means least error, state and search surface, not fewest lines: a shared
-choke point may add code while giving a wrong behavior one enforceable address.
+Give each module one intentional public surface, and have cross-module callers
+use it rather than internals. Describe the inputs, results, error vocabulary,
+ordering and state guarantees callers need. An interface that only forwards has
+not earned its place.
 
-**Surface is context.** Ask before and after a design or implementation: what can
-be reduced, what now has one owner, and what becomes easier to change without
-losing capability, robustness or safety? Explicitness comes from honest names,
-boundaries, errors and structure, not an ever-growing inventory of special cases.
-
-Before adding machinery, consider deleting obsolete surfaces, consolidating
-owners, reusing an existing boundary, table-driving repeated behavior or using
-an established pattern. Compatibility layers, broad abstractions, fallback paths
-and parallel workflows must justify the states and maintenance they introduce.
-A green suite does not excuse unnecessary parallel machinery.
-
-No arbitrary file-count or line-count targets. Useful comments, module briefings
-and explanations preserve the model, reasons and invariants; they are not code
-volume to shave away. Consolidate repetition without losing those explanations.
-
-## Establish the model before cutting files
-
-Read the affected code, current vocabulary, requirements and architecture.
-Trace a representative behavior from its entrypoint through decisions, state
-and outputs. Distinguish the actual model from the requested change.
-
-When a settled model is supplied, map it as given. Otherwise resolve the relevant
-meanings through the checks below. When concepts, lifecycles or names stay
-ambiguous, report that to the lead with the affected scenarios instead of settling
-them here.
-
-Clarify terms with real counterexamples: can two concepts change independently,
-have different lifetimes or mean different things across contexts? Keep the
-resolved vocabulary at its existing canonical owner. A substantial system needs
-a context map, each context's responsibility and lexicon, and an explanation of
-terms whose meaning changes across boundaries. Extend the existing explanation;
-do not impose a second glossary or another methodology's folder names.
-
-Give each responsibility and maintained truth one canonical owner. Multiple
-inputs are legitimate; independent writers or competing implementations of the
-same responsibility create drift. Establish the existing owner before adding
-another implementation. Similar code alone does not mean identical responsibility.
-
-Make declarations express the real concepts. **One name, one job:** a cap is not
-also a fetch page size; a floor is not also a server default; a timeout is not
-also an embedding budget. Separate meanings need honest names even when their
-values currently agree. Comments cannot excuse a false declaration.
-
-**Withhold, never fabricate:** represent unavailable or undetermined separately
-from absent, empty, false or expired in the contract and its types, then give
-consumers an explicit handling decision. A fallback may provide a less useful
-answer, but must keep the contract's promises, including timeout nesting, budget
-pairing and invariants when a dependency or configuration is missing.
-
-## Vertical co-location and safe localization
-
-Start from the business capability. Technical roles live **inside** the owning
-module, rather than forming global controllers/services/repositories layers.
-
-For example, a pricing change should be understandable at its capability owner
-rather than requiring reconstruction across five global technical-layer folders.
-
-For each capability, identify its inputs, state, decisions, invariants, outputs
-and expected changes. Keep parts that must be understood together together.
-Split where responsibility, technology, failure behavior or a genuine contract
-creates an independently understandable boundary. A broad product area can be a
-namespace; independent capabilities inside it still need their own owners.
-
-Do not create tiny packages or numbered file chunks to hit a size target. A
-large coherent file is a signal to examine its responsibilities, not permission
-to scatter one state machine. Judge the blast radius and implicit knowledge a
-future change needs. Optimize for safe localization and manageable context.
-
-## Public boundaries and dependency direction
-
-Make the architecture visible at each useful scale. Repository boundaries expose
-independent systems and their contracts; capability folders group cohesive behavior;
-submodules and files expose the roles of the chosen construction. A collection of
-well-named leaf files is incomplete if the reader cannot find what connects them.
-Show the composition owner and how control/data passes between participants in
-code, using the relevant native mechanism: a pipeline declaration, handler registry,
-transition table, subscription wiring or explicit constructor composition.
-
-Use folders when a responsibility has several parts that belong together. A state
-machine might own `states/` plus a transition policy and coordinator; an extensible
-integration may own adapter packages plus a factory or registry. Keep the policy
-and its assembly discoverable instead of scattering state transitions or hiding
-ordering in import side effects. A small machine can keep its states in one table.
-Folders express the model; they do not substitute for it or mandate a class per state.
-
-Separate the owner of runtime sequencing from application composition when those
-are different responsibilities. Creating dependencies at startup does not by itself
-explain which stage runs next or how a failed stage affects the remaining run.
-Do not call every coordinator a Composition Root, or every status enum a State
-pattern. Name a mechanism only after checking its defining roles in the code.
-
-Give each module one intentional public surface. Cross-module callers use it,
-never deep internals. Describe the inputs, results, error vocabulary, ordering
-and state guarantees callers need. Hide useful complexity behind that surface;
-an interface that only adds forwarding layers has not earned its place.
-
-Respect existing public boundaries even on a small change. When module boundaries
-and dependency drift are consequential, use suitable enforcement such as native
-module-private visibility, import constraints or dependency checks. Reuse existing
-mechanisms before adding another. Derive a needed machine-readable dependency map from
-actual imports or declarations; do not maintain a second architectural truth
-manually. New cross-module edges must be deliberate, reviewable changes; an
-existing-edge baseline can support a ratchet during a migration. A single-script
-tool with no such boundaries does not need a map or new gate merely to follow
-this method.
+Respect existing public boundaries even on a small change. Where boundary drift
+is consequential, use the language's own enforcement — module-private
+visibility, import constraints or dependency checks — and reuse existing
+mechanisms before adding one. Derive any machine-readable dependency map from
+actual imports or declarations rather than maintaining a second truth by hand.
+New cross-module edges are deliberate, reviewable changes; a baseline of
+existing edges can support a ratchet during a migration. A single-script tool
+needs no map or gate merely to follow this method.
 
 Keep operational scripts and contract checks with the system they protect.
-Temporary authoring aids and convention checks must be removable without breaking
-builds, tests or operation. A one-off inspection does not earn a permanent gate;
-use existing commands and actual requirements rather than adding administration
-to complete an ordinary change.
+Temporary authoring aids must be removable without breaking builds, tests or
+operation, and a one-off inspection does not earn a permanent gate.
 
-During implementation, give each affected important module a local briefing and
-its decision reasons, written from the actual model, accepted decisions and code.
-Preserve purpose, system context, construction, reasons, public boundary and change
-constraints at their source owners. Keep the briefing at the existing package
-documentation or entrypoint and link wider architecture instead of duplicating
-it. A self-explanatory leaf needs no separate briefing. A design proposal identifies the explanation's
-owner; placing it in source requires authorized implementation.
+Keep each affected important module's briefing current at its package
+documentation or entrypoint, written from the actual model and code, and link
+wider architecture instead of copying it. A design proposal names where an
+explanation belongs; writing it into source needs authorized implementation.
 
 ## Invariants live with their mechanism
 
 Document and enforce a rule at its owner, usually the capability or command
-boundary. A state machine that exists only in prose leaves every writer free to
-violate it. State what MUST hold, where and how it is enforced, and what breaks
-if it is violated. Only genuinely system-wide rules belong at architecture level.
+boundary. A rule that exists only in prose leaves every writer free to break it.
+State what must hold, where it is enforced and what breaks if it is violated.
 
-For example: an aggregate holds at most one record per key, and an arriving
-record with that key replaces the existing one before and after every supported
-manipulation. Or an occupied slot rejects immediately while another slot type
-queues at its target inbox. Those rules cannot be understood away from the
-component that owns the data or contention behavior.
-
-Keep local invariants in their capability explanation, beside the enforcing
-mechanism. Derive any whole-system index from those owners; do not maintain a
-central duplicate register. Tests point to the behavior's specification; a
-chapter need not maintain a second inventory of the tests.
+For example: a subscription has at most one active plan, and changing plans ends
+the old one in the same transaction. That rule belongs in
+`subscriptions.change_plan`, not in the settings page, the admin tool and the
+billing import separately; each of those calls the command. Only genuinely
+system-wide rules belong at architecture level. Derive any whole-system index of
+invariants from their owners rather than keeping a central duplicate, and let
+tests point to the behavior's specification rather than a chapter listing tests.
 
 ## Shared Machinery and shared capability components
 
-Evaluate these as different responsibilities:
+These are different responsibilities:
 
-- **Shared Machinery** executes capability-neutral mechanics, such as a persistence
-  skeleton, handler factory or store/hydration mechanism. It contains **zero
-  capability-specific logic**. The module declares its concrete queries,
-  envelopes, contracts and error vocabulary. The machinery executes that contract;
-  it never generates or silently changes it.
-- **Shared capability components** own genuinely common behavior. This includes a
-  UI interaction used by multiple consumers: the shared component owns the
-  interaction, while each consumer supplies its own data and wiring. The same
-  behavior in two components is still two places for one truth to diverge.
+- **Shared Machinery** executes capability-neutral mechanics, such as a
+  persistence skeleton, handler factory or hydration mechanism, with **zero
+  capability-specific logic**. Each module declares its concrete queries,
+  envelopes, contracts and error vocabulary; the machinery executes that contract
+  and never generates or silently changes it.
+- **Shared capability components** own genuinely common behavior, such as a UI
+  interaction several screens use. The component owns the interaction; each
+  consumer supplies its own data and wiring.
 
-For each adoption, compare the consumer before and after. Net complexity must go
-down per module; otherwise keep the unsuitable mechanism out and record the
-reason at the design owner. Rejecting a mechanism never licenses duplication of
-the same responsibility. Equally, code resemblance is not a reason to merge
-independent business policies. This is a semantic ownership decision, not an
-automatic extraction rule at the second similar snippet.
+A generic repository base that each capability configures with its own queries
+is machinery. Two pricing rules that look alike but answer to different business
+owners are not a shared component, and merging them couples decisions that
+should change independently. For each adoption, compare the consumer before and
+after: net complexity must go down per module, or the mechanism stays out with
+its reason recorded at the design owner. Rejecting a mechanism never licenses
+duplicating the same responsibility, and resemblance alone is no reason to merge.
 
-Keep interfaces intention-revealing. If the capability honestly is plain CRUD,
-binding an appropriate generic mechanism directly is clearer than wrappers with
-no responsibility. Moving onto Shared Machinery preserves the concrete contracts
-and observable behavior, reviewable as near-verbatim moves. A behavior change
-must be identified as its own decision.
+If a capability honestly is plain CRUD, binding a suitable generic mechanism
+directly is clearer than wrappers with no responsibility. Moving onto Shared
+Machinery keeps contracts and observable behavior, reviewable as near-verbatim
+moves; a behavior change is its own decision.
 
 ## Patterns serve the architecture
 
 Use established patterns when they reduce places to look, centralize enforcement
-or make evolution safer: a state machine, registry, factory, adapter, repository,
-event log, outbox or process manager can each earn a place. A pattern that adds a
-layer without reducing the search or error surface is decoration.
+or make evolution safer: a state machine, registry, factory, adapter,
+repository, event log, outbox or process manager can each earn a place. A
+pattern that adds a layer without reducing the search or error surface is
+decoration. Bounded contexts, ports, events and invariants matter through the
+boundaries they express; do not rename a system after a methodology.
 
-Consequential language, architecture, framework, provider, security, persistence,
-protocol or runtime choices are decisions of their own, not a by-product of the
-layout. Consult current primary sources and established literature for them;
-when such a choice needs dedicated current-practice research, report it to the
-lead. Keep the accepted choice and rationale at the repository's canonical
-design owner.
-Do not invent citations or rename a system after a methodology. Bounded contexts,
-ports, events and invariants matter through the boundaries they express.
+Consequential language, framework, provider, security, persistence, protocol or
+runtime choices are decisions of their own, not a by-product of the layout.
+Consult current primary sources for them; when one needs dedicated research,
+report it to the lead. Keep the accepted choice and rationale at the
+repository's design owner, and never invent citations.
 
 If **Puppeteer** is available, use it for substantial exploration of independent
 capabilities or competing boundaries before loading the whole system into the
-main context. Scouts return current owners, contracts, evidence and disagreements;
-the main agent reconciles the architecture. When this method answers scoped
-structural questions, return the answers to whoever loaded it; do not start a
-council of its own. A known local change needs no parallel architecture study.
+main context; scouts return current owners, contracts, evidence and
+disagreements, and the main agent reconciles them. A known local change needs no
+parallel architecture study.
 
 ## Check and deliver the design
 
-Walk a normal domain change, a boundary failure and a likely extension through
-the design. Show where code, tests, invariants and explanation live, how callers
-reach the public surface and what new dependency edges appear. Compare actual
-state, error surface and context needed against useful alternatives.
+Walk three changes through the design: a normal domain change, a boundary
+failure and a likely extension. For the discount example: a new stacking rule
+lands in `pricing/discounts.py`; an unreachable discount store surfaces as a
+`quote` error checkout must handle, not as "no discount"; a new code type adds a
+rule and a test without touching checkout. Show where code, tests, invariants and
+explanation live, how callers reach the public surface and which new dependency
+edges appear, and compare state, error surface and needed context against
+useful alternatives.
 
-Try the extension without chat history: can a maintainer find the coordinator,
-participant contract and the correct folder for a new stage, state or adapter?
-Can they see which ordering, failure and ownership rules the extension must retain?
-Verify these against executable wiring, not a tree diagram alone. A flat module
-or a nested layout may pass; neither a file-count limit nor a required depth does.
+Then try the extension without chat history: can a maintainer find the
+coordinator, the participant contract and the right folder for a new stage,
+state or adapter, and see which ordering, failure and ownership rules it must
+keep? Verify that against executable wiring, not a tree diagram. A flat module
+or a nested layout may pass; neither a file limit nor a required depth does.
 
-If a change still scatters across unrelated files, duplicates policy or requires
-knowledge hidden in another module, revise the ownership. Deliver the vocabulary,
-capability and dependency relationships, interface decisions, any needed briefings,
-reasons and remaining questions at the existing design owner, scaled to the change.
-Do not launch a refactoring
-from a design-only request. If implementation is separately authorized, use
-mechanical, compiler/test-checked moves where structure changes across the tree.
+If a change still scatters across unrelated files, duplicates policy or depends
+on knowledge hidden in another module, revise the ownership. Deliver the
+vocabulary, capability and dependency relationships, interface decisions, needed
+briefings, reasons and open questions at the existing design owner, scaled to
+the change, and return scoped answers to whoever loaded this method. A
+design-only request does not launch a refactoring; if implementation is
+separately authorized, use mechanical, compiler- and test-checked moves where
+structure changes across the tree.
 
 Supplementary upstream methods are credited in [NOTICE.md](NOTICE.md).

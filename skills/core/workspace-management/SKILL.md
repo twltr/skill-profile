@@ -23,19 +23,19 @@ to the places that own the work and keeps none of their content.
 
 ## Entering work, onboarded
 
-**Request:** "let's continue with the dispatcher for the freelance stuff"
+**Request (fictional):** "let's continue with the importer for the Acme project"
 
-1. Read the Workspace root's `README.md`: a Workspace named for the freelance
-   operations exists.
-2. Read that Workspace's `README.md` and `AGENTS.md`: the dispatcher is one of
-   its repositories, at a recorded path, with its own `AGENTS.md`; its role
+1. Read the Workspace root's `README.md`: a Workspace `acme` is listed under
+   clients.
+2. Read that Workspace's `README.md` and `AGENTS.md`: the importer is one of
+   its repositories, at a recorded path, with its own `AGENTS.md`; its worker
    agents run on a server reached through an MCP connection; shared notes live
    in a named knowledge base.
 3. Check the Workspace's required access: the MCP connection to that server is
    not configured in this client. Say so before starting — "I can read the
-   dispatcher code, but I cannot reach the role agents without the MCP
+   importer code, but I cannot reach the worker agents without the MCP
    connection" — instead of working around it.
-4. Enter the dispatcher repository and read its own instructions before acting.
+4. Enter the importer repository and read its own instructions before acting.
 5. After the work, if a part moved, appeared, retired or changed state, update
    the Workspace in the same task.
 
@@ -140,9 +140,9 @@ moves to the knowledge system once one exists. The exception ends when the
 there and leave a pointer. Never turn the exception into a roadmap or to-do
 list; open work still belongs to its repository's issues or roadmap.
 
-Record which account an agent uses, never its credentials. When customer data is
-involved, the **Agents and accounts** row decides which agent may touch it; a
-local assistant without that agreement works through the agents that have it.
+When customer data is involved, the **Agents and accounts** row decides which
+agent may touch it; a local assistant without that agreement works through the
+agents that have it.
 
 Never put source code, customer files, credentials, generated output, issued
 documents or transient work notes in a Workspace. They keep their own owners.
@@ -152,7 +152,8 @@ documents or transient work notes in a Workspace. They keep their own owners.
 - **Enter through it.** At the start of work on a project, client, product or
   system, read the root `README.md`, find the matching Workspace and read its
   `README.md` and `AGENTS.md`, then the instructions of the part you enter. A
-  part's own rules always win over the Workspace's.
+  part's own rules win over the Workspace's: the part owns its work, the
+  Workspace only points to it.
 - **Check the required access first.** If a tool, connector or login the
   Workspace lists is missing in this client, report it at once with what it
   blocks; do the work it does not block, and never pretend a missing route was
@@ -168,8 +169,8 @@ documents or transient work notes in a Workspace. They keep their own owners.
   change; it is not a background watcher.
 - **Propose, never create unasked.** When work spans several important parts
   and no Workspace covers it, say so once, with the parts you found: "This work
-  spans the control-plane, network and runner repositories and a deployment at
-  one provider; shall I create a Workspace for it?" Create it only after the
+  spans the web, API and worker repositories and a deployment at one
+  provider; shall I create a Workspace for it?" Create it only after the
   user agrees. Never create one for a single repository, and never rename,
   merge or retire a Workspace on your own.
 - **Keep instruction files single.** When you change a Workspace's rules, edit
@@ -186,7 +187,8 @@ documents or transient work notes in a Workspace. They keep their own owners.
    creating another owner.
 2. Inventory every important part: repository, running system, provider,
    document root, shared drive, knowledge base. Record its role, location and
-   instruction owner. Never infer a missing part from an old path.
+   instruction owner. Do not infer a missing part from an old path: old paths
+   outlive moves and renames, so confirm each location on this host.
 3. Write `README.md` with the sections above, `AGENTS.md` so an entering agent
    reads the map, selects the right part and then that part's own rules, and a
    `CLAUDE.md` (or the host's equivalent) that only points to `AGENTS.md`.
@@ -216,9 +218,13 @@ configuration.
 
 ## Done when
 
-The root and the Workspace's files agree, and every non-canonical instruction
-file only points to `AGENTS.md`; every live part's location
-resolves on this host; the current state matches reality; plans and notes are
-referenced, not copied, and any provisional view is dated and marked; requested AI projects enter through the Workspace; and
-provider claims are verified. Report any cloud, restart or provider-interface
-boundary that remains.
+- The root and the Workspace's files agree, and every non-canonical
+  instruction file only points to `AGENTS.md`.
+- Every live part's location resolves on this host, and the current state
+  matches reality.
+- Plans and notes are referenced, not copied; any provisional view is dated and
+  marked.
+- Requested AI projects enter through the Workspace, and provider claims are
+  verified.
+
+Report any cloud, restart or provider-interface boundary that remains.

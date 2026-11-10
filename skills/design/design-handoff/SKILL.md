@@ -1,135 +1,122 @@
 ---
 name: design-handoff
-description: Generate developer handoff specs from a design. Use when a design is ready for engineering and needs a spec sheet covering layout, design tokens, component props, interaction states, responsive breakpoints, edge cases, and animation details.
-argument-hint: "<Figma URL or design description>"
+description: Generate a developer handoff spec from a finished design. Use when a screen or feature is ready for engineering and needs a spec sheet covering layout, design tokens, components and props, interaction states, responsive breakpoints, content limits, edge cases, motion and accessibility notes, so developers build it without guessing.
+argument-hint: "<design file URL or design description>"
 metadata:
   skill-type: leaf
   skill-tree: design
 ---
 
-# /design-handoff
+# Design Handoff
 
 **Leaf skill** in Design; reached through its domain or by name.
 
-> Sections that start with `~~` name a tool category rather than a product: `~~design tool` (for example Figma), `~~knowledge base` (for example Notion), `~~project tracker` (for example Linear or Jira). Use whichever connected tool of that category the host provides, and skip the section when none is connected.
-Generate comprehensive developer handoff documentation from a design.
+Whatever a design leaves unspecified, the developer decides under deadline, and
+the result drifts from the design in exactly the places nobody looked: hover and
+error states, long names, slow networks, the narrow breakpoint. A handoff spec
+closes those gaps. It references tokens and components instead of raw values,
+so the build stays connected to the system, and it says why a decision was made,
+so developers can judge cases the spec did not foresee.
 
-## Usage
+## A worked excerpt
 
+**Design (fictional):** a team member list with an invite button.
+
+```markdown
+| Element | State | Behavior |
+|---|---|---|
+| Invite button | Loading | Label stays, spinner replaces icon, button disabled; prevents double invites |
+| Member row | Long name | Truncate at one line with ellipsis; full name in the row's accessible name |
+| List | Empty | "No members yet" plus the invite button; never an empty table header |
+
+Edge case: 500+ members — paginate at 50; the design shows one page, not a scroll.
 ```
-/design-handoff $ARGUMENTS
-```
 
-Generate handoff specs for: @$1
+The reusable choice: each line states the behavior and, where it is not obvious,
+the reason, so the developer can apply the same logic elsewhere.
 
-If a Figma URL is provided, pull the design from Figma. Otherwise, work from the provided description or screenshot.
+## Gather the design
 
-## What to Include
+Work from a design file link (pull it with a connected `~~design tool`), a
+screenshot or a description. Use the project's own breakpoints, token names and
+component library; the values in the template below are placeholders. Where the
+design is silent on a state or edge case, propose the behavior and mark it
+**proposed** so the designer confirms it, rather than presenting a guess as the
+design.
 
-### Visual Specifications
-- Exact measurements (padding, margins, widths)
-- Design token references (colors, typography, spacing)
-- Responsive breakpoints and behavior
-- Component variants and states
+> Sections marked `~~` name a tool category, not a product: `~~design tool` (for
+> example Figma) or `~~project tracker` (for example Linear or Jira). Use
+> whichever connected tool of that category the host provides; skip the step
+> when none is.
 
-### Interaction Specifications
-- Click/tap behavior
-- Hover states
-- Transitions and animations (duration, easing)
-- Gesture support (swipe, pinch, long-press)
+With a `~~design tool`, take measurements, tokens, component properties and
+assets from the file instead of estimating from an image. With a
+`~~project tracker`, link the spec to the implementation ticket, and create
+sub-tasks only when the person asks.
 
-### Content Specifications
-- Character limits
-- Truncation behavior
-- Empty states
-- Loading states
-- Error states
+## What the spec covers
 
-### Edge Cases
-- Minimum/maximum content
-- International text (longer strings)
-- Slow connections
-- Missing data
+| Area | Include |
+|---|---|
+| Layout | Grid, spacing, widths, alignment, responsive behavior per breakpoint |
+| Tokens | Color, type, spacing, radius, elevation, motion — by token name |
+| Components | Which library component, variant and props; anything custom |
+| States | Default, hover, focus, active, disabled, loading, error, empty, success |
+| Content | Character limits, truncation, wrapping, translated and longer strings, missing data |
+| Interaction | Click, tap, keyboard, gestures; what happens on slow or failed requests |
+| Motion | Trigger, property, duration and easing as tokens; reduced-motion behavior |
+| Accessibility | Focus order, accessible names and roles, keyboard behavior, announcements |
 
-### Accessibility
-- Focus order
-- ARIA labels and roles
-- Keyboard interactions
-- Screen reader announcements
-
-## Principles
-
-1. **Don't assume** — If it's not specified, the developer will guess. Specify everything.
-2. **Use tokens, not values** — Reference `spacing-md` not `16px`.
-3. **Show all states** — Default, hover, active, disabled, loading, error, empty.
-4. **Describe the why** — "This collapses on mobile because users primarily use one-handed" helps developers make good judgment calls.
+Principles: specify what the developer would otherwise guess; reference
+`spacing-md`, not `16px`; show every state; and give the reason where a decision
+is not self-evident ("collapses on mobile because most use is one-handed").
 
 ## Output
 
 ```markdown
-## Handoff Spec: [Feature/Screen Name]
+## Handoff spec: [feature or screen]
 
 ### Overview
-[What this screen/feature does, user context]
+[What it does, who uses it, link to the design]
 
 ### Layout
-[Grid system, breakpoints, responsive behavior]
+[Grid, breakpoints, responsive behavior]
 
-### Design Tokens Used
+### Tokens used
 | Token | Value | Usage |
-|-------|-------|-------|
-| `color-primary` | #[hex] | CTA buttons, links |
-| `spacing-md` | [X]px | Between sections |
-| `font-heading-lg` | [size/weight/family] | Page title |
+|---|---|---|
+| `color-primary` | [value] | Primary buttons, links |
 
 ### Components
 | Component | Variant | Props | Notes |
-|-----------|---------|-------|-------|
-| [Component] | [Variant] | [Props] | [Special behavior] |
+|---|---|---|---|
 
-### States and Interactions
+### States and interactions
 | Element | State | Behavior |
-|---------|-------|----------|
-| [CTA Button] | Hover | [Background darken 10%] |
-| [CTA Button] | Loading | [Spinner, disabled] |
-| [Form] | Error | [Red border, error message below] |
+|---|---|---|
 
-### Responsive Behavior
+### Responsive behavior
 | Breakpoint | Changes |
-|------------|---------|
-| Desktop (>1024px) | [Default layout] |
-| Tablet (768-1024px) | [What changes] |
-| Mobile (<768px) | [What changes] |
+|---|---|
+| [project breakpoint] | [what changes] |
 
-### Edge Cases
-- **Empty state**: [What to show when no data]
-- **Long text**: [Truncation rules]
-- **Loading**: [Skeleton or spinner]
-- **Error**: [Error state appearance]
+### Content and edge cases
+- **Empty:** [what to show]
+- **Long text:** [truncation or wrapping rule]
+- **Loading and failure:** [skeleton, spinner, retry]
 
-### Animation / Motion
-| Element | Trigger | Animation | Duration | Easing |
-|---------|---------|-----------|----------|--------|
-| [Element] | [Trigger] | [Description] | [ms] | [easing] |
+### Motion
+| Element | Trigger | Animation | Duration | Easing | Reduced motion |
+|---|---|---|---|---|---|
 
-### Accessibility Notes
-- [Focus order]
-- [ARIA labels needed]
-- [Keyboard interactions]
+### Accessibility
+- [Focus order, accessible names, keyboard interactions, announcements]
+
+### Open questions
+- [Every behavior marked **proposed**, for the designer to confirm]
 ```
 
-## If Connectors Available
-
-If **~~design tool** is connected:
-- Pull exact measurements, tokens, and component specs from Figma
-- Export assets and generate a complete spec sheet
-
-If **~~project tracker** is connected:
-- Link the handoff to the implementation ticket
-- Create sub-tasks for each section of the spec
-
-## Tips
-
-1. **Share the Figma link** — I can pull exact measurements, tokens, and component info.
-2. **Mention edge cases** — "What happens with 100 items?" helps me spec boundary conditions.
-3. **Specify the tech stack** — "We use React + Tailwind" helps me give relevant implementation notes.
+The spec records decisions the design already made. Choosing the motion, the
+copy or a new component is design work to finish first; documenting a reusable
+component for every consumer is design system documentation, not a feature
+handoff.

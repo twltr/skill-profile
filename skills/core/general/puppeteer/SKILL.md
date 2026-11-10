@@ -1,146 +1,206 @@
 ---
 name: puppeteer
-description: Decide and coordinate native agent delegation for independent, verifiable work. Use when a task may benefit from a subagent, parallel work, or an independent review; small dependent tasks can stay with the main agent.
+description: Decide whether to hand work to native subagents, then cut it into independent assignments, brief each agent, choose its model for the phase and check what comes back. Use when work could be investigated, implemented or reviewed in parallel, needs an independent reviewer, or needs a delegate model chosen, even if the user only says "use agents", "parallelize this" or "get a second opinion". Review criteria belong to Engineering Review; this skill only arranges the reviewer. Not the Puppeteer browser-automation library.
 ---
 
 # Puppeteer
 
-Keep large investigations out of the main agent's context until they produce
-useful evidence. Keep requirements, cross-domain decisions, integration and
-evidence coverage with the main agent. Delegate specialist judgments the lead
-cannot competently establish; coordinating acceptance does not mean personally
-certifying every part. For substantial work, normally delegate coherent
-investigations, implementation packages or independent reviews; run independent
-assignments in parallel when supported. A small clear change or deterministic
-lookup stays direct when delegation adds more work than it saves.
+Delegation fails in four predictable ways. The lead's context fills with raw
+exploration until it can no longer steer. A confident summary is accepted as a
+verified result. Two agents write the same migration, lockfile or contract and
+contradict each other. And a task lands on a model that is wrong for its phase:
+an expensive model on settled typing, or a weak one on an unresolved design.
+
+This skill prevents each failure with one move. Scouts return **evidence, not
+narratives**, so the lead's context holds conclusions with their sources. Every
+return is **a claim to check**, not a result. Work is cut at **stable boundaries
+with one writer per shared resource**. The model is chosen **per phase and
+capability**, not per habit. The lead keeps requirements, cross-cutting
+decisions, integration and the final acceptance; delegating a part never
+delegates responsibility for the whole. Coordinating acceptance does not mean
+personally certifying every part: delegate the specialist judgments the lead
+cannot competently make.
 
 ## A scout and a useful return
 
 For a cancellation feature, the lead identifies ordering, inventory and payment
-as affected capabilities before reading all three implementations. One illustrative
-brief is:
+as affected capabilities before reading all three implementations, then sends
+one scout per capability. An illustrative brief, using every field of the
+[brief template](#3-brief-each-agent):
 
 ```text
-Task: Find inventory behavior when an unfulfilled order is cancelled.
-Inputs: The verified reservation entrypoint, current contract and relevant tests.
-Boundary: Read-only; investigate inventory ownership, not the whole repository.
-Return: Source-backed behavior, invariants, missing decisions and consequences
-        for the cancellation design. Identify what you did not verify.
+Task:       Find inventory behavior when an unfulfilled order is cancelled.
+Outcome:    Source-backed behavior and the decisions cancellation still needs.
+Inputs:     Reservation entrypoint at 4f2c1e9, current contract, inventory tests.
+Must hold:  Reserved stock is never double-released.
+Skills:     None; a read-only scout needs no method pack.
+Boundary:   Read-only tools; inventory ownership only; no further agents.
+Shared:     The order-state contract is owned by the lead; report, don't change.
+Evidence:   Exact file:line for each behavior claim.
+Stop if:    Behavior depends on an unsettled payment decision.
+Return:     Findings, what was not verified, the smallest next decision.
 ```
 
-The scout reports that reservations can expire before cancellation arrives and
-links the actual handling of already-released stock. The lead checks that evidence,
-settles the public outcome and shares it with the ordering owner. Other scouts
-work independently until a shared contract needs a decision. Summaries preserve
-the evidence needed to steer; they do not transfer responsibility for the result.
+The return the lead wants back is short and checkable:
 
-Useful contrasts:
+```text
+Finding:      Reservations expire after 15 min (inventory/reserve.ts:88);
+              cancel ignores already-released stock (inventory/cancel.ts:41).
+Not verified: Refund ordering; payment code was out of scope.
+Next:         Lead decides whether cancel-after-expiry succeeds or is a no-op.
+```
 
-- A known one-file fix and its check stay direct.
-- Two capabilities with settled contracts can be implemented concurrently by
-  separate owners, with their own behavior checks and a combined integration check.
-- Two assignments that need the same migration or API decision wait for that
-  prerequisite; different filenames do not make them independent.
-- A large diagnostic investigation can use a read-only analyst; plain counting
-  and filtering belong to deterministic tools.
-- An independent reviewer receives requirements and evidence without the author's
-  conclusion. An implementer cannot approve its own work as independent review.
-- A blocked agent returns the exact missing contract, evidence or access and
-  preserves useful partial work; the lead resizes or unblocks the assignment.
+The lead opens the two cited lines, settles the public outcome and passes it to
+the ordering scout. The other scouts keep working until a shared contract needs
+a decision. That is the whole method in miniature: a bounded question, cited
+evidence, an honest gap, and a lead that checks before it builds on the answer.
 
-## Match the phase and the capability
+## 1. Decide whether to delegate
 
-Apply this routing by default when assigning work; it needs no special user switch.
-Match uncertainty, consequence and modality, not only the phase's name:
+Delegation costs a brief, a context switch and a verification pass. It pays off
+when the work is large, independent, or needs a judgment the lead cannot give
+competently or impartially. For substantial work it is the normal method:
+delegate coherent investigations, implementation packages and independent
+reviews, in parallel where the host allows. Typical calls:
 
-- **Planning and unresolved design:** a suitable strong main model can retain the
-  work or use similarly capable scouts. A narrow factual lookup still belongs to
-  deterministic tools or a sufficient bounded researcher.
-- **Settled nonvisual implementation:** prefer a sufficient efficient worker when
-  requirements, contracts and acceptance are clear. A plan file alone does not
-  establish that clarity. Escalate unresolved or high-consequence implementation,
-  or a demonstrated capability gap, before accumulating repeated failed attempts.
-- **Independent review:** prefer a strong reviewer suited to the actual change.
-  Review strength does not expand scope: inspect the change and relevant consumers;
-  recheck affected behavior after corrections, widening only for new evidence.
-- **Visual planning, creation and review:** assess visual judgment and access to
-  rendered results separately from coding ability. A good refactoring worker may
-  need a different author for a diagram or interface, and another independent
-  reviewer for its visual quality.
+- **Stay direct:** a known one-file fix and its check; a lookup, count or filter
+  that a deterministic tool answers faster than any agent. Staying direct never
+  waives an independent review the work requires.
+- **Delegate in parallel:** two capabilities with settled contracts, each with
+  its own owner and behavior checks, plus one combined integration check.
+- **Delegate, but wait:** two assignments that need the same migration or API
+  decision wait for it. Different filenames do not make work independent.
+- **Delegate for size:** a large diagnostic or research question goes to a
+  read-only analyst so the lead keeps only the conclusions.
+- **Delegate for independence:** a reviewer receives requirements and evidence
+  without the author's conclusion. An implementer cannot approve its own work as
+  independent review; the same model in a separate context can.
 
-When selecting or reassessing delegate models, read the shared
-[model routing reference](references/model-routing.md). It owns current preferences,
-verified identifiers, host limitations and the usage feedback rule. Native client
-configuration owns executable bindings and defaults; do not change the main model,
-settings, account or provider merely to follow this table. Check the actual spawn
-schema and role restrictions: a preset can lock a model or effort. Use an available
-role that supports the required choice instead of assuming a label such as
-"reviewer" makes its fixed model suitable.
+If the host has no native agent tool, do the work directly and record any review
+that needed independence as open rather than reviewing your own work and calling
+it independent.
+
+## 2. Cut at a stable boundary
+
+**For repository work**, cut by a coherent, independently testable outcome — a
+user-visible capability or a module behind a settled contract — and let one owner
+handle its code and tests. Do not split UI, API and data by layer while the
+contract between them is unsettled; each agent would guess the others' half. If
+the code boundary itself is unclear, settling it is design work for the lead,
+not something to delegate around.
+
+**For research and design**, the boundary can be a concern rather than a folder:
+data lifecycle and recovery in one assignment, protection and trust boundaries in
+another, both with the same workload and constraints. Several agents may take one
+topic when that yields distinct evidence, such as competing analyses. Select only the concerns the change
+actually touches. Keep shared assumptions, dependencies and decisions visible to
+every affected agent, and bring material decisions back for challenge before
+integrating them; the lead resolves the interactions, for example retention
+versus deletion. These are example topics, not a required team.
+
+Before parallel work, write a short dependency list and serialize each shared
+resource — a migration, contract decision, lockfile, generated output, Git index,
+database or port — unless each agent owns an isolated copy. Worktrees separate files, not contradictory semantics. One
+writer owns each shared resource.
+
+## 3. Brief each agent
+
+Use the template from the worked example. Each field closes a specific gap:
+
+| Field | Why it is there |
+|---|---|
+| Task, Outcome | The agent optimizes for what you name; an activity without an outcome never finishes |
+| Inputs | Exact paths, the starting revision and relevant uncommitted changes; the agent cannot see your working state |
+| Must hold | Requirements and invariants the result has to keep; without them the agent optimizes the task alone |
+| Skills | Skills the agent should load for its role, so it applies them itself instead of receiving a paraphrase |
+| Boundary | Allowed reads and writes, tools, and "no further agents" |
+| Shared | Resources and decisions owned elsewhere, so the agent reports instead of changing them |
+| Evidence | What acceptance will check, so the agent collects it on the way |
+| Stop if | The conditions where continuing would mean guessing a decision |
+| Return | The shape of the answer, including what was not verified; no raw logs or work diary |
+
+An implementer returns a different shape than a scout:
+
+```text
+Return:     Changed files, starting revision checked, tests run with results,
+            unresolved risks, next action.
+```
+
+Include any user restriction that exists only in the main conversation. Give a
+fresh context instead of the whole chat: the agent needs the brief, not your
+history; use the host's no-history fork option (see the host notes in
+[model-routing.md](references/model-routing.md#host-notes)). Enforce read-only
+work with native read-only tools or sandboxing; a prompt that says "read-only"
+does not make a shell harmless. Without either, keep the work direct or state
+the residual risk in the brief.
+
+Child agents do not delegate further. Nested delegation hides who owns a result
+and multiplies cost; enforce it natively where the host can, and otherwise state
+it in the brief as an instruction rather than claiming a hard limit.
+
+## 4. Choose the model for the phase
+
+Apply this routing by default whenever you assign work; it needs no user switch.
+It selects delegate models only: do not change the main model, settings, account
+or provider to follow it. Match uncertainty, consequence and modality, not the phase's name:
+
+- **Planning and unresolved design:** a strong main model keeps the work or uses
+  similarly capable scouts. A narrow factual lookup still goes to tools or a
+  sufficient bounded researcher.
+- **Settled nonvisual implementation:** an efficient worker, once requirements,
+  contracts and acceptance are actually clear — a plan file alone does not make
+  them clear. Escalate unresolved or high-consequence implementation, or a
+  demonstrated capability gap, before repeated failed attempts pile up.
+- **Independent review:** a strong reviewer suited to the change. Review strength
+  does not widen scope: inspect the change and its consumers, recheck what
+  corrections affected, and widen only for new evidence.
+- **Visual planning, authoring and review:** judge visual ability and access to
+  rendered output separately from coding ability. A good refactoring worker may
+  need a different author for a diagram, and another reviewer for its quality.
+
+The current per-host preferences, model identifiers and host limitations live in
+[references/model-routing.md](references/model-routing.md); read it whenever you
+select or reassess a delegate model; it also owns checking the actual spawn
+schema and role locks. A requested model is not proof of the model that ran;
+verify the effective selection where the host shows it.
 
 For example, a code-focused lead refactors a settings flow and needs a diagram.
-It settles the behavior and hands the verified model, existing visual direction
-and embedding constraints to a visually capable author using the relevant design
-skill. After integration, a separate capable reviewer receives the brief, exact
-revision and rendered narrow/wide or light/dark states, without the author's
-approval. The lead verifies behavior and reconciles the specialist's findings;
-the author corrects defects and the reviewer checks the changed renders. Authoring
-includes material composition decisions, not only typing the SVG or CSS.
+It settles the behavior, then hands the verified model, visual direction and
+embedding size to a visually capable author. After integration, a separate
+reviewer gets the brief, the exact revision and the rendered narrow/wide or
+light/dark states, without the author's approval. The author corrects defects,
+including composition decisions, and the reviewer checks the changed renders.
+Source validity, a model name
+or the author's self-critique cannot stand in for visual acceptance; if a capable
+author, reviewer or render access is missing, name that gap and continue the
+unaffected work.
 
-Independent agents may use the same model in separate contexts. Provider diversity
-is not required. A small suitable task can stay direct, but that does not waive
-required independent review. If a capable author, independent reviewer or rendered
-access is missing, state that particular gap and continue unaffected work. Source
-validity, a model name or author self-critique cannot stand in for visual acceptance.
+## 5. Dispatch and steer
 
-## Cut work at a stable boundary
+Launch independent assignments together so they finish together; queue them in
+waves when the host's slots are limited. If a dependency, permission, requirement
+or base revision changes, pause the affected assignment and rescope it. Do not
+let an agent widen its own task, and do not start an identical replacement while
+the first job's state is unknown — two writers on one resource is the failure
+this skill exists to prevent.
 
-For research and design, a boundary can be an engineering concern rather than a
-code capability. Select questions relevant to the change; a new application needs
-an initial view across the concerns, while a small feature may touch only a few.
-Assign one coherent topic to an agent, or split a broad topic into independent
-subquestions or competing analyses. Several agents may investigate one topic when
-that produces distinct evidence; the topic list is not a required agent count.
+## 6. Accept and integrate
 
-For example, a design investigation might separate data lifecycle and recovery
-requirements from protection needs and trust boundaries, sharing the same workload
-and constraints. The lead then resolves interactions such as retention versus
-deletion requirements. These are example topics, not a required design or team.
-Keep common assumptions, dependencies and decisions visible to all affected agents;
-return material decisions for challenge before integrating their recommendations.
-If **State of the Art** is available, it owns evidence research; if **Grilling with
-Agents** is available and selected, it owns iterative challenge. Reuse an active
-caller's topic scope and return results to it without restarting either method.
+A returned report is submitted for review, not verified. Open the decisive
+evidence and changes without repeating the whole exploration. Resolve
+disagreements against the contract and reproducible behavior, not against the
+more confident report. A blocked agent should return the exact missing contract,
+evidence or access plus its useful partial work; resize or unblock the
+assignment rather than restarting it blind. After integration, run the checks
+the combined state affects, because each agent only verified its own part.
 
-For repository work, prefer a coherent user-visible capability or other independently testable outcome. Let one owner handle its necessary code and tests. Do not split UI, API, and data by layer while their contract is unsettled. A vertical slice is a design aid, not a rule that every slice gets an agent; use `vertical-slices` when available and the code boundary itself needs judgment. Without it, establish ownership and contracts directly.
+## When another workflow called this skill
 
-Before parallel work, identify prerequisites and shared resources in a short dependency list. Serialise a shared migration, contract decision, lockfile, generated output, Git index, database, or port unless ownership is isolated. Worktrees separate files, not contradictory semantics. One writer owns each shared resource.
+The caller owns its scope, criteria and questioning; this skill owns only the
+agent mechanics. Name the active workflows in every brief, return results to
+them, and do not load or restart them. A missing caller method does not prevent
+a bounded delegation whose ownership and evidence are clear.
 
-## Give each agent a complete small contract
-
-Provide the observable outcome, relevant requirements and invariants, exact inputs and accessible paths, starting revision and relevant local changes, allowed reads and writes, shared dependencies, acceptance evidence, output shape, and stop conditions. Include any user restriction that exists only in the main conversation. Use a fresh context when the client supports it; do not hand over the whole chat for convenience. Resolve the actual tool schema: in a host exposing only `fork_turns="none"` or `"all"`, a standalone brief uses `"none"`; do not invent a partial-history value.
-
-Use native read-only tools or sandboxing for research. A prompt saying "read-only"
-does not make a shell or connector harmless. Select the model and effort through
-the phase/capability routing above and verify the effective selection where the
-host exposes it; a requested model is not proof of the model that ran. Child agents
-must not delegate further; enforce this natively where available and otherwise
-mark it as an instruction, not a hard limit.
-
-Require the result, changed artifacts or exact references, the checked starting state, tests actually run, unresolved risks, and the next action. No raw logs or work diary. A returned report is submitted for review, not verified. Inspect decisive evidence and changes without repeating all exploration. Resolve disagreement against the contract and reproducible behavior. After integration, run the checks affected by the combined state.
-
-If a dependency, permission, requirement, or base changes, pause the affected assignment and rescope it. Do not let a subagent invent a wider task or start an identical replacement job while the first job's state is unknown.
-
-Use the host's capacity honestly; queue independent assignments in waves when
-slots are limited. Delegation is also useful for research and conceptual work:
-the useful cut is an independent question or outcome, not necessarily a code folder.
-
-If `minmax-tokens` is available, use it when deciding how to retrieve or return
-large evidence efficiently. If `grilling-with-agents` is available for an authorized
-iterative planning session, it owns the questioning protocol while this skill owns
-agent mechanics. If `engineering-review` is available for acceptance, it owns review
-criteria and author independence. Return to an existing caller rather than calling
-it recursively. Missing methods do not prevent a bounded native delegation when
-its ownership and evidence are clear.
-
-Read [evidence and limits](references/evidence.md) only when explaining or revising
-these delegation rules.
+The research behind these rules and its limits are in
+[references/evidence.md](references/evidence.md); read it only when revising
+the rules themselves.

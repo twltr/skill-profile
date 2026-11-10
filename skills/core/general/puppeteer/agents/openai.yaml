@@ -2,7 +2,7 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Puppeteer"
-  short_description: "Delegate bounded work and verify integration"
+  short_description: "Split work across agents and check what returns"
   default_prompt: "Use $puppeteer to divide this work into accountable, verifiable tasks."
 policy:
   allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 # Evidence and limits
 
-The operational rules above are design choices. These sources inform them; none proves that this particular skill is optimal.
+The operational rules in SKILL.md are design choices. These sources inform them; none proves that this particular skill is optimal.
 
 - [Towards a Science of Scaling Agent Systems, v3](https://arxiv.org/html/2512.08296v3) compares 260 configurations over six benchmarks. Task structure and coordination affect the result, so more agents are not a universal improvement.
 - [Why Do Multi-Agent LLM Systems Fail?, MAST](https://arxiv.org/html/2503.13657v3) categorizes observed design, coordination, and verification failures. The taxonomy motivates explicit contracts and checks; it does not measure this skill's effectiveness.

@@ -10,204 +10,245 @@ metadata:
 
 **Parent skill** in Software Engineering; applies its lenses together where they are relevant.
 
-Review a concrete change against its intended result and actual evidence. The
-reviewer must not be the author of the work being accepted. Implementers run
-their own checks, but those checks are not independent review approval.
+Review a concrete change against its intended result and actual evidence. Two
+things make a review worth having. It is **independent**: the reviewer did not
+author the work being accepted, so implementers' own checks are evidence, not
+approval. And its findings are **true**: each one was checked before it was
+reported, because a false finding costs the implementer a round trip and teaches
+them to skim the next review.
 
 ## A worked review exchange
 
-Fictional change: a new cancellation screen and its payment status.
+Fictional change: a cancellation screen and the refund status behind it.
 
 ```text
-Reviewer: At the narrow viewport, the select's chevron touches its right edge.
-Observed on the provided build, in the cancellation form's open state.
-Please correct the owning spacing rule and recheck the same state.
+Finding 1 [P1, confirmed]: refunds/status.py:58 maps a provider timeout to
+REFUNDED. The requirement separates pending from confirmed, and nothing confirms
+the refund. A customer whose request timed out sees "refunded" and may never be
+paid. Reproduced with the timeout fixture. Smallest fix: map the timeout to
+PENDING and leave confirmation to reconciliation.
 
-Reviewer question: Why does a timed-out refund appear as "refunded"?
-The requirement distinguishes pending from confirmed. Is there provider evidence
-that makes this outcome definitive, or does this state need to stay pending?
+Finding 2 [P3, confirmed]: at 360 px the select's chevron touches its right edge
+in the form's open state (screenshot attached). Other controls use the shared inset.
 
-Implementer: There is no confirmation; the mapping was incorrect. I changed the
-timeout outcome to pending and added the relevant behavioral check. The chevron
-now uses the same inset as the other controls. Here is the revised build/evidence.
+Question 1: refunds/client.py:30 retries on every exception, including 4xx
+responses. Is a 409 from the provider ever retryable? Recommended answer: no;
+retry only timeouts and 5xx.
 
-Reviewer: Rechecked the changed mapping and rendered narrow/wide form states on
-the updated revision. Both findings are resolved; unrelated states remain covered
-by the stated checks, not by assumption.
+Dropped before reporting: refund_status() can return None, but its only caller
+treats None as pending (refunds/views.py:41).
+
+Implementer: Timeout now maps to PENDING, with a behavioral test. 409 is not
+retryable, so the client retries only timeouts and 5xx. The chevron uses the
+shared inset. Revised build at <revision>.
+
+Reviewer: Rechecked on <revision>. The new test fails on the old mapping and
+passes on the new one; narrow and wide form states render correctly; the retry
+change adds no new path. All three resolved. Not covered: live provider
+behavior, which no stated check reaches.
 ```
 
-The question tests a real uncertainty without declaring an unproven bug. A
-confirmed defect is a finding with evidence. Both belong in the review record;
-neither needs a theatrical debate or an arbitrary numerical score.
+The question tests a real uncertainty without declaring an unproven bug; the
+dropped candidate did not survive checking, so it cost the implementer nothing.
+Severity and confidence are stated separately, and the recheck names what it did
+not cover.
 
 ## Establish an independent reviewer
 
-Identify the authors of the affected change. The main agent can review subagent
-implementation when it has the relevant capability and evidence access. Otherwise
-delegate that judgment to a suitable independent reviewer. If the main agent
-implemented the change, another agent must review it. Review authorship per
-affected work, including material design/composition decisions, not merely by job title. An
-agent who fixes a disputed part becomes an author of that part; obtain an independent
-check of that correction rather than approving it itself.
+Establish who authored each affected part, including material design and
+composition decisions, not only who holds which job title. The main agent can
+review a subagent's implementation when it has the capability and evidence
+access; if the main agent implemented the change, another agent reviews it. An
+agent who fixes a disputed part becomes an author of that part, so its
+correction needs an independent check too.
 
-If **Puppeteer** is available, use its phase/capability model routing to arrange
-appropriate independent reviewers, scope access and coordinate responses. Use
-real native agents; reuse an existing assignment that meets these requirements.
-A separate context on the same model can be independent.
-If no independent
-reviewer is available, perform honest author verification and report independent
-review as open; do not simulate a second opinion or call self-checks approval.
+If **Puppeteer** is available, use its model routing to arrange suitable
+independent reviewers, scope their access and coordinate responses; reuse an
+existing assignment that meets these requirements. A separate context on the
+same model can be independent. If no independent reviewer is available, perform
+honest author verification and report independent review as open; do not
+simulate a second opinion or call self-checks approval.
 
-Provide the requirements, accepted decisions, baseline/current revision, relevant
-diff, author verification and runnable or rendered access. Do not prime reviewers
-with the implementer's conclusion. Review the actual current state, not merely
-an earlier screenshot or a summary of what was supposed to change.
+Give reviewers the requirements, accepted decisions, baseline and current
+revision, the relevant diff, the author's verification and runnable or rendered
+access. State the change's intent, but do not prime reviewers with the
+implementer's conclusion that it works. Review the current state, not an earlier
+screenshot or a summary of what was supposed to change.
 
 ## Select the actual change
 
-Split a mixed review by the questions that need different expertise: behavioral
-correctness and contracts, visual presentation and interaction, and factual
-agreement between a figure and the system it explains. A strong code reviewer
-does not automatically establish visual quality. Give visual work to a capable
-independent reviewer with the actual renders, including when the main agent is
-not suited to judge them. The lead retains integration and evidence coverage;
-it resolves factual discrepancies with evidence and does not manufacture a missing
-specialist verdict. Use one capable reviewer when that suffices, or bounded
-specialists when the work benefits; do not duplicate the complete review for each.
+Split a mixed review by the expertise its questions need: behavior and
+contracts, visual presentation and interaction, and factual agreement between a
+figure and the system it explains; a strong code reviewer does not thereby
+establish visual quality. Use one capable reviewer when that suffices, or bounded
+specialists without duplicating the whole review for each. The lead keeps
+integration and evidence coverage and does not manufacture a missing verdict.
 
-Establish whether the target is uncommitted work, a commit, a branch or an explicitly
-broader assessment. For a branch review, resolve the intended target and its verified
-upstream state, then inspect the diff from the merge base with HEAD. Comparing two
-branch tips directly can attribute target-branch work to the proposal. Do not guess
-an unavailable reference. Include staged, unstaged and relevant new files when the
-requested target is local work; preserve unrelated changes.
+Establish whether the target is uncommitted work, a commit, a branch or an
+explicitly broader assessment. For a branch, resolve the intended target and its
+verified upstream, then diff from the merge base to HEAD; comparing two branch
+tips attributes the target branch's work to the proposal. Do not guess an
+unavailable reference. For local work, include staged, unstaged and relevant new
+files, and preserve unrelated changes. If the same revision was already reviewed
+and nothing changed, say so rather than reviewing it again; scale the depth of a
+trivial or generated change to its risk.
 
-Read the complete scoped diff and enough callers, contracts and tests to establish
-the affected behavior. Finding one defect does not finish the remaining review.
-Distinguish a regression introduced here from an existing issue. Broader architecture
-or requirement assessments may legitimately address existing problems, but label
-that scope instead of presenting them as newly introduced regressions.
+Read the complete scoped diff and enough callers, contracts and tests to
+establish the affected behavior. Finding one defect does not finish the review.
+Distinguish a regression introduced here from an existing issue; a broader
+assessment may address existing problems, but label them as such.
 
 ## Review the result and its explanation
 
-Establish the review phase. Substantial work is reviewed in two phases: first the
-implementation, then, separately, the documentation updated to match that
-accepted result.
-A Phase 1 acceptance is not permission to merge before Phase 2. Review source
-comments with code; review the durable README and documentation in Phase 2. If
-the latter exposes a behavior defect, reopen the affected implementation review.
+Substantial work is reviewed in two phases: first the implementation, then,
+separately, the documentation updated to match the accepted result. Accepting
+phase 1 is not permission to merge before phase 2. Review source comments with
+the code and durable README and documentation in phase 2; if the latter exposes a
+behavior defect, reopen the implementation review.
 
-Trace the changed behavior through the affected boundaries. Check correctness,
-regressions, failure states, contract compatibility, data ownership and verification.
-Inspect the README and affected durable documentation in its review phase;
-the complete change must leave source and explanation in agreement. A passing test does not excuse a false model,
-duplicated owner, missing requirement or misleading documentation.
+Trace the changed behavior through the affected boundaries: correctness,
+regressions, contract compatibility, data ownership and verification. Give
+failure paths their own pass — errors swallowed or logged and ignored, broad
+catches that hide unrelated failures, defaults and fallbacks that make an outage
+look like a valid result. A passing test does not excuse a false model, a
+duplicated owner, a missing requirement or misleading documentation.
 
 Apply these criteria where relevant, from the methods the domain loaded for the
 reviewer role:
 
-- **Technology choices:** assess justified language, pattern, protocol, framework
-  and dependency choices, with current evidence where the choice is consequential.
-- **Domain language:** test meanings and names against actual scenarios and
+- **Technology choices:** justified language, pattern, protocol, framework and
+  dependency choices, with current evidence where the choice is consequential.
+- **Domain language:** meanings and names tested against actual scenarios and
   lifecycles.
-- **Ownership and placement:** check coherent ownership, public boundaries and
-  file/module placement.
-- **Reason comments:** check the explanation of reasons, models and invariants
-  beside code.
-- **Test evidence:** assess whether evidence distinguishes the relevant failures.
-- **Documentation:** assess README, agent instructions and durable docs against
-  their distinct owners; check usable entrypoints, concise explanation and
-  accurate primary visuals, with **Editorial SVG Diagrams** for explanatory figures.
-- **Complete replacement:** check whether an agreed replacement reached affected
-  consumers and whether a purported completion still leaves the retired owner active.
+- **Ownership and placement:** coherent ownership, public boundaries and
+  file and module placement.
+- **Reason comments:** reasons, models and invariants explained beside the code,
+  and still true of it.
+- **Test evidence:** whether the evidence distinguishes the relevant failures.
+- **Documentation:** README, agent instructions and durable docs against their
+  distinct owners; usable entrypoints, concise explanation and accurate primary
+  visuals, with **Editorial SVG Diagrams** for explanatory figures.
+- **Complete replacement:** whether an agreed replacement reached its consumers,
+  or a purported completion leaves the retired owner active.
 
 Add this skill's own lenses when the change calls for them:
 
-- **MinMax Codebase:** assess system complexity, redundant owners and preserved behavior
-  in review mode; do not turn a finding into an unrelated refactoring assignment.
-- **Improve Codebase Architecture:** for an explicitly broader architectural
-  assessment, judge language and architecture choices down to interfaces, names,
-  modules and files; report prioritized, evidence-backed improvements as findings.
+- **MinMax Codebase:** system complexity, redundant owners and preserved
+  behavior, in review mode; a finding does not become a refactoring assignment.
+- **Improve Codebase Architecture:** for an explicitly broader assessment,
+  language and architecture choices down to interfaces, names, modules and
+  files, reported as prioritized, evidence-backed findings.
 
-Read each lens or loaded method once for its specific contribution. Without one,
-apply the bounded review criteria directly and disclose a material limit. Do not
-start a chain of new workflows or ask a caller to invoke itself again.
+Read each lens or loaded method once for its contribution. Without one, apply
+the criteria above directly and disclose the limit. Do not start a chain of new
+workflows or ask a caller to invoke itself again.
 
-## Inspect rendered UI and graphics in detail
+## Inspect rendered UI and graphics
 
-For UI work, require the actual affected screen and relevant viewport sizes,
-themes and interaction states. For diagrams, icons and other visual artifacts,
-inspect their real embedding size and intended surfaces as well as semantic
-accuracy; Editorial SVG Diagrams owns the criteria for explanatory figures.
-Builds, source inspection and component tests do not prove visual quality.
-Judging the visual direction, motion, iconography or accessibility is design
-review: hand that part back to the agent, which runs it from the middle, and
-keep the checks below for this review. Do not invent a new aesthetic
-during review.
+For UI work, require the affected screen at the relevant viewport sizes, themes
+and interaction states; for diagrams, icons and other visuals, their real
+embedding size and surfaces as well as their semantic accuracy. Builds, source
+inspection and component tests do not prove visual quality, and a screenshot
+establishes only the state it shows. Judging visual direction, motion,
+iconography or accessibility is design review: hand that part back to the agent,
+which runs it from the middle, and do not invent a new aesthetic here.
 
-Check spacing and padding, optical/icon alignment, text clearance around chevrons,
-typography, readable contrast, clipping, overflow, responsive behavior and the
-states relevant to the change, including focus, error and disabled states. Verify
-interaction and keyboard behavior when they are affected. A screenshot establishes
-only the state it shows; inspect the real interaction where needed.
+Check spacing and padding, optical and icon alignment, text clearance around
+chevrons, typography, contrast, clipping, overflow, responsive behavior and the
+states the change touches, including focus, error and disabled. Verify
+interaction and keyboard behavior when they are affected.
 
-Obtain an independent read-only visual reviewer who did not author the affected
-design or implementation. Use Puppeteer's current model-routing reference when
-available rather than selecting by the parent's coding strength or a fixed role
-name. The main agent performs the checks it can establish and integrates the
-specialist's evidence; it does not need to duplicate or claim that visual judgment.
-Additional perspectives may help substantial visual work; do not claim provider
-diversity or access that the host does not expose. An image-capable model must
-actually receive rendered evidence; an accessibility tree or markup is insufficient.
+Obtain a read-only visual reviewer who did not author the design or
+implementation, chosen through Puppeteer's model routing when available rather
+than by coding strength, and give it rendered images; markup or an accessibility
+tree is not visual evidence. Missing visual capability, reviewer or rendered
+access is a specific blocked check: report it rather than accept the UI unseen or
+hand the routine visual work to the user.
 
-Return the screen/state, observed issue, consequence and reproduction or visual
-evidence. Send justified fixes to the implementer and recheck the affected states
-on the corrected build. Missing visual capability, an independent reviewer or
-rendered access is a specific blocked check, not a reason
-to ask the user to do all the routine visual work or to accept the UI unseen.
+## Verify each candidate before reporting
+
+Treat every suspected issue as a hypothesis and try to refute it:
+
+1. **Confirm it happens.** Re-read the location and enough of its callers,
+   tests and configuration to show the behavior occurs, not merely that a diff
+   hunk read alone suggests it could.
+2. **Rule out the usual false positives.** The issue predates this change; the
+   surprising code is correct and its reason is documented nearby; a configured
+   linter, type checker or test already catches it; the code deliberately
+   suppresses it with a stated reason; or it is a style preference no rule asks
+   for.
+3. **Quote the rule.** A guideline finding cites the exact sentence and confirms
+   that it covers this file; repository instruction files apply to their own
+   directory and below.
+4. **Classify by evidence:**
+
+| Evidence | Record as |
+|---|---|
+| Reproduced, or traced end to end through the code | Finding, confirmed |
+| Strong reading of the code, not executed | Finding, with the check that would confirm it |
+| Depends on intent, an unknown input or an unsettled requirement | Question to the implementer |
+| Refuted | Dropped; mention it only if the implementer would otherwise wonder |
+
+Confidence and severity are independent: a certain typo is P3, and a plausible
+data-loss path is a P0 question until it is settled. When candidates come from
+delegated reviewers, check each decisive claim against the code before adopting
+it; for a release-blocking candidate, an independent agent can re-check that one
+claim with only the claim, the requirement and code access.
 
 ## Ask when the reason is materially unclear
 
-Separate a reproducible defect from an uncertain rationale. For a material question,
-state the observed choice, the requirement or evidence in tension with it and what
-answer would resolve the concern. Ask only questions whose prerequisites are
-settled, number them and give your recommended answer to each, in a short
-exchange with the implementer; the implementer is the respondent here, not the
-human user. Do not start a full human interview.
+For a material question, state the observed choice, the requirement or evidence
+in tension with it and what answer would resolve the concern. Ask only questions
+whose prerequisites are settled, number them and give your recommended answer to
+each, in a short exchange with the implementer; the implementer answers here,
+not the human user, so do not start a full interview.
 
-Evaluate the reply against evidence and consequences. Accept a supported reason,
-request a correction or preserve an unresolved disagreement. Do not require a
-question round for an obvious defect. Do not force unanimity by repeating the same
-arguments or escalate technical choices the agents can settle themselves.
+Evaluate the reply against evidence and consequences: accept a supported reason,
+request a correction or record an unresolved disagreement. An obvious defect
+needs no question round. Do not force unanimity by repeating arguments, or
+escalate technical choices the agents can settle themselves.
 
 ## Record findings and verify corrections
 
-For remote work, publish actionable code findings on the relevant PR lines when
-supported. Use PR review/comments for cross-cutting and UI findings. Record open
-questions, meaningful answers, decisions, corrections and recheck results even
-when agents also communicate directly. Link the actual revision and evidence.
-Keep the issue informed of material blockers or changed scope; the active plan
-retains relevant unresolved conditions without duplicating the entire transcript.
+Order findings by impact with a compact label:
 
-A finding states location, observed behavior, impact, evidence and the smallest
-useful correction or missing decision. Do not pad a review with speculative defects,
-preference-only rewrites or inventories of unaffected code. After remote writes,
-confirm the provider's result; a local draft is not a posted comment.
+| Label | Meaning |
+|---|---|
+| P0 | Blocks release: data loss, security exposure, broken build or core path |
+| P1 | Urgent defect on a path users or operators will hit |
+| P2 | Ordinary defect or unmet agreed requirement |
+| P3 | Worthwhile minor correction |
 
-Order actionable findings by impact. A compact priority label can distinguish a
-release blocker (P0), urgent defect (P1), ordinary defect (P2) and worthwhile minor
-correction (P3). Demonstrate the affected scenario and cite the smallest relevant
-location in the change. Intentional behavior or personal style preference is not
-itself a defect; unmet agreed UI or documentation requirements still are findings.
-When no actionable issue is established, say so and report verification limits;
-do not invent a finding to make the review look substantial.
+A finding states its location, observed behavior, impact, evidence class and
+the smallest useful correction or missing decision. Intentional behavior and
+personal preference are not defects; unmet agreed UI or documentation
+requirements are. Do not pad a review with speculative defects, rewrites of
+taste or inventories of unaffected code. When nothing actionable is established,
+say so and report the verification limits.
 
-Use a clear outcome: changes required, blocked on specified evidence, or reviewed
-with stated checks and limits. Tie it to the reviewed revision. After changes,
-recheck affected behavior and any newly exposed risk; previous approval does not
-automatically cover new edits. Resolve a discussion only after its disposition
-and required evidence are recorded.
+For remote work, post code findings on the relevant PR lines when supported, and
+cross-cutting or UI findings in the review body:
 
-Return the outcome to whoever owns the work. That owner handles final cleanup,
+- One comment per distinct issue; an issue that recurs names its other locations
+  instead of repeating itself.
+- Offer a ready-to-apply suggestion only when applying it fully fixes the issue;
+  otherwise describe the fix.
+- Link code at the reviewed revision's full commit hash, so the link still shows
+  the reviewed lines after later pushes.
+- After a remote write, confirm the provider's result; a local draft is not a
+  posted comment.
+
+Record questions, answers, decisions, corrections and recheck results, linked
+to the revision and evidence, even when agents also talk directly. Keep the issue
+informed of material blockers or changed scope; the active plan keeps unresolved
+conditions without copying the transcript.
+
+Close with a clear outcome tied to the reviewed revision: changes required,
+blocked on specified evidence, or reviewed with stated checks and limits. After
+corrections, recheck the affected behavior and any newly exposed risk; an earlier
+approval does not cover new edits. Resolve a discussion only once its
+disposition and evidence are recorded.
+
+Return the outcome to whoever owns the work. That owner handles cleanup,
 changelog, issue closure and merge sequencing; this skill neither deletes plans
-nor merges merely because the review passed.
+nor merges because the review passed.

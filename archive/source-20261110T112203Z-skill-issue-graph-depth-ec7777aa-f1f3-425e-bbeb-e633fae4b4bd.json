@@ -1,0 +1,23 @@
+{
+  "source_revision": "3040298ed670bacf9e35a27722a5758709914d52",
+  "reason": "Preserve Skill Issue before skill_graph.py discovers skills at any depth after the core/extras restructuring (2026-11-10).",
+  "packages": [
+    "skills/core/general/skill-issue"
+  ],
+  "archive": "archive/source-20261110T112203Z-skill-issue-graph-depth-ec7777aa-f1f3-425e-bbeb-e633fae4b4bd.zip",
+  "files": {
+    "skills/core/general/skill-issue/LICENSE-Anthropic.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "skills/core/general/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/core/general/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/core/general/skill-issue/NOTICE.md": "93bd49a95c9b82ff1c78fa19b9d636dcd262a63a6bcdf18d8f24357a914c1d32",
+    "skills/core/general/skill-issue/SKILL.md": "97eb7d2e33a19ed52bf3efecbddd17e0e0b8a9fc64eb5384120c67f857e06838",
+    "skills/core/general/skill-issue/agents/openai.yaml": "147165491ba35069993de9d5ecc82da834c350977eb1347e4c1425cb65499000",
+    "skills/core/general/skill-issue/assets/icon-small.png": "825e3e2973788b4896eb853032cd9a5000f8c00a8ebf1dc9571801d56e63305f",
+    "skills/core/general/skill-issue/assets/icon-small.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/general/skill-issue/assets/icon.png": "3a851e8ce0490057f9feec042e1452c9cdb1467447ef602658bd0b7ab95184e7",
+    "skills/core/general/skill-issue/assets/icon.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/general/skill-issue/references/evaluation.md": "87248e0e050ed03a9080b949a2f4c2f81d14056a41e87642bbed3304b560d8f4",
+    "skills/core/general/skill-issue/references/installation.md": "d13941597731f74b6b20d68551c0bc73d8b8d2410ce9f55d6a4a713c2b492c7c",
+    "skills/core/general/skill-issue/scripts/skill_graph.py": "11805366621340abd50084edcbd93f6e0d9230b8be146481012829401ebbd562"
+  }
+}

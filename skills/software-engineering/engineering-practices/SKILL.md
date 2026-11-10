@@ -55,6 +55,11 @@ Alternatives: a small standalone service in another language could be justified
 by deployment constraints; a JavaScript backend needs a positive reason beyond
 generator convenience. Neither alternative currently beats the stated fit.
 
+When a consequential technology or architecture choice has several defensible
+answers and the evidence does not settle it, suggest that the user start
+`grilling-with-agents`, where specialist agents challenge the options; do not
+load it yourself, and keep working on what is already settled.
+
 Before pinning versions: verify the language/runtime support line, framework
 compatibility and required SDK support in their current official documentation.
 ```

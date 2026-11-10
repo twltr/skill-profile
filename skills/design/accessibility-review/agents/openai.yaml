@@ -2,6 +2,6 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Accessibility Review"
-  short_description: "Leaf: Audit designs against WCAG 2.1 AA"
+  short_description: "Leaf: Audit designs against WCAG 2.2 AA"
 policy:
   allow_implicit_invocation: false

@@ -116,16 +116,15 @@ the combined decisions still hold together. For example, data recovery and
 security findings may constrain each other; neither scout owns that combined
 trade-off alone. These are investigation boundaries, not implementation layers.
 
-For engineering, use **Vertical Slices** when available for responsibility,
-interfaces, dependencies, invariants and Shared Machinery. Perform active domain modeling: distinguish
-overloaded terms, test definitions with counterexamples, compare them with actual
-behavior, and keep settled language at its existing owner. If **Domain Modeling**
-is available, use it for those decisions; do not claim an uninstalled skill
-was invoked or create a competing glossary by default.
-
-If **Engineering Practices** is available, use it for unresolved language, framework,
-protocol, architecture and dependency choices, with current primary evidence.
-Do not start a new research council inside the council.
+For engineering topics, scouts examine responsibility boundaries, interfaces,
+dependencies and invariants; distinguish overloaded terms, test definitions with
+counterexamples and compare them with actual behavior; and weigh language,
+framework, protocol and dependency choices against current primary evidence. The
+council does this with its own judgment and loads no other method: this skill is
+a shared leaf, usable from any domain. Whoever started the council applies a
+domain's methods to its result afterwards. Keep settled language at its existing
+owner instead of creating a competing glossary, and do not start a new research
+council inside the council.
 
 Repository and module names should express settled concepts and avoid collisions.
 Check an existing naming convention before inventing one. A name for a local
@@ -203,16 +202,14 @@ Consensus or a numerical score is not proof of correctness or a perfect design.
 Summarize decisions the lead made, why they were made, relevant evidence, rejected
 alternatives, previously supplied user decisions, remaining assumptions and what
 would reopen an important choice. Return that report to the user without
-questions or a confirmation gate. It does not automatically start
-Road to Glory or create planning artifacts before the requested planning scope
-calls for them.
+questions or a confirmation gate. It does not start planning or
+create planning artifacts before the requested planning scope calls for them.
 
 If an active plan already owns the work, integrate decisions, reasons,
 evidence, rejected alternatives and unresolved prerequisites there. Do not leave
 the rationale only in chat or create a parallel council log.
 
-For engineering work that includes roadmap planning, if **Road to Glory** is
-available, hand off with:
+When the report feeds roadmap planning, shape it as a planning handoff with:
 
 - The repository purpose, name and source location, or the bounded feature owner.
 - Domain language, capability boundaries and public interfaces.
@@ -225,15 +222,14 @@ available, hand off with:
 - Remote issue/PR expectations when a remote exists; local work needs no ticket store.
 
 For other requests limited to a decision report, return it to the user
-without creating repositories, plans or tickets. When planning is in scope but
-Road to Glory is unavailable, preserve the decisions and next work at the task's
-existing planning owner.
+without creating repositories, plans or tickets. When planning is in scope,
+preserve the decisions and next work at the task's existing planning owner.
 
 Create a missing local repository when repository creation is part of the authorized
 task and its destination is settled. Otherwise provide the concrete proposal and
 name the unresolved destination. Planning alone does not authorize product
-implementation or remote publication. Road to Glory owns planning artifacts and
-lifecycle; handing off to it does not start another council.
+implementation or remote publication. The planning owner keeps planning artifacts
+and lifecycle; handing the report to it does not start another council.
 
 ## Another example: a new repository
 

@@ -223,7 +223,7 @@ skill is described as applied before its instructions have been read.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/engineering-family.dark.svg">
-  <img src="figures/engineering-family.svg" width="760" alt="Adjacency matrix of 18 skills in tree order: the Software Engineering domain, its flow and parent, its leaves, the shared leaves and the core skills; a row references a column; only Grilling with Agents and one Puppeteer boundary mention sit below the diagonal.">
+  <img src="figures/engineering-family.svg" width="760" alt="Adjacency matrix of 18 skills in tree order: the Software Engineering domain, its flow and parent, its leaves, the shared leaves and the core skills; a row references a column; only one Puppeteer boundary mention sits below the diagonal.">
 </picture>
 
 A row references a column. Rows and columns follow the tree: the domain, its
@@ -241,12 +241,11 @@ references that point up the tree.
 | Dot | Boundary mention only |
 
 Regenerated on 2026-11-10 after the tree work, from the references
-`skills/core/skill-issue/scripts/skill_graph.py` extracts: 33 edges, five of
-them upward. Four are Grilling with Agents using engineering leaves and Road to
-Glory, which a shared leaf may not load (open decision); the fifth is a
-Puppeteer boundary sentence about Engineering Review. Every engineering leaf
-now names only core skills, and only the domain, Road to Glory and Engineering
-Review route.
+`skills/core/skill-issue/scripts/skill_graph.py` extracts. One edge points up:
+a Puppeteer boundary sentence about Engineering Review. Engineering leaves name
+only core skills; the domain, Road to Glory and Engineering Review route; and
+the shared leaf Grilling with Agents is only suggested — by the domain, Road to
+Glory and Engineering Practices — and loads nothing itself.
 
 ## Project-owned skills
 

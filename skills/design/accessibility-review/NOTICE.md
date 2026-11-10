@@ -36,3 +36,10 @@ cannot verify, reports which test steps ran, uses one findings table instead of
 four, and shares its severity scale with the design critique. WCAG 2.1 AA stays
 the default standard, consistent with the skill's name and its parent. The
 description now mentions criterion citations, zoom and reflow, and WCAG 2.2.
+
+## 2026-11-10: WCAG 2.2 AA default
+
+On the owner's decision the audit now defaults to WCAG 2.2 AA, the current W3C
+Recommendation: the 2.2 AA and A additions are part of the criteria table, and
+a project that still requires 2.1 AA drops them explicitly. Design Review
+changed with it.

@@ -111,10 +111,11 @@ its own with several parents or flows beneath it.
    work happens.
 6. **Shared leaves are suggested, not loaded.** A leaf that several domains can
    use — an interview, a decision council — sits outside every tree. A routing
-   skill may suggest it to the person under a stated condition ("if the
-   requirements are still unclear, suggest the decision-council skill"); it never
-   loads it. The person who accepts becomes the leaf's root, so the leaf stays
-   independent of every tree and names no caller.
+   skill or a leaf may suggest it to the person under a stated condition ("if the
+   requirements are still unclear, suggest the decision-council skill"); none
+   loads it. The person who accepts becomes the leaf's root. The edge points from
+   the tree to the shared leaf, never back: the shared leaf loads no skill of any
+   tree and names no caller, so it stays usable from every domain.
 
 Example of rule 4: in an engineering domain, both the implementer and the
 reviewer need the test-design leaf. Neither role's skills load it; the domain

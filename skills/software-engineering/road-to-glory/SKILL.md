@@ -33,7 +33,7 @@ Engineering domain loads that role's pack. This flow names roles, not methods.
 
 | Phase | Role | Condition |
 |---|---|---|
-| Plan: scout, decide, cut packages | Orchestrator | Ownership, concept and technology decisions are implementer judgments: take that role for them or give them to an implementer delegate. |
+| Plan: scout, decide, cut packages | Orchestrator | Ownership, concept and technology decisions are implementer judgments: take that role for them or give them to an implementer delegate. When a consequential decision stays open after scouting, suggest that the user start `grilling-with-agents`; do not load it yourself. |
 | Implement | Implementer, including every delegate | A delegate's brief carries the implementer pack in Puppeteer's `Skills:` field. |
 | Review: implementation, then documentation | Reviewer, independent of the author | The lead does not approve work it authored. |
 | Document | Documenter | Starts only after the implementation is accepted. |

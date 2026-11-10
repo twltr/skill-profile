@@ -1,6 +1,6 @@
 ---
 name: accessibility-review
-description: Run a WCAG 2.1 AA accessibility audit on a design or page, citing the success criterion for every finding — "audit accessibility", "check a11y", "is this accessible?". Use when checking color contrast, keyboard access and focus, touch target size, form labels and errors, zoom and reflow, or screen reader behavior before handoff or release; extends to WCAG 2.2 AA when that is the requirement.
+description: Run a WCAG 2.2 AA accessibility audit on a design or page, citing the success criterion for every finding — "audit accessibility", "check a11y", "is this accessible?". Use when checking color contrast, keyboard access and focus, touch target size, form labels and errors, zoom and reflow, or screen reader behavior before handoff or release; extends to WCAG 2.2 AA when that is the requirement.
 argument-hint: "<design file URL, page URL, or description>"
 metadata:
   skill-type: leaf
@@ -14,7 +14,7 @@ metadata:
 A design can work well with a mouse and good eyesight and still shut out people
 who use a keyboard, a screen reader, magnification or simpler language. An audit
 finds those barriers and makes each one checkable: every finding names its WCAG
-success criterion, the measured value and the fix. WCAG 2.1 AA is the default
+success criterion, the measured value and the fix. WCAG 2.2 AA is the default
 standard because many legal and contractual baselines reference it, among them
 EN 301 549 in the EU and the 2024 US ADA Title II rule; check which requirement
 actually applies. The audit is also honest about its medium: a mockup shows
@@ -66,29 +66,27 @@ Test in this order, and report which steps actually ran:
 5. **Screen reader** (VoiceOver, NVDA) on the main tasks. The audit does not
    replace testing with assistive technology or with disabled users.
 
-## WCAG 2.1 criteria to check
+## WCAG 2.2 criteria to check
 
 Level in brackets. Not exhaustive: these are the criteria most designs fail.
 
 | Principle | Criteria |
 |---|---|
 | Perceivable | 1.1.1 Non-text content has a text alternative (A) · 1.3.1 Structure conveyed semantically (A) · 1.3.5 Input purpose identifiable (AA) · 1.4.1 Color not the only means (A) · 1.4.3 Text contrast 4.5:1, large text 3:1 (AA) · 1.4.4 Resize text to 200% (AA) · 1.4.10 Reflow at 320 CSS px (AA) · 1.4.11 Non-text contrast 3:1 for controls and graphics (AA) · 1.4.12 Text spacing (AA) · 1.4.13 Content on hover or focus (AA) |
-| Operable | 2.1.1 Keyboard (A) · 2.1.2 No keyboard trap (A) · 2.2.2 Pause, stop, hide moving content (A) · 2.4.3 Focus order (A) · 2.4.4 Link purpose (A) · 2.4.7 Focus visible (AA) · 2.5.3 Label in name (A) |
-| Understandable | 3.2.1 No change of context on focus (A) · 3.3.1 Error identified in text (A) · 3.3.2 Labels or instructions (A) · 3.3.3 Error suggestion (AA) |
+| Operable | 2.1.1 Keyboard (A) · 2.1.2 No keyboard trap (A) · 2.2.2 Pause, stop, hide moving content (A) · 2.4.3 Focus order (A) · 2.4.4 Link purpose (A) · 2.4.7 Focus visible (AA) · 2.4.11 Focus not obscured (AA) · 2.5.3 Label in name (A) · 2.5.7 Dragging movements have a single-pointer alternative (AA) · 2.5.8 Target size minimum 24 × 24 CSS px, with its spacing exceptions (AA) |
+| Understandable | 3.2.1 No change of context on focus (A) · 3.3.1 Error identified in text (A) · 3.2.6 Consistent help (A) · 3.3.2 Labels or instructions (A) · 3.3.3 Error suggestion (AA) · 3.3.7 Redundant entry (A) · 3.3.8 Accessible authentication (AA) |
 | Robust | 4.1.2 Name, role, value (A) · 4.1.3 Status messages announced (AA) |
 
 Large text means at least 18 pt (24 CSS px), or 14 pt (about 18.7 CSS px) bold.
 
-**Target size is not an AA criterion in WCAG 2.1:** 2.5.5 (44 × 44 CSS px) is
-Level AAA. Report smaller targets as a usability finding against platform
-guidance (Apple 44 pt, Material 48 dp), not as an AA failure — unless the
-requirement is WCAG 2.2.
+**Target size:** 2.5.8 requires 24 × 24 CSS px (or enough spacing) at AA;
+2.5.5 (44 × 44 CSS px) stays Level AAA. Report targets between 24 and 44 px as a
+usability finding against platform guidance (Apple 44 pt, Material 48 dp), not
+as an AA failure.
 
-**When the requirement is WCAG 2.2 AA**, also check 2.4.11 Focus not obscured
-(AA), 2.5.7 Dragging movements (AA), 2.5.8 Target size minimum 24 × 24 CSS px
-with its spacing exceptions (AA), 3.2.6 Consistent help (A), 3.3.7 Redundant
-entry (A) and 3.3.8 Accessible authentication (AA). WCAG 2.2 removed 4.1.1
-Parsing.
+**When a project still requires WCAG 2.1 AA**, drop the 2.2 additions (2.4.11,
+2.5.7, 2.5.8, 3.2.6, 3.3.7, 3.3.8) and say so in the report. WCAG 2.2 removed
+4.1.1 Parsing, so a 2.1 audit still lists it.
 
 ## Severity
 
@@ -104,7 +102,7 @@ Use one scale, so the findings can be merged with a design critique:
 
 ```markdown
 ## Accessibility audit: [design or page]
-**Standard:** WCAG 2.1 AA | **Medium:** [mockup / rendered page] | **Date:** [date]
+**Standard:** WCAG 2.2 AA | **Medium:** [mockup / rendered page] | **Date:** [date]
 
 **Summary:** [count] findings — Critical [n], Major [n], Minor [n]
 

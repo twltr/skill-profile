@@ -108,6 +108,11 @@ def main(argv):
                 continue
             if t["type"] == "core":
                 continue  # core skills stand in the middle; naming one routes nothing into a tree
+            if s["group"] == "extras" and t["group"] != "extras":
+                rules.append(f"{source} (shared leaf) names {target}; a shared leaf loads no tree skill")
+                continue
+            if t["group"] == "extras":
+                continue  # suggesting a shared leaf to the person routes nothing (edge rule 6)
             if s["type"] in ("core", "leaf") and s["group"] != "extras":
                 rules.append(f"{source} ({s['type']}) names {target}; a {s['type']} skill loads nothing")
             elif s["tree"] and t["tree"] and s["tree"] != t["tree"]:

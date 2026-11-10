@@ -27,3 +27,10 @@ Engineering Practices and State of the Art as callers, were removed or made
 caller-neutral: as a shared leaf, a person starts it, directly or after a routing
 skill suggests it. The closing note on direct entry now says the same. The
 method, its no-question rule, examples and hand-off content are unchanged.
+
+## 2026-11-10: edges inverted
+
+On the owner's decision the council no longer loads engineering methods or
+hands off to a planning flow by name. Its scouts apply the same engineering
+questions with their own judgment; Software Engineering, Road to Glory and
+Engineering Practices suggest the council instead (edge rule 6).

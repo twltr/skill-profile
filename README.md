@@ -175,9 +175,7 @@ The type system and the two existing domains are in place:
 
 Every skill declares its type in `metadata`, in the first line of its body and
 in the prefix of its short description. No skill names its caller or a sibling
-leaf, and no edge crosses between trees. Open: Grilling with Agents, a shared
-leaf, still uses engineering leaves and Road to Glory, which the shared-leaf rule
-does not allow.
+leaf, no edge crosses between trees, and shared leaves are only suggested.
 `skills/core/skill-issue/scripts/check_tree.py skills` lists every remaining rule
 finding; the installer refuses a collection with a missing type or required child. The [writing map](SKILLS.md#writing-family-map) and the
 [engineering matrix](SKILLS.md#engineering-tree-map) show what is left;

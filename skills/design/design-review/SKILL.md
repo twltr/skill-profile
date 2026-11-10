@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: Review a design or interface for usability, visual hierarchy, consistency and accessibility, combining a structured design critique with a WCAG 2.1 AA audit. Use for reviewing screens, mockups or rendered pages before handoff or release.
+description: Review a design or interface for usability, visual hierarchy, consistency and accessibility, combining a structured design critique with a WCAG 2.2 AA audit. Use for reviewing screens, mockups or rendered pages before handoff or release.
 metadata:
   skill-type: parent
   skill-tree: design
@@ -22,7 +22,7 @@ findings into one list.
 1. Get the design: a URL, screenshot, rendered states or a description. Prefer
    rendered states at the sizes and themes that ship.
 2. Load `design-critique` for usability, hierarchy and consistency, and
-   `accessibility-review` for the WCAG 2.1 AA audit. Load only one when the
+   `accessibility-review` for the WCAG 2.2 AA audit. Load only one when the
    request names it ("just check contrast").
 3. Merge the findings: one list ordered by impact on the user, each with the
    location, the problem, the source (critique or accessibility) and the

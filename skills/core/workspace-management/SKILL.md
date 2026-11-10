@@ -28,10 +28,15 @@ to the places that own the work and keeps none of their content.
 1. Read the Workspace root's `README.md`: a Workspace named for the freelance
    operations exists.
 2. Read that Workspace's `README.md` and `AGENTS.md`: the dispatcher is one of
-   its repositories, at a recorded path, with its own `AGENTS.md`; the business
-   records live in a document store; shared notes live in a named knowledge base.
-3. Enter the dispatcher repository and read its own instructions before acting.
-4. After the work, if a part moved, appeared, retired or changed state, update
+   its repositories, at a recorded path, with its own `AGENTS.md`; its role
+   agents run on a server reached through an MCP connection; shared notes live
+   in a named knowledge base.
+3. Check the Workspace's required access: the MCP connection to that server is
+   not configured in this client. Say so before starting — "I can read the
+   dispatcher code, but I cannot reach the role agents without the MCP
+   connection" — instead of working around it.
+4. Enter the dispatcher repository and read its own instructions before acting.
+5. After the work, if a part moved, appeared, retired or changed state, update
    the Workspace in the same task.
 
 **A single repository is not a Workspace.** "Fix the login bug in my notes app"
@@ -42,9 +47,9 @@ grows into several important parts that belong together.
 ## What is Workspace-worthy
 
 A Workspace covers one coherent body of work made of **more than one important
-part**: several repositories, running systems and their providers, document
-roots, shared drives, infrastructure, or accounts that together serve one
-purpose — a client, a product line, an operating model, an agent system. Ask:
+part**: several repositories, running systems and their providers, servers with
+their agents, scheduled automations, document roots, shared drives,
+infrastructure, or accounts that together serve one purpose — a client, a product line, an operating model, an agent system. Ask:
 would an agent entering one part miss something it needs from another? If yes,
 it is Workspace-worthy. If everything lives in one repository, it is not.
 
@@ -107,7 +112,8 @@ repositories, under their own instructions.
 |---|---|
 | Purpose and boundary | What this body of work is, and what belongs elsewhere |
 | Local host scope | That every path applies to this machine only |
-| Parts | A table: kind, role, location (path, URL or provider), instruction owner |
+| Parts | A table: kind, role, location (path, URL, host or provider), instruction owner — including running systems and scheduled automations |
+| Required access | The tools, connectors, MCP servers and logins an agent needs to work here, and whether each is set up in the clients on this machine |
 | Current state | Each part's actual status — live, in development, planned, retired — as it is now |
 | Shared knowledge | Where notes, lore, cross-cutting to-dos and direction live, such as a Notion or Obsidian space, or "none yet" |
 | Provider availability | Which routes were checked for local and cloud agents, with date and result |
@@ -131,6 +137,10 @@ documents or transient work notes in a Workspace. They keep their own owners.
   system, read the root `README.md`, find the matching Workspace and read its
   `README.md` and `AGENTS.md`, then the instructions of the part you enter. A
   part's own rules always win over the Workspace's.
+- **Check the required access first.** If a tool, connector or login the
+  Workspace lists is missing in this client, report it at once with what it
+  blocks; do the work it does not block, and never pretend a missing route was
+  used.
 - **Keep it current.** When the work creates, moves, renames, retires or changes
   the state of a part, update the affected Workspace in the same task, and the
   root `README.md` when clusters change. This happens when a task exposes the

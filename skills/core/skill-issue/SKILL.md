@@ -165,12 +165,12 @@ selected, what it may load, and where it sits:
 | **Core** | Stands in the middle, on the agent's surface; useful in any context | Implicit | Nothing |
 | **Domain** | Root of a tree; establishes the context and routes into it | Implicit | Its children |
 | **Parent** | Inner node; applies its children together | Explicit-only | Its children |
-| **Flow** | Inner node; runs steps left to right with roles | Explicit-only or via its domain | Its step skills |
+| **Flow** | Runs steps left to right with roles; on the surface or in a tree | Implicit as a core flow; explicit-only in a tree | Its step skills |
 | **Leaf** | Self-contained method, invoked by a routing skill or a person | Explicit-only | Nothing |
 
 Domain, parent and flow skills are **routing skills**. Selection decides the
-type: a skill the agent may select by itself is core or domain; a skill only a
-person calls by name is a leaf whose root is that person. The agent starts in the
+type: a skill the agent may select by itself is core, a domain root or a core
+flow; a skill only a person calls by name is a leaf whose root is that person. The agent starts in the
 middle, with core skills and domain roots; it moves down a tree, never up and
 never across into another tree. A leaf must work when a user calls it by name,
 so it never assumes or names a caller. A flow orders skills that stay usable

@@ -47,14 +47,16 @@ pull in half the collection.
 | **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
 | **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
 | **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
-| **Flow** | Inner node that runs steps left to right, with roles | Through its domain | Its step skills | Road to Glory |
+| **Flow** | Runs steps left to right, with roles — on the surface as a core flow, or inside a tree | Implicitly as a core flow; through its domain inside a tree | Its step skills | Road to Glory |
 | **Leaf** | Self-contained method, always invoked manually | Through a routing skill or by a person | Nothing | Golden Comments, Customer Writing, Grilling, Grilling with Agents, … |
 
 Domain, parent and flow skills are **routing skills**: nodes that have
 children.
 
 **Selection decides the type.** What lies on the agent's surface — what it may
-select by itself — is either a core skill or a domain root. Everything else is
+select by itself — is a core skill, a domain root or a core flow. A flow is a
+shape, not a position: on the surface it is implicit and may enter several
+trees from the middle; inside a tree it is reached through its domain. Everything else is
 invoked manually: by a routing skill above it, or by a person. There is no
 manual core skill. Grilling, the interview you start with "grill me", is a leaf
 whose root is you: you call it, it loads nothing, and it works on its own.
@@ -66,7 +68,8 @@ implementer, orchestrator, reviewer, documenter — and loads that role's
 
 ### How an agent moves
 
-1. **Start in the middle.** Only core skills and domain roots are implicit.
+1. **Start in the middle.** Only core skills, core flows and domain roots are
+   implicit; from the middle the agent may enter one tree or several.
 2. **Go down.** A routing skill names its children; a child never names its
    caller and returns its result to whoever loaded it.
 3. **Never cross trees.** When work in one tree needs another tree, the need

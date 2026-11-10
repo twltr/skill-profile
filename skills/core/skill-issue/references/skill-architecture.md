@@ -41,18 +41,24 @@ without checking every other one.
 | **Core** | A standalone method on the agent's surface, useful in any context | Implicit | Nothing |
 | **Domain** | The root of a tree: establishes the context and routes into it | Implicit | Its children — one, several, or a role's pack |
 | **Parent** | An inner node that groups children and applies them together | Explicit-only | Its children, without an order |
-| **Flow** | An inner node that defines a sequence of steps and the roles that run them | Explicit-only, or loaded by its domain | Its step skills, left to right |
+| **Flow** | A sequence of steps and the roles that run them — on the surface as a core flow, or inside a tree | Implicit as a core flow; explicit-only inside a tree | Its step skills, left to right |
 | **Leaf** | A self-contained method, always invoked manually: by a routing skill or a person | Explicit-only | Nothing, ever |
 
 Domain, parent and flow skills are **routing skills**: nodes that have children.
 
 **Selection decides the type.** A skill on the agent's surface — one the agent
-may select by itself — is core when it stands alone and a domain when it roots a
-tree. A skill that is never selected implicitly is a leaf, or a parent or flow
-if it loads other skills. There is no explicit-only core skill: a skill that only
-a person calls by name, such as an interview started with "grill me", is a leaf
-whose root is that person. Core and leaf both load nothing; a core skill decides
-for itself when it applies, a leaf waits to be called.
+may select by itself — is a core skill, a domain root, or a core flow. A skill
+that is never selected implicitly is a leaf, or a parent or flow if it loads
+other skills. There is no explicit-only core skill: a skill that only a person
+calls by name, such as an interview started with "grill me", is a leaf whose
+root is that person. Core and leaf both load nothing; a core skill decides for
+itself when it applies, a leaf waits to be called.
+
+**Flow is a shape, not a position.** A flow on the surface is a **core flow**:
+implicit like a core skill, but it runs its steps in order. Because it stands
+in the middle, a core flow may enter several trees, as the agent itself may. A
+flow inside a tree is explicit-only and reached through its domain; it never
+leaves that tree.
 
 A method may stay core while no tree exists for its context yet. When you
 create one, ask whether more skills of that kind will follow; if so, give it its
@@ -74,9 +80,10 @@ its own with several parents or flows beneath it.
 
 ## Edge rules
 
-1. **Start in the middle.** Only core and domain skills are implicit. Every other
-   skill is reached through a routing skill or by a person naming it; a person
-   who calls a leaf by name is its root.
+1. **Start in the middle.** Only core skills, core flows and domain roots are
+   implicit. Every other skill is reached through a routing skill or by a person
+   naming it; a person who calls a leaf by name is its root. Whatever stands in
+   the middle may enter one tree or several.
 2. **Edges point down.** A routing skill names its children; a child never names
    its caller. Results go back to whoever loaded the child.
 3. **Never across trees.** If a skill in one tree needs work from another tree —
@@ -165,10 +172,11 @@ distribute a tree as a whole, package it together, for example as one plugin.
 1. **Should the agent select it by itself?** No: it is a leaf — or a parent or
    flow if it loads other skills — reached through a routing skill or by a
    person. Yes: continue.
-2. **Does it root a tree of other skills?** Yes: domain. No: core. A core skill
-   must be useful in any context; if it only serves one context, it is a leaf of
-   that tree, and the tree may need its domain first.
-3. **Below a domain, does a node define ordered steps or roles?** Yes: flow.
+2. **Does it load other skills?** No: core — useful in any context; if it only
+   serves one context, it is a leaf of that tree, and the tree may need its
+   domain first. Yes: a domain if it roots a tree and routes into it; a core flow
+   if it runs steps in order, possibly across trees.
+3. **Inside a tree, does a node define ordered steps or roles?** Yes: flow.
    Otherwise, if it groups children it applies together: parent.
 4. **Check the edges** against the rules above with the collection's graph
    audit, then declare the type and requirements in `metadata`, the first body

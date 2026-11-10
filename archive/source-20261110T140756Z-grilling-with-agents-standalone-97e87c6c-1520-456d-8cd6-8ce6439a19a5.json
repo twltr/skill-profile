@@ -1,0 +1,18 @@
+{
+  "source_revision": "78a9b50963e035e7662bfdc6ed47775b0d454013",
+  "reason": "Preserve Grilling with Agents before it absorbs the design-tree questioning it borrowed from Grilling (issue #2, 2026-11-10).",
+  "packages": [
+    "skills/extras/grilling-with-agents"
+  ],
+  "archive": "archive/source-20261110T140756Z-grilling-with-agents-standalone-97e87c6c-1520-456d-8cd6-8ce6439a19a5.zip",
+  "files": {
+    "skills/extras/grilling-with-agents/LICENSE-Matt-Pocock.txt": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/extras/grilling-with-agents/NOTICE.md": "44df531bbbd14d23abadd476fce1cf5b776099db01f265999476378d3e79141b",
+    "skills/extras/grilling-with-agents/SKILL.md": "753ca6c43a0ad6bef5d128ac86ec8c6d7b5e51fde83cf03993c896e1bfdb2643",
+    "skills/extras/grilling-with-agents/agents/openai.yaml": "a8ed8f2340161605e00a92ec5b0bdeb6eb4a3af778b1c5b395e3b1092a03eb2f",
+    "skills/extras/grilling-with-agents/assets/icon-small.png": "4a718541d3e7e49ce10d5ddc2dcdb4ad780616fe870720873cf28afc3d9a24a8",
+    "skills/extras/grilling-with-agents/assets/icon-small.svg": "708209b2475260df6f1ac5c3f006dff35f9541b1f3650e48951ee3e12be1f0bc",
+    "skills/extras/grilling-with-agents/assets/icon.png": "17d1ed455fa9a49b48cef53d4142b6f49d74fd15323b5820ca9f7bb5768b8313",
+    "skills/extras/grilling-with-agents/assets/icon.svg": "708209b2475260df6f1ac5c3f006dff35f9541b1f3650e48951ee3e12be1f0bc"
+  }
+}

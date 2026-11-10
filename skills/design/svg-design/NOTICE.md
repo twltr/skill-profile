@@ -30,3 +30,10 @@ the other technical references and preview asset retain the matched source.
 
 The Skill Profile owns this complete local variant under `skills/design/svg-design/`.
 Installed directories are deployment copies; future local changes belong here.
+
+## 2026-11-10 quality pass
+
+The cross-reference for surrounding page design no longer tells this leaf to use
+a sibling skill; it hands that work back with the graphic's constraints, as a
+leaf in the Design tree loads no other skill. The boundary sentences naming
+Frontend Design and Editorial SVG Diagrams are unchanged.

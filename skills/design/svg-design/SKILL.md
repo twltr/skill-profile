@@ -189,9 +189,10 @@ When creating logos (not icons), follow this process:
 
 ## Cross-References
 
-- If `frontend-design` is available, use it for surrounding website or interface
-  design and follow the established typography, colors and visual hierarchy.
-  Otherwise, use the project's existing design system.
+- Surrounding website or interface design is not this skill's work. Hand it
+  back to whoever asked for the graphic, with the graphic's role and size
+  constraints, and follow the established typography, colors and visual
+  hierarchy or the project's existing design system meanwhile.
 - If `editorial-svg-diagrams` is available, use it for figures that explain
   concepts, relationships, processes or systems. Otherwise, keep this skill's
   output focused on brand and interface graphics, and explain the unavailable

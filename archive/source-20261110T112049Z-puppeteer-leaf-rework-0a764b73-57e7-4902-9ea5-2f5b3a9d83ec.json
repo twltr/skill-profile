@@ -1,0 +1,18 @@
+{
+  "source_revision": "6778e70f556c3c4149062316329b29e2a2206736",
+  "reason": "Preserve complete Puppeteer package before its Skill Issue rework (description, canonical brief, step order, leaf composition, routing reference cleanup) requested by Tobi on 2026-11-10.",
+  "packages": [
+    "skills/core/general/puppeteer"
+  ],
+  "archive": "archive/source-20261110T112049Z-puppeteer-leaf-rework-0a764b73-57e7-4902-9ea5-2f5b3a9d83ec.zip",
+  "files": {
+    "skills/core/general/puppeteer/SKILL.md": "b2b3bbc4f7f98ff1f85e1445a88f9f568960a907a02c1d362aad74afb9aacb54",
+    "skills/core/general/puppeteer/agents/openai.yaml": "3773a59763a10ed6828c43f19e2e56ee4bac521e5017816c2da3624804ed98f9",
+    "skills/core/general/puppeteer/assets/icon-small.png": "bb74d1a820ef7a8088095401514be040e9e6f27736ea6d4de44332a488889f00",
+    "skills/core/general/puppeteer/assets/icon-small.svg": "f5eb540bbcc6fd419334b1cba0674a96ea3f1b18f6dbe83025cba90bb03b4e88",
+    "skills/core/general/puppeteer/assets/icon.png": "dac9282cd3c14f5e3ad0b46fb3ad284eeda1364cda23f46db99b97d36bbab617",
+    "skills/core/general/puppeteer/assets/icon.svg": "f5eb540bbcc6fd419334b1cba0674a96ea3f1b18f6dbe83025cba90bb03b4e88",
+    "skills/core/general/puppeteer/references/evidence.md": "299d0e9bb96dde0b6eed03232310b7cdb2c6c9d6da78cea3720a843fe00309d9",
+    "skills/core/general/puppeteer/references/model-routing.md": "2832dd70a9f3e2fbe45af4e6dc31fe6ea5b97fb637f6ff027634d3049d8ce98c"
+  }
+}

@@ -207,6 +207,35 @@ The Pages plugin likewise remains host-managed. Each target host must expose
 its own skill catalog and actual tools. A missing dependency is reported; no
 skill is described as applied before its instructions have been read.
 
+## Engineering and general map
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="figures/engineering-family.dark.svg">
+  <img src="figures/engineering-family.svg" width="760" alt="Adjacency matrix of 17 engineering and general skills; a row references a column; cells below the diagonal point up the proposed layering.">
+</picture>
+
+A row references a column. Rows and columns follow a proposed layering:
+workflows (Road to Glory to Engineering Review), engineering methods (Engineering
+Practices to Marshmallow Tests), then general methods (State of the Art to
+Puppeteer). In a clean tree every mark sits above the diagonal; the tinted lower
+triangle holds references that point back up the layering.
+
+| Mark | Meaning |
+|---|---|
+| Filled square | Required: the method depends on the other skill's content |
+| Outlined square | Conditional: used when available and the situation needs it |
+| Cross | Back-reference: names a caller to say "return there" or "do not restart" |
+| Dot | Boundary mention only |
+
+The 2026-11-10 classification counts 61 downward and 32 upward references (21
+conditional, 7 back-references, 4 boundary mentions). Notable patterns: the
+Engineering Review row is a review router over seven method lenses; Grilling
+with Agents holds the only required cross-skill dependency besides documentation,
+on Grilling; Road to Glory collects four back-references from its callees;
+Puppeteer is referenced by twelve skills in this matrix (sixteen collection-wide)
+but still names five of them. Edges were
+extracted per sentence and classified by hand where wording was ambiguous.
+
 ## Project-owned skills
 
 These skills are linked here and maintained in their own repositories. Their

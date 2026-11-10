@@ -1,0 +1,26 @@
+{
+  "source_revision": "40de35d5beb417c2e98bebb5ce0dc79fb48ad9f9",
+  "reason": "Before tightening the trigger harness hit rule",
+  "packages": [
+    "skills/core/skill-issue"
+  ],
+  "archive": "archive/source-20261110T162526Z-harness-hit-rule-eff93a24-f72c-4c03-89d4-87ca865729c0.zip",
+  "files": {
+    "skills/core/skill-issue/LICENSE-Anthropic.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "skills/core/skill-issue/LICENSE-OpenAI.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/core/skill-issue/LICENSE.txt": "fe81cd26174e6aa58fbb1807c44c214633202b437b2e35478a68feb171e052ad",
+    "skills/core/skill-issue/NOTICE.md": "0ed7b8d8866dbac9adf6283deaf675867f6755619c7eca3f33f7bb4241c5dd67",
+    "skills/core/skill-issue/SKILL.md": "96b79499ff4ed28df3817e7e44cafede05a60fba0afd8a278b210f01637c6d22",
+    "skills/core/skill-issue/agents/openai.yaml": "a1985b08efe7f2988de672fcd17d0f18ac76fc85f483ff0248608097379e2df6",
+    "skills/core/skill-issue/assets/icon-small.png": "825e3e2973788b4896eb853032cd9a5000f8c00a8ebf1dc9571801d56e63305f",
+    "skills/core/skill-issue/assets/icon-small.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/assets/icon.png": "3a851e8ce0490057f9feec042e1452c9cdb1467447ef602658bd0b7ab95184e7",
+    "skills/core/skill-issue/assets/icon.svg": "5dc4251c22032073ab4815d42bb735557daf5190bdb1e24e7fc5ff713edf7357",
+    "skills/core/skill-issue/references/evaluation.md": "e08c9333b1cb9a6f88f6cff206443d93803e1158a0f842452ea8c85f72e893f4",
+    "skills/core/skill-issue/references/installation.md": "a30a66c4e6b58a05a6dad22fe408d45557b089c4382c76726cda386ac3927ce0",
+    "skills/core/skill-issue/references/skill-architecture.md": "d288e653e6d7f8a71d0ba83d68db3b675c6b9832f12e3fbdc7741d6c7496bdff",
+    "skills/core/skill-issue/scripts/check_tree.py": "dad50c3288706b4ac79850120ceb40cb6aedbf9f3e79674cd9be483172b4ad92",
+    "skills/core/skill-issue/scripts/skill_graph.py": "a1ae4bb2bd2b169d1b915d28cca932b092d16ac233456c53b64e0241ea673848",
+    "skills/core/skill-issue/scripts/trigger_window.py": "ac90c278cab60fac95d33e25e1228fd93475bc8f82eb50f96b3463fc50a9518a"
+  }
+}

@@ -1,194 +1,170 @@
 ---
 name: design-system
-description: Audit, document, or extend your design system. Use when checking for naming inconsistencies or hardcoded values across components, writing documentation for a component's variants, states, and accessibility notes, or designing a new pattern that fits the existing system.
+description: Audit, document, or extend a design system's tokens, components and patterns. Use when checking for naming inconsistencies or hardcoded values across components, writing documentation for a component's variants, states, props and accessibility, or designing a new component or pattern that fits the existing system instead of duplicating one.
 argument-hint: "[audit | document | extend] <component or system>"
 metadata:
   skill-type: leaf
   skill-tree: design
 ---
 
-# /design-system
+# Design System
 
 **Leaf skill** in Design; reached through its domain or by name.
 
-> Sections that start with `~~` name a tool category rather than a product: `~~design tool` (for example Figma), `~~knowledge base` (for example Notion), `~~project tracker` (for example Linear or Jira). Use whichever connected tool of that category the host provides, and skip the section when none is connected.
-Manage your design system — audit for consistency, document components, or design new patterns.
+A design system saves decisions only while teams trust it. Drift erodes that
+trust quietly: three names for one component, raw hex values beside the tokens
+they duplicate, states nobody documented. Once people stop trusting the system,
+they build around it. This method works in three modes — **audit** the system as
+it is, **document** a component so it can be used correctly, **extend** it
+with a pattern that fits — and grounds each in the actual source: token files,
+component code and the design file, not a generic idea of a design system.
 
-## Usage
+## A worked audit finding
 
+**Situation (fictional):** a React library with a tokens file; the request is
+"audit our buttons and cards".
+
+```text
+Naming    Button, IconBtn and .btn-link name one concept three ways.
+          → Adopt Button with an `icon` and a `link` variant; alias the old
+            names for one release.
+Tokens    23 hardcoded colors in Card and Modal. 18 equal an existing token
+          (replace mechanically); 5 match none.
+          → The 5 need a decision: a missing token, or a design error to fix.
+States    Card has no focus state although it is clickable.
 ```
-/design-system audit                    # Full system audit
-/design-system document [component]     # Document a component
-/design-system extend [pattern]         # Design a new component or pattern
-```
 
-## Components of a Design System
+The reusable choice is the split between a value that duplicates a token, which
+is a mechanical fix, and one that matches no token, which is a design question to
+put in front of a person instead of guessing.
 
-### Design Tokens
-Atomic values that define the visual language:
-- Colors (brand, semantic, neutral)
-- Typography (scale, weights, line heights)
-- Spacing (scale, component padding)
-- Borders (radius, width)
-- Shadows (elevation levels)
-- Motion (durations, easings)
+## Gather the system
 
-### Components
-Reusable UI elements with defined:
-- Variants (primary, secondary, ghost)
-- States (default, hover, active, disabled, loading, error)
-- Sizes (sm, md, lg)
-- Behavior (interactions, animations)
-- Accessibility (ARIA, keyboard)
+Read what exists before judging it: the token source, the component code or
+library, and the documentation. A search such as
+`rg -n '#[0-9a-fA-F]{3,8}\b|[0-9]+px' src/components` finds hardcoded values in
+code; adapt the pattern to the stack.
 
-### Patterns
-Common UI solutions combining components:
-- Forms (input groups, validation, submission)
-- Navigation (sidebar, tabs, breadcrumbs)
-- Data display (tables, cards, lists)
-- Feedback (toasts, modals, inline messages)
+> Sections marked `~~` name a tool category, not a product: `~~design tool` (for
+> example Figma) or `~~knowledge base` (for example Notion). Use whichever
+> connected tool of that category the host provides; skip the step when none is.
+
+With a `~~design tool`, inspect component names, variants, layer structure and
+token use in the design file and compare them with the code. With a
+`~~knowledge base`, find existing component pages and usage guidelines, and
+publish updated documentation there only when the person asked for that.
+
+A system has three layers; the audit and the documentation cover each:
+
+| Layer | Contents |
+|---|---|
+| Tokens | Color (brand, semantic, neutral), typography, spacing, radius and border, elevation, motion durations and easings |
+| Components | Variants, states (default, hover, focus, active, disabled, loading, error), sizes, behavior, accessibility |
+| Patterns | Forms, navigation, data display, feedback — components combined to solve a recurring problem |
+
+When tokens move between tools, the Design Tokens Community Group format (first
+stable version 2025.10, October 2025) is the common interchange format; follow
+the format the project already uses.
 
 ## Principles
 
-1. **Consistency over creativity** — The system exists so teams don't reinvent the wheel
-2. **Flexibility within constraints** — Components should be composable, not rigid
-3. **Document everything** — If it's not documented, it doesn't exist
-4. **Version and migrate** — Breaking changes need migration paths
+1. **Consistency over novelty.** The system exists so teams stop re-deciding the
+   same things; a one-off variant needs a reason the system lacks.
+2. **Composable within constraints.** Prefer a variant or a composition of
+   existing components over a new component.
+3. **Undocumented means unusable.** A state or variant nobody can find gets
+   rebuilt.
+4. **Version and migrate.** A breaking rename or removal needs a migration path,
+   such as an alias for a release and a codemod or a search to find uses.
 
-## Output — Audit
+## Audit
+
+Report counts and evidence, not a score: a number without criteria hides which
+problem matters.
 
 ```markdown
-## Design System Audit
+## Design system audit: [scope]
 
-### Summary
-**Components reviewed:** [X] | **Issues found:** [X] | **Score:** [X/100]
+**Reviewed:** [components, token files] | **Findings:** [count by category]
 
-### Naming Consistency
-| Issue | Components | Recommendation |
-|-------|------------|----------------|
-| [Inconsistent naming] | [List] | [Standard to adopt] |
+### Naming
+| Issue | Where | Recommendation |
+|---|---|---|
 
-### Token Coverage
-| Category | Defined | Hardcoded Values Found |
-|----------|---------|----------------------|
-| Colors | [X] | [X] instances of hardcoded hex |
-| Spacing | [X] | [X] instances of arbitrary values |
-| Typography | [X] | [X] instances of custom fonts/sizes |
+### Token coverage
+| Category | Tokens defined | Hardcoded values | Matching an existing token |
+|---|---|---|---|
 
-### Component Completeness
-| Component | States | Variants | Docs | Score |
-|-----------|--------|----------|------|-------|
-| Button | ✅ | ✅ | ⚠️ | 8/10 |
-| Input | ✅ | ⚠️ | ❌ | 5/10 |
+### Component completeness
+| Component | States | Variants | Docs | Accessibility |
+|---|---|---|---|---|
+| Button | complete | partial: no icon-only size | missing | focus ring present |
 
-### Priority Actions
-1. [Most impactful improvement]
-2. [Second priority]
-3. [Third priority]
+### Priority actions
+1. [Highest user or team impact first, with the effort it takes]
 ```
 
-## Output — Document
+## Document
+
+Document a reusable component for everyone who consumes it. Take props and the
+code example from the real component, not an invented API.
 
 ```markdown
 ## Component: [Name]
 
-### Description
-[What this component is and when to use it]
+[What it is and when to use it — and when to use something else]
 
 ### Variants
-| Variant | Use When |
-|---------|----------|
-| [Primary] | [Main actions] |
-| [Secondary] | [Supporting actions] |
+| Variant | Use when |
+|---|---|
 
-### Props / Properties
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| [prop] | [type] | [default] | [description] |
+### Props
+| Prop | Type | Default | Description |
+|---|---|---|---|
 
 ### States
 | State | Visual | Behavior |
-|-------|--------|----------|
-| Default | [description] | — |
-| Hover | [description] | [interaction] |
-| Active | [description] | [interaction] |
-| Disabled | [description] | Non-interactive |
-| Loading | [description] | [animation] |
+|---|---|---|
 
 ### Accessibility
-- **Role**: [ARIA role]
-- **Keyboard**: [Tab, Enter, Escape behavior]
-- **Screen reader**: [Announced as...]
+- **Role:** [role or native element]
+- **Keyboard:** [Tab, Enter, Space, Escape, arrows]
+- **Screen reader:** [announced as …]
 
-### Do's and Don'ts
-| ✅ Do | ❌ Don't |
-|------|---------|
-| [Best practice] | [Anti-pattern] |
+### Do and don't
+| Do | Don't |
+|---|---|
 
-### Code Example
-[Framework-appropriate code snippet]
+### Example
+[A short snippet in the project's framework]
 ```
 
-## Output — Extend
+## Extend
+
+Before proposing anything new, list the existing components that come close and
+say why each is not enough; most requests end as a new variant. A new component
+reuses existing tokens and only proposes a new token with its reason.
 
 ```markdown
-## New Component: [Name]
+## Proposed component: [Name]
 
 ### Problem
-[What user need or gap this component addresses]
+[The user need or gap]
 
-### Existing Patterns
-| Related Component | Similarity | Why It's Not Enough |
-|-------------------|-----------|---------------------|
-| [Component] | [What's shared] | [What's missing] |
+### Existing options
+| Component | What it shares | Why it is not enough |
+|---|---|---|
 
-### Proposed Design
-
-#### API / Props
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| [prop] | [type] | [default] | [description] |
-
-#### Variants
-| Variant | Use When | Visual |
-|---------|----------|--------|
-| [Variant] | [Scenario] | [Description] |
-
-#### States
-| State | Behavior | Notes |
-|-------|----------|-------|
-| Default | [Description] | — |
-| Hover | [Description] | [Interaction] |
-| Disabled | [Description] | Non-interactive |
-| Loading | [Description] | [Animation] |
-
-#### Tokens Used
-- Colors: [Which tokens]
-- Spacing: [Which tokens]
-- Typography: [Which tokens]
+### Design
+Props, variants and states as in the documentation template; tokens used.
 
 ### Accessibility
-- **Role**: [ARIA role]
-- **Keyboard**: [Expected interactions]
-- **Screen reader**: [Announced as...]
+Role, keyboard and screen-reader behavior.
 
-### Open Questions
-- [Decision that needs design review]
-- [Edge case to resolve]
+### Open questions
+[Decisions that need design review]
 ```
 
-## If Connectors Available
-
-If **~~design tool** is connected:
-- Audit components directly in Figma — check naming, variants, and token usage
-- Pull component properties and layer structure for documentation
-
-If **~~knowledge base** is connected:
-- Search for existing component documentation and usage guidelines
-- Publish updated documentation to your wiki
-
-## Tips
-
-1. **Start with an audit** — Know where you are before deciding where to go.
-2. **Document as you build** — It's easier to document a component while designing it.
-3. **Prioritize coverage over perfection** — 80% of components documented beats 100% of 10 components.
+The system's components and tokens are this method's subject. A spec sheet for
+one feature or screen, and a new product's visual direction, are separate design
+work; a system audit does not replace a WCAG audit either.

@@ -154,29 +154,33 @@ together, for example as one plugin, is the planned distribution unit.
 
 The type system and the two existing domains are in place:
 
-- **Software Engineering** is live as a role-based domain. In a windowed trigger
-  test with `claude -p`, it loaded on 19 of 20 coding requests and 12 of 16
-  unseen ones, with no false positives; Engineering Practices, Golden Comments
-  and Vertical Slices are explicit-only and loaded through it. The evidence is in
+- **Software Engineering** is live as a role-based domain. In windowed trigger
+  tests with `claude -p` it loaded on 20 of 20 coding requests, 16 of 16 unseen
+  ones and 12 of 12 unseen PR-review and quick-fix requests, with no false
+  positives; every other engineering skill is explicit-only and loaded through
+  it. The evidence is in
   [its notice](skills/software-engineering/software-engineering/NOTICE.md).
-- **Good Writing** routes to explicit-only writing specialists.
+- **Good Writing** routes to explicit-only writing specialists. It loaded on 19
+  of 20 writing requests and 12 of 12 unseen ones, with no false positives
+  ([its notice](skills/writing/good-writing/NOTICE.md)).
 - **Design** is live as a selecting domain over Frontend Design, Design System,
   Motion Design, GSAP, SVG Design, UX Copy, Design Handoff and the Design Review
   parent; five of these were adapted from Anthropic's design plugin (Apache-2.0).
-  It loaded on 15 of 20 design requests with no false positives, against 12 of
-  20 for the previous implicit skills; the evidence is in
-  [its notice](skills/design/design/NOTICE.md). Editorial SVG Diagrams is core.
+  Without the plugin it loaded on 20 of 20 design requests and 12 of 12 unseen
+  ones, with no false positives, against 12 of 20 for the previous implicit
+  skills; the evidence is in [its notice](skills/design/design/NOTICE.md).
+  Editorial SVG Diagrams is core.
 - **Writing and Software Engineering** share no edges: code-owned documentation
   and source comments belong to Software Engineering.
 
 Every skill declares its type in `metadata`, in the first line of its body and
 in the prefix of its short description. No skill names its caller or a sibling
-leaf, and no edge crosses between trees. Not yet done: switching the Software
-Engineering skills that still fire by themselves to explicit-only after
-measuring, and a trigger evaluation of Good Writing.
+leaf, and no edge crosses between trees. Open: Grilling with Agents, a shared
+leaf, still uses engineering leaves and Road to Glory, which the shared-leaf rule
+does not allow.
 `skills/core/skill-issue/scripts/check_tree.py skills` lists every remaining rule
 finding; the installer refuses a collection with a missing type or required child. The [writing map](SKILLS.md#writing-family-map) and the
-[engineering matrix](SKILLS.md#engineering-and-general-map) show what is left;
+[engineering matrix](SKILLS.md#engineering-tree-map) show what is left;
 `skills/core/skill-issue/scripts/skill_graph.py` measures it.
 
 ## Layout

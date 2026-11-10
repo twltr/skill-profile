@@ -43,12 +43,11 @@ loaded by it. See the [writing family map](#writing-family-map).
 ## Software Engineering
 
 These skills are maintained as part of this repository. Their primary source is
-Tobi's former global Engineering instructions and the revision decisions in the
+the owner's former global Engineering instructions and the revision decisions in the
 joined `engineering-skills` Git history. Individual `NOTICE.md` files preserve
 supplementary Matt Pocock attribution where applicable. Software Engineering is
-the group's context router: Engineering Practices, Golden Comments and Vertical
-Slices are loaded only through it, while the other methods keep their own
-triggers for now. See the [engineering map](#engineering-and-general-map).
+the group's context router; every other skill in the group is explicit-only and
+loaded through it, Road to Glory or Engineering Review, or called by name. See the [engineering map](#engineering-tree-map).
 
 | Skill | Purpose and provenance |
 |---|---|
@@ -220,34 +219,34 @@ The Pages plugin likewise remains host-managed. Each target host must expose
 its own skill catalog and actual tools. A missing dependency is reported; no
 skill is described as applied before its instructions have been read.
 
-## Engineering and general map
+## Engineering tree map
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/engineering-family.dark.svg">
-  <img src="figures/engineering-family.svg" width="760" alt="Adjacency matrix of 17 engineering and general skills; a row references a column; cells below the diagonal point up the proposed layering.">
+  <img src="figures/engineering-family.svg" width="760" alt="Adjacency matrix of 18 skills in tree order: the Software Engineering domain, its flow and parent, its leaves, the shared leaves and the core skills; a row references a column; only Grilling with Agents and one Puppeteer boundary mention sit below the diagonal.">
 </picture>
 
-A row references a column. Rows and columns follow a proposed layering:
-workflows (Road to Glory to Engineering Review), engineering methods (Engineering
-Practices to Marshmallow Tests), then general methods (State of the Art to
-Puppeteer). In a clean tree every mark sits above the diagonal; the tinted lower
-triangle holds references that point back up the layering.
+A row references a column. Rows and columns follow the tree: the domain, its
+flow and parent (Software Engineering to Engineering Review), the leaves
+(Engineering Practices to MinMax Codebase), the shared leaves (Grilling,
+Grilling with Agents), then the core skills (Skill Issue to Puppeteer). In a
+clean tree every mark sits above the diagonal; the tinted lower triangle holds
+references that point up the tree.
 
 | Mark | Meaning |
 |---|---|
-| Filled square | Required: the method depends on the other skill's content |
-| Outlined square | Conditional: used when available and the situation needs it |
-| Cross | Back-reference: names a caller to say "return there" or "do not restart" |
+| Filled square | Required: listed in the skill's `skill-requires` |
+| Outlined square | Conditional: loaded by role or situation, or a core hint |
+| Cross | Points up the tree: the skill names a skill above it |
 | Dot | Boundary mention only |
 
-The 2026-11-10 classification counts 61 downward and 32 upward references (21
-conditional, 7 back-references, 4 boundary mentions). Notable patterns: the
-Engineering Review row is a review router over seven method lenses; Grilling
-with Agents holds the only required cross-skill dependency besides documentation,
-on Grilling; Road to Glory collects four back-references from its callees;
-Puppeteer is referenced by twelve skills in this matrix (sixteen collection-wide)
-but still names five of them. Edges were
-extracted per sentence and classified by hand where wording was ambiguous.
+Regenerated on 2026-11-10 after the tree work, from the references
+`skills/core/skill-issue/scripts/skill_graph.py` extracts: 33 edges, five of
+them upward. Four are Grilling with Agents using engineering leaves and Road to
+Glory, which a shared leaf may not load (open decision); the fifth is a
+Puppeteer boundary sentence about Engineering Review. Every engineering leaf
+now names only core skills, and only the domain, Road to Glory and Engineering
+Review route.
 
 ## Project-owned skills
 

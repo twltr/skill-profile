@@ -1,0 +1,11 @@
+[
+ {"query": "the onboarding flow feels cluttered, simplify the visual hierarchy of the first screen", "should_trigger": true},
+ {"query": "we need a favicon and app icon that match our brand colors", "should_trigger": true},
+ {"query": "can you check if our color palette passes contrast requirements for body text?", "should_trigger": true},
+ {"query": "the toast notifications pop in too abruptly, make the motion smoother", "should_trigger": true},
+ {"query": "rewrite the 404 page copy so it doesn't sound robotic", "should_trigger": true},
+ {"query": "give me feedback on the new checkout screen layout before we ship it", "should_trigger": true},
+ {"query": "add pagination to the /orders API endpoint", "should_trigger": false},
+ {"query": "make an architecture overview figure for the README", "should_trigger": false},
+ {"query": "write a customer email announcing the redesign", "should_trigger": false}
+]

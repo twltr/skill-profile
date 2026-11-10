@@ -3,3 +3,5 @@ interface:
   icon_small: "./assets/icon-small.png"
   display_name: "Motion Design"
   short_description: "Leaf: Design purposeful animation and interface motion"
+policy:
+  allow_implicit_invocation: false

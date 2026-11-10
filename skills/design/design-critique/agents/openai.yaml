@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "Design Critique"
+  short_description: "Leaf: Structured feedback on usability and hierarchy"
+policy:
+  allow_implicit_invocation: false

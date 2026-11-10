@@ -103,11 +103,11 @@ owns diagrams that explain a concept, relationship, process or system, including
 those embedded in websites, presentations and articles. Documentation and
 learning material are its main uses; visual clarity must serve the explanation.
 
-If `svg-design` is available, use it for logos, icons, brand assets and decorative
-or expressive web graphics. A process diagram on a landing page belongs here;
-the site's logo, icon set and decorative hero artwork belong to SVG Design. If
-`frontend-design` is available, use it for the surrounding page layout and
-interface, passing the figure's purpose and space constraints. If either skill
-is unavailable, follow the existing design system and keep its work within this
+Logos, icons, brand assets, decorative web graphics and the surrounding page
+layout are design work, not explanatory figures: hand those parts back to the
+agent, which takes them into the design domain, together with the figure's
+purpose and space constraints. A process diagram on a landing page belongs here;
+the site's logo, icon set and decorative hero artwork do not. Without a design
+method, follow the existing design system and keep this work within the
 figure's scope. This skill owns the explanatory figure's editable SVG, themes,
 exports and visual checks.

@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "Design System"
+  short_description: "Leaf: Audit, document and extend a design system"
+policy:
+  allow_implicit_invocation: false

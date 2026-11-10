@@ -3,3 +3,5 @@ interface:
   icon_small: "./assets/icon-small.png"
   display_name: "Frontend Design"
   short_description: "Leaf: Design distinctive interfaces and visual systems"
+policy:
+  allow_implicit_invocation: false

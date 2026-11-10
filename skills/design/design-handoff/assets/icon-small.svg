@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+<title id="title">Design Handoff: a document handed over with an arrow</title>
+<g aria-hidden="true"><rect x="8" y="8" width="30" height="46" rx="4" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4"/><path d="M15 20H31M15 29H27" fill="none" stroke="#F3F2EE" stroke-width="6.3"/><path d="M30 42H52M45 35L52 42L45 49" fill="none" stroke="#F3F2EE" stroke-width="7.8"/></g>
+<g><rect x="8" y="8" width="30" height="46" rx="4" fill="#26364A" stroke="none" stroke-width="0"/><path d="M15 20H31M15 29H27" fill="none" stroke="#F3F2EE" stroke-width="3.5"/><path d="M30 42H52M45 35L52 42L45 49" fill="none" stroke="#CF704D" stroke-width="5"/></g>
+</svg>

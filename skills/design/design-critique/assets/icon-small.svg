@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+<title id="title">Design Critique: a frame with an annotation pin</title>
+<g aria-hidden="true"><rect x="8" y="16" width="38" height="38" rx="4" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4"/><path d="M15 30H38M15 40H31" fill="none" stroke="#F3F2EE" stroke-width="6.8"/><circle cx="47" cy="17" r="10" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4"/><circle cx="47" cy="17" r="3" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="1.4"/></g>
+<g><rect x="8" y="16" width="38" height="38" rx="4" fill="#3A8E8C" stroke="none" stroke-width="0"/><path d="M15 30H38M15 40H31" fill="none" stroke="#F3F2EE" stroke-width="4"/><circle cx="47" cy="17" r="10" fill="#CF704D" stroke="none" stroke-width="0"/><circle cx="47" cy="17" r="3" fill="#F3F2EE" stroke="none" stroke-width="0"/></g>
+</svg>

@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "UX Copy"
+  short_description: "Leaf: Write and review microcopy, errors and CTAs"
+policy:
+  allow_implicit_invocation: false

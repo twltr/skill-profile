@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "Design Handoff"
+  short_description: "Leaf: Turn a finished design into a developer spec"
+policy:
+  allow_implicit_invocation: false

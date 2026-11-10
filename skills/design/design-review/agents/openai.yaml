@@ -1,0 +1,7 @@
+interface:
+  icon_large: "./assets/icon.png"
+  icon_small: "./assets/icon-small.png"
+  display_name: "Design Review"
+  short_description: "Parent: Critique and accessibility review in one pass"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,22 @@
+[
+ {"query": "the pricing page looks kind of cheap, can you make it feel more premium? it's in app/pricing/page.tsx", "should_trigger": true},
+ {"query": "what should the label on the signup button say? right now it's just 'Submit'", "should_trigger": true},
+ {"query": "we need a logo for our cli tool 'driftwood', simple svg, has to work in dark mode", "should_trigger": true},
+ {"query": "add a nice entrance animation to the hero section, nothing flashy", "should_trigger": true},
+ {"query": "is our settings page accessible? check contrast and keyboard navigation", "should_trigger": true},
+ {"query": "can you review this dashboard design before we hand it to the devs? screenshot is in design/dash.png", "should_trigger": true},
+ {"query": "write a handoff spec for the new onboarding modal so frontend can build it", "should_trigger": true},
+ {"query": "our buttons use like 5 different blues, clean up the design tokens", "should_trigger": true},
+ {"query": "make a scroll-triggered timeline animation with gsap for the about page", "should_trigger": true},
+ {"query": "die Fehlermeldungen im Checkout klingen total technisch, schreib die freundlicher", "should_trigger": true},
+ {"query": "fix the failing unit test in tests/test_cart.py", "should_trigger": false},
+ {"query": "draw a diagram of how our auth service talks to the database", "should_trigger": false},
+ {"query": "make a 5 slide deck about our Q3 results for the board", "should_trigger": false},
+ {"query": "write a blog post about our new feature launch", "should_trigger": false},
+ {"query": "what is the difference between flexbox and grid?", "should_trigger": false},
+ {"query": "summarize the PDF report in ~/Downloads/q3.pdf for me", "should_trigger": false},
+ {"query": "set up eslint and prettier in this repo", "should_trigger": false},
+ {"query": "why is my react component re-rendering twice?", "should_trigger": false},
+ {"query": "write an email to the client about the delayed deployment", "should_trigger": false},
+ {"query": "rename the Customer model to Account in the django app", "should_trigger": false}
+]

@@ -3,3 +3,5 @@ interface:
   icon_small: "./assets/icon-small.png"
   display_name: "SVG Design"
   short_description: "Leaf: Design logos, icons and visual graphics for websites"
+policy:
+  allow_implicit_invocation: false

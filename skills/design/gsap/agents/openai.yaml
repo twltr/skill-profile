@@ -4,4 +4,4 @@ interface:
   display_name: "GSAP"
   short_description: "Leaf: Choose the GSAP guidance needed for the animation"
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

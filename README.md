@@ -45,8 +45,8 @@ pull in half the collection.
 | Type | What it is | Selected | Loads | In this profile |
 |---|---|---|---|---|
 | **Core** | Standalone method on the agent's surface, useful in any context | Implicitly | Nothing | Unslop, Editorial SVG Diagrams, MinMax Tokens, Puppeteer, Skill Issue, Workspace Management |
-| **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering; Design is planned |
-| **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses |
+| **Domain** | Root of a tree; establishes the context and routes | Implicitly | Its children | Good Writing, Software Engineering, Design |
+| **Parent** | Inner node that applies its children together | Through its parent | Its children | Engineering Review over its lenses; Design Review over critique and accessibility |
 | **Flow** | Runs steps left to right, with roles, inside a tree | Through its domain | Its step skills | Road to Glory |
 | **Leaf** | Self-contained method, always invoked manually | Through a routing skill or by a person | Nothing | Golden Comments, Customer Writing, Grilling, Grilling with Agents, … |
 
@@ -160,8 +160,12 @@ The type system and the two existing domains are in place:
   and Vertical Slices are explicit-only and loaded through it. The evidence is in
   [its notice](skills/software-engineering/software-engineering/NOTICE.md).
 - **Good Writing** routes to explicit-only writing specialists.
-- **Design** is planned over Frontend Design, Motion Design, GSAP and SVG Design;
-  they remain implicit until their domain exists. Editorial SVG Diagrams is core.
+- **Design** is live as a selecting domain over Frontend Design, Design System,
+  Motion Design, GSAP, SVG Design, UX Copy, Design Handoff and the Design Review
+  parent; five of these were adapted from Anthropic's design plugin (Apache-2.0).
+  It loaded on 15 of 20 design requests with no false positives, against 12 of
+  20 for the previous implicit skills; the evidence is in
+  [its notice](skills/design/design/NOTICE.md). Editorial SVG Diagrams is core.
 - **Writing and Software Engineering** share no edges: code-owned documentation
   and source comments belong to Software Engineering.
 
@@ -195,7 +199,7 @@ plain skills.
 skills/core/                   Core skills: automatic, cross-domain
 skills/writing/                Good Writing and its specialists
 skills/software-engineering/   Software Engineering, its flow, parent and leaves
-skills/design/                 Design leaves: interface, motion, identity (domain planned)
+skills/design/                 Design, its leaves and the Design Review parent
 skills/extras/                 Manually selected skills outside every tree
 figures/                       Editable SVG maps of the collection, light and dark
 archive/                       Complete previous package snapshots (ZIP + manifest)

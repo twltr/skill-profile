@@ -12,7 +12,12 @@ from agents/openai.yaml. Longer aliases are matched first, so "Grilling with
 Agents" is not also counted as "Grilling".
 
 The output counts mentions, not calls: a boundary sentence ("logos belong to
-SVG Design") is an edge too. Treat mutual pairs and high fan-out as places to
+SVG Design") is an edge too. Tree membership is not an edge, so the type line
+("**Leaf skill** in Design") and `skill-tree:` metadata are ignored, and a
+one-word skill name such as Design, GSAP or Puppeteer counts only where it is
+marked as a skill — in backticks, in bold, or followed by "skill" or "domain" —
+because the plain word is often ordinary prose or a library name. Unmarked
+mentions of one-word skills are therefore missed; the audit can undercount them. Treat mutual pairs and high fan-out as places to
 inspect. Standard library only; exits 1 if no skill is found.
 """
 import json
@@ -20,6 +25,11 @@ import re
 import sys
 from collections import Counter
 from pathlib import Path
+
+
+# Lines that state where a skill sits in the tree rather than what it loads.
+MEMBERSHIP = re.compile(r"^(\*\*(Core|Domain|Parent|Flow|Leaf) skill\*\*.*|\s*skill-tree:.*)$", re.MULTILINE)
+ONE_WORD = re.compile(r"[A-Za-z]+")
 
 
 def frontmatter_name(text):
@@ -70,9 +80,14 @@ def main(argv):
     for name, directory in skills.items():
         files = [directory / "SKILL.md", *sorted((directory / "references").glob("*.md"))]
         text = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        text = MEMBERSHIP.sub("", text)
         counts = Counter()
         for alias, owner in patterns:
-            regex = re.compile(r"(?<![\w-])" + re.escape(alias) + r"(?![\w-])")
+            if ONE_WORD.fullmatch(alias):
+                word = re.escape(alias)
+                regex = re.compile(rf"`{word}`|\*\*{word}\*\*|(?<![\w-]){word}(?= (?:skill|domain)\b)")
+            else:
+                regex = re.compile(r"(?<![\w-])" + re.escape(alias) + r"(?![\w-])")
             hits = len(regex.findall(text))
             # Blank matched spans so a shorter alias cannot match inside a longer one.
             text = regex.sub(lambda m: " " * len(m.group(0)), text)

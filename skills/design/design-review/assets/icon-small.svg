@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title">
+<title id="title">Design Review: a magnifier over a design</title>
+<g aria-hidden="true"><path d="M39 39L55 55" fill="none" stroke="#F3F2EE" stroke-width="10.8"/><circle cx="28" cy="28" r="16" fill="#F3F2EE" stroke="#F3F2EE" stroke-width="8.8"/><path d="M21 29L26 34L35 23" fill="none" stroke="#F3F2EE" stroke-width="6.8"/></g>
+<g><path d="M39 39L55 55" fill="none" stroke="#CF704D" stroke-width="8"/><circle cx="28" cy="28" r="16" fill="#F3F2EE" stroke="#26364A" stroke-width="6"/><path d="M21 29L26 34L35 23" fill="none" stroke="#B58D3C" stroke-width="4"/></g>
+</svg>

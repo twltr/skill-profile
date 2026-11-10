@@ -99,6 +99,6 @@ Competing or corroborating source:
 Effect on this decision:
 ```
 
-Use a research note only while the task needs it, under `.tmp/research/<topic>/`
-or another approved temporary owner. Report useful primary citations in the
-decision handoff; do not preserve raw search results as durable product docs.
+Keep this record in the temporary research note only while the task needs it.
+Report useful primary citations in the decision handoff; do not preserve raw
+search results as durable product docs.

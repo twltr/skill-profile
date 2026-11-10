@@ -1,11 +1,17 @@
 # Sources and adaptation
 
 This skill is a new local research method. Its engineering decision boundary
-aligns with the local **Engineering Practices** skill; its optional delegation,
-technical-decision challenge, domain and planning handoffs refer conditionally to
-**Puppeteer**, **Grilling with Agents**, **Domain Modeling**, **Vertical Slices**
-and **Road to Glory**. These skills remain the owners of their respective methods.
-No source skill is copied or replaced.
+was first aligned with the local Engineering Practices skill, and earlier
+versions handed delegation, decision challenges, domain questions and planning to
+named sibling skills. Since the collection became a tree, the body names only
+the core skill Puppeteer and returns everything else to whoever loaded it. No
+source skill is copied or replaced.
+
+Changes on 2026-11-10: the description now says when to use the skill; the
+example ends in a filled handoff; the handoff shape, source selection and
+reframing examples were consolidated; the discovery-service caveats now live
+only in the research-methods reference; and the closing section no longer
+assumes a calling workflow, council or call chain.
 
 The source-discovery examples were checked against public service descriptions
 on 2026-11-04. arXiv's official About page describes moderation and explicitly

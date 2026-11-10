@@ -113,6 +113,7 @@ repositories, under their own instructions.
 | Purpose and boundary | What this body of work is, and what belongs elsewhere |
 | Local host scope | That every path applies to this machine only |
 | Parts | A table: kind, role, location (path, URL, host or provider), instruction owner — including running systems and scheduled automations |
+| Agents and accounts | Which agents act on this work — automations, role agents on a server, the owner's local assistants — with which account or seat, and which of them may process customer data under which agreement |
 | Required access | The tools, connectors, MCP servers and logins an agent needs to work here, and whether each is set up in the clients on this machine |
 | Current state | Each part's actual status — live, in development, planned, retired — as it is now |
 | Shared knowledge | Where notes, lore, cross-cutting to-dos and direction live, such as a Notion or Obsidian space, or "none yet" |
@@ -127,6 +128,10 @@ repository's roadmap — which the Workspace names in its **Shared knowledge**
 row so agents with a connector can read it. A planned part may appear in
 **Parts** with the status "planned": that is the current state of the map, not
 a plan.
+
+Record which account an agent uses, never its credentials. When customer data is
+involved, the **Agents and accounts** row decides which agent may touch it; a
+local assistant without that agreement works through the agents that have it.
 
 Never put source code, customer files, credentials, generated output, issued
 documents or transient work notes in a Workspace. They keep their own owners.

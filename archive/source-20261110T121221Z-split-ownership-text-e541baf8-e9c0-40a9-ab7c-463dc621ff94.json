@@ -1,0 +1,34 @@
+{
+  "source_revision": "bfe4c760354638415cded9ec40ec59eeb73fb251",
+  "reason": "Preserve Workspace Writing and GSAP before their text names the Skill Profile as owner after the repository split (2026-11-10).",
+  "packages": [
+    "skills/writing/workspace-writing",
+    "skills/extras/gsap"
+  ],
+  "archive": "archive/source-20261110T121221Z-split-ownership-text-e541baf8-e9c0-40a9-ab7c-463dc621ff94.zip",
+  "files": {
+    "skills/writing/workspace-writing/SKILL.md": "23c2ee7a49ad953308635c0c2ef8d9adc03d0c1f4bb102a909502585d017d9e9",
+    "skills/writing/workspace-writing/agents/openai.yaml": "bee1739cf681f9f46bc3ae12edfaf50dfc8c40c21db03f1f8a55c7f97c0a75eb",
+    "skills/writing/workspace-writing/assets/icon-small.png": "ff06ab8042607ff54b0131b73c7f163cb50e7549a72ba747344c5e88d83731fd",
+    "skills/writing/workspace-writing/assets/icon-small.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/writing/workspace-writing/assets/icon.png": "c427ae1ffd762fa4b69a3234fed9750720cac1432968b4a8bc9e970955387f34",
+    "skills/writing/workspace-writing/assets/icon.svg": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee",
+    "skills/extras/gsap/LICENSE": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+    "skills/extras/gsap/NOTICE.md": "a8b75290640bab5ed873cb2a5ab08c1a1f93cf549804397d1335a3bdfff2381c",
+    "skills/extras/gsap/SKILL.md": "6360256507d3d3378c09ccfcf59e664d3e710e0050ecdf56c1e1808819f52d0f",
+    "skills/extras/gsap/agents/openai.yaml": "1392253e70d9bebffa4fd1161be5a95a30269ddc70145d180358c49589373b2a",
+    "skills/extras/gsap/assets/icon-small.png": "f34dc6bebefbcf3b86599e14572178fb725ed969a7a61ec9e7faa7a4dde13761",
+    "skills/extras/gsap/assets/icon-small.svg": "ba1d980e19e98cd53a5f1ec4b348f3a2e261a5941b4a01c75492ea7ff70be0c2",
+    "skills/extras/gsap/assets/icon.png": "d49732bf1f6cc4f1bd6404f5ac459ebaf586000ef04bef058c25515b652f153d",
+    "skills/extras/gsap/assets/icon.svg": "cd48b45e7d2b963a210ce8f18e4faa566a68d1a9b8d33e67320650bce5ffaff9",
+    "skills/extras/gsap/references/gsap-core.md": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+    "skills/extras/gsap/references/gsap-frameworks.md": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+    "skills/extras/gsap/references/gsap-performance.md": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+    "skills/extras/gsap/references/gsap-plugins.md": "5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4",
+    "skills/extras/gsap/references/gsap-react.md": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+    "skills/extras/gsap/references/gsap-scrolltrigger.md": "9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
+    "skills/extras/gsap/references/gsap-timeline.md": "1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
+    "skills/extras/gsap/references/gsap-utils.md": "1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
+    "skills/extras/gsap/references-manifest.json": "e14b10e2309ab7762ab9bb0023db32683bbfe5f872a59ad99cd89e95f72ae319"
+  }
+}

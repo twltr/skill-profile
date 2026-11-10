@@ -18,6 +18,15 @@ installations can use either mechanism. Verify this runtime rather than moving
 working copies because another path appears in documentation. Avoid duplicate
 active copies with the same skill name.
 
+Claude Code reads personal skills from `~/.claude/skills/<name>/SKILL.md`,
+project skills from `.claude/skills/` and plugin skills from installed plugins.
+Its explicit-only policy is the frontmatter field `disable-model-invocation: true`.
+Skills uploaded to a claude.ai account are a separate store: the app's skill
+settings list those, and the host syncs them down to Claude Code, while a local
+`~/.claude/skills` folder does not appear in the app's skill list. A skill that
+works in Claude Code but is "missing in the app" is usually in the wrong store,
+not broken. Uploading to the account is an account change; confirm it first.
+
 For other clients, inspect their current native mechanism. A directory accepted
 by one host does not prove discovery by another. Copying a skill does not install
 its tools, credentials, runtimes or account connections.

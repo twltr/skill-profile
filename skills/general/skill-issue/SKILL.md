@@ -1,176 +1,349 @@
 ---
 name: skill-issue
-description: Create, revise or review agent skills with clear task descriptions, worked examples, usable workflows and justified supporting resources. Use for SKILL.md authoring, trigger boundaries, skill quality reviews and installation guidance; executing another skill's workflow remains with that skill.
+description: Create, revise, review or audit agent skills, from capturing intent through drafting, realistic test prompts, trigger tuning and iteration. Use whenever someone wants to turn a workflow into a skill, improve or restructure a SKILL.md, fix a skill that fires too often or too rarely, design a router over sibling skills, untangle dependencies inside a skill collection, or review skills for quality, even when they only say "this skill is bad" or "make my skills better". Executing another skill's own workflow stays with that skill.
 metadata:
-  short-description: Build and review practical skills with clear examples
+  short-description: Build, test and sharpen skills agents actually use
 ---
 
 # Skill Issue
 
-Build a skill another agent can use without reconstructing the intended method.
-Show a small successful application early, then explain the decisions that make
-it work. Open with the problem the method solves and why its core choices help;
-the reader needs causal understanding, not only a trigger and a list of commands.
-Preserve the user's scope: a review produces findings; authorized edits
-change only the named skills and their affected resources.
+A skill is a briefing for a capable colleague who has never met you. It is read
+at the moment of need by an agent that knows its craft but not your situation,
+your conventions or the mistakes you already made. Everything in it should either
+change a decision or save work; everything else is noise the agent must read past.
+
+Creating or improving a skill is a loop:
+
+1. Capture what the skill should do, for whom, and when it should fire.
+2. Draft or revise it.
+3. Run realistic prompts with the skill, and with a baseline.
+4. Evaluate the results with the user: qualitatively, and quantitatively where
+   outputs are verifiable.
+5. Revise from what the runs showed, not from what the draft promised.
+6. Repeat; then widen the test set and tune the description.
+
+Figure out where the user is in this loop and pick up from there. Someone with
+an idea needs interviewing and a draft; someone with a draft needs test runs;
+someone with a working skill may only need its triggering fixed. If the user says
+"skip the evals, just improve it with me", do that — the loop serves the skill,
+not the other way round.
+
+## Principles
+
+These are the ideas behind every later section. When a specific rule seems not
+to fit, reason from these instead.
+
+- **Progressive disclosure.** A skill loads in three levels: metadata (name and
+  description, always in context), the `SKILL.md` body (loaded when the skill
+  triggers) and bundled resources (read or executed only when needed). Put each
+  piece of guidance at the cheapest level where it still arrives in time.
+- **Explain the why.** Today's models have good theory of mind. A reason lets
+  them handle the case you did not foresee; a bare MUST only covers the case you
+  did. If you find yourself writing ALWAYS or NEVER in capitals, treat it as a
+  yellow flag: reframe it and explain what goes wrong without it.
+- **Principle of lack of surprise.** A skill's contents should not surprise the
+  user if its intent were described to them. No hidden side effects, no actions
+  beyond the stated purpose, nothing that grants itself authority, credentials or
+  tools the runtime does not provide.
+- **Keep the prompt lean.** Every line must pull its weight. Read the transcripts
+  of test runs, not just the outputs: if the skill makes the agent waste effort,
+  remove the part that causes it and see what happens.
+- **Generalize, don't overfit.** A skill will be used across far more prompts
+  than the few you test with. Fix the cause behind a failed example rather than
+  patching that example; if a problem is stubborn, try a different metaphor or
+  working pattern instead of another constraint.
+- **Bundle repeated work.** When every test run independently writes the same
+  helper script or takes the same multi-step detour, ship that work once in
+  `scripts/` and tell the skill to use it.
+- **One owner per fact.** Each decision, rule or procedure lives in exactly one
+  place. Other places link to it. Duplicates drift apart and contradict each other.
+- **Trees, not meshes.** Skills compose downward: a caller names the skills it
+  uses; a callee does not name its callers. A collection where everything mentions
+  everything is expensive to load and impossible to reason about.
 
 ## A small worked example
 
-**Request:** Improve a delegation skill whose only guidance is “give clear tasks.”
+**Request:** "My commit-message skill never fires."
 
-Put a usable handoff near the start of that skill:
+The description is the only thing the agent sees before deciding, and this one
+names a topic, not a task or a moment:
 
-```text
-Task: Identify why the checkout test fails.
-Inputs: The failing test, its error output and the checkout module.
-Boundary: Read-only; no edits or additional agents.
-Return: The likely cause, exact supporting locations, uncertainty and
-        the smallest check that could distinguish competing explanations.
+```yaml
+description: Commit message conventions.
 ```
 
-Then explain when that handoff is useful and when the main agent should do the
-work directly. Keep this short example in `SKILL.md`; a separate file would add
-a lookup to its central method. A longer comparison of delegation research may
-remain a conditional reference. This is an example of authored skill content,
-not an instruction to launch an agent during skill authoring.
+Rewrite it to say what the skill does and the situations where it helps,
+including phrasings that never mention the skill:
 
-## 1. Establish the task and owner
+```yaml
+description: Write commit messages in this repository's Conventional Commits
+  style with scope, imperative summary and breaking-change footer. Use whenever
+  committing, amending, squashing or preparing a PR, even if the user just says
+  "commit this" or "save my work".
+```
 
-Confirm the skill's reader, input, useful outcome, likely request and boundaries.
-Use actual user examples when available; otherwise propose realistic cases and
-label assumptions. Resolve only gaps that change the outcome or authority.
+Then check it against two prompts: *"ok commit the auth changes and push"*
+should trigger it; *"what does git commit --amend do?"* is a near-miss that
+asks for an explanation, not a message, and should not. The example teaches the
+reusable choice — describe the moment of use, then test both sides of the
+boundary — rather than a template to copy.
 
-Find the canonical source and intended runtime. Read the existing skill completely
-and any resources affected by the change. Preserve unrelated edits, licenses,
-provenance and native settings. An installed copy, upstream repository and host
-plugin may have different owners; do not create a second maintained source.
+## Anatomy of a skill
 
-For a review-only request, inspect without editing the reviewed skills. Record
-specific findings and the smallest proposed changes at the task's existing owner.
+```text
+skill-name/
+├── SKILL.md            required: YAML frontmatter + Markdown instructions
+├── agents/openai.yaml  optional: Codex presentation and invocation policy
+├── scripts/            executable code for deterministic or repetitive work
+├── references/         documentation read into context when needed
+├── assets/             files used in the output: templates, icons, fonts
+├── evals/              test cases (see references/evaluation.md)
+└── NOTICE.md, LICENSE* provenance and licenses of adapted material
+```
 
-## 2. Make discovery and presentation useful
+The frontmatter needs `name` (lowercase, hyphenated, matches the directory) and
+`description`. Host-specific fields carry host-specific policy: Claude Code reads
+`disable-model-invocation: true` to keep a skill explicit-only, Codex reads
+`policy.allow_implicit_invocation` from `agents/openai.yaml`. Keep such policy in
+metadata and out of the description text, which is for the task.
 
-Use a short lowercase, hyphenated name. In the YAML frontmatter, `description`
-explains what the skill does and when it fits. Lead with the task; add a boundary
-only where a nearby workflow could be confused with it. Keep essential trigger
-information here because the body is read only after selection.
+When a skill supports several domains or frameworks, organize references by
+variant so the agent reads only the one it needs:
 
-The human-facing short description states the concrete benefit in ordinary
-language. “Write and revise texts for their audience and purpose” is useful;
-“Auto: choose a writing method” spends the description on control information.
+```text
+cloud-deploy/
+├── SKILL.md        workflow + how to select the provider
+└── references/
+    ├── aws.md
+    ├── gcp.md
+    └── azure.md
+```
 
-Keep technical invocation rules in the runtime's supported metadata, such as
-`policy.allow_implicit_invocation` in `agents/openai.yaml`. Preserve those rules
-unless changing them is authorized. Do not repeat “Auto,” “explicit-only” or a
-policy explanation in descriptions. Functional routing and permission boundaries
-still belong in the workflow where they affect decisions.
+Keep `SKILL.md` under about 500 lines. When you approach that, add a layer of
+hierarchy with clear pointers about where the agent should go next, instead of
+compressing the prose until it stops explaining. Give a reference file longer
+than about 300 lines a table of contents.
 
-## 3. Teach through a short example
+## How skill triggering works
 
-Include at least one realistic worked example near the beginning, before a long
-ruleset or reference index. Show the input, the decisive action and the resulting
-output or evidence. A few lines may be enough. For an interaction skill, show an
-actual question or handoff; for a writing skill, a small transformation; for a
-technical skill, a minimal valid operation with its expected result.
+An agent sees the name and description of every available skill and decides
+from those alone whether to consult one. Two consequences shape every description:
 
-An example must teach a reusable choice, not just display a generic template or
-repeat the rule in other words. Explain the relevant boundary beside it. Label
-fictional facts and illustrative pseudocode; never invent tool APIs or claim a
-sample was executed. If an output format matters, show its actual shape.
+- **Agents consult skills for work they cannot easily do alone.** A one-step
+  request such as "read this file" rarely triggers a skill even when the
+  description matches, because the agent can just do it. Complex, multi-step or
+  specialized requests trigger reliably when the description matches.
+- **Agents tend to undertrigger.** Make descriptions a little pushy: state what
+  the skill does, then the contexts where it applies, including requests that
+  never name it. "Use whenever the user mentions dashboards, metrics or wants to
+  display company data, even without asking for a dashboard" beats "How to build
+  dashboards."
 
-Keep short examples of the normal path inline. Move a collection of variants or
-a lengthy walkthrough only when it would distract from the shared method. Do
-not put the first usable example behind a link merely to shorten the main file.
+Pushy is not greedy. The more skills share a trigger surface, the more each
+description must state its nearest neighbor: "Explanatory diagrams belong here;
+logos and icons belong to the brand-graphics skill." Name a boundary only where confusion is
+plausible, or the description fills up with exclusions.
 
-## 4. Write the method and choose its precision
+Write the description in one to three sentences, under the 1024-character limit
+of the skill specification. Lead with the task and outcome. The human-facing
+short description (`metadata.short-description`, or `short_description` in
+`agents/openai.yaml`) states the concrete benefit in plain words: "Write and
+revise texts for their audience and purpose", not "Auto: choose a writing method".
 
-Explain how to obtain inputs, make the important decisions, act, verify and place
-the result. Include the non-obvious reasons, invariants and failure consequences.
-Assume the agent knows its general craft; omit generic coaching and repeated
-rules that add no decision guidance.
+## Routers over sibling skills
 
-Match precision to the task. Context-dependent design needs criteria and room for
-judgment. A recurring transformation may need parameterized code. A fragile
-operation needs its exact prerequisites, ordering and failure handling. Do not
-turn a discretionary task into a rigid ceremony or a risky operation into advice.
+When several specialists share one trigger surface — writing, visual design,
+testing — their descriptions compete. Each one either undertriggers or fires for
+its sibling's work. A **router** resolves this:
 
-Resolve real tool names, supported arguments, dependencies and paths against the
-target environment. Missing access or unresolved authority must have a clear stop
-or fallback appropriate to the task. A skill never grants permission, credentials
-or access to tools that the runtime does not expose.
+- One router skill carries the broad, implicit description for the whole surface.
+- The specialists become explicit-only through host policy. The router loads
+  the right one; a user can still call any specialist by name.
+- The router body is a switchboard, not a manual: a selection table, the few
+  rules every route shares, and what to hand the specialist. Keep it short;
+  depth belongs in the specialists.
+- A specialist works fully when called directly and never routes back to the router.
 
-## 5. Give every supporting file a reason
+```markdown
+| Signal in the request          | Load              | Owns                         |
+|--------------------------------|-------------------|------------------------------|
+| Explains a system or workflow  | concept-diagrams  | Concept figures, exports     |
+| Logo, icon, brand mark         | brand-graphics    | Identity and web graphics    |
+| Movement, transition, timing   | ui-motion         | Motion principles            |
+```
+
+A router costs one extra hop on every use. It pays off when misrouting is
+common or expensive. Siblings with clearly distinct triggers are cheaper as
+plain skills with one boundary sentence each.
+
+## Composition and dependencies
+
+Reference another skill only for an independently useful capability, and say:
+the condition that needs it, what to pass, what comes back, and the honest
+fallback if it is unavailable ("If a prose-cleanup skill is available, run it
+on the final draft; otherwise do a manual filler pass"). Resolve and read the actual skill
+before claiming it was applied.
+
+Keep the graph a tree:
+
+- **Callers name callees; callees stay ignorant of callers.** A specialist does
+  not need to know which router or workflow loaded it. Back-references create
+  cycles that agents follow, loading half the collection for a small task.
+- **Leaves stay leaves.** A pure technique skill (prose cleanup, diagram drawing,
+  test design) references nothing, or only other leaves.
+- **Mention shared concerns where they decide something.** If three workflows
+  delegate work, those three reference the delegation skill; the other twenty do not.
+- **Never re-enter an active ancestor.** Pass the names of active workflows in a
+  handoff so the callee does not restart them.
+- **Discovery and composition are different routes.** An explicit-only skill
+  stays out of implicit selection, but an authorized workflow may still read it
+  deliberately. A reference grants no authority the runtime does not give.
+
+To audit a collection, run [scripts/skill_graph.py](scripts/skill_graph.py) on
+its skill roots. It counts cross-references and lists mutual pairs and the most
+referenced skills. Mutual pairs and very high fan-out are smells to inspect, not
+automatic errors: a count shows a mention, not a real call.
+
+## Write the body
+
+Open with the problem the skill solves and why its core choices address it. The
+reader needs causal understanding, not only a trigger and a list of commands.
+Show a small successful application early — a few lines of input, decisive action
+and resulting output — before any long ruleset. An example must teach a reusable
+choice, not repeat a rule in other words. Label fictional facts and illustrative
+pseudocode; never invent tool APIs or claim a sample was executed.
+
+Use the imperative form. When an output format matters, show its exact shape:
+
+```markdown
+## Report structure
+Use this template:
+# [Title]
+## Summary
+## Findings
+## Recommendations
+```
+
+Show examples as input and output where that fits:
+
+```markdown
+**Example:**
+Input: Added user authentication with JWT tokens
+Output: feat(auth): implement JWT-based authentication
+```
+
+Match precision to fragility. Context-dependent design needs criteria and room
+for judgment. A recurring transformation may need a parameterized script. A
+fragile operation needs exact prerequisites, ordering and failure handling. Do
+not turn a discretionary task into a ceremony, or a risky operation into advice.
+
+Resolve real tool names, arguments, dependencies and paths against the target
+environment. Missing access or unresolved authority needs a clear stop or
+fallback.
+
+Format for both readers. Humans scan headings, tables and code blocks; agents
+follow steps and examples. Use numbered steps for sequences, a table for a
+selection, a fenced block for anything to be copied, and prose for the reasons.
+Avoid decorative bold and walls of bullets that hide which point carries weight.
+
+Write a draft, then reread it with fresh eyes as the agent who will receive it:
+what would you misread, skip or not know how to start?
+
+## Give every supporting file a reason
 
 | Material | Placement |
 |---|---|
 | Core decisions, common workflow, first worked example | `SKILL.md` |
 | Brief examples needed on most uses | Beside the relevant step in `SKILL.md` |
-| Substantial optional variants, schemas or provider details | A directly linked reference with a stated reading condition |
+| Substantial optional variants, schemas, provider details | A directly linked reference with a stated reading condition |
 | Repeated mechanics that need deterministic execution | A script with explicit inputs, outputs and failure behavior |
-| Files copied into the user's result | Assets or templates |
-| Attribution, licenses and source records | The skill's provenance files |
+| Files copied into the user's result | `assets/` |
+| Attribution, licenses, source records | `NOTICE.md` and license files |
 
-Ask whether a separate file saves irrelevant reading or merely adds a lookup.
-There is no required number of references and no benefit in splitting by file
-count alone. Keep one owner for each fact; move material rather than copying it
-into both the body and a reference. Link resources directly from `SKILL.md` and
-state when to read them. Avoid chains of references for the normal path.
+A separate file should save irrelevant reading, not merely add a lookup. Link
+each resource directly from `SKILL.md` and state when to read it. Avoid chains
+of references on the normal path, and never put the first usable example behind
+a link just to shorten the main file.
 
-Use another skill only for an independently useful capability. State "if available"
-or its equivalent, the condition that needs it, the input, expected result and
-honest fallback. Resolve and read the actual method before claiming it was used.
-An absent skill is not an excuse to fabricate capabilities or omit a required check.
-Do not re-enter the caller or any active ancestor, or create a mandatory tour
-through several skills. Include active workflow names in delegated handoffs.
-Explicit-only discovery and deliberate composition are different routes: native
-policy still applies, and a workflow reference does not grant missing authority.
+## Test, evaluate, improve
 
-Keep one owner for decisions, mechanics and lifecycle. For example, an independent
-review method can return findings to a planning method; the planning method owns
-cleanup and merge sequencing. Explain why distinct stages exist when their order
-prevents rework or loss of evidence. Use steps for sequential work and examples
-to show the decisive choice rather than accumulating unsupported rules.
+After a draft, write two or three realistic test prompts — what a real user
+would type, with real-sounding detail — and share them with the user before
+running. Then run each prompt with the skill and against a baseline: no skill
+for a new skill, the previous version for a revision. Use parallel subagents
+when available so runs finish together; otherwise run them yourself in sequence
+and say that this is weaker, because you know the skill's intent.
 
-## 6. Review and verify
+While runs are in progress, draft assertions for outputs that can be checked
+objectively, with names that say what they check. Leave subjective qualities —
+style, visual design — to human judgment rather than forcing assertions onto them.
 
-Read the finished skill as a new user of its method. Check these questions:
+Review the results with the user directly in the conversation: per case, the
+prompt, what the skill run produced, how it differed from the baseline, and
+which assertions passed. Read the transcripts too. Then improve:
 
-- Does the description identify a concrete task and distinguish its nearest neighbor?
-- Does the opening explain the problem and why the method's core choices address it?
-- Does the opening example show useful work and the expected result?
+1. **Generalize from the feedback** instead of fitting the examples.
+2. **Remove what does not pull its weight**, especially parts that cause wasted work.
+3. **Explain the why** behind anything the agent got wrong.
+4. **Bundle work the runs kept repeating.**
+
+Rerun into a new iteration and continue until the user is satisfied, the
+feedback is empty, or progress stalls. Exact test-case layout, workspace
+structure, grading and the trigger-tuning procedure are in
+[references/evaluation.md](references/evaluation.md); read it before writing the
+first test case or trigger eval set.
+
+## Tune the description
+
+Once the skill works, test its triggering. Write about twenty realistic queries:
+eight to ten that should trigger it and eight to ten near-misses that share its
+vocabulary but need something else. Near-misses are the valuable half. "Write a
+fibonacci function" is a useless negative for a PDF skill; "convert this PDF's
+tables into a pandas DataFrame and plot revenue" may be a real one for a PDF skill
+that only covers forms. Review the set with the user, then run it as described
+in [references/evaluation.md](references/evaluation.md#trigger-evaluation).
+
+## Review a skill or a collection
+
+For a review-only request, inspect without editing. Read each skill as a new
+user of its method and check:
+
+- Does the description name a concrete task and moment of use, and distinguish
+  its nearest neighbor — including a library, tool or product with the same name?
+- Does the opening explain the problem and why the core choices address it?
+- Does an early example show useful work and its result?
 - Can the ordinary path run without opening every supporting file?
 - Is each reference conditional, substantial or independently reusable?
 - Are tools and paths real, constraints coherent and dependencies available?
+- Are reasons given where the skill uses MUST, ALWAYS or NEVER?
 - Does verification distinguish a useful outcome from the relevant failure?
+- Is there an honest fallback when a tool, skill or host capability is missing?
 
-Parse the metadata and check names, links and referenced assets. Run changed
-helpers on representative inputs. Exercise a normal request, a different valid
-request and a near-miss; include a blocked case when authority or access matters.
-For an audit, use these cases to expose ambiguities without doing the downstream
-work. Report desk review, executed checks and fresh model trials separately.
-A metadata check cannot establish reliable model selection or good output.
+Then walk four requests through the description and workflow without doing the
+downstream work: a normal one, a different valid one, a near-miss and, where
+authority or access matters, a blocked one. Near-misses expose trigger
+collisions that reading alone misses. Parse the metadata and check names, links
+and referenced assets.
+
+For a collection, also run the graph script, look for overlapping trigger
+surfaces that want a router, and for skills that repeat a fact another skill owns.
 
 Write findings as **observed passage → consequence → smallest improvement**.
-Include a concrete candidate example where its absence is the issue. Distinguish
-an absent example from one that is late, too generic or unnecessarily external.
-Keep proposals separate from edits and avoid a numeric score without criteria.
+Include a candidate example where its absence is the issue. Keep proposals
+separate from edits and avoid numeric scores without criteria. Report desk
+review, executed checks and fresh model trials separately: a metadata check
+does not prove reliable selection or good output.
 
-## 7. Install only when that is part of the task
+If **Grilling with Agents** is available and an authorized collection review
+needs deeper challenge, give independent agents bounded skills to test against
+realistic uses; the lead answers and fixes supported issues.
+
+## Install only when that is part of the task
 
 For an authorized installation, update or distribution, read
-[references/installation.md](references/installation.md). It covers source and
-runtime ownership, complete-tree copies, native metadata and loader checks.
-Authoring or reviewing a skill does not require installing an external creator.
+[references/installation.md](references/installation.md). Authoring or reviewing
+a skill does not require installing anything.
 
-Deliver the revised skill or the requested review, the checks actually performed
-and any open activation boundary. Improve the method from observed use; do not
-add instructions merely to make the package look comprehensive. Source influences
-and adaptation choices are recorded in [NOTICE.md](NOTICE.md).
-
-If **Grilling with Agents** is available and an authorized collection review calls
-for deeper challenge, give independent agents bounded skills and ask them to test
-the problem, rationale, workflow and examples against realistic uses. The lead
-answers and fixes supported issues; council questions stay between agents. Report
-decisions, reasons and any unresolved prerequisite to the user or existing plan
-without turning the audit into a user interview. Do not mistake a desk audit for
-a fresh behavioral trial.
+Deliver the revised skill or the requested review, the checks actually performed,
+and any open activation boundary. Source influences and adaptation choices are
+recorded in [NOTICE.md](NOTICE.md).

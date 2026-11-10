@@ -1,6 +1,34 @@
 # Sources and adaptation
 
-Skill Issue is a maintained local authoring method. The 2026-11-04 revision
+Skill Issue is a maintained local authoring method.
+
+## Anthropic Skill Creator (2026-11-10 revision)
+
+The 2026-11-10 revision rebases the method on Anthropic's `skill-creator`, as
+installed through the claude.ai account skill sync on 2026-11-10 (`SKILL.md`
+SHA-256 `1d51c0b077c24489baa7fdb6c7072ff0c94479dab7110dad2fc6039a47a4bed4`).
+Licensed under Apache-2.0; the license is retained as
+[LICENSE-Anthropic.txt](LICENSE-Anthropic.txt).
+
+Adapted, partly close to the original wording: the create–test–review–improve
+loop, progressive disclosure, the principle of lack of surprise, the anatomy and
+domain-organization trees, the 500-line guidance, how skill triggering works and
+the advice to write slightly pushy descriptions, the writing-style passage on
+explaining the why instead of capitalized MUSTs, the four improvement principles,
+the `evals/` case layout read by `claude plugin eval`, and the trigger-eval query
+guidance with its good and bad examples.
+
+Deliberately not adopted: the browser eval viewer, benchmark aggregation scripts,
+grader/analyzer/comparator agent files, `.skill` packaging and the host-specific
+Claude.ai and Cowork sections. Results are reviewed with the user in the
+conversation; the upstream tooling is referenced as an optional route when it is
+installed. Added locally: named principles "One owner per fact" and "Trees, not
+meshes", router guidance for sibling skills, composition rules,
+`scripts/skill_graph.py`, multi-host invocation metadata and the review format.
+
+## 2026-11-04 revision
+
+The 2026-11-04 revision
 combines its existing ownership, authorization and workflow rules with early
 worked examples, explicit placement criteria for supporting files, and a separate
 installation reference.

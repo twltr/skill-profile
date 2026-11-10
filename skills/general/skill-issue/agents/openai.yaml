@@ -2,4 +2,4 @@ interface:
   icon_large: "./assets/icon.png"
   icon_small: "./assets/icon-small.png"
   display_name: "Skill Issue"
-  short_description: "Build and review skills with clear, practical examples"
+  short_description: "Build, test and sharpen skills agents actually use"

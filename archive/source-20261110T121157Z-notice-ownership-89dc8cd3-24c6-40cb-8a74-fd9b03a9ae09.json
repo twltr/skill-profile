@@ -1,0 +1,38 @@
+{
+  "source_revision": "f21c13a582d429f109ada8ce8cb0819150850392",
+  "reason": "Preserve SVG Design and Grilling before their NOTICE ownership statements name the Skill Profile and current paths (2026-11-10).",
+  "packages": [
+    "skills/extras/svg-design",
+    "skills/extras/grilling"
+  ],
+  "archive": "archive/source-20261110T121157Z-notice-ownership-89dc8cd3-24c6-40cb-8a74-fd9b03a9ae09.zip",
+  "files": {
+    "skills/extras/svg-design/LICENSE.txt": "54bf7a20b6a595db6650534cb24afc238ef0e26a607fdf7872fd54825ee19da4",
+    "skills/extras/svg-design/NOTICE.md": "1e5e92043055b8643549e3281179915c5803444e8a36b5fb41648868d6e9e0cd",
+    "skills/extras/svg-design/SKILL.md": "f287ea655442be2df8343837396c63f5bbed085bf74333f6d3edea876574d550",
+    "skills/extras/svg-design/agents/openai.yaml": "62a7d2ba0297bd8052705eb1cc37ae463ce463378298b31f1ff0077631045c99",
+    "skills/extras/svg-design/assets/icon-small.png": "a0bb0e4e4a49f386c07a87d2dadce31f9b3a0d3c55b9f1eddedf2eab37b020f4",
+    "skills/extras/svg-design/assets/icon-small.svg": "366b147ef96da993b00709d40bf2a6fc56f78c88cd41b9ef3590f7cbdcc4529d",
+    "skills/extras/svg-design/assets/icon.png": "3ff76be748efec8388e2fade5c0bb7367a307102b95600b0c444ec1b89264fdc",
+    "skills/extras/svg-design/assets/icon.svg": "366b147ef96da993b00709d40bf2a6fc56f78c88cd41b9ef3590f7cbdcc4529d",
+    "skills/extras/svg-design/assets/preview.html": "fff20df8fa253e3d8a3893cc3cecbe2b837e79bbe51ce232f750950b6261dd41",
+    "skills/extras/svg-design/references/accessibility-and-pitfalls.md": "6bf6fa56b309f4350da1087f836fb79fb4b9ca9dea191437e9c8ba0ed4170706",
+    "skills/extras/svg-design/references/advanced-techniques.md": "1d4a104219a48732eb1337dbd3eaffbbed6d991b22c99e2b467c007d17e41aa1",
+    "skills/extras/svg-design/references/animation.md": "737651f9670c13b9c26576136654c1c0222acb6903d14e8c360a12f1a7924332",
+    "skills/extras/svg-design/references/editing-workflow.md": "cfad157a20c37eed3265c529d626809e008e8e7997e3e37d15a5e06fb7fb4942",
+    "skills/extras/svg-design/references/icon-design.md": "0459ebf842c0f85664edbf4b954f0c114532c87e2e14acef253f42085658a552",
+    "skills/extras/svg-design/references/logo-techniques.md": "a37ba0fa674f696b7740bee1bdf8e79af8e597d3dde6fb343677a2dfd7b58a04",
+    "skills/extras/svg-design/references/optimization.md": "4853060b6494cc7a09f176baf26194a2b64534740d8a840343e5820705780010",
+    "skills/extras/svg-design/references/path-patterns.md": "314528f6a4bbea6c1efd45701fd2a5bd4021d76b2b8382965b73e1b678622802",
+    "skills/extras/svg-design/source-manifest.json": "60ac563edadb774b58319df8494e8ab16e94209072d39d9bf4c5edeb841cbd0b",
+    "skills/extras/grilling/LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/extras/grilling/LICENSE.txt": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "skills/extras/grilling/NOTICE.md": "8108831499979893c71dc4270cfbe3bd18e946e46b0a1820c19904a3a05b0660",
+    "skills/extras/grilling/SKILL.md": "cb370901fc0517e607c00e8882ea670a4532cdb5b83a2a31631e52292184554f",
+    "skills/extras/grilling/agents/openai.yaml": "e55c18617b6398dd30307d761dd64be963be5d061d588b0a1899c6a04f3c8b4b",
+    "skills/extras/grilling/assets/icon-small.png": "fd201a504408d873e9b50966439a9d1cc768304d807bba4fdab42b885cbc0f3c",
+    "skills/extras/grilling/assets/icon-small.svg": "00f288a0b1e963d47ea0cef5ef1f5b9ed829a0a097c9e79d534b2f0d0e803b4b",
+    "skills/extras/grilling/assets/icon.png": "913dcb455901fa78893f431e092ce43c438ba123b772e3d83dfbfa72be7fec0c",
+    "skills/extras/grilling/assets/icon.svg": "00f288a0b1e963d47ea0cef5ef1f5b9ed829a0a097c9e79d534b2f0d0e803b4b"
+  }
+}

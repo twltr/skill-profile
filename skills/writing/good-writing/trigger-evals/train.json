@@ -1,0 +1,22 @@
+[
+  {"query": "can you write an email to Jana at the bakery saying the new menu page is live but the price list still needs her sign-off before friday? notes are in notes/bakery-call.md", "should_trigger": true},
+  {"query": "schreib mir bitte ein Angebot für die Website-Wartung bei der Musikschule, 12 Monate, die Eckdaten stehen in offers/maintenance-scope.md", "should_trigger": true},
+  {"query": "turn notes/q3-retro.md into a short report for the team: what went well, what broke, what we change", "should_trigger": true},
+  {"query": "I need a landing page text for our new monitoring service, target is small agencies, tone friendly not salesy", "should_trigger": true},
+  {"query": "draft a reply to the customer complaint in inbox/complaint-2611.txt, we were late but the fix is deployed now", "should_trigger": true},
+  {"query": "kannst du aus den drei Gesprächsnotizen in notes/ einen Artikel für unseren Blog machen, so 800 Wörter, Thema warum kleine Websites Wartung brauchen", "should_trigger": true},
+  {"query": "write a user manual for the booking form admin, the people using it are not technical. features are listed in docs/booking-features.md", "should_trigger": true},
+  {"query": "rewrite this proposal so it argues for the cheaper option instead, keep the numbers: offers/hosting-proposal.md", "should_trigger": true},
+  {"query": "put together meeting notes from today's call for the shared space: decisions, owners, open questions. raw notes in notes/call-1011.md", "should_trigger": true},
+  {"query": "Brief an den Vermieter wegen der Heizung, höflich aber bestimmt, ist jetzt schon das dritte Mal", "should_trigger": true},
+  {"query": "fix the typo in this sentence: 'we recieved your payment'", "should_trigger": false},
+  {"query": "update the README so the install steps match the new npm scripts in package.json", "should_trigger": false},
+  {"query": "add a comment above the retry loop in src/sync.ts explaining why we back off", "should_trigger": false},
+  {"query": "what's the difference between 'affect' and 'effect'?", "should_trigger": false},
+  {"query": "explain how DNS propagation works, short", "should_trigger": false},
+  {"query": "rename the variable customerMail to customerEmail across src/", "should_trigger": false},
+  {"query": "is 'Sehr geehrte Damen und Herren' still okay in German emails or too stiff?", "should_trigger": false},
+  {"query": "convert docs/booking-features.md to a csv with one feature per row", "should_trigger": false},
+  {"query": "count the words in notes/q3-retro.md", "should_trigger": false},
+  {"query": "why does `npm run build` fail with 'Cannot find module ./copy'?", "should_trigger": false}
+]

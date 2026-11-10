@@ -1,0 +1,11 @@
+[
+  {"query": "need a short announcement for the newsletter: we moved hosting, nothing changes for customers, one sentence about the faster load times", "should_trigger": true},
+  {"query": "Schreib eine Absage an den Bewerber aus applications/mueller.md, freundlich, mit kurzem Feedback", "should_trigger": true},
+  {"query": "make the onboarding guide in docs/onboarding-draft.md readable for new freelancers, it's a wall of text right now", "should_trigger": true},
+  {"query": "write a case study about the duo website relaunch from notes/relaunch-summary.md for our portfolio page", "should_trigger": true},
+  {"query": "draft the follow-up mail after yesterday's pitch, they asked for references and a rough timeline", "should_trigger": true},
+  {"query": "kannst du einen LinkedIn-Post daraus machen? notes/launch.md", "should_trigger": true},
+  {"query": "translate 'Zahlungserinnerung' to English", "should_trigger": false},
+  {"query": "document the new env variables in the repo's AGENTS.md", "should_trigger": false},
+  {"query": "shorten my reply to two lines: 'thanks a lot for getting back to me so quickly, I really appreciate it, I will look into it'", "should_trigger": false}
+]

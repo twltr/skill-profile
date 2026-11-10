@@ -1,0 +1,11 @@
+[
+  {"query": "review PR #91 and tell me if the migration in migrations/0042 can lock the accounts table", "should_trigger": true},
+  {"query": "is the diff on feature/cache-ttl ok to ship? be honest", "should_trigger": true},
+  {"query": "pls take a look at pull request 204, mainly error handling", "should_trigger": true},
+  {"query": "users get charged twice when they double click pay, fix it fast", "should_trigger": true},
+  {"query": "rename the notFound message key to resourceNotFound, small thing", "should_trigger": true},
+  {"query": "schnell: in src/cache/store.ts ist der Default-TTL falsch, sollte 2 Minuten sein", "should_trigger": true},
+  {"query": "what's the usual etiquette for approving a PR with nits?", "should_trigger": false},
+  {"query": "open the github notifications page for me", "should_trigger": false},
+  {"query": "explain what ALTER TABLE ... DEFAULT does in postgres 16, briefly", "should_trigger": false}
+]

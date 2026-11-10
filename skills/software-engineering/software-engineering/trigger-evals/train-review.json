@@ -1,0 +1,10 @@
+[
+  {"query": "check PR #317 before I merge, is the caching change safe?", "should_trigger": true},
+  {"query": "can you go over branch feature/cache-ttl, what could break with the longer ttl?", "should_trigger": true},
+  {"query": "quick one: the profile card shows last login in UTC, should be the user's local time", "should_trigger": true},
+  {"query": "tiny fix pls, typo in the error messages file: invalidEmial", "should_trigger": true},
+  {"query": "gh pr 55 — look at it and leave me your verdict, I don't need comments posted", "should_trigger": true},
+  {"query": "how do I write a good PR description?", "should_trigger": false},
+  {"query": "what does an idempotency key do, conceptually?", "should_trigger": false},
+  {"query": "list my open PRs on github", "should_trigger": false}
+]

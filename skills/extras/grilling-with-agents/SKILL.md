@@ -9,22 +9,25 @@ metadata:
 
 **Leaf skill** outside every tree; a person starts it by name.
 
-If **Grilling** is available, use its decision tree, prerequisite-aware rounds
-and recommended answers. If **Puppeteer** is available, use it for delegation
-mechanics. Without either supporting skill, retain this method's scoped briefs,
-dependency-aware questions and evidence checks; never pretend a method was loaded.
+Questions follow a **design tree**: every decision branches into the decisions
+that hang off it. Work in **rounds**. The frontier is the in-scope decisions whose
+prerequisites are settled; ask the whole frontier together, number each question,
+give a recommended answer, and settle it before opening the branches that depend
+on it — asking earlier would decide against facts the next answer may change. If
+**Puppeteer** is available, use it for delegation mechanics; without it, keep this
+method's scoped briefs, dependency-aware questions and evidence checks, and never
+pretend a method was loaded.
 The lead agent is the interviewee and decision owner within the user's brief;
 specialist agents challenge that lead. The user receives decisions, reasons and
 remaining limitations, never interview questions from this method. Keeping the
 questioning inside the agent team lets it work through alternatives without
 turning every engineering trade-off into homework for the user.
 
-This is an explicit variant of Grilling. Its rules that every decision belongs
-to the human and that the next round waits for human answers are replaced here
-by lead-agent decisions and the report-only outcome below. Preserve facts versus
-decisions and dependency-aware questioning. Ordinary Grilling remains the separate
-method for a human interview when the user chooses it; do not start it as a fallback
-or run it alongside this council.
+Unlike an interview with a person, every decision here belongs to the lead agent
+within the user's brief, and the next round waits for the lead's answers, not the
+user's; the result is the report-only outcome below. Keep facts separate from
+decisions. When the user wants to be interviewed, that is a separate method they
+start themselves; do not start it as a fallback or run it alongside this council.
 
 ## A worked feature example
 
@@ -39,7 +42,7 @@ questions about existing owners, not three implementation tickets split by layer
 Lead -> Payment scout
 Investigate payment outcomes when an unfulfilled order is cancelled.
 Inputs: the verified payment entrypoint, relevant tests and the current contract.
-Read-only. Use Grilling's dependency-aware questions to challenge my design;
+Read-only. Challenge my design with dependency-aware questions, one round at a time;
 I am the interviewee, and this council never asks the user questions.
 Return source-backed facts, unresolved decisions, your recommendation and
 the consequences for other capabilities. Ask me, not the user.
@@ -168,10 +171,10 @@ depend on it. Do not mistake absence of evidence for absence of a problem.
 ## 4. Resolve within the team; report unresolved prerequisites
 
 Use one rule for every entry: this method asks the user no questions. It applies
-when the user invokes it directly and when Engineering Practices, Road to Glory
-or another authorized workflow uses it. There is no question-budget option or
-separate technical mode. A caller must not relay council questions to the user
-or invoke ordinary Grilling to work around this boundary.
+when the user invokes it directly and when another authorized workflow uses it.
+There is no question-budget option or separate technical mode. A caller must not
+relay council questions to the user or start a human interview to work around
+this boundary.
 
 Decide from the supplied requirements and verified evidence. Choose defensible
 trade-offs within the brief, label assumptions and return the reasoning to the
@@ -188,8 +191,8 @@ This is a status statement, not a disguised question or an approval request.
 
 No-question behavior does not invent facts, user preferences, access or consent.
 Mandatory host approval requirements still govern external actions; the council
-cannot supply approval or bypass them. A user who wants an interview can choose
-ordinary Grilling separately. This method finishes with the useful result it can
+cannot supply approval or bypass them. A user who wants to be interviewed can start
+that separately. This method finishes with the useful result it can
 support and its explicit limitations.
 
 ## 5. Converge and hand off

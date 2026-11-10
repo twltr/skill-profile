@@ -209,7 +209,9 @@ no authority the runtime does not give.
 To audit a collection, run [scripts/skill_graph.py](scripts/skill_graph.py) on
 its skill roots. It counts cross-references and lists mutual pairs and the most
 referenced skills. A mutual pair or an edge into another tree is a defect to
-explain; a count shows a mention, not a real call.
+explain; a count shows a mention, not a real call. For a collection that declares
+types, [scripts/check_tree.py](scripts/check_tree.py) checks the rules: it fails
+on a missing type or a missing required child and lists every other rule break.
 
 ## Write the body
 

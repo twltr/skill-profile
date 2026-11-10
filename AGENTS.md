@@ -24,8 +24,9 @@ Keep the collection a tree. Declare every skill's type in `metadata`
 (`skill-type`, `skill-tree`, `skill-requires`), in the first body line and at the
 start of its short description. Routing skills name their children; children never
 name their callers; no edge crosses into another tree. Run
-`python3 -B skills/core/skill-issue/scripts/skill_graph.py skills` after changing
-references and explain any new mutual pair or cross-tree edge. Measure a domain's
+`python3 -B skills/core/skill-issue/scripts/check_tree.py skills` after changing
+types or references: it must report no ERROR, and explain any new rule finding.
+`skill_graph.py` shows the underlying edges. Measure a domain's
 trigger behavior before making its children explicit-only.
 
 Write skill instructions, metadata descriptions and authored examples in English.

@@ -172,7 +172,9 @@ The type system and the two existing domains are in place:
 Every skill declares its type in `metadata`, in the first line of its body and
 in the prefix of its short description. Not yet done: removing the remaining
 back-references inside the trees, and switching the Software Engineering leaves
-that still fire by themselves to explicit-only after measuring. The [writing map](SKILLS.md#writing-family-map) and the
+that still fire by themselves to explicit-only after measuring.
+`skills/core/skill-issue/scripts/check_tree.py skills` lists every remaining rule
+finding; the installer refuses a collection with a missing type or required child. The [writing map](SKILLS.md#writing-family-map) and the
 [engineering matrix](SKILLS.md#engineering-and-general-map) show what is left;
 `skills/core/skill-issue/scripts/skill_graph.py` measures it.
 

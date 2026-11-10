@@ -167,7 +167,8 @@ for the reader and purpose` — in `agents/openai.yaml` and
 
 **Check dependencies when installing, not while working.** The collection's
 installation tooling should refuse to install a routing skill whose required
-children are missing, and report edges that point up or across trees. The stop
+children are missing, and report edges that point up or across trees;
+`scripts/check_tree.py` does both and can be called by an installer. The stop
 line in the body is the fallback for hosts the tooling does not cover. To
 distribute a tree as a whole, package it together, for example as one plugin.
 

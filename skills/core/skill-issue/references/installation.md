@@ -55,7 +55,7 @@ A `SKILL.md` begins with YAML metadata describing the task:
 
 ```yaml
 ---
-name: design-review
+name: interface-audit
 description: Review a proposed interface for usability, visual hierarchy and consistency with its design system.
 ---
 ```
@@ -64,7 +64,7 @@ For Codex, a separate `agents/openai.yaml` can configure presentation and policy
 
 ```yaml
 interface:
-  display_name: "Design Review"
+  display_name: "Interface Audit"
   short_description: "Review interface usability and visual design"
 policy:
   allow_implicit_invocation: false

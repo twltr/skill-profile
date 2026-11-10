@@ -64,6 +64,26 @@ def aliases_for(name, directory):
     return found
 
 
+def references(name, directory, patterns):
+    """Count mentions of other skills in a skill's SKILL.md and references/*.md."""
+    files = [directory / "SKILL.md", *sorted((directory / "references").glob("*.md"))]
+    text = "\n".join(path.read_text(encoding="utf-8") for path in files)
+    text = MEMBERSHIP.sub("", text)
+    counts = Counter()
+    for alias, owner in patterns:
+        if ONE_WORD.fullmatch(alias):
+            word = re.escape(alias)
+            regex = re.compile(rf"`{word}`|\*\*{word}\*\*|(?<![\w-]){word}(?= (?:skill|domain)\b)")
+        else:
+            regex = re.compile(r"(?<![\w-])" + re.escape(alias) + r"(?![\w-])")
+        hits = len(regex.findall(text))
+        # Blank matched spans so a shorter alias cannot match inside a longer one.
+        text = regex.sub(lambda m: " " * len(m.group(0)), text)
+        if hits and owner != name:
+            counts[owner] += hits
+    return dict(counts.most_common())
+
+
 def main(argv):
     as_json = "--json" in argv
     roots = [arg for arg in argv if arg != "--json"]
@@ -76,24 +96,7 @@ def main(argv):
         ((alias, owner) for owner, directory in skills.items() for alias in aliases_for(owner, directory)),
         key=lambda pair: -len(pair[0]),
     )
-    edges = {}
-    for name, directory in skills.items():
-        files = [directory / "SKILL.md", *sorted((directory / "references").glob("*.md"))]
-        text = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        text = MEMBERSHIP.sub("", text)
-        counts = Counter()
-        for alias, owner in patterns:
-            if ONE_WORD.fullmatch(alias):
-                word = re.escape(alias)
-                regex = re.compile(rf"`{word}`|\*\*{word}\*\*|(?<![\w-]){word}(?= (?:skill|domain)\b)")
-            else:
-                regex = re.compile(r"(?<![\w-])" + re.escape(alias) + r"(?![\w-])")
-            hits = len(regex.findall(text))
-            # Blank matched spans so a shorter alias cannot match inside a longer one.
-            text = regex.sub(lambda m: " " * len(m.group(0)), text)
-            if hits and owner != name:
-                counts[owner] += hits
-        edges[name] = dict(counts.most_common())
+    edges = {name: references(name, directory, patterns) for name, directory in skills.items()}
 
     inbound = Counter(target for targets in edges.values() for target in targets)
     mutual = sorted({tuple(sorted((a, b))) for a, targets in edges.items() for b in targets if a in edges.get(b, {})})

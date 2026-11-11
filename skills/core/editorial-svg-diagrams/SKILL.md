@@ -1,7 +1,7 @@
 ---
 name: editorial-svg-diagrams
 description: >-
-  Create explanatory diagrams for documentation, architecture, workflows and learning material as editable transparent SVGs with theme variants and PNG/PDF exports. Use whenever a concept, system, process or relationship would be clearer as a figure, in a README, article, slide or web page, even if the user only says "draw how this works". Use SVG Design for logos, icons, brand assets and decorative website graphics.
+  Create explanatory diagrams for documentation, architecture, workflows and learning material as editable transparent SVGs with theme variants and PNG/PDF exports. Use whenever a concept, system, process, relationship or annotated formula would be clearer as a figure, in a README, article, slide or web page, even if the user only says "draw how this works". Use SVG Design for logos, icons, brand assets and decorative website graphics.
 metadata:
   skill-type: core
 ---
@@ -57,8 +57,16 @@ The order matters: a figure planned around its text ends up as text in boxes.
 Fix the takeaway and remove the prose first, then choose the form, then draw.
 
 1. **Name one visual takeaway.** Write privately: "After seeing the figure, the reader should perceive ____." Examples: the three directions of SYN/SYN-ACK/ACK; every network header wrapping the preceding data; knowing one location versus having eight possibilities. Verify semantics against source material, code, or explicit assumptions.
-2. **Remove prose before drawing.** Put chapter title, definition, caveats, citations, explanations, and conclusion in the *surrounding text*. Keep labels attached to actual shapes, regions, or arrows only. Default visible content: at most ~12 short labels / ~35 words, each label ideally 1–3 words. These are targets, not grounds to omit indispensable data; `visual_guard.py` only warns above 35 words or 24 labels, so passing it does not mean the figure is lean. If explaining requires several sentences inside the figure, split the figure or write those sentences outside it.
-3. **Choose the representation before its layout.** Ask for every figure: **Which visual form explains this question most clearly? How can I draw it most cleanly?** Compare plausible alternatives against the same takeaway before choosing: containment, layers, timeline, sequence, state, queue, matrix, repeated slots, or a true dependency topology. Read [references/visual-patterns.md](references/visual-patterns.md). A table, short text, or no extra figure may be clearer. Choose by the relationship, never by habit or a quota for variety. Reusing boxes and arrows for every subject is not a visual system; consistent typography and geometry can unify different diagram types.
+2. **Remove prose before drawing.** Put chapter title, definition, caveats, citations, explanations, and conclusion in the *surrounding text*. Keep labels attached to actual shapes, regions, or arrows only. Default visible content: at most ~12 short labels / ~35 words, each label ideally 1–3 words. These are targets, not grounds to omit indispensable data; `visual_guard.py` only warns above 35 words or 24 labels, so passing it does not mean the figure is lean. A node may carry one short sub-line of about five words when it states the difference the figure is about (`server keeps a hash` against `server keeps a public key`); a sentence is still prose. If explaining requires several sentences inside the figure, split the figure or write those sentences outside it.
+3. **Choose the representation before its layout.** Ask for every figure: **Which visual form explains this question most clearly? How can I draw it most cleanly?** Compare plausible alternatives against the same takeaway before choosing: containment, layers, timeline, sequence, state, queue, matrix, repeated slots, proportional parts, parallel routes, a specimen grid, an annotated formula, or a true dependency topology. Read [references/visual-patterns.md](references/visual-patterns.md). A table, short text, or no extra figure may be clearer. Choose by the relationship, never by habit or a quota for variety. Reusing boxes and arrows for every subject is not a visual system; consistent typography and geometry can unify different diagram types.
+
+   Then write the choice down in one line and keep it for delivery:
+
+   ```text
+   Form: parallel routes, not a sequence — the reader compares two ways to one result.
+   ```
+
+   A comparison that stays private is the one that gets skipped, and a chain of boxes and arrows is where the skip hides, because every subject can be forced into it. Choose that chain only when the connections themselves are the subject, and let the line say so. When one document gets several figures, a repeated form needs the same kind of reason: the same relationship again, not the form that was already at hand.
 4. **Plan the geometry, then compose to the content.** Sketch the alignment axes, peer sizes, repeated gaps, group padding and connector channels before drawing details. Use a small spacing unit; align related centers or edges and give equal relationships equal spacing. Route each connector between intentional ports through free space, without passing through unrelated nodes, labels or borders. Prefer a short clear route to unexplained bends; use shared buses only for a real shared relationship. Fit a tight `viewBox` to the result and keep the frame free of what the [style contract](#the-style-contract-hard-defaults) excludes.
 5. **Draw accurately with restrained visual grammar.** Use SVG primitives (`rect`, `circle`, `path`, `line`, `text`), clean route geometry, 2–4px arrows, enough spacing, consistent radii, blue/teal as default semantic accents. Show all labels at sizes readable at final embedding width. Read [references/svg-construction.md](references/svg-construction.md) when building or teaching.
 6. **Handle color and backgrounds intentionally.** Keep the canvas transparent. Use neutral strokes/text plus a few meaningful accent fills. For static SVG, use dark text/strokes on light surroundings and light text/strokes in the explicit dark variant; use embedded `prefers-color-scheme` CSS only as progressive enhancement. Check with two different backgrounds. Do not assume `currentColor` in an external SVG `<img>` inherits the page theme; it does not.
@@ -77,8 +85,49 @@ Fix the takeaway and remove the prose first, then choose the form, then draw.
    - typography, clipping, contrast and arrowheads;
    - with the labels ignored for a moment: does the geometry itself expose the intended order or relationship?
 
-   Reconsider the diagram type if a tidy arrangement still needs awkward detours or diffuse placement. Fix and re-render every affected variant. Passing lints does not establish visual quality: if no renderer is available (previews need `cairosvg` and Pillow), report the visual check as open.
-8. **Deliver usable assets without unnecessary commentary.** Return SVG and, when relevant, PNG/PDF or variants. Put factual caveats as adjacent prose/captions, not visible text drawn into the SVG. Describe what differs across variants where it matters.
+   Reconsider the diagram type if a tidy arrangement still needs awkward detours or diffuse placement. Fix and re-render every affected variant. Passing lints does not establish visual quality: if no renderer is available (previews need `cairosvg` and Pillow), report the visual check as open. Inkscape alone is enough to look at a variant on its surface: `inkscape figure.dark.svg --export-filename=figure.dark.png --export-width=900 --export-background='#16191c'`.
+8. **Deliver usable assets without unnecessary commentary.** Return SVG and, when relevant, PNG/PDF or variants, with the form line from step 3 so the reader of the result can question the choice. The form line goes in the reply or hand-off, never into the figure or the document. Put factual caveats as adjacent prose/captions, not visible text drawn into the SVG. Describe what differs across variants where it matters.
+
+## Put the subject itself in the figure
+
+A correct figure can still be lifeless: abstract nouns in identical boxes. The
+reader understands faster when the figure contains the thing, not its name.
+These are choices to weigh for every figure, not decoration to add.
+
+- **Literal sample values.** Write `48 69 21` and `SGkh`, not "bytes" and
+  "encoded text"; a real value lets the reader check the step
+  ([base64-roundtrip.svg](assets/base64-roundtrip.svg)).
+- **Specimens.** Show the actual glyph, state or pattern with its code beneath
+  instead of describing it ([quadrant-glyphs.svg](assets/quadrant-glyphs.svg)).
+- **Drawn quantities.** Let length or area carry a number and print the number
+  beside it ([time-budget.svg](assets/time-budget.svg)). Compute the geometry
+  from the values; a bar that only looks about right is a false statement.
+- **One accent.** Color the element the takeaway is about and leave its peers
+  neutral ([login-routes.svg](assets/login-routes.svg)). Color on everything
+  marks nothing. Parts of a whole are the exception: each part is a subject and
+  needs its own hue.
+- **Chips and icons only where they separate peers.** A small tag or a simple
+  drawn object earns its place when it tells two otherwise similar nodes apart.
+
+Take sample values from the verified source or mark them as illustrative in
+the surrounding text; an invented number that looks measured misleads.
+
+## Formulas as figures
+
+Running text gets its formulas from the destination's own math rendering. Draw
+a formula when its *terms need pointing at*, or when the destination renders no
+math at all (see [references/embedding-and-formats.md](references/embedding-and-formats.md#formulas)).
+The figure adds what typeset math cannot: a bracket or color per term naming its
+role, and where it helps, the behaviour the formula produces drawn beneath it.
+[backoff-formula.svg](assets/backoff-formula.svg) labels `cap`, `base` and `2ⁿ`
+and shows the wait doubling until it meets the ceiling.
+
+Set each term as its own centred `<text>` at a fixed x, so brackets stay under
+their terms whichever fallback font renders the file. Hand-set only single-line
+notation. Fractions, roots and stacked indices need a TeX-to-SVG renderer;
+without one, rewrite the formula on one line or report the figure as open
+instead of faking the layout with nudged text. Keep the formula as searchable
+text beside the figure either way.
 
 ## The style contract (hard defaults)
 
@@ -86,7 +135,7 @@ Each default protects the figure's job of showing one relationship; break one
 only when the user asks for it.
 
 - **No root background fill** (`<rect width="100%" height="100%" fill="#fff">`, etc.) unless the user explicitly asks for a fixed-background image. Keep SVG alpha transparent and let the destination own its page color.
-- **No gratuitous text as graphics:** no explanatory paragraphs, title/subtitle, glossary, source attribution, legend or outcome prose inside the SVG by default. Semantic `<title>` and `<desc>` are *nonvisual metadata* and should remain.
+- **No gratuitous text as graphics:** no explanatory paragraphs, title/subtitle, glossary, source attribution, legend or outcome prose inside the SVG by default. Rows that name the parts of a drawn quantity are labels, not a legend to decode. Semantic `<title>` and `<desc>` are *nonvisual metadata* and should remain.
 - **No page furniture in the frame:** no floating whitespace, built-in title strip, decorative eyebrow, page-colored rectangle, giant footer or whole-document card frame. A host border belongs to the surrounding document.
 - **No generic dashboards:** avoid multiple equal cards with filler text and icons if a single arrow, progression or state contrast conveys more.
 - **No forced fixed artboard:** fit `viewBox` tightly; prefer shape-to-area and visual balance over defaulting to 960×600.
@@ -110,6 +159,12 @@ variant. Their editable SVGs are preserved from the supplied test archive; the
 import manifest records their provenance. Compare the visual mechanism, not
 identical styling: shrinking region, diverging paths, or input/output timing.
 
+The five figures added on 2026-11-11 (time budget, login routes, Base64 round
+trip, quadrant glyphs, backoff formula) widen the range of forms. The owner
+accepted them as benchmarks the same day. They stay in `assets/` because
+`scripts/build_examples.py` generates them; `assets/accepted/` holds the
+imported figures.
+
 When asked to recreate a provided figure, inspect or crop the figure itself
 rather than importing surrounding page chrome into the art.
 
@@ -127,6 +182,11 @@ rather than importing surrounding page chrome into the art.
 | `assets/pc-connection.svg`, `.dark.svg` | Two endpoints, direction and ports |
 | `assets/osi-layers.svg`, `.dark.svg` | Lean layer stack |
 | `assets/codebase-architecture.svg`, `.dark.svg` | Deliberately generic 3-component example, not a verified codebase |
+| `assets/time-budget.svg`, `.dark.svg` | Proportional parts of a whole with their numbers |
+| `assets/login-routes.svg`, `.dark.svg` | Two parallel routes into one shared result, one accented difference |
+| `assets/base64-roundtrip.svg`, `.dark.svg` | Transformation chain with literal sample values in the nodes |
+| `assets/quadrant-glyphs.svg`, `.dark.svg` | Specimen grid: the patterns themselves with their codes |
+| `assets/backoff-formula.svg`, `.dark.svg` | Annotated formula above the behaviour it produces |
 | `assets/starter.svg`, `.dark.svg` | Tiny editable starting point |
 | `assets/accepted/` | The three accepted benchmark figures and their dark variants |
 | `scripts/build_examples.py` | Deterministically rebuild the generated examples and variants |
@@ -147,8 +207,9 @@ those embedded in websites, presentations and articles, with their editable SVG,
 themes, exports and visual checks. A process diagram on a landing page belongs
 here; the site's logo, icon set and decorative hero artwork do not.
 
-Logos, icons, brand assets, decorative web graphics and the surrounding page
-layout are design work, not explanatory figures. Hand those parts back to the
+Logos, icons, brand assets, decorative web graphics, the surrounding page
+layout and interactive widgets with controls are design or interface work, not
+explanatory figures. Hand those parts back to the
 agent with the figure's purpose and space constraints, so it can take them to a
 design method. Without one, follow the existing design system and keep this
 work within the figure's scope.

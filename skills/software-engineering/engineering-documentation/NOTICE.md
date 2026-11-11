@@ -45,3 +45,9 @@ trials on the actual host. The research does not justify more always-loaded text
 These sources were summarized independently; their pages and papers were not
 copied into the package. SVG construction and prose mechanics remain owned by
 Editorial SVG Diagrams and Unslop.
+
+On 2026-11-11 the owner asked that invariants, rules and quantitative
+relationships be stated in notation where that is more exact. Section 7 is
+newly authored for that; its identifiers, values and paths are fictional.
+Destination math rendering is owned by Editorial SVG Diagrams' embedding
+reference. No fresh model trials of the revised method were run.

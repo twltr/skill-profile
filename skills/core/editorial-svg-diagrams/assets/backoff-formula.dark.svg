@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="238" viewBox="0 0 600 238" role="img" aria-labelledby="backoffformula-title backoffformula-desc">
+<title id="backoffformula-title">Capped exponential backoff</title>
+<desc id="backoffformula-desc">delay = min(cap, base times 2 to the power n). The wait doubles with every retry n until it reaches the ceiling cap; shown for base 1 second and cap 30 seconds.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="backoffformula-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="backoffformula-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="70" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">delay</text>
+<text x="140" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">=</text>
+<text x="200" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">min(</text>
+<text x="275" y="42" class="f-ochre mono" text-anchor="middle" style="font-size:30px;font-weight:600">cap</text>
+<text x="318" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">,</text>
+<text x="385" y="42" class="f-blue mono" text-anchor="middle" style="font-size:30px;font-weight:600">base</text>
+<text x="455" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">×</text>
+<text x="560" y="42" class="f-ink mono" text-anchor="middle" style="font-size:30px;font-weight:600">)</text>
+<text x="515" y="42" class="f-teal mono" text-anchor="middle" style="font-size:30px;font-weight:600">2<tspan dy="-13" style="font-size:20px">n</tspan></text>
+<path d="M246 56 V64 H304 V56" fill="none" class="s-ochre" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="275.0" y="86" class="f-ink tiny" text-anchor="middle" >ceiling</text>
+<path d="M347 56 V64 H423 V56" fill="none" class="s-blue" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="385.0" y="86" class="f-ink tiny" text-anchor="middle" >first wait</text>
+<path d="M494 56 V64 H536 V56" fill="none" class="s-teal" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"  />
+<text x="515.0" y="86" class="f-ink tiny" text-anchor="middle" >doubles per retry</text>
+<path d="M96 128.0 L512 128.0" fill="none" class="s-ochre" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="5 7"/>
+<text x="522" y="133.0" class="f-ink tiny" text-anchor="start" >cap</text>
+<text x="84" y="230" class="f-muted tiny mono" text-anchor="end" >n</text>
+<rect x="104" y="203.4" width="36" height="2.6" rx="3" class="f-teal" />
+<text x="122" y="230" class="f-muted tiny mono" text-anchor="middle" >0</text>
+<rect x="162" y="200.8" width="36" height="5.2" rx="3" class="f-teal" />
+<text x="180" y="230" class="f-muted tiny mono" text-anchor="middle" >1</text>
+<rect x="220" y="195.6" width="36" height="10.4" rx="3" class="f-teal" />
+<text x="238" y="230" class="f-muted tiny mono" text-anchor="middle" >2</text>
+<rect x="278" y="185.2" width="36" height="20.8" rx="3" class="f-teal" />
+<text x="296" y="230" class="f-muted tiny mono" text-anchor="middle" >3</text>
+<rect x="336" y="164.4" width="36" height="41.6" rx="3" class="f-teal" />
+<text x="354" y="230" class="f-muted tiny mono" text-anchor="middle" >4</text>
+<rect x="394" y="128.0" width="36" height="78.0" rx="3" class="f-ochre" />
+<text x="412" y="230" class="f-muted tiny mono" text-anchor="middle" >5</text>
+<rect x="452" y="128.0" width="36" height="78.0" rx="3" class="f-ochre" />
+<text x="470" y="230" class="f-muted tiny mono" text-anchor="middle" >6</text>
+</svg>

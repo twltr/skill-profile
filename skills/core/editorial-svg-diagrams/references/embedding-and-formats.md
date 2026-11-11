@@ -34,6 +34,26 @@ For a paper use the light SVG on the paper. For a dark deck use `.dark.svg` or r
 | Word / PowerPoint | SVG if tool supports it, else PNG | Inspect final export at target size |
 | Reports / slides | Inline SVG or vector PDF | Put figure title and explanatory caption in document layout |
 
+## Formulas
+
+Prefer the destination's own math rendering for formulas in running text, and
+verify it on the actual destination: Markdown itself defines no math syntax
+(CommonMark has none), so support is a host feature.
+
+| Destination | Native math (checked 2026-11-11) | Otherwise |
+|---|---|---|
+| GitHub Markdown | `$…$` inline, `$$…$$` or a `math` fenced block; rendered with MathJax. Use the `` $`…`$ `` inline form when the expression clashes with Markdown syntax. [Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions) | n/a |
+| GitLab Markdown | Same delimiters; rendered with KaTeX, which supports a subset of LaTeX. [Docs](https://docs.gitlab.com/user/markdown/) | n/a |
+| npm package page, other Markdown viewers | No documented support found | Single-line notation in a code span or block, or a figure |
+| LaTeX, Word, slides | The document's own equation tools | n/a |
+
+Draw the formula as a figure when its terms need labels or no native rendering
+exists. A hand-written SVG carries single-line notation reliably; for built-up
+layout use a TeX-to-SVG renderer such as the `tex2svg` tool in
+[MathJax's Node demos](https://github.com/mathjax/MathJax-demos-node), and keep
+the TeX source with the figure, because the output is outlines, not editable
+text. That tool was identified from its documentation, not run for this skill.
+
 ## Output dimensions and text
 
 Fit the SVG's `viewBox` to the actual content. A wide 820×350 colored band figure becomes illegible at 8cm print width; in narrow columns reduce nodes and labels rather than squeezing. Test at actual expected final insertion width; 16–22 SVG-unit text sizes are good starting points but physical size matters. Preserve editable `<text>` and never require remote font downloads.

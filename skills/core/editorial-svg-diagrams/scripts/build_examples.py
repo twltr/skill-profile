@@ -207,6 +207,101 @@ def starter():
     return 665,213,'\n'.join(b),'Minimal two-node figure','A sender points to a receiver. Minimal labels, transparent background, no title inside the visible diagram.'
 
 
+def outline(x,y,w,h,r,col,width=2.4):
+    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="none" class="s-{col}" stroke-width="{width}"/>'
+
+
+def time_budget():
+    # Parts of a whole: segment widths are the data, the rows only name them.
+    parts=[('Network',0.9,'blue'),('Render',0.6,'teal'),('Script',0.3,'ochre')]
+    total=sum(v for _,v,_ in parts); x0=12; W=616
+    b=[text(x0,34,'Page load','f-muted small'),
+       text(x0+W,36,f'{total:.1f} s','f-ink label','end','style="font-size:30px;font-weight:700"')]
+    cur=x0
+    for i,(name,value,col) in enumerate(parts):
+        w=W*value/total
+        b.append(rect(round(cur,1),54,round(w-3,1),30,6,'f-'+col))
+        cur+=w
+        y=126+i*38
+        b.append(rect(x0,y-14,14,14,3,'f-'+col))
+        b.append(text(x0+26,y,name,'f-ink label'))
+        b.append(text(x0+W,y,f'{value:.1f} s','f-ink label','end'))
+    return 640,216,'\n'.join(b),'Where page load time goes','Page load of 1.8 seconds split proportionally: network 0.9 s, render 0.6 s, script 0.3 s. Values are illustrative.'
+
+
+def login_routes():
+    # Two parallel routes that end in one shared node; only the middle step differs.
+    b=[]
+    for cx,col,head,start,check,store in [
+        (160,'blue','Password','Typed secret','Hash compare','server keeps a hash'),
+        (480,'teal','Passkey','Device key','Signature check','server keeps a public key')]:
+        x=cx-120
+        b.append(text(cx,26,head,'f-ink label','middle'))
+        b.append(rect(x,44,240,52,10,'f-neutralwash')); b.append(outline(x,44,240,52,10,'border',2))
+        b.append(text(cx,77,start,'f-ink small','middle'))
+        b.append(path(f'M{cx} 100 V122','s-'+col,3,f'loginroutes-{col}-arrow'))
+        b.append(rect(x,126,240,68,10,'f-'+col+'wash')); b.append(outline(x,126,240,68,10,col))
+        b.append(text(cx,156,check,'f-ink label','middle'))
+        b.append(text(cx,180,store,'f-muted tiny','middle'))
+        b.append(path(f'M{cx} 198 V236','s-'+col,3,f'loginroutes-{col}-arrow'))
+    b.append(rect(40,240,560,52,10,'f-greenwash')); b.append(outline(40,240,560,52,10,'green'))
+    b.append(text(320,273,'Session','f-ink label','middle'))
+    return 640,304,'\n'.join(b),'Password and passkey login','Two parallel routes reach the same session. Password: typed secret, hash compare against a stored hash. Passkey: device key, signature check against a stored public key.'
+
+
+def base64_roundtrip():
+    # The same data in three notations; literal sample values sit inside the nodes.
+    b=[]
+    nodes=[(12,'Hi!','Text','border','neutralwash'),(290,'48 69 21','3 bytes','blue','bluewash'),(568,'SGkh','4 characters','teal','tealwash')]
+    for x,value,role,col,wash in nodes:
+        b.append(rect(x,24,180,64,10,'f-'+wash)); b.append(outline(x,24,180,64,10,col,2.2))
+        b.append(text(x+90,64,value,'f-ink label mono','middle'))
+        b.append(text(x+90,114,role,'f-muted small','middle'))
+    for x1,x2,lab in [(196,286,'UTF-8'),(474,564,'Base64')]:
+        b.append(text((x1+x2)/2,34,lab,'f-muted tiny','middle'))
+        b.append(path(f'M{x1} 48 H{x2}','s-blue',3,'base64roundtrip-blue-arrow'))
+        b.append(path(f'M{x2} 68 H{x1}','s-teal',3,'base64roundtrip-teal-arrow'))
+    return 760,126,'\n'.join(b),'Base64 round trip','The text Hi! is the three bytes 48 69 21 in UTF-8 and the four characters SGkh in Base64; each step is reversible.'
+
+
+def quadrant_glyphs():
+    # Specimen grid: show the things themselves, each with its code.
+    codes=['1000','0100','0010','0001','1001','0110','1110','1111']
+    b=[]
+    for i,code in enumerate(codes):
+        tx=12+(i%4)*142; ty=10+(i//4)*130
+        b.append(outline(tx,ty,130,118,10,'border',2))
+        gx=tx+45; gy=ty+16
+        for k,bit in enumerate(code):
+            if bit=='1': b.append(rect(gx+(k%2)*20,gy+(k//2)*30,20,30,0,'f-teal'))
+        b.append(outline(gx,gy,40,60,0,'guide',1.4))
+        b.append(text(tx+65,ty+102,code,'f-ink small mono','middle'))
+    return 580,268,'\n'.join(b),'Quadrant block characters as four bits','Eight of the sixteen quadrant patterns of one character cell. The four bits name the top-left, top-right, bottom-left and bottom-right quadrant.'
+
+
+def backoff_formula():
+    # An annotated formula above its behaviour. Every term is its own centred
+    # <text>, so the brackets stay aligned whichever fallback font renders it.
+    big='style="font-size:30px;font-weight:600"'
+    b=[]
+    for cx,term,col in [(70,'delay','ink'),(140,'=','ink'),(200,'min(','ink'),(275,'cap','ochre'),(318,',','ink'),(385,'base','blue'),(455,'×','ink'),(560,')','ink')]:
+        b.append(text(cx,42,term,f'f-{col} mono','middle',big))
+    b.append(f'<text x="515" y="42" class="f-teal mono" text-anchor="middle" {big}>2<tspan dy="-13" style="font-size:20px">n</tspan></text>')
+    for x1,x2,lab,col in [(246,304,'ceiling','ochre'),(347,423,'first wait','blue'),(494,536,'doubles per retry','teal')]:
+        b.append(path(f'M{x1} 56 V64 H{x2} V56','s-'+col,2))
+        b.append(text((x1+x2)/2,86,lab,'f-ink tiny','middle'))
+    # base = 1 s, cap = 30 s: 1, 2, 4, 8, 16, then held at the ceiling.
+    base_y=206; scale=2.6
+    b.append(line(96,base_y-30*scale,512,base_y-30*scale,'s-ochre',1.8,'5 7'))
+    b.append(text(522,base_y-30*scale+5,'cap','f-ink tiny'))
+    b.append(text(84,base_y+24,'n','f-muted tiny mono','end'))
+    for n in range(7):
+        raw=2**n; value=min(30,raw); x=104+n*58; h=round(value*scale,1)
+        b.append(rect(x,round(base_y-h,1),36,h,3,'f-ochre' if raw>30 else 'f-teal'))
+        b.append(text(x+18,base_y+24,n,'f-muted tiny mono','middle'))
+    return 600,238,'\n'.join(b),'Capped exponential backoff','delay = min(cap, base times 2 to the power n). The wait doubles with every retry n until it reaches the ceiling cap; shown for base 1 second and cap 30 seconds.'
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--out',type=Path,default=ASSETS)
@@ -220,6 +315,11 @@ def main():
         'osi-layers':layers,
         'codebase-architecture':architecture,
         'starter':starter,
+        'time-budget':time_budget,
+        'login-routes':login_routes,
+        'base64-roundtrip':base64_roundtrip,
+        'quadrant-glyphs':quadrant_glyphs,
+        'backoff-formula':backoff_formula,
     }
     for name,fn in figures.items():
         w,h,body,title,description=fn()

@@ -338,7 +338,43 @@ meaning and required tooling. Verify the replacement before retiring its old
 asset. Do not sweep unrelated diagrams. The figure and text describe one model;
 update and check them together when that model changes.
 
-## 7. Verify the reading paths and maintain the result
+## 7. State rules and invariants in notation when that is exact
+
+An invariant, a limit, a schedule, a capacity or cost relationship, or a
+complexity bound is often more exact as a predicate or formula than as a
+sentence, and easier to check against the code. Use notation there. For the
+fictional turn model:
+
+```text
+Invariant   accepted(t) ⇒ reviewed(t)          for every turn t
+Retry       delay(n) = min(RETRY_CAP, RETRY_BASE · 2ⁿ)
+            RETRY_BASE = 1 s, RETRY_CAP = 30 s  →  1, 2, 4, 8, 16, 30, 30 s
+Enforced    runtime/turns/state.py:accept · tests/turns/test_retry.py
+```
+
+- Use the code's own identifiers as symbols, so a search for `RETRY_CAP` finds
+  both the rule and its implementation.
+- Read the rule out of the implementation or its tests, not out of memory of
+  the algorithm's textbook form. Say whether it is implemented, intended or
+  planned.
+- Anchor it to the code or test that enforces it. A formula without an
+  enforcing owner is a claim; the code owns the truth, and the formula changes
+  in the same work as the code.
+- Give one worked instance with real values, and the range where the rule holds.
+- Keep the derivation beside the code that needs it; the docs state the
+  contract and link there.
+
+Do not formalize what a sentence already states exactly, and do not invent a
+guarantee by writing it as a theorem.
+
+Check the destination's math rendering before choosing syntax: Markdown defines
+none, GitHub and GitLab add `$…$` and `math` blocks, many viewers and package
+pages show raw source. Single-line notation in a code block, as above, reads
+everywhere and stays searchable. When the terms need labelling or the layout
+needs more than one line, ask Editorial SVG Diagrams for a formula figure, with
+the formula kept as text beside it.
+
+## 8. Verify the reading paths and maintain the result
 
 Apply Unslop, if available, to the assembled result: headings, captions, alternatives
 and surrounding prose as well as the body. Cut redundancy hard. Do not use a fixed
@@ -356,7 +392,8 @@ clarity check directly without claiming the method was loaded.
   future extensions; a row of names and URLs is not a substitute for that model.
   Label a desk walkthrough separately from an actual agent trial; do not claim
   measured effectiveness from a tidy file tree or subagent agreement.
-- Check facts, commands, links and diagram transitions against their owners. Run
+- Check facts, commands, links, diagram transitions and stated formulas or
+  invariants against their owners; recompute each worked instance. Run
   safe examples in the supported environment; do not deploy or mutate production
   just to verify documentation without the corresponding authorization.
 - Inspect rendered pages and figures at actual reading width, including relevant

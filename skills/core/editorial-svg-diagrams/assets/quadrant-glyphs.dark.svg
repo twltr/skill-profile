@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="268" viewBox="0 0 580 268" role="img" aria-labelledby="quadrantglyphs-title quadrantglyphs-desc">
+<title id="quadrantglyphs-title">Quadrant block characters as four bits</title>
+<desc id="quadrantglyphs-desc">Eight of the sixteen quadrant patterns of one character cell. The four bits name the top-left, top-right, bottom-left and bottom-right quadrant.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="quadrantglyphs-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="quadrantglyphs-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="12" y="10" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="57" y="26" width="20" height="30" rx="0" class="f-teal" />
+<rect x="57" y="26" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="77" y="112" class="f-ink small mono" text-anchor="middle" >1000</text>
+<rect x="154" y="10" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="219" y="26" width="20" height="30" rx="0" class="f-teal" />
+<rect x="199" y="26" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="219" y="112" class="f-ink small mono" text-anchor="middle" >0100</text>
+<rect x="296" y="10" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="341" y="56" width="20" height="30" rx="0" class="f-teal" />
+<rect x="341" y="26" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="361" y="112" class="f-ink small mono" text-anchor="middle" >0010</text>
+<rect x="438" y="10" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="503" y="56" width="20" height="30" rx="0" class="f-teal" />
+<rect x="483" y="26" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="503" y="112" class="f-ink small mono" text-anchor="middle" >0001</text>
+<rect x="12" y="140" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="57" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="77" y="186" width="20" height="30" rx="0" class="f-teal" />
+<rect x="57" y="156" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="77" y="242" class="f-ink small mono" text-anchor="middle" >1001</text>
+<rect x="154" y="140" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="219" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="199" y="186" width="20" height="30" rx="0" class="f-teal" />
+<rect x="199" y="156" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="219" y="242" class="f-ink small mono" text-anchor="middle" >0110</text>
+<rect x="296" y="140" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="341" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="361" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="341" y="186" width="20" height="30" rx="0" class="f-teal" />
+<rect x="341" y="156" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="361" y="242" class="f-ink small mono" text-anchor="middle" >1110</text>
+<rect x="438" y="140" width="130" height="118" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<rect x="483" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="503" y="156" width="20" height="30" rx="0" class="f-teal" />
+<rect x="483" y="186" width="20" height="30" rx="0" class="f-teal" />
+<rect x="503" y="186" width="20" height="30" rx="0" class="f-teal" />
+<rect x="483" y="156" width="40" height="60" rx="0" fill="none" class="s-guide" stroke-width="1.4"/>
+<text x="503" y="242" class="f-ink small mono" text-anchor="middle" >1111</text>
+</svg>

@@ -1,4 +1,4 @@
-# Maintaining the Skill Profile
+# Maintaining Skill Tree
 
 This repository is the canonical source for Tobi's curated agent skills. Read
 README.md, SKILLS.md and the complete skill being changed before editing it.

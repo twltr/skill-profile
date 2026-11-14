@@ -25,6 +25,27 @@ choose a table or text when a picture adds no useful structure.
 | Timing / availability | Aligned time axes or intervals | When something exists or changes | Eager versus on-demand acquisition |
 | Shared stages / validation | A rail with checkpoints or gates | What must pass before progress continues | Installation or request validation |
 | Comparing independent conditions | A matrix with stable row/column meanings | Which condition affects which outcome | Resume causes versus continuation owners |
+| Parts of a whole | One bar or area split in proportion, each part named with its number | Share of the total | `time-budget.svg` |
+| Two ways to one result | Parallel aligned routes that merge into a shared node; only the differing step accented | What is the same and where the routes differ | `login-routes.svg` |
+| One thing in several notations / a conversion | A chain whose nodes hold the literal value and whose arrows name the operation | The value itself changing form | `base64-roundtrip.svg` |
+| A family of variants | A specimen grid: each tile shows the thing itself above its code or name | The variants and their system | `quadrant-glyphs.svg` |
+| What a formula's terms do | Formula with one bracket or color per term, behaviour drawn beneath | Which term causes which effect | `backoff-formula.svg` |
+| Splitting a set into groups | Adjacent regions holding the actual members | Membership, and what crosses the boundary | Variables `a, b` beside `c, d`, with the clauses that span both |
+| One step inside a cycle or route | A short strip of stations with only the subject accented | Where the subject sits among its neighbours | A transition zone between running and a station |
+
+## One subject, three candidate forms
+
+Fictional question: *where does a password login differ from a passkey login?*
+
+- A sequence diagram answers "who sends what when" and buries the difference
+  in message seven of twelve.
+- A two-column table lists properties but shows no route.
+- Parallel routes into one shared node put the single differing step side by
+  side and make the common result one shape. That is the takeaway, so that is
+  the form (`login-routes.svg`).
+
+The same subject would deserve the sequence if the question were about the
+order of the exchange.
 
 ## Shared rules
 
@@ -36,4 +57,6 @@ choose a table or text when a picture adds no useful structure.
 - For quantities, use spatial repetition/size/position and minimal numeric labels. Never draw visually misleading counts; distinguish *possible states* from *physical entities*.
 - For repository architecture, establish actual modules and call/data arrows from code inspection; if inaccessible, clearly mark the whole example as illustrative in accompanying prose.
 - Use colored fills to indicate role (blue request/application, teal transport/response, green network, ochre medium); the exact hues are less important than contrast and consistent mapping.
+- Compute proportional geometry from the numbers and keep the numbers visible. Name each part directly at or beside its mark; do not send the reader to a detached color key.
+- In a specimen grid keep every tile the same size and vary only the specimen, so the differences the reader sees are the real ones.
 - Borders are not inherently bad. A border that marks an endpoint or possibility slot is meaningful. A giant card around the entire figure, with a built-in footnote, is usually not.

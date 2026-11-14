@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="304" viewBox="0 0 640 304" role="img" aria-labelledby="loginroutes-title loginroutes-desc">
+<title id="loginroutes-title">Password and passkey login</title>
+<desc id="loginroutes-desc">Two parallel routes reach the same session. Password: typed secret, hash compare against a stored hash. Passkey: device key, signature check against a stored public key.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #1C2936; }
+.s-ink { stroke: #1C2936; }
+.f-muted { fill: #5A6672; }
+.s-muted { stroke: #5A6672; }
+.f-guide { fill: #B2BDC7; }
+.s-guide { stroke: #B2BDC7; }
+.f-border { fill: #BCC6CF; }
+.s-border { stroke: #BCC6CF; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137B77; }
+.s-teal { stroke: #137B77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #E9F1F8; }
+.f-tealwash { fill: #E6F5F2; }
+.f-greenwash { fill: #EAF4ED; }
+.f-neutralwash { fill: #F2F5F7; }
+.f-soft { fill: #778590; }
+.s-soft { stroke: #778590; }
+.f-whitetxt { fill: #FFFFFF; }
+@media (prefers-color-scheme: dark) {
+  .f-ink { fill: #F1F4F6; }
+  .s-ink { stroke: #F1F4F6; }
+  .f-muted { fill: #B2BAC1; }
+  .s-muted { stroke: #B2BAC1; }
+  .f-guide { fill: #49545C; }
+  .s-guide { stroke: #49545C; }
+  .f-border { fill: #444B50; }
+  .s-border { stroke: #444B50; }
+  .f-blue { fill: #3979A5; }
+  .s-blue { stroke: #3979A5; }
+  .f-teal { fill: #137D77; }
+  .s-teal { stroke: #137D77; }
+  .f-green { fill: #397654; }
+  .s-green { stroke: #397654; }
+  .f-ochre { fill: #95622F; }
+  .s-ochre { stroke: #95622F; }
+  .f-brown { fill: #8B6058; }
+  .s-brown { stroke: #8B6058; }
+  .f-bluewash { fill: #14232E; }
+  .f-tealwash { fill: #102825; }
+  .f-greenwash { fill: #14271C; }
+  .f-neutralwash { fill: #171C20; }
+  .f-soft { fill: #808990; }
+  .s-soft { stroke: #808990; }
+  .f-whitetxt { fill: #FFFFFF; }
+}
+]]></style>
+<defs>
+  <marker id="loginroutes-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="loginroutes-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="160" y="26" class="f-ink label" text-anchor="middle" >Password</text>
+<rect x="40" y="44" width="240" height="52" rx="10" class="f-neutralwash" />
+<rect x="40" y="44" width="240" height="52" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<text x="160" y="77" class="f-ink small" text-anchor="middle" >Typed secret</text>
+<path d="M160 100 V122" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#loginroutes-blue-arrow)" />
+<rect x="40" y="126" width="240" height="68" rx="10" class="f-bluewash" />
+<rect x="40" y="126" width="240" height="68" rx="10" fill="none" class="s-blue" stroke-width="2.4"/>
+<text x="160" y="156" class="f-ink label" text-anchor="middle" >Hash compare</text>
+<text x="160" y="180" class="f-muted tiny" text-anchor="middle" >server keeps a hash</text>
+<path d="M160 198 V236" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#loginroutes-blue-arrow)" />
+<text x="480" y="26" class="f-ink label" text-anchor="middle" >Passkey</text>
+<rect x="360" y="44" width="240" height="52" rx="10" class="f-neutralwash" />
+<rect x="360" y="44" width="240" height="52" rx="10" fill="none" class="s-border" stroke-width="2"/>
+<text x="480" y="77" class="f-ink small" text-anchor="middle" >Device key</text>
+<path d="M480 100 V122" fill="none" class="s-teal" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#loginroutes-teal-arrow)" />
+<rect x="360" y="126" width="240" height="68" rx="10" class="f-tealwash" />
+<rect x="360" y="126" width="240" height="68" rx="10" fill="none" class="s-teal" stroke-width="2.4"/>
+<text x="480" y="156" class="f-ink label" text-anchor="middle" >Signature check</text>
+<text x="480" y="180" class="f-muted tiny" text-anchor="middle" >server keeps a public key</text>
+<path d="M480 198 V236" fill="none" class="s-teal" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#loginroutes-teal-arrow)" />
+<rect x="40" y="240" width="560" height="52" rx="10" class="f-greenwash" />
+<rect x="40" y="240" width="560" height="52" rx="10" fill="none" class="s-green" stroke-width="2.4"/>
+<text x="320" y="273" class="f-ink label" text-anchor="middle" >Session</text>
+</svg>

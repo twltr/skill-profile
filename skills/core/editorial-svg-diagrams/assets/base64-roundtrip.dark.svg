@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="126" viewBox="0 0 760 126" role="img" aria-labelledby="base64roundtrip-title base64roundtrip-desc">
+<title id="base64roundtrip-title">Base64 round trip</title>
+<desc id="base64roundtrip-desc">The text Hi! is the three bytes 48 69 21 in UTF-8 and the four characters SGkh in Base64; each step is reversible.</desc>
+<style><![CDATA[
+  text { font-family: Arial, Helvetica, sans-serif; }
+  .label { font-size: 21px; font-weight: 600; }
+  .small { font-size: 16px; font-weight: 500; }
+  .tiny { font-size: 14px; font-weight: 500; }
+  .mono { font-family: Menlo, Consolas, monospace; }
+.f-ink { fill: #F1F4F6; }
+.s-ink { stroke: #F1F4F6; }
+.f-muted { fill: #B2BAC1; }
+.s-muted { stroke: #B2BAC1; }
+.f-guide { fill: #49545C; }
+.s-guide { stroke: #49545C; }
+.f-border { fill: #444B50; }
+.s-border { stroke: #444B50; }
+.f-blue { fill: #3979A5; }
+.s-blue { stroke: #3979A5; }
+.f-teal { fill: #137D77; }
+.s-teal { stroke: #137D77; }
+.f-green { fill: #397654; }
+.s-green { stroke: #397654; }
+.f-ochre { fill: #95622F; }
+.s-ochre { stroke: #95622F; }
+.f-brown { fill: #8B6058; }
+.s-brown { stroke: #8B6058; }
+.f-bluewash { fill: #14232E; }
+.f-tealwash { fill: #102825; }
+.f-greenwash { fill: #14271C; }
+.f-neutralwash { fill: #171C20; }
+.f-soft { fill: #808990; }
+.s-soft { stroke: #808990; }
+.f-whitetxt { fill: #FFFFFF; }
+]]></style>
+<defs>
+  <marker id="base64roundtrip-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-blue" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="base64roundtrip-teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" class="s-teal" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="12" y="24" width="180" height="64" rx="10" class="f-neutralwash" />
+<rect x="12" y="24" width="180" height="64" rx="10" fill="none" class="s-border" stroke-width="2.2"/>
+<text x="102" y="64" class="f-ink label mono" text-anchor="middle" >Hi!</text>
+<text x="102" y="114" class="f-muted small" text-anchor="middle" >Text</text>
+<rect x="290" y="24" width="180" height="64" rx="10" class="f-bluewash" />
+<rect x="290" y="24" width="180" height="64" rx="10" fill="none" class="s-blue" stroke-width="2.2"/>
+<text x="380" y="64" class="f-ink label mono" text-anchor="middle" >48 69 21</text>
+<text x="380" y="114" class="f-muted small" text-anchor="middle" >3 bytes</text>
+<rect x="568" y="24" width="180" height="64" rx="10" class="f-tealwash" />
+<rect x="568" y="24" width="180" height="64" rx="10" fill="none" class="s-teal" stroke-width="2.2"/>
+<text x="658" y="64" class="f-ink label mono" text-anchor="middle" >SGkh</text>
+<text x="658" y="114" class="f-muted small" text-anchor="middle" >4 characters</text>
+<text x="241.0" y="34" class="f-muted tiny" text-anchor="middle" >UTF-8</text>
+<path d="M196 48 H286" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#base64roundtrip-blue-arrow)" />
+<path d="M286 68 H196" fill="none" class="s-teal" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#base64roundtrip-teal-arrow)" />
+<text x="519.0" y="34" class="f-muted tiny" text-anchor="middle" >Base64</text>
+<path d="M474 48 H564" fill="none" class="s-blue" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#base64roundtrip-blue-arrow)" />
+<path d="M564 68 H474" fill="none" class="s-teal" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#base64roundtrip-teal-arrow)" />
+</svg>

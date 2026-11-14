@@ -16,3 +16,9 @@ learning, doing, understanding and lookup. [W3C WAI's complex-image guidance](ht
 informs concise textual equivalents for explanatory diagrams. Both were reviewed
 on 2026-11-05; neither requires a fixed chapter tree or a graphic on every page.
 The drawing and prose methods remain with Editorial SVG Diagrams and Unslop.
+
+On 2026-11-11 the owner asked that formulas be welcome wherever a relationship,
+rule or invariant is stated more exactly in notation. Section 4 is newly
+authored for that; its backoff example is fictional. Destination math rendering
+is owned by Editorial SVG Diagrams' embedding reference. No fresh model trials
+of the revised method were run.

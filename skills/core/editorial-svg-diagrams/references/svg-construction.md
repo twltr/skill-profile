@@ -59,6 +59,10 @@ The bundled default SVG contains semantic CSS classes with a light palette and a
 
 This follows the browser/OS `prefers-color-scheme` when honored by the SVG renderer. **It is not equivalent to inheriting a parent ChatGPT app theme.** For inline SVG in a host, prefer styling via the host's actual theme system; when using an external `.svg` in an `<img>`, use the authored light/dark variants if the site offers a manual theme toggle. Most raster/PDF converters render one static scheme; use the explicit variant appropriate to the destination.
 
+The light and dark values for every semantic class are the `LIGHT` and `DARK`
+tables in `scripts/build_examples.py`; take colors for a new figure from there
+instead of sampling an example file.
+
 ## 6. Rebuild and test
 
 From the skill folder:
@@ -81,6 +85,8 @@ Change the second arrow's label to `SYN + ACK` and shift its endpoints 15 SVG un
 
 - **Entropy:** 8 slot `<rect>` shapes per row, 1 selected `<circle>` on first row, all candidate circles on second. Keep all circles count-correct.
 - **Packet encapsulation:** preserve blue payload identity, add only one new header/trailer per row; align segment widths to communicate composition.
+- **Proportional parts:** compute each segment width as `total width × value / sum`; print the value beside the part's name. See `time_budget()` in `scripts/build_examples.py`.
+- **Annotated formula:** one centred `<text>` per term at a fixed x, a three-sided bracket path beneath the term, the role label centred under the bracket. Do not rely on measured text widths; fallback fonts differ.
 - **OSI:** 7 aligned colored bands and one short protocol exemplar per row; no visible title or prose in SVG.
 
 Do not use SVG as an excuse to reconstruct an entire article out of `<text>` tags.

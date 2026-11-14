@@ -107,7 +107,45 @@ Do not require repository chapters, AGENTS.md, build instructions or deployment
 steps when the reader's task has none. Conversely, a software command is not
 verified merely because it resembles a familiar tool's syntax.
 
-## 4. Let figures replace the explanation they carry
+## 4. State exact relationships as formulas
+
+When a quantity, rule or limit is more exact in notation than in a sentence,
+write the formula. "The wait roughly doubles up to a maximum" leaves the reader
+to guess the start, the growth and the ceiling. A formula does not:
+
+```text
+delay(n) = min(cap, base · 2ⁿ)
+
+n      retries so far, starting at 0
+base   first wait, 1 s
+cap    longest wait, 30 s
+
+Example: n = 3 gives min(30 s, 1 s · 8) = 8 s; from n = 5 on the wait stays at 30 s.
+```
+
+This device and its values are fictional. The same holds for a tolerance, a
+capacity, a conversion, a threshold or a condition that must always hold.
+
+- Say which question the formula answers before showing it.
+- Define every symbol directly beneath it, with its unit and the product's own
+  name for it. An undefined symbol is a guessed prerequisite.
+- Add one worked example with real numbers so readers can check their reading.
+- State where the formula stops applying and what happens there.
+- Take it from the source. Mark a formula you derived yourself as derived and
+  show from what; do not present it as the product's specification.
+
+Notation is not rigor by itself. If a sentence is as exact, keep the sentence:
+symbols that only decorate cost every reader who does not read them fluently.
+
+Check how the destination renders math before choosing the syntax. Markdown
+defines none; hosts such as GitHub and GitLab add `$…$` and `math` blocks, many
+viewers show the raw source. Where nothing renders, use single-line notation in
+a code block as above. When the terms need labelling or the layout cannot be
+written on one line, ask Editorial SVG Diagrams for a formula figure, which also
+knows the per-destination details. Keep the formula as searchable text beside
+any figure, and inspect the rendered page.
+
+## 5. Let figures replace the explanation they carry
 
 For a model, process, state change or relationship, consider the visual form before
 drafting paragraphs. Use Editorial SVG Diagrams when available with the verified
@@ -127,7 +165,7 @@ If Editorial SVG Diagrams is unavailable, use a faithful available representatio
 report the missing method; a required figure remains open. Preserve verified
 meaning and supported output formats when revising an existing figure.
 
-## 5. Verify the finished manual
+## 6. Verify the finished manual
 
 Use Unslop when available on the assembled text, including headings, captions and
 text equivalents. Remove filler and repeated explanations without deleting facts,
@@ -139,7 +177,7 @@ sources. Execute safe examples when tools and access permit; record what was
 inspected, executed or still unverified. A documentation request does not authorize
 external effects such as sending, deploying or operating dangerous equipment.
 Inspect the intended rendering, diagram legibility, links, navigation and text
-alternatives. Where a material contract remains unclear, state the exact source gap.
+alternatives. Recompute each worked formula example from its stated values. Where a material contract remains unclear, state the exact source gap.
 
 Revise the canonical explanation in place. Keep publication history, temporary
 progress and open work with their existing record owner rather than appending
